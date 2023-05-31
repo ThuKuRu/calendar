@@ -14,6 +14,9 @@ const Sidebar = styled.div`
     height: 75px;
     background-color: #293042;
   }
+  .miniCalendar{
+    color: #FFFFFF;
+  }
 `;
 
 const HeaderLogo = styled.img`
