@@ -1,59 +1,7 @@
 import React from "react";
 import { Box, Button, Typography } from "@mui/material";
-import { useState } from "react";
 
-const ToDoModal = () => {
-  const [toDoData, setToDoData] = useState([
-    {
-      name: "Conference",
-      level: 1,
-    },
-    {
-      name: "Conference",
-      level: 2,
-    },
-    {
-      name: "Conference",
-      level: 3,
-    },
-    {
-      name: "Conference",
-      level: 4,
-    },
-    {
-      name: "Conference",
-      level: 5,
-    },
-    {
-      name: "Conference",
-      level: 5,
-    },
-    {
-      name: "Conference",
-      level: 5,
-    },
-    {
-      name: "Conference",
-      level: 5,
-    },
-    {
-      name: "Conference",
-      level: 5,
-    },
-    {
-      name: "Conference",
-      level: 5,
-    },
-    {
-      name: "Conference",
-      level: 5,
-    },
-    {
-      name: "Conference",
-      level: 5,
-    },
-  ]);
-
+const ToDoModal = ({ toDoData, setToDoData }) => {
   const modalStyle = {
     position: "absolute",
     top: "50%",
