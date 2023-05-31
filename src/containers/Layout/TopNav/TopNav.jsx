@@ -8,16 +8,27 @@ import {
   Avatar,
 } from "./index.style";
 import SidebarButton from "../../../img/sidebar_button.png";
-import Notification from "../../../img/bell_3.png";
+import NotificationIcon from "../../../img/bell_3.png";
 import AvatarImg from "../../../img/thu_1.png";
 import { Link, Navlink } from "react-router-dom";
+import { Popper } from "@mui/material";
+import Notification from "../../Notification/Notification";
 
 const TopNav = () => {
   const [value, setValue] = React.useState("en");
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handleClick = (event) => {
+    setAnchorEl(anchorEl ? null : event.currentTarget);
+  };
+
+  const open = Boolean(anchorEl);
+  const id = open ? "simple-popper" : undefined;
 
   const handleChange = (event) => {
     setValue(event.target.value);
   };
+
   return (
     <NavBar>
       <div className="header">
@@ -28,7 +39,10 @@ const TopNav = () => {
             </Button>
           </div>
           <div className="headContentRight">
-            <Icon src={Notification} />
+            <Icon src={NotificationIcon} onClick={handleClick} />
+            <Popper id={id} open={open} anchorEl={anchorEl}>
+              <Notification />
+            </Popper>
             <SelectList value={value} onChange={handleChange}>
               <MenuItem value="en" selected="selected">
                 ENGLISH

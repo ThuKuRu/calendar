@@ -32,6 +32,7 @@ const Icon = styled.img`
   width: 30px;
   height: 30px;
   text-aligns: center;
+  cursor: pointer;
 `;
 
 const Button = styled.button`
