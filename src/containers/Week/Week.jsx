@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const Week = () => {
   return (
@@ -6,4 +6,4 @@ const Week = () => {
   )
 }
 
-export default Week
+export default Week;

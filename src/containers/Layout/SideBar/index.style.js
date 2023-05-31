@@ -17,7 +17,7 @@ const Sidebar = styled.div`
 
 const HeaderLogo = styled.img`
   width: 300px;
-  height: 60px;
+  height: 75px;
   background-color: #293042;
 `;
 
