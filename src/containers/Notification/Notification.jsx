@@ -1,6 +1,6 @@
 import React from "react";
 import { Box } from "@mui/material";
-import { ListItemButton, ListItemText, ListItem, List } from "@mui/material";
+import { ListItemButton, ListItemText, List } from "@mui/material";
 
 const Notification = () => {
   const notiList = [
@@ -19,7 +19,7 @@ const Notification = () => {
   ];
 
   return (
-    <Box sx={{ border: 1, p: 1, bgcolor: "background.paper" }}>
+    <Box sx={{ border: 1, p: 1, bgcolor: "background.paper", mt: 2 }}>
       <List sx={{ width: 300, bgcolor: "background.paper" }}>
         {notiList.map((noti) => (
           <ListItemButton>
