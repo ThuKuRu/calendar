@@ -6,11 +6,12 @@ const Sidebar = styled.div`
   bottom: 0;
   left: 0;
   display: flex;
+  flex-direction: column;
   width: 300px;
   background-color: #041820;
   height: 100%;
   .headLogo {
-    height: 60px;
+    height: 75px;
     background-color: #293042;
   }
 `;
@@ -21,4 +22,11 @@ const HeaderLogo = styled.img`
   background-color: #293042;
 `;
 
-export { Sidebar, HeaderLogo };
+const CreateButton = styled.img`
+  cursor: pointer;
+  width: 300px;
+  height: 75px;
+  background-color: #293042;
+`;
+
+export { Sidebar, HeaderLogo, CreateButton};
