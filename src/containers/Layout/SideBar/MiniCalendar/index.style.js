@@ -9,7 +9,7 @@ const Minicalendar = styled.div`
   .wrapper header {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
   }
 
   header .current-date {
