@@ -7,29 +7,52 @@ const Sidebar = styled.div`
   left: 0;
   display: flex;
   flex-direction: column;
-  width: 300px;
+  width: 400px;
   background-color: #041820;
   height: 100%;
   .headLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
     height: 75px;
     background-color: #293042;
+    p{
+      margin-left: 10px;
+      color: #ffffff;
+      font-size: 45px;
+      font-family: "Poppins";
+      font-weight: bold;
+    }
   }
-  .miniCalendar{
-    color: #FFFFFF;
+  .miniCalendar {
+    color: #ffffff;
+  }
+  .createButton {
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    .createText {
+      color: #ffffff;
+      margin-left: 10px;
+      font-size: 30px;
+      font-family: Poppins;
+      font-weight: bold;
+      cursor: pointer;
+    }
   }
 `;
 
 const HeaderLogo = styled.img`
-  width: 300px;
-  height: 75px;
-  background-color: #293042;
+  width: auto;
 `;
 
-const CreateButton = styled.img`
+const CreateIcon = styled.img`
   cursor: pointer;
-  width: 300px;
-  height: 75px;
+  width: 40px;
+  height: 40px;
   background-color: #293042;
 `;
 
-export { Sidebar, HeaderLogo, CreateButton};
+export { Sidebar, HeaderLogo, CreateIcon };
