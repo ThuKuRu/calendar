@@ -76,6 +76,7 @@ const Minicalendar = styled.div`
           &.active {
             &::before {
               background-color: #3f80ea;
+              // background-color: #BBFDC9;
             }
           }
         }

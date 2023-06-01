@@ -6,6 +6,7 @@ import { Sidebar, HeaderLogo, CreateIcon } from "./index.style";
 import Logo from "../../../img/calendar_logo.png";
 import CreateIconImg from "../../../img/create_icon.png";
 import MiniCalendar from "./MiniCalendar/MiniCalendar";
+import TodolistIconImg from "../../../img/todolist_icon.png";
 
 const SideBar = () => {
   const [open, setOpen] = React.useState(false);
@@ -77,9 +78,13 @@ const SideBar = () => {
         <p className="createText">CREATE</p>
       </div>
       <div className="miniCalendar">
-        <MiniCalendar></MiniCalendar>
+        <MiniCalendar/>
       </div>
-      <Popup modal trigger={<button>To Do List</button>}>
+      <div className="todolistButton">
+        <TodolistIcon src={TodolistIconImg}/>
+        <p className="todolistText">TO DO LIST</p>
+      </div>
+        <Popup modal trigger={<button>To Do List</button>}>
         <ToDoModal toDoData={toDoData} setToDoData={setToDoData} />
       </Popup>
     </Sidebar>
