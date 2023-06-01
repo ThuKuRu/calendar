@@ -2,7 +2,7 @@ import React from "react";
 import { Sidebar, HeaderLogo } from "./index.style";
 import Logo from "../../../img/header_logo.png";
 import ToDoModal from "../../ToDoModal/ToDoModal";
-import { Modal, Button } from "@mui/material";
+import { Modal } from "@mui/material";
 import { useState } from "react";
 
 const SideBar = () => {
@@ -66,7 +66,7 @@ const SideBar = () => {
     <Sidebar>
       <div className="headLogo">
         <HeaderLogo src={Logo} />
-        <Button onClick={handleOpenModal}>To Do List</Button>
+        <button onClick={handleOpenModal}>To Do List</button>
         <Modal
           open={open}
           onClose={handleCloseModal}
