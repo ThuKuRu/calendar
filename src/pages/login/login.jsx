@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { LoginStyle } from "./index.style";
-import { FacebookRounded, Visibility, VisibilityOff } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 
 const Login = () => {
@@ -25,7 +24,8 @@ const Login = () => {
     console.log(inputs);
     return(
         <div>
-
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"></link>
         <LoginStyle>
             <form>
                 <h2>Login Karenda</h2>
@@ -45,7 +45,7 @@ const Login = () => {
                     onChange={handleChange}
                     required/>
                     <div className="eyeIcon" onClick={handleToggle}>
-                        {toggleEye ? <Visibility/> : <VisibilityOff/>}
+                    {toggleEye ? <span class="material-icons"> visibility </span> : <span class="material-icons"> visibility_off </span>}
                     </div>
                 </div>
                 <button type="submit">Login</button>

@@ -5,6 +5,7 @@ import Month from "../../Month/Month";
 import Week from "../../Week/Week";
 import Day from "../../Day/Day";
 
+
 const Main = () => {
   return (
     <Content>
@@ -25,6 +26,7 @@ const Main = () => {
           </div>
         </div>
         <div className="navigateRight">
+
           <button type="button" className="nav">
             <a href="/">Month</a>
           </button>
@@ -34,15 +36,16 @@ const Main = () => {
           <button type="button" className="nav">
             <a href="/day">Day</a>
           </button>
+          
 
           <div className="content">
-            <BrowserRouter>
+            {/* <BrowserRouter>
               <Routes>
-              <Route path="/" element={<Month title='Month' /> } />
+              <Route path="/month" element={<Month title='Month' /> } />
               <Route path="/week" element={<Week title='Week' /> } />
               <Route path="/day" element={<Day title='Day' /> } />
               </Routes>
-            </BrowserRouter>
+            </BrowserRouter> */}
           </div>
         </div>
       </div>

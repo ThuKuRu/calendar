@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-// import "./register.scss";
 import { RegisterStyle } from "./index.styleR";
 import FormInput from "../../components/formInput/formInput";
 import { Link } from "react-router-dom";
-// import { FacebookRounded } from "@mui/icons-material";
 
 const Register = () => {
     const [inputValues, setInputValues] = useState({
