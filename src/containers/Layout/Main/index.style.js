@@ -8,7 +8,7 @@ const Content = styled.div`
     position: fixed;
     top: 45px;
     right: 0;
-    left: 300px;
+    left: 400px;
     padding: 4px 0px;
     background-color: #fff;
     .navigateLeft {
@@ -47,7 +47,7 @@ const Content = styled.div`
       position: fixed;
       top: 75px;
       right: 0;
-      left: 300px;
+      left: 400px;
       padding: 4px 0px;
     }
   }
