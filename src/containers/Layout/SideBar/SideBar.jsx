@@ -1,6 +1,4 @@
 import React from "react";
-import { Sidebar, HeaderLogo } from "./index.style";
-import Logo from "../../../img/header_logo.png";
 import ToDoModal from "../../ToDoModal/ToDoModal";
 import { useState } from "react";
 import Popup from "reactjs-popup";
