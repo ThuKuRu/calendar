@@ -1,6 +1,5 @@
 import React from "react";
-import { Box } from "@mui/material";
-import { ListItemButton, ListItemText, List } from "@mui/material";
+import { NotiItem, NotiList, NotificationContainer } from "./index.style";
 
 const Notification = () => {
   const notiList = [
@@ -19,15 +18,17 @@ const Notification = () => {
   ];
 
   return (
-    <Box sx={{ border: 1, p: 1, bgcolor: "background.paper", mt: 2 }}>
-      <List sx={{ width: 300, bgcolor: "background.paper" }}>
+    <NotificationContainer>
+      <NotiList>
         {notiList.map((noti) => (
-          <ListItemButton>
-            <ListItemText primary={noti.title} secondary={noti.message} />
-          </ListItemButton>
+          <NotiItem>
+            <h3>{noti.title}</h3>
+            <p>{noti.message}</p>
+            <hr />
+          </NotiItem>
         ))}
-      </List>
-    </Box>
+      </NotiList>
+    </NotificationContainer>
   );
 };
 
