@@ -16,13 +16,20 @@ const ToDoModal = ({ toDoData, setToDoData }) => {
 
   return (
     <ToDoModalContainer>
-      <Typo>To Do List</Typo>
-      <ToDosList>
-        {toDoData.map((todo) => (
-          <ToDoItem level={todo.level}>{todo.name}</ToDoItem>
-        ))}
-      </ToDosList>
-      <Button onClick={sortToDoList}>SORT</Button>
+      <div className="overlay">
+        <Typo>To Do List</Typo>
+        <ToDosList>
+          {toDoData.map((todo) => (
+            <ToDoItem level={todo.level}>{todo.name}</ToDoItem>
+          ))}
+        </ToDosList>
+        <div className="button">
+          <Button>
+            <a href="/">Cancel</a>
+          </Button>
+          <Button onClick={sortToDoList}>Sort</Button>
+        </div>
+      </div>
     </ToDoModalContainer>
   );
 };

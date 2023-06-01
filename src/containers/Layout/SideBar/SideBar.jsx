@@ -2,7 +2,7 @@ import React from "react";
 import ToDoModal from "../../ToDoModal/ToDoModal";
 import { useState } from "react";
 import Popup from "reactjs-popup";
-import { Sidebar, HeaderLogo, CreateIcon } from "./index.style";
+import { Sidebar, HeaderLogo, CreateIcon, TodolistIcon } from "./index.style";
 import Logo from "../../../img/calendar_logo.png";
 import CreateIconImg from "../../../img/create_icon.png";
 import MiniCalendar from "./MiniCalendar/MiniCalendar";
@@ -78,13 +78,17 @@ const SideBar = () => {
         <p className="createText">CREATE</p>
       </div>
       <div className="miniCalendar">
-        <MiniCalendar/>
+        <MiniCalendar />
       </div>
-      <div className="todolistButton">
-        <TodolistIcon src={TodolistIconImg}/>
-        <p className="todolistText">TO DO LIST</p>
-      </div>
-        <Popup modal trigger={<button>To Do List</button>}>
+      <Popup
+        modal
+        trigger={
+          <div className="todolistButton">
+            <TodolistIcon src={TodolistIconImg} />
+            <p className="todolistText">TO DO LIST</p>
+          </div>
+        }
+      >
         <ToDoModal toDoData={toDoData} setToDoData={setToDoData} />
       </Popup>
     </Sidebar>

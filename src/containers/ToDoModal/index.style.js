@@ -9,17 +9,39 @@ const levelColor = {
 };
 
 const ToDoModalContainer = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 700px;
-  background-color: white;
-  padding: 20px;
-  box-shadow: 24px;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  .overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 24px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 20px;
+    .button {
+      display: flex;
+      float: right;
+      justify-content: center;
+      margin-left: 300px;
+      text-direction: none;
+      a {
+        text-decoration: none;
+        color: black;
+      }
+    }
+  }
 `;
 
 const ToDoItem = styled.div`
@@ -53,18 +75,16 @@ const ToDosList = styled.div`
 
 const Button = styled.button`
   background-color: #d9d9d9;
-  border: 1px solid #3788d8;
+  border: 2px solid #000;
   border-radius: 10px;
   color: black;
   font-weight: bold;
-  font-size: 29px;
-  line-height: 29px;
+  font-size: 25px;
   padding: 2% 4%;
   margin-top: 3%;
-  margin-left: auto;
-  margin-right: 7%;
-  max-width: 23%;
+  width: auto;
   cursor: pointer;
+  margin-left: 20px;
 `;
 
 const Typo = styled.h3`
