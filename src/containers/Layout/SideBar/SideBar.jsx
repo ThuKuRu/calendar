@@ -11,8 +11,6 @@ import MiniCalendar from "./MiniCalendar/MiniCalendar";
 
 const SideBar = () => {
   const [open, setOpen] = React.useState(false);
-  const handleOpenModal = () => setOpen(true);
-  const handleCloseModal = () => setOpen(false);
 
   // mock data
   const [toDoData, setToDoData] = useState([
