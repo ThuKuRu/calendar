@@ -2,8 +2,8 @@ import React from "react";
 import { Sidebar, HeaderLogo } from "./index.style";
 import Logo from "../../../img/header_logo.png";
 import ToDoModal from "../../ToDoModal/ToDoModal";
-import { Modal } from "@mui/material";
 import { useState } from "react";
+import Popup from "reactjs-popup";
 
 const SideBar = () => {
   const [open, setOpen] = React.useState(false);
@@ -66,15 +66,9 @@ const SideBar = () => {
     <Sidebar>
       <div className="headLogo">
         <HeaderLogo src={Logo} />
-        <button onClick={handleOpenModal}>To Do List</button>
-        <Modal
-          open={open}
-          onClose={handleCloseModal}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description"
-        >
+        <Popup modal trigger={<button>To Do List</button>}>
           <ToDoModal toDoData={toDoData} setToDoData={setToDoData} />
-        </Modal>
+        </Popup>
       </div>
     </Sidebar>
   );

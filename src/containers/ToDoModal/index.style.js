@@ -19,6 +19,7 @@ const ToDoModalContainer = styled.div`
   box-shadow: 24px;
   display: flex;
   flex-direction: column;
+  border: 1px solid black;
 `;
 
 const ToDoItem = styled.div`
