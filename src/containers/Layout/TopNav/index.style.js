@@ -7,7 +7,7 @@ const NavBar = styled.div`
     position: fixed;
     top: 0;
     right: 0;
-    left: 300px;
+    left: 400px;
     height: 45px;
     display: flex;
     .headContent {
