@@ -8,9 +8,11 @@ import {
   Avatar,
 } from "./index.style";
 import SidebarButton from "../../../img/sidebar_button.png";
-import Notification from "../../../img/bell_3.png";
+import NotificationIcon from "../../../img/bell_3.png";
 import AvatarImg from "../../../img/thu_1.png";
 import { Link, Navlink } from "react-router-dom";
+import Notification from "../../Notification/Notification";
+import Popup from "reactjs-popup";
 
 const TopNav = () => {
   const [value, setValue] = React.useState("en");
@@ -18,6 +20,7 @@ const TopNav = () => {
   const handleChange = (event) => {
     setValue(event.target.value);
   };
+
   return (
     <NavBar>
       <div className="header">
@@ -28,7 +31,9 @@ const TopNav = () => {
             </Button>
           </div>
           <div className="headContentRight">
-            <Icon src={Notification} />
+            <Popup trigger={<Icon src={NotificationIcon} />}>
+              <Notification />
+            </Popup>
             <SelectList value={value} onChange={handleChange}>
               <MenuItem value="en" selected="selected">
                 ENGLISH
