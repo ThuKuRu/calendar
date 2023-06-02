@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Minicalendar = styled.div`
+const MinicalendarStyle = styled.div`
   .wrapper {
     width: 100%;
     background-color: #041820;
@@ -10,7 +10,7 @@ const Minicalendar = styled.div`
       align-items: center;
       justify-content: space-between;
       .current-date {
-        font-size: 1.4rem;
+        font-size: 20px;
         font-weight: 750;
         font-family: "Poppins";
       }
@@ -31,6 +31,9 @@ const Minicalendar = styled.div`
     }
     .miniCalendar {
       font-family: "Poppins";
+      width: 90%;
+      margin-left: 15px;
+      margin-top: -10px;
       ul {
         padding-inline-start: 0px;
         display: flex;
@@ -41,19 +44,21 @@ const Minicalendar = styled.div`
           position: relative;
           width: calc(100% / 7);
           text-align: center;
+          font-size: 16px;
         }
       }
       .weeks {
         li {
           font-weight: 750;
-          font-size: 18px;
+          font-size: 16px;
         }
       }
       .days {
         li {
+          font-size: 13px;
           z-index: 1;
           cursor: pointer;
-          margin-top: 30px;
+          margin-top: 20px;
           &::before {
             position: absolute;
             content: "";
@@ -76,7 +81,6 @@ const Minicalendar = styled.div`
           &.active {
             &::before {
               background-color: #3f80ea;
-              // background-color: #BBFDC9;
             }
           }
         }
@@ -85,4 +89,4 @@ const Minicalendar = styled.div`
   }
 `;
 
-export { Minicalendar };
+export { MinicalendarStyle };

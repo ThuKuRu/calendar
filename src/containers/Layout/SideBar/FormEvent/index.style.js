@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Formevent = styled.div`
+const FormEventStyle = styled.div`
   font-family: "Poppins";
   .modal {
     position: fixed;
@@ -10,14 +10,15 @@ const Formevent = styled.div`
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    text-align: center;
     .modal-container {
       position: fixed;
       left: 35%;
       top: 30%;
-      width: 30%;
+      width: 35%;
       border: 1px solid #011627;
       border-radius: 1em;
-      // box-shadow: -2px 5px 5px #e71d36;
       background-color: #fdfffc;
       display: flex;
       flex-direction: column;
@@ -28,7 +29,6 @@ const Formevent = styled.div`
       .header {
         display: absolute;
         width: 70%;
-        // border-bottom: 1px solid gray;
         font-size: 32px;
         text-align: center;
         padding: 5px;
@@ -41,20 +41,23 @@ const Formevent = styled.div`
         background-color: white;
         font-size: 20px;
         .add-form {
-          height: 36px;
-          width: 100%;
+          margin-top: -10px;
+          height: 30px;
+          width: 95%;
           border: 1px solid #011627;
           border-radius: 1em;
           padding: 8px 12px;
           font-size: 20px;
         }
         .formCreate-container {
+          margin-top: 15px;
+          width: 100%;
           .formCreate-container-things {
+            width: 100%;
             display: flex;
             justify-content: space-between;
-            margin-top: 20px;
-           
             .formCreate-things {
+              width: 30%;
               border: 1px solid #fff;
               border-radius: 22px;
               font-size: 20px;
@@ -64,6 +67,8 @@ const Formevent = styled.div`
             .formCreate-event {
               background-color: #3f80ea;
               color: #fff;
+              width: 30%;
+              
             }
           }
           
@@ -71,7 +76,7 @@ const Formevent = styled.div`
             display: flex;
             justify-content: space-between;
             background-color: #d9d9d9;
-            margin-top: 20px;
+            margin-top: 15px;
             margin-bottom: 30px;
             border-radius: 16px;
             padding: 10px 10px;
@@ -90,22 +95,31 @@ const Formevent = styled.div`
                 font-size: 30px;
               }
             }
-        }
+          }
         }
       }
       .buttonFormCreate {
         display: flex;
         justify-content: end;
-        margin-top: 20px;
+        margin-top: 10px;
+        cursor: pointer;
+        justify-content:content;
         .Cancel {
-          border-radius: 16px;
-          padding: 5px 10px;
-          margin-right: 20px;
-        }
-        .Save {
           background-color: #d9d9d9;
           border-radius: 16px;
-          padding: 5px 30px;
+          padding: 5px 10px;
+          a {
+          text-decoration: none;
+          font-size: 20px;
+          color: #000;
+        }
+        }
+        }
+        .Save {
+          margin-left: 20px;
+          background-color: #d9d9d9;
+          border-radius: 16px;
+          padding: 5px 10px;
         }
       }
 
@@ -129,4 +143,4 @@ const Formevent = styled.div`
   }
 `;
 
-export { Formevent };
+export { FormEventStyle };

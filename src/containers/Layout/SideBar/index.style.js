@@ -7,42 +7,49 @@ const Sidebar = styled.div`
   left: 0;
   display: flex;
   flex-direction: column;
-  width: 400px;
+  width: 20%;
   background-color: #041820;
   height: 100%;
+  justify-content: center;
   .headLogo {
+    position: fixed;
+    top: 0;
+    width: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 10px 0;
-    height: 75px;
+    height: 60px;
     background-color: #293042;
     p {
       margin-left: 10px;
       color: #ffffff;
-      font-size: 45px;
+      font-size: 40px;
       font-family: "Poppins";
       font-weight: bold;
     }
   }
   .miniCalendar {
+    margin-top: -30px;
     color: #ffffff;
   }
   .createButton {
-    height: 100px;
+    height: 90px;
     justify-content: center;
     align-items: center;
     display: flex;
+    margin-top: -100px;
     .createText {
       color: #ffffff;
       margin-left: 10px;
-      font-size: 30px;
+      font-size: 25px;
       font-family: Poppins;
       font-weight: bold;
       cursor: pointer;
     }
   }
   .todolistButton {
+    margin-top: -25px;
     height: 100px;
     display: flex;
     justify-content: center;
@@ -50,7 +57,7 @@ const Sidebar = styled.div`
     .todolistText {
       color: #ffffff;
       margin-left: 10px;
-      font-size: 30px;
+      font-size: 25px;
       font-family: Poppins;
       font-weight: bold;
       cursor: pointer;
@@ -59,20 +66,21 @@ const Sidebar = styled.div`
 `;
 
 const HeaderLogo = styled.img`
-  width: auto;
+  width: 40px;
+  height: 40px;
 `;
 
 const CreateIcon = styled.img`
   cursor: pointer;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   background-color: #293042;
 `;
 
 const TodolistIcon = styled.img`
   cursor: pointer;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   background-color: #041820;
 `;
 

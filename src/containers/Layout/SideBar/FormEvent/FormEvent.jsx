@@ -1,9 +1,8 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import { Formevent } from "./FormEvent.style";
+import { FormEventStyle } from "./index.style";
 const FormEvent = ({ close }) => {
   return (
-    <Formevent>
+    <FormEventStyle>
       <link
         href="https://fonts.googleapis.com/css?family=Poppins"
         rel="stylesheet"
@@ -28,7 +27,6 @@ const FormEvent = ({ close }) => {
                 <div className="formCreate-things">To-do</div>
                 <div className="formCreate-things">Reminder</div>
               </div>
-
               <div className="formCreate-time-container">
                 <div className="formCreate-sche-day">
                   <div class="material-symbols-outlined">schedule</div>
@@ -53,7 +51,7 @@ const FormEvent = ({ close }) => {
 
             <div className="buttonFormCreate">
               <div className="Cancel">
-                <a className="Cancel" onClick={close}>
+                <a className="cancel" onClick={close} href="/#">
                   Cancel
                 </a>
               </div>
@@ -62,7 +60,7 @@ const FormEvent = ({ close }) => {
           </div>
         </div>
       </div>
-    </Formevent>
+    </FormEventStyle>
   );
 };
 

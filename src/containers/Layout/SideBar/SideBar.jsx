@@ -77,7 +77,6 @@ const SideBar = () => {
       <div className="createButton">
         <CreateIcon src={CreateIconImg} />
         <Popup modal trigger={<p className="createText">CREATE</p>}>
-          {/* <FormEvent></FormEvent> */}
           {(close) => <FormEvent close={close} />}
         </Popup>
       </div>
@@ -93,7 +92,6 @@ const SideBar = () => {
           </div>
         }
       >
-        {/* <ToDoModal toDoData={toDoData} setToDoData={setToDoData} /> */}
         {(close) => (
           <ToDoModal
             close={close}

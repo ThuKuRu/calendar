@@ -17,12 +17,14 @@ const ToDoModalContainer = styled.div`
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   justify-content: center;
+  text-align: center;
   .overlay {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 700px;
+    width: 30%;
+    height: 60%;
     background-color: white;
     padding: 20px;
     box-shadow: 24px;
@@ -30,11 +32,13 @@ const ToDoModalContainer = styled.div`
     flex-direction: column;
     border: 1px solid black;
     border-radius: 20px;
+    justify-content: center;
+    text-align: center;
     .button {
       display: flex;
       float: right;
+      margin-left: 150px;
       justify-content: center;
-      margin-left: 300px;
       text-direction: none;
       a {
         text-decoration: none;
@@ -48,15 +52,17 @@ const ToDoItem = styled.div`
   border: 1px solid #3788d8;
   border-radius: 10px;
   color: white;
-  padding: 2% 6%;
-  font-size: 23px;
+  padding: 2% 5%;
+  font-size: 18px;
   margin: 1% 0;
   background-color: ${({ level }) => levelColor[level]};
 `;
 
 const ToDosList = styled.div`
-  margin-top: 3px;
   max-height: 500px;
+  justify-content: center;
+  margin-left: 20px;
+  width: 90%;
   overflow-y: scroll;
 
   &::-webkit-scrollbar {
@@ -79,18 +85,19 @@ const Button = styled.button`
   border-radius: 10px;
   color: black;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 18px;
   padding: 2% 4%;
   margin-top: 3%;
   width: auto;
   cursor: pointer;
-  margin-left: 20px;
+  margin-left: 10px;
 `;
 
 const Typo = styled.h3`
   text-align: center;
   font-weight: bold;
   font-size: 30px;
+  margin: 0px 20px 10px;
 `;
 
 export { ToDoModalContainer, ToDoItem, ToDosList, Typo, Button };

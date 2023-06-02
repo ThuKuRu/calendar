@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 const NavBar = styled.div`
-  margin-left: 300px;
+  margin-left: 20%;
   .header {
     background-color: #ccc;
     position: fixed;
     top: 0;
     right: 0;
-    left: 400px;
+    left: 20%;
     height: 45px;
     display: flex;
     .headContent {

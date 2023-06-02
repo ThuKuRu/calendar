@@ -25,7 +25,7 @@ const ToDoModal = ({ toDoData, setToDoData, close }) => {
         </ToDosList>
         <div className="button">
           <Button>
-            <a className="Cancel" onClick={close}>
+            <a className="Cancel" onClick={close} href="/#">
               Cancel
             </a>
           </Button>
