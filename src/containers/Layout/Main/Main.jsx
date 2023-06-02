@@ -38,15 +38,20 @@ const Main = () => {
           <div className="content">
             <BrowserRouter>
               <Routes>
-              <Route path="/" element={<Month title='Month' /> } />
-              <Route path="/week" element={<Week title='Week' /> } />
-              <Route path="/day" element={<Day title='Day' /> } />
+                <Route path="/" element={<Month title='Month' />} />
+                <Route path="/week" element={<Week title='Week' />} />
+                <Route path="/day" element={<Day title='Day' />} />
               </Routes>
             </BrowserRouter>
           </div>
+
         </div>
+
       </div>
+
     </Content>
+
+
   );
 };
 

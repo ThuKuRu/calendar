@@ -6,7 +6,9 @@ import { Sidebar, HeaderLogo, CreateIcon, TodolistIcon } from "./index.style";
 import Logo from "../../../img/calendar_logo.png";
 import CreateIconImg from "../../../img/create_icon.png";
 import MiniCalendar from "./MiniCalendar/MiniCalendar";
+import FormEvent from "./FormEvent/FormEvent";
 import TodolistIconImg from "../../../img/todolist_icon.png";
+
 
 const SideBar = () => {
   const [open, setOpen] = React.useState(false);
@@ -75,7 +77,10 @@ const SideBar = () => {
       </div>
       <div className="createButton">
         <CreateIcon src={CreateIconImg} />
-        <p className="createText">CREATE</p>
+        <Popup modal trigger={<p className="createText">CREATE</p>}>
+          {/* <FormEvent></FormEvent> */}
+          {(close) => <FormEvent close={close} />}
+        </Popup>
       </div>
       <div className="miniCalendar">
         <MiniCalendar />

@@ -54,7 +54,7 @@ const MiniCalendar = () => {
             setCurrMonth(date.getMonth());
         } else {
             setCurrMonth(currMonth + 1);
-            date = new Date(currYear, currMonth+1);
+            date = new Date(currYear, currMonth + 1);
         }
         daysArray = updateDays();
     }
@@ -66,7 +66,7 @@ const MiniCalendar = () => {
             setCurrMonth(date.getMonth());
         } else {
             setCurrMonth(currMonth - 1);
-            date = new Date(currYear, currMonth-1);
+            date = new Date(currYear, currMonth - 1);
         }
         daysArray = updateDays();
     }
@@ -135,7 +135,7 @@ function getDate(day, index) {
     return console.log(new Date(year, month, day));
 }
 
-export function setDate(newDate){
+export function setDate(newDate) {
     date = newDate;
 }
 
