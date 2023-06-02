@@ -50,6 +50,8 @@ const Content = styled.div`
       left: 400px;
       padding: 4px 0px;
     }
+
+    
   }
 `;
 

@@ -54,7 +54,7 @@ const MiniCalendar = () => {
             setCurrMonth(date.getMonth());
         } else {
             setCurrMonth(currMonth + 1);
-            date = new Date(currYear, currMonth+1);
+            date = new Date(currYear, currMonth + 1);
         }
         daysArray = updateDays();
     }
@@ -66,14 +66,14 @@ const MiniCalendar = () => {
             setCurrMonth(date.getMonth());
         } else {
             setCurrMonth(currMonth - 1);
-            date = new Date(currYear, currMonth-1);
+            date = new Date(currYear, currMonth - 1);
         }
         daysArray = updateDays();
     }
 
     return (
         <Minicalendar>
-            <div class="wrapper">
+            <div className="wrapper">
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"></link>
                 <header>
                     <div className="icons">
@@ -135,7 +135,7 @@ function getDate(day, index) {
     return console.log(new Date(year, month, day));
 }
 
-export function setDate(newDate){
+export function setDate(newDate) {
     date = newDate;
 }
 
