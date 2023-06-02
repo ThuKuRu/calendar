@@ -1,5 +1,5 @@
 import React from "react";
-import ToDoModal from "../../ToDoModal/ToDoModal";
+import ToDoModal from "./ToDoModal/ToDoModal";
 import { useState } from "react";
 import Popup from "reactjs-popup";
 import { Sidebar, HeaderLogo, CreateIcon, TodolistIcon } from "./index.style";
