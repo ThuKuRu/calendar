@@ -9,7 +9,6 @@ import MiniCalendar from "./MiniCalendar/MiniCalendar";
 import FormEvent from "./FormEvent/FormEvent";
 import TodolistIconImg from "../../../img/todolist_icon.png";
 
-
 const SideBar = () => {
   const [open, setOpen] = React.useState(false);
 
@@ -94,7 +93,14 @@ const SideBar = () => {
           </div>
         }
       >
-        <ToDoModal toDoData={toDoData} setToDoData={setToDoData} />
+        {/* <ToDoModal toDoData={toDoData} setToDoData={setToDoData} /> */}
+        {(close) => (
+          <ToDoModal
+            close={close}
+            toDoData={toDoData}
+            setToDoData={setToDoData}
+          />
+        )}
       </Popup>
     </Sidebar>
   );

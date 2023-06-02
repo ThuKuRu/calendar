@@ -7,7 +7,7 @@ import {
   Typo,
 } from "./index.style";
 
-const ToDoModal = ({ toDoData, setToDoData }) => {
+const ToDoModal = ({ toDoData, setToDoData, close }) => {
   const sortToDoList = () => {
     const newToDoData = [...toDoData];
     newToDoData.sort((todo1, todo2) => todo2.level - todo1.level);
@@ -25,7 +25,9 @@ const ToDoModal = ({ toDoData, setToDoData }) => {
         </ToDosList>
         <div className="button">
           <Button>
-            <a href="/">Cancel</a>
+            <a className="Cancel" onClick={close}>
+              Cancel
+            </a>
           </Button>
           <Button onClick={sortToDoList}>Sort</Button>
         </div>
