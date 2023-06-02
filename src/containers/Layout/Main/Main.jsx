@@ -1,9 +1,5 @@
 import React from "react";
 import { Content } from "./index.style";
-// import { Route, Routes, BrowserRouter } from "react-router-dom";
-// import Month from "../../Month/Month";
-// import Week from "../../Week/Week";
-// import Day from "../../Day/Day";
 
 const Main = () => {
   return (
@@ -26,24 +22,14 @@ const Main = () => {
         </div>
         <div className="navigateRight">
           <button type="button" className="nav">
-            <a href="/">Month</a>
+            <a href="/#">Month</a>
           </button>
           <button type="button" className="nav">
-            <a href="/week">Week</a>
+            <a href="/#">Week</a>
           </button>
           <button type="button" className="nav">
-            <a href="/day">Day</a>
+            <a href="/#">Day</a>
           </button>
-
-          {/* <div className="content">
-            <BrowserRouter>
-              <Routes>
-                <Route path="/" element={<Month title='Month' />} />
-                <Route path="/week" element={<Week title='Week' />} />
-                <Route path="/day" element={<Day title='Day' />} />
-              </Routes>
-            </BrowserRouter>
-          </div> */}
         </div>
       </div>
     </Content>

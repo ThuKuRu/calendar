@@ -20,18 +20,6 @@ function App() {
       path: "/register",
       element: <Register />,
     },
-    {
-      path: "/day",
-      element: <Day />,
-    },
-    {
-      path: "/week",
-      element: <Week />,
-    },
-    {
-      path: "/month",
-      element: <Month />,
-    },
   ]);
   return (
     <div className="app">
