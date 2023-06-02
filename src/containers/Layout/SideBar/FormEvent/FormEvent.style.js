@@ -74,8 +74,8 @@ const Formevent = styled.div`
             margin-top: 20px;
             margin-bottom: 30px;
             border-radius: 16px;
-            padding: 5px 10px;
-            font-size: 16px;
+            padding: 10px 10px;
+            font-size: 18px;
             .formCreate-sche-day {
               display: flex;
               align-items: center;
@@ -96,9 +96,16 @@ const Formevent = styled.div`
       .buttonFormCreate {
         display: flex;
         justify-content: end;
-        button {
+        margin-top: 20px;
+        .Cancel {
+          border-radius: 16px;
           padding: 5px 10px;
-          margin: 0 5px;
+          margin-right: 20px;
+        }
+        .Save {
+          background-color: #d9d9d9;
+          border-radius: 16px;
+          padding: 5px 30px;
         }
       }
 

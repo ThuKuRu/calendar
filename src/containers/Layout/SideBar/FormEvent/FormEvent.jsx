@@ -50,11 +50,13 @@ const FormEvent = ({ close }) => {
               type="text"
               placeholder="Add description..."
             />
-            <a className="close" onClick={close}>
-              Cancel
-            </a>
+
             <div className="buttonFormCreate">
-              <div className="Cancel"> Cancel </div>
+              <div className="Cancel">
+                <a className="Cancel" onClick={close}>
+                  Cancel
+                </a>
+              </div>
               <div className="Save"> Save </div>
             </div>
           </div>
