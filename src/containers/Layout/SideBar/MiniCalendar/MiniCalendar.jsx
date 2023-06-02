@@ -110,9 +110,9 @@ function getDate(day, index) {
     const currYear = date.getFullYear();
     var month;
     var year;
-    if (daysActiveArray[index] == "inactive") {
+    if (daysActiveArray[index] === "inactive") {
         if (index < 6) {
-            if (currMonth == 0) {
+            if (currMonth === 0) {
                 month = 11;
                 year = currYear - 1;
             } else {
@@ -120,7 +120,7 @@ function getDate(day, index) {
                 year = currYear;
             }
         } else {
-            if (currMonth == 11) {
+            if (currMonth === 11) {
                 month = 0;
                 year = currYear + 1;
             } else {

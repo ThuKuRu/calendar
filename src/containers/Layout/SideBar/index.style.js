@@ -17,7 +17,7 @@ const Sidebar = styled.div`
     padding: 10px 0;
     height: 75px;
     background-color: #293042;
-    p{
+    p {
       margin-left: 10px;
       color: #ffffff;
       font-size: 45px;
@@ -42,6 +42,20 @@ const Sidebar = styled.div`
       cursor: pointer;
     }
   }
+  .todolistButton {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .todolistText {
+      color: #ffffff;
+      margin-left: 10px;
+      font-size: 30px;
+      font-family: Poppins;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
 `;
 
 const HeaderLogo = styled.img`
@@ -55,4 +69,11 @@ const CreateIcon = styled.img`
   background-color: #293042;
 `;
 
-export { Sidebar, HeaderLogo, CreateIcon };
+const TodolistIcon = styled.img`
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  background-color: #041820;
+`;
+
+export { Sidebar, HeaderLogo, CreateIcon, TodolistIcon };

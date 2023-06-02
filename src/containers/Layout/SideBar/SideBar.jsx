@@ -1,12 +1,70 @@
 import React from "react";
-import { Sidebar, HeaderLogo, CreateIcon } from "./index.style";
+import ToDoModal from "./ToDoModal/ToDoModal";
+import { useState } from "react";
+import Popup from "reactjs-popup";
+import { Sidebar, HeaderLogo, CreateIcon, TodolistIcon } from "./index.style";
 import Logo from "../../../img/calendar_logo.png";
 import CreateIconImg from "../../../img/create_icon.png";
 import MiniCalendar from "./MiniCalendar/MiniCalendar";
 import FormEvent from "./FormEvent/FormEvent";
-import Popup from "reactjs-popup";
+import TodolistIconImg from "../../../img/todolist_icon.png";
+
 
 const SideBar = () => {
+  const [open, setOpen] = React.useState(false);
+
+  // mock data
+  const [toDoData, setToDoData] = useState([
+    {
+      name: "Conference",
+      level: 1,
+    },
+    {
+      name: "Conference",
+      level: 2,
+    },
+    {
+      name: "Conference",
+      level: 3,
+    },
+    {
+      name: "Conference",
+      level: 4,
+    },
+    {
+      name: "Conference",
+      level: 1,
+    },
+    {
+      name: "Conference",
+      level: 4,
+    },
+    {
+      name: "Conference",
+      level: 3,
+    },
+    {
+      name: "Conference",
+      level: 5,
+    },
+    {
+      name: "Conference",
+      level: 5,
+    },
+    {
+      name: "Conference",
+      level: 5,
+    },
+    {
+      name: "Conference",
+      level: 5,
+    },
+    {
+      name: "Conference",
+      level: 5,
+    },
+  ]);
+
   return (
     <Sidebar>
       <link
@@ -25,8 +83,19 @@ const SideBar = () => {
         </Popup>
       </div>
       <div className="miniCalendar">
-        <MiniCalendar></MiniCalendar>
+        <MiniCalendar />
       </div>
+      <Popup
+        modal
+        trigger={
+          <div className="todolistButton">
+            <TodolistIcon src={TodolistIconImg} />
+            <p className="todolistText">TO DO LIST</p>
+          </div>
+        }
+      >
+        <ToDoModal toDoData={toDoData} setToDoData={setToDoData} />
+      </Popup>
     </Sidebar>
   );
 };
