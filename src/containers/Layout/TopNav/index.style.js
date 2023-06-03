@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
 const NavBar = styled.div`
-  margin-left: 20%;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
   .header {
     background-color: #ccc;
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 20%;
     height: 45px;
     display: flex;
+    width: 100%;
+    margin-right: 10px;
     .headContent {
       width: 100%;
       background-color: #fff;
@@ -21,7 +21,8 @@ const NavBar = styled.div`
       }
       .headContentRight {
         display: flex;
-        margin-right: 21px;
+        width: 220px;
+        justify-content: space-between;
       }
     }
   }
@@ -53,7 +54,8 @@ const SelectList = styled.select`
   border-top: none;
   border-right: none;
   border-left: none;
-  border-bottom: 3px solid #000;
+  // border-bottom: 3px solid #000;
+  border-bottom: none;
 `;
 
 const MenuItem = styled.option`
