@@ -2,13 +2,17 @@ import styled from "styled-components";
 
 const Content = styled.div`
   display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  .nav {
+    height: 30px;
+  }
   .navigate {
+    height: 30px;
     display: flex;
     justify-content: space-between;
-    position: fixed;
-    top: 45px;
-    right: 0;
-    left: 20%;
+    width: 100%;
     padding: 4px 0px;
     background-color: #fff;
     .navigateLeft {
@@ -35,6 +39,8 @@ const Content = styled.div`
         border: none;
         padding: 5px 10px;
         border: none;
+        color: #fff;
+        cursor: pointer;
         a {
           color: #fff;
           font-size: 16px;
@@ -42,14 +48,11 @@ const Content = styled.div`
         }
       }
     }
-    .content {
-      display: flex;
-      position: fixed;
-      top: 75px;
-      right: 0;
-      left: 20%;
-      padding: 4px 0px;
-    }
+  }
+  .content {
+    display: flex;
+    height: 100%;
+    padding: 10px 10px;
   }
 `;
 

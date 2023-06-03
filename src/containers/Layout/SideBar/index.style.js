@@ -1,20 +1,20 @@
 import styled from "styled-components";
 
 const Sidebar = styled.div`
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
+  // position: fixed;
+  // top: 0;
+  // bottom: 0;
+  // left: 0;
   display: flex;
   flex-direction: column;
-  width: 20%;
+  min-width: 250px;
+  width: 100%;
   background-color: #041820;
   height: 100%;
-  justify-content: center;
   .headLogo {
-    position: fixed;
-    top: 0;
-    width: 20%;
+    // position: fixed;
+    // top: 0;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,7 +30,7 @@ const Sidebar = styled.div`
     }
   }
   .miniCalendar {
-    margin-top: -30px;
+    // margin-top: -30px;
     color: #ffffff;
   }
   .createButton {
@@ -38,7 +38,7 @@ const Sidebar = styled.div`
     justify-content: center;
     align-items: center;
     display: flex;
-    margin-top: -100px;
+    // margin-top: -100px;
     .createText {
       color: #ffffff;
       margin-left: 10px;
