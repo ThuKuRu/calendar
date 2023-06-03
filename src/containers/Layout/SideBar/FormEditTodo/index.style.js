@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-const FormEventStyle = styled.div`
-  font-family: "Poppins";
+const FormEditTodoStyle = styled.div`
+font-family: "Poppins";
   .modal {
     position: fixed;
     color: black;
@@ -50,6 +50,19 @@ const FormEventStyle = styled.div`
           border-radius: 1em;
           padding: 8px 12px;
           font-size: 20px;
+          display: flex;
+          text-align: start;
+          margin
+        }
+        .formTodo-address {
+          text-align: left;
+          margin-top: -10px;
+          height: auto;
+          width: 95%;
+          border: 1px solid #011627;
+          border-radius: 1em;
+          padding: 8px 12px;
+          font-size: 20px;
         }
         .formCreate-container {
           margin-top: 20px;
@@ -66,7 +79,7 @@ const FormEventStyle = styled.div`
               padding: 0 30px;
               background-color: #d9d9d9;
             }
-            .formCreate-event {
+            .formCreate-todo {
               background-color: #3f80ea;
               color: #fff;
               // width: 20%;
@@ -74,25 +87,31 @@ const FormEventStyle = styled.div`
             }
           }
           
-          .formCreate-time-container {
+          .formTodo-time-container {
             display: flex;
-            justify-content: space-between;
-            background-color: #d9d9d9;
-            margin-top: 20px;
-            margin-bottom: 30px;
-            border-radius: 16px;
-            padding: 10px 10px;
-            font-size: 18px;
-            .formCreate-sche-day {
+            margin: 20px 0;
+            font-weight: bold;
+            align-items: center;
+            .formTodo-sche-day {
               display: flex;
               align-items: center;
+              border: 1px solid #000;
+              border-radius: 22px;
+              margin-left: 20px;
+              width: 100%;
+              padding: 8px 12px;
+              font-weight: normal;
+           
               .material-symbols-outlined {
                 font-size: 30px;
               }
-              
             }
-            .formCreate-times {
+            .formTodo-sche-day-level {
+              background-color: red;
+            }
+            .formTodo-times {
               display: flex;
+             
               .material-symbols-outlined{
                 font-size: 30px;
               }
@@ -146,4 +165,4 @@ const FormEventStyle = styled.div`
   }
 `;
 
-export { FormEventStyle };
+export { FormEditTodoStyle };

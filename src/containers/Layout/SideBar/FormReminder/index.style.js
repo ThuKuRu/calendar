@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const FormEventStyle = styled.div`
+const FormReminderStyle = styled.div`
   font-family: "Poppins";
   .modal {
     position: fixed;
@@ -42,7 +42,7 @@ const FormEventStyle = styled.div`
         background-color: white;
         font-size: 20px;
         
-        .add-form {
+        .add-form-reminder {
           margin-top: -10px;
           height: 30px;
           width: 95%;
@@ -50,6 +50,7 @@ const FormEventStyle = styled.div`
           border-radius: 1em;
           padding: 8px 12px;
           font-size: 20px;
+          text-align: start;
         }
         .formCreate-container {
           margin-top: 20px;
@@ -66,9 +67,10 @@ const FormEventStyle = styled.div`
               padding: 0 30px;
               background-color: #d9d9d9;
             }
-            .formCreate-event {
+            .formCreate-reminder {
               background-color: #3f80ea;
               color: #fff;
+              
               // width: 20%;
               
             }
@@ -146,4 +148,4 @@ const FormEventStyle = styled.div`
   }
 `;
 
-export { FormEventStyle };
+export { FormReminderStyle };
