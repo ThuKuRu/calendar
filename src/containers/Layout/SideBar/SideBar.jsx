@@ -7,6 +7,9 @@ import Logo from "../../../img/calendar_logo.png";
 import CreateIconImg from "../../../img/create_icon.png";
 import MiniCalendar from "./MiniCalendar/MiniCalendar";
 import FormEvent from "./FormEvent/FormEvent";
+import FormTodo from "./FormTodo/FormTodo";
+import FormReminder from "./FormReminder/FormReminder";
+import FormEditTodo from "./FormEditTodo/FormEditTodo";
 import TodolistIconImg from "../../../img/todolist_icon.png";
 
 const SideBar = () => {
@@ -77,7 +80,10 @@ const SideBar = () => {
       <div className="createButton">
         <CreateIcon src={CreateIconImg} />
         <Popup modal trigger={<p className="createText">CREATE</p>}>
-          {(close) => <FormEvent close={close} />}
+          {/* {(close) => <FormEvent close={close} />} */}
+          {/* {(close) => <FormTodo close={close} />} */}
+          {/* {(close) => <FormReminder close={close} />} */}
+          {(close) => <FormEditTodo close={close} />}
         </Popup>
       </div>
       <div className="miniCalendar">
