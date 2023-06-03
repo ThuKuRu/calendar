@@ -30,10 +30,10 @@ const Content = styled.div`
     }
     .navigateRight {
       display: flex;
-      margin-left: 850px;
       margin-right: 20px;
       .nav {
         background-color: #3f80ea;
+        font-size: 16px;
         border-radius: 5px;
         margin-left: 2px;
         border: none;
@@ -41,11 +41,6 @@ const Content = styled.div`
         border: none;
         color: #fff;
         cursor: pointer;
-        a {
-          color: #fff;
-          font-size: 16px;
-          text-decoration: none;
-        }
       }
     }
   }

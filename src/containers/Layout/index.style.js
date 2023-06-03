@@ -13,6 +13,7 @@ const LayOut = styled.div`
     display: flex;
     height: 100%;
     width: 100%;
+    min-width: 60%;
     flex-direction: column;
   }
 `;
