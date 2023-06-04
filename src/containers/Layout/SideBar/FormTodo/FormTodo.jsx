@@ -1,6 +1,7 @@
 import React from "react";
 import { FormTodoStyle } from "./index.style";
-const FormTodo = ({ close }) => {
+
+const FormTodo = ({ close, setActive }) => {
   return (
     <FormTodoStyle>
       <link
@@ -23,13 +24,27 @@ const FormTodo = ({ close }) => {
             />
             <div className="formCreate-container">
               <div className="formCreate-container-things">
-                <div className="formCreate-things ">Event</div>
+                <div
+                  className="formCreate-things "
+                  onClick={() => {
+                    setActive("event");
+                  }}
+                >
+                  Event
+                </div>
                 <div className="formCreate-things formCreate-todo">To-do</div>
-                <div className="formCreate-things">Reminder</div>
+                <div
+                  className="formCreate-things"
+                  onClick={() => {
+                    setActive("reminder");
+                  }}
+                >
+                  Reminder
+                </div>
               </div>
 
               <div className="formTodo-time-container">
-                Khoảng thời gian cho phép:
+                Duration:
                 <div className="formTodo-sche-day">
                   <span class="material-symbols-outlined">arrow_drop_down</span>
                 </div>
@@ -40,10 +55,13 @@ const FormTodo = ({ close }) => {
                   <div class="material-symbols-outlined">schedule</div>
                   <div className="formTodo-day">Friday, May 19</div>
                   <span class="material-symbols-outlined">arrow_drop_down</span>
+
+                  <div className="formCreate-time">9:30 AM</div>
+                  <span class="material-symbols-outlined">arrow_drop_down</span>
                 </div>
               </div>
               <div className="formTodo-time-container">
-                Mức độ quan trọng:
+                Importance:
                 <div className="formTodo-sche-day">
                   <span class="material-symbols-outlined">arrow_drop_down</span>
                 </div>
