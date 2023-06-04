@@ -60,8 +60,9 @@ const FormEventStyle = styled.div`
               font-size: 20px;
               padding: 5px 30px;
               background-color: #d9d9d9;
-              
+              cursor: pointer;
             }
+           
             .formCreate-event {
               background-color: #3f80ea;
               color: #fff;
@@ -74,11 +75,12 @@ const FormEventStyle = styled.div`
             background-color: #d9d9d9;
             border-radius: 16px;
             padding: 10px 10px;
-            font-size: 16px;
+            font-size: 18px;
             margin: 20px 0;
             .formCreate-sche-day {
               display: flex;
               align-items: center;
+              
             }
             .formCreate-times {
               display: flex;

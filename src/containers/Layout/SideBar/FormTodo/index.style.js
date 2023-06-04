@@ -11,45 +11,41 @@ font-family: "Poppins";
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
     justify-content: center;
-    text-align: center;
+    align-items: center;
+     display: flex;
     .modal-container {
-      position: fixed;
-      left: 35%;
-      top: 30%;
-      width: 35%;
+      width: 40%;
+      height: auto;
+      max-height: 600px;
       border: 1px solid #011627;
       border-radius: 1em;
       background-color: #fdfffc;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
       align-items: center;
       color: #011627;
 
       .header {
-        display: absolute;
-        width: 70%;
+
         font-size: 32px;
         text-align: center;
         padding: 5px;
         background-color: white;
-        margin-bottom: 32px;
       }
       .content {
-        display: absolute;
         width: 80%;
         padding: 10px 5px;
         background-color: white;
         font-size: 20px;
         
         .add-form {
-          margin-top: -10px;
           height: 30px;
           width: 95%;
           border: 1px solid #011627;
           border-radius: 1em;
           padding: 8px 12px;
           font-size: 20px;
+          margin-bottom: 10px;         
         }
         .formTodo-address {
           text-align: left;
@@ -62,19 +58,18 @@ font-family: "Poppins";
           font-size: 20px;
         }
         .formCreate-container {
-          margin-top: 20px;
-          width: 100%;
           .formCreate-container-things {
-            // width: 100%;
             display: flex;
             justify-content: space-between;
+            margin: 10px 0;
             .formCreate-things {
-              width: 15%;
+              width: auto;
               border: 1px solid #fff;
               border-radius: 22px;
               font-size: 20px;
-              padding: 0 30px;
+              padding: 5px 30px;
               background-color: #d9d9d9;
+              cursor: pointer;
             }
             .formCreate-todo {
               background-color: #3f80ea;
@@ -98,6 +93,7 @@ font-family: "Poppins";
               width: 100%;
               padding: 8px 12px;
               font-weight: normal;
+              font-size: 18px;
             
               .material-symbols-outlined {
                 font-size: 30px;

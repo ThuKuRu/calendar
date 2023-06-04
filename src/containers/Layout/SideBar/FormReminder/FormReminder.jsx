@@ -1,6 +1,6 @@
 import React from "react";
 import { FormReminderStyle } from "./index.style";
-const FormReminder = ({ close }) => {
+const FormReminder = ({ close, setActive }) => {
   return (
     <FormReminderStyle>
       <link
@@ -16,12 +16,29 @@ const FormReminder = ({ close }) => {
         <div className="modal-container">
           <div className="header"> Create New Reminder </div>
           <div className="content">
-            <div className="add-form-reminder">Hallooo</div>
-
+            <input
+              className="add-form"
+              type="text"
+              placeholder="Add article..."
+            />
             <div className="formCreate-container">
               <div className="formCreate-container-things">
-                <div className="formCreate-things ">Event</div>
-                <div className="formCreate-things">To-do</div>
+                <button
+                  className="formCreate-things "
+                  onClick={() => {
+                    setActive("event");
+                  }}
+                >
+                  Event
+                </button>
+                <button
+                  className="formCreate-things"
+                  onClick={() => {
+                    setActive("todo");
+                  }}
+                >
+                  To-do
+                </button>
                 <div className="formCreate-things formCreate-reminder">
                   Reminder
                 </div>
@@ -40,7 +57,7 @@ const FormReminder = ({ close }) => {
             </div>
 
             <input
-              className="add-form-reminder"
+              className="add-form"
               type="text"
               placeholder="Add description..."
             />

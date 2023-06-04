@@ -14,8 +14,8 @@ import TodolistIconImg from "../../../img/todolist_icon.png";
 
 const SideBar = () => {
   const [open, setOpen] = React.useState(false);
-
   // mock data
+  const [active, setActive] = React.useState("event");
   const [toDoData, setToDoData] = useState([
     {
       name: "Conference",
@@ -79,9 +79,23 @@ const SideBar = () => {
       </div>
       <div className="createButton">
         <CreateIcon src={CreateIconImg} />
+
         <Popup modal trigger={<p className="createText">CREATE</p>}>
-          {(close) => <FormEvent close={close} />}
-          {/* {(close) => <FormTodo close={close} />} */}
+          {(close) => (
+            <div>
+              {active === "event" && (
+                <FormEvent close={close} setActive={setActive} />
+              )}
+              {active === "todo" && (
+                <FormTodo close={close} setActive={setActive} />
+              )}
+              {active === "reminder" && (
+                <FormReminder close={close} setActive={setActive} />
+              )}
+            </div>
+          )}
+          {/* {(close) => <FormEvent close={close} />} */}
+          {/* {active === "todo" && ((close) => <FormTodo close={close} />)} */}
           {/* {(close) => <FormReminder close={close} />} */}
           {/* {(close) => <FormEditTodo close={close} />} */}
         </Popup>

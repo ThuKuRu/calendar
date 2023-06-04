@@ -1,6 +1,6 @@
 import React from "react";
 import { FormEventStyle } from "./index.style";
-const FormEvent = ({ close }) => {
+const FormEvent = ({ close, setActive }) => {
   return (
     <FormEventStyle>
       <link
@@ -26,8 +26,23 @@ const FormEvent = ({ close }) => {
                 <button className="formCreate-things formCreate-event">
                   Event
                 </button>
-                <button className="formCreate-things">To-do</button>
-                <button className="formCreate-things">Reminder</button>
+
+                <button
+                  className="formCreate-things"
+                  onClick={() => {
+                    setActive("todo");
+                  }}
+                >
+                  To-do
+                </button>
+                <button
+                  className="formCreate-things"
+                  onClick={() => {
+                    setActive("reminder");
+                  }}
+                >
+                  Reminder
+                </button>
               </div>
               <div className="formCreate-time-container">
                 <div className="formCreate-sche-day">
