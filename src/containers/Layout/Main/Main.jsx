@@ -9,46 +9,8 @@ const Main = () => {
 
   return (
     <Content>
-      <div className="navigate">
-        <div className="navigateLeft">
-          <button type="button" className="nav">
-            &lt;
-          </button>
-          <button type="button" className="nav">
-            Today
-          </button>
-          <button type="button" className="nav">
-            &gt;
-          </button>
-        </div>
-        <div className="navigateRight">
-          <button
-            type="button"
-            className="nav"
-            onClick={() => setActive("month")}
-          >
-            Month
-          </button>
-          <button
-            type="button"
-            className="nav"
-            onClick={() => setActive("week")}
-          >
-            Week
-          </button>
-          <button
-            type="button"
-            className="nav"
-            onClick={() => setActive("day")}
-          >
-            Day
-          </button>
-        </div>
-      </div>
       <div className="content">
-        {active === "month" && <Month />}
-        {active === "week" && <Week />}
-        {active === "day" && <Day />}
+        <Week />
       </div>
     </Content>
   );

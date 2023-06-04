@@ -80,10 +80,10 @@ const SideBar = () => {
       <div className="createButton">
         <CreateIcon src={CreateIconImg} />
         <Popup modal trigger={<p className="createText">CREATE</p>}>
-          {/* {(close) => <FormEvent close={close} />} */}
+          {(close) => <FormEvent close={close} />}
           {/* {(close) => <FormTodo close={close} />} */}
           {/* {(close) => <FormReminder close={close} />} */}
-          {(close) => <FormEditTodo close={close} />}
+          {/* {(close) => <FormEditTodo close={close} />} */}
         </Popup>
       </div>
       <div className="miniCalendar">

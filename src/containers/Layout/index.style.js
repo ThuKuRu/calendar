@@ -8,6 +8,7 @@ const LayOut = styled.div`
     display: flex;
     height: 100%;
     width: 22%;
+    min-width: 22%;
   }
   .rightContent {
     display: flex;
