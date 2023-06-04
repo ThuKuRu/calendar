@@ -34,12 +34,16 @@ const ToDoModalContainer = styled.div`
     border-radius: 20px;
     justify-content: center;
     text-align: center;
+    .header {
+      font-size: 32px;
+      text-align: center;
+      padding: 5px;
+      background-color: white;
+    }
     .button {
       display: flex;
-      float: right;
-      margin-left: 150px;
-      justify-content: center;
       text-direction: none;
+      margin-left: 270px;
       a {
         text-decoration: none;
         color: black;
@@ -81,23 +85,19 @@ const ToDosList = styled.div`
 
 const Button = styled.button`
   background-color: #d9d9d9;
-  border: 2px solid #000;
-  border-radius: 10px;
-  color: black;
-  font-weight: bold;
-  font-size: 18px;
-  padding: 2% 4%;
+  border-radius: 16px;
+  padding: 5px 10px;
+  font-size: 20px;
   margin-top: 3%;
-  width: auto;
   cursor: pointer;
   margin-left: 10px;
+  border: none;
 `;
 
 const Typo = styled.h3`
+  font-size: 32px;
   text-align: center;
-  font-weight: bold;
-  font-size: 30px;
-  margin: 0px 20px 10px;
+  padding: 5px;
 `;
 
 export { ToDoModalContainer, ToDoItem, ToDosList, Typo, Button };

@@ -14,7 +14,8 @@ const FormEventStyle = styled.div`
     align-items: center;
      display: flex;
     .modal-container {
-      width: 40%;
+      width: 35%;
+      max-width: 700px;
       height: auto;
       max-height: 450px;
       border: 1px solid #011627;
@@ -26,7 +27,6 @@ const FormEventStyle = styled.div`
       color: #011627;
 
       .header {
-
         font-size: 32px;
         text-align: center;
         padding: 5px;
@@ -93,31 +93,28 @@ const FormEventStyle = styled.div`
           display: flex;
           justify-content: end;
           margin: 10px 0;
-          cursor: pointer;
-          
+          cursor: pointer;  
           .Cancel {
             background-color: #d9d9d9;
             border-radius: 16px;
             padding: 5px 10px;
-            a {
-            text-decoration: none;
-            font-size: 20px;
-            color: #000;
-          }
-          }
+            cursor: pointer;
+              a {
+                text-decoration: none;
+                font-size: 20px;
+                color: #000;
+              }
+            }
           }
           .Save {
             margin-left: 20px;
             background-color: #d9d9d9;
             border-radius: 16px;
             padding: 5px 10px;
+             cursor: pointer;
           }
+        }   
       }
-      
-      }
-
-        
-
         .close {
           cursor: pointer;
           display: block;

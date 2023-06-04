@@ -65,7 +65,6 @@ font-family: "Poppins";
           margin-top: 20px;
           width: 100%;
           .formCreate-container-things {
-            // width: 100%;
             display: flex;
             justify-content: space-between;
             .formCreate-things {
