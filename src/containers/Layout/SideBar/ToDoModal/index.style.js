@@ -94,10 +94,4 @@ const Button = styled.button`
   border: none;
 `;
 
-const Typo = styled.h3`
-  font-size: 32px;
-  text-align: center;
-  padding: 5px;
-`;
-
-export { ToDoModalContainer, ToDoItem, ToDosList, Typo, Button };
+export { ToDoModalContainer, ToDoItem, ToDosList, Button };
