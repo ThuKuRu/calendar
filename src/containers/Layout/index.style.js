@@ -7,9 +7,9 @@ const LayOut = styled.div`
   .sidebar {
     display: flex;
     height: 100%;
-    width: auto;
+    width: 22%;
   }
-  .rightContent{
+  .rightContent {
     display: flex;
     height: 100%;
     width: 100%;
