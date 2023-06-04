@@ -23,9 +23,11 @@ const FormEvent = ({ close }) => {
             />
             <div className="formCreate-container">
               <div className="formCreate-container-things">
-                <div className="formCreate-things formCreate-event">Event</div>
-                <div className="formCreate-things">To-do</div>
-                <div className="formCreate-things">Reminder</div>
+                <button className="formCreate-things formCreate-event">
+                  Event
+                </button>
+                <button className="formCreate-things">To-do</button>
+                <button className="formCreate-things">Reminder</button>
               </div>
               <div className="formCreate-time-container">
                 <div className="formCreate-sche-day">
@@ -36,7 +38,7 @@ const FormEvent = ({ close }) => {
                 <div className="formCreate-times">
                   <div className="formCreate-time">9:30 AM</div>
                   <span class="material-symbols-outlined">arrow_drop_down</span>
-                  <span>-</span>
+                  <span class="dash">-</span>
                   <div className="formCreate-time">10:30 AM</div>
                   <span class="material-symbols-outlined">arrow_drop_down</span>
                 </div>
