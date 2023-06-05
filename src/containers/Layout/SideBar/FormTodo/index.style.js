@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const FormTodoStyle = styled.div`
-font-family: "Poppins";
+font-family: "Poppins" !important;
   .modal {
     position: fixed;
     color: black;
@@ -14,7 +14,8 @@ font-family: "Poppins";
     align-items: center;
      display: flex;
     .modal-container {
-      width: 40%;
+      width: 35%;
+      max-width: 700px;
       height: auto;
       max-height: 600px;
       border: 1px solid #011627;
@@ -26,12 +27,12 @@ font-family: "Poppins";
       color: #011627;
 
       .header {
-
         font-size: 32px;
         text-align: center;
         padding: 5px;
         background-color: white;
       }
+
       .content {
         width: 80%;
         padding: 10px 5px;
@@ -70,12 +71,11 @@ font-family: "Poppins";
               padding: 5px 30px;
               background-color: #d9d9d9;
               cursor: pointer;
+              font-family: "Poppins" !important; 
             }
             .formCreate-todo {
               background-color: #3f80ea;
               color: #fff;
-              // width: 20%;
-              
             }
           }
           
@@ -111,28 +111,28 @@ font-family: "Poppins";
         .buttonFormCreate {
           display: flex;
           justify-content: end;
-          margin-top: 60px;
-          cursor: pointer;
-          justify-content:content;
+          margin: 10px 0;
+          cursor: pointer;  
           .Cancel {
             background-color: #d9d9d9;
             border-radius: 16px;
             padding: 5px 10px;
-            a {
-            text-decoration: none;
-            font-size: 20px;
-            color: #000;
-          }
-          }
+            cursor: pointer;
+              a {
+                text-decoration: none;
+                font-size: 20px;
+                color: #000;
+              }
+            }
           }
           .Save {
             margin-left: 20px;
             background-color: #d9d9d9;
             border-radius: 16px;
             padding: 5px 10px;
+             cursor: pointer;
           }
-      }
-      
+        }     
       }
 
         

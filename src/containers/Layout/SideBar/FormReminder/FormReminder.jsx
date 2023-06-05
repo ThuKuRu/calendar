@@ -39,19 +39,23 @@ const FormReminder = ({ close, setActive }) => {
                 >
                   To-do
                 </button>
-                <div className="formCreate-things formCreate-reminder">
+                <button className="formCreate-things formCreate-reminder">
                   Reminder
-                </div>
+                </button>
               </div>
               <div className="formCreate-time-container">
                 <div className="formCreate-sche-day">
-                  <div class="material-symbols-outlined">schedule</div>
+                  <div className="material-symbols-outlined">schedule</div>
                   <div className="formCreate-day">Friday, May 19</div>
-                  <span class="material-symbols-outlined">arrow_drop_down</span>
+                  <span className="material-symbols-outlined">
+                    arrow_drop_down
+                  </span>
                 </div>
                 <div className="formCreate-times">
                   <div className="formCreate-time">9:30 AM</div>
-                  <span class="material-symbols-outlined">arrow_drop_down</span>
+                  <span className="material-symbols-outlined">
+                    arrow_drop_down
+                  </span>
                 </div>
               </div>
             </div>

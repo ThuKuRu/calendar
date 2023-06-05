@@ -24,23 +24,25 @@ const FormTodo = ({ close, setActive }) => {
             />
             <div className="formCreate-container">
               <div className="formCreate-container-things">
-                <div
+                <button
                   className="formCreate-things "
                   onClick={() => {
                     setActive("event");
                   }}
                 >
                   Event
-                </div>
-                <div className="formCreate-things formCreate-todo">To-do</div>
-                <div
+                </button>
+                <button className="formCreate-things formCreate-todo">
+                  To-do
+                </button>
+                <button
                   className="formCreate-things"
                   onClick={() => {
                     setActive("reminder");
                   }}
                 >
                   Reminder
-                </div>
+                </button>
               </div>
 
               <div className="formTodo-time-container">

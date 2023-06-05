@@ -48,14 +48,18 @@ const FormEvent = ({ close, setActive }) => {
                 <div className="formCreate-sche-day">
                   <div class="material-symbols-outlined">schedule</div>
                   <div className="formCreate-day">Friday, May 19</div>
-                  <span class="material-symbols-outlined">arrow_drop_down</span>
+                  <span className="material-symbols-outlined">
+                    arrow_drop_down
+                  </span>
                 </div>
                 <div className="formCreate-times">
                   <div className="formCreate-time">9:30 AM</div>
                   <span class="material-symbols-outlined">arrow_drop_down</span>
                   <span class="dash">-</span>
                   <div className="formCreate-time">10:30 AM</div>
-                  <span class="material-symbols-outlined">arrow_drop_down</span>
+                  <span className="material-symbols-outlined">
+                    arrow_drop_down
+                  </span>
                 </div>
               </div>
             </div>

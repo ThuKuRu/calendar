@@ -15,6 +15,7 @@ const FormReminderStyle = styled.div`
      display: flex;
     .modal-container {
       width: 40%;
+      max-width: 532px;
       height: auto;
       max-height: 450px;
       border: 1px solid #011627;
@@ -26,7 +27,6 @@ const FormReminderStyle = styled.div`
       color: #011627;
 
       .header {
-
         font-size: 32px;
         text-align: center;
         padding: 5px;
@@ -53,6 +53,10 @@ const FormReminderStyle = styled.div`
             display: flex;
             justify-content: space-between;
             margin: 10px 0;
+            align-items: center;
+            button {
+              font-family: "Poppins" !important;
+            }
             .formCreate-things {
               width: auto;
               border: 1px solid #fff;
@@ -64,6 +68,11 @@ const FormReminderStyle = styled.div`
             }
            
             .formCreate-reminder {
+              width: auto;
+              border: 1px solid #fff;
+              border-radius: 22px;
+              font-size: 20px;
+              padding: 5px 30px;
               background-color: #3f80ea;
               color: #fff;
             }

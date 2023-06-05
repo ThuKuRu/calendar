@@ -53,6 +53,10 @@ const FormEventStyle = styled.div`
             display: flex;
             justify-content: space-between;
             margin: 10px 0;
+            height: 40px;
+            button {
+              font-family: "Poppins" !important;
+            }
             .formCreate-things {
               width: auto;
               border: 1px solid #fff;

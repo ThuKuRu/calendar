@@ -23,21 +23,27 @@ const FormEditTodo = ({ close }) => {
                 Khoảng thời gian cho phép:
                 <div className="formTodo-sche-day">
                   3 ngày
-                  <span class="material-symbols-outlined">arrow_drop_down</span>
+                  <span className="material-symbols-outlined">
+                    arrow_drop_down
+                  </span>
                 </div>
               </div>
               <div className="formTodo-time-container">
                 Deadline:
                 <div className="formTodo-sche-day">
-                  <div class="material-symbols-outlined">schedule</div>
+                  <div className="material-symbols-outlined">schedule</div>
                   <div className="formTodo-day">Friday, May 19</div>
-                  <span class="material-symbols-outlined">arrow_drop_down</span>
+                  <span className="material-symbols-outlined">
+                    arrow_drop_down
+                  </span>
                 </div>
               </div>
               <div className="formTodo-time-container">
                 Mức độ quan trọng:
                 <div className="formTodo-sche-day formTodo-sche-day-level">
-                  <span class="material-symbols-outlined">arrow_drop_down</span>
+                  <span className="material-symbols-outlined">
+                    arrow_drop_down
+                  </span>
                 </div>
               </div>
             </div>
