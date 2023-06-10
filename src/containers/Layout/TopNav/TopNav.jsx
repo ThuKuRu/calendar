@@ -1,16 +1,7 @@
 import React from "react";
-import {
-  NavBar,
-  Button,
-  Icon,
-  SelectList,
-  MenuItem,
-  Avatar,
-} from "./index.style";
-import SidebarButton from "../../../img/sidebar_button.png";
+import { NavBar, Icon, SelectList, MenuItem, Avatar } from "./index.style";
 import NotificationIcon from "../../../img/bell_3.png";
 import AvatarImg from "../../../img/thu_1.png";
-import { Link, Navlink } from "react-router-dom";
 import Notification from "../../Notification/Notification";
 import Popup from "reactjs-popup";
 
@@ -24,25 +15,16 @@ const TopNav = () => {
   return (
     <NavBar>
       <div className="header">
-        <div className="headContent">
-          <div className="sidebarButton">
-            <Button>
-              <Icon src={SidebarButton} />
-            </Button>
-          </div>
-          <div className="headContentRight">
-            <Popup trigger={<Icon src={NotificationIcon} />}>
-              <Notification />
-            </Popup>
-            <SelectList value={value} onChange={handleChange}>
-              <MenuItem value="en" selected="selected">
-                ENGLISH
-              </MenuItem>
-              <MenuItem value="vi">VIETNAMESE</MenuItem>
-            </SelectList>
-            <Avatar src={AvatarImg} variant="rounded" />
-          </div>
-        </div>
+        <Popup trigger={<Icon src={NotificationIcon} />}>
+          <Notification />
+        </Popup>
+        <Avatar src={AvatarImg} variant="rounded" />
+        <SelectList value={value} onChange={handleChange}>
+          <MenuItem value="en" selected="selected">
+            Thu thút
+          </MenuItem>
+          <MenuItem value="vi">VIETNAMESE</MenuItem>
+        </SelectList>
       </div>
     </NavBar>
   );

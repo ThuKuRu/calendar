@@ -4,32 +4,16 @@ const NavBar = styled.div`
   display: flex;
   justify-content: flex-end;
   width: 100%;
+  border-bottom: 1px solid;
+  padding: 5px 0px;
   .header {
-    background-color: #ccc;
-    height: 45px;
+    padding: 0px 2%;
     display: flex;
-    width: 100%;
-    margin-right: 10px;
-    .headContent {
-      width: 100%;
-      background-color: #fff;
-      display: flex;
-      height: 40px;
-      justify-content: space-between;
-      .sidebarButton {
-        display: flex;
-      }
-      .headContentRight {
-        display: flex;
-        width: 220px;
-        justify-content: space-between;
-      }
-    }
+    justify-content: center;
   }
 `;
 
 const Icon = styled.img`
-  margin-top: 5px;
   width: 30px;
   height: 30px;
   text-aligns: center;
@@ -46,7 +30,6 @@ const Button = styled.button`
 `;
 
 const SelectList = styled.select`
-  margin-top: 5px;
   height: 30px;
   text-decoration: none !important;
   font-size: 20px;
@@ -54,7 +37,6 @@ const SelectList = styled.select`
   border-top: none;
   border-right: none;
   border-left: none;
-  // border-bottom: 3px solid #000;
   border-bottom: none;
 `;
 
@@ -69,7 +51,6 @@ const MenuItem = styled.option`
 `;
 
 const Avatar = styled.img`
-  margin-top: 5px;
   margin-left: 10px;
   border: 1px solid #000;
   border-radius: 6px;

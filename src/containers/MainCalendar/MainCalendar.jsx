@@ -8,7 +8,7 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import "react-datepicker/dist/react-datepicker.css";
 import { Container } from "./index.style";
 
-const Week = () => {
+const MainCalendar = () => {
   const events = [
     {
       title: "Big Meeting",
@@ -52,4 +52,4 @@ const Week = () => {
   );
 };
 
-export default Week;
+export default MainCalendar;

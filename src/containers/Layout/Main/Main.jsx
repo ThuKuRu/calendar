@@ -1,17 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import { Content } from "./index.style";
-import Month from "../../Month/Month";
-import Week from "../../Week/Week";
-import Day from "../../Day/Day";
+import MainCalendar from "../../MainCalendar/MainCalendar";
+import Dashboard from "../../Dashboard/Dashboard";
+import Todolist from "../../Todolist/Todolist";
+import Workspace from "../../Workspace/Workspace";
 
-const Main = () => {
-  const [active, setActive] = useState("month");
-
+const Main = ({ tab }) => {
   return (
     <Content>
-      <div className="content">
-        <Week />
-      </div>
+      {tab === "dashboard" && <Dashboard />}
+      {tab === "calendar" && <MainCalendar />}
+      {tab === "todolist" && <Todolist />}
+      {tab === "workspace" && <Workspace />}
     </Content>
   );
 };

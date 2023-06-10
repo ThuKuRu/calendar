@@ -2,70 +2,19 @@ import React from "react";
 import ToDoModal from "./ToDoModal/ToDoModal";
 import { useState } from "react";
 import Popup from "reactjs-popup";
-import { Sidebar, HeaderLogo, CreateIcon, TodolistIcon } from "./index.style";
+import { Sidebar, HeaderLogo } from "./index.style";
 import Logo from "../../../img/calendar_logo.png";
 import CreateIconImg from "../../../img/create_icon.png";
-import MiniCalendar from "./MiniCalendar/MiniCalendar";
 import FormEvent from "./FormEvent/FormEvent";
 import FormTodo from "./FormTodo/FormTodo";
 import FormReminder from "./FormReminder/FormReminder";
 import FormEditTodo from "./FormEditTodo/FormEditTodo";
 import TodolistIconImg from "../../../img/todolist_icon.png";
 
-const SideBar = () => {
+const SideBar = ({ setTab }) => {
   const [open, setOpen] = React.useState(false);
-  // mock data
+
   const [active, setActive] = React.useState("event");
-  const [toDoData, setToDoData] = useState([
-    {
-      name: "Conference",
-      level: 1,
-    },
-    {
-      name: "Conference",
-      level: 2,
-    },
-    {
-      name: "Conference",
-      level: 3,
-    },
-    {
-      name: "Conference",
-      level: 4,
-    },
-    {
-      name: "Conference",
-      level: 1,
-    },
-    {
-      name: "Conference",
-      level: 4,
-    },
-    {
-      name: "Conference",
-      level: 3,
-    },
-    {
-      name: "Conference",
-      level: 5,
-    },
-    {
-      name: "Conference",
-      level: 5,
-    },
-    {
-      name: "Conference",
-      level: 5,
-    },
-    {
-      name: "Conference",
-      level: 5,
-    },
-    {
-      name: "Conference",
-      level: 5,
-    },
-  ]);
 
   return (
     <Sidebar>
@@ -74,13 +23,10 @@ const SideBar = () => {
         rel="stylesheet"
       ></link>
       <div className="headLogo">
-        <HeaderLogo src={Logo} />
-        <p>KARENDA</p>
+        <p>Logo</p>
       </div>
-      <div className="createButton">
-        <CreateIcon src={CreateIconImg} />
-
-        <Popup modal trigger={<p className="createText">CREATE</p>}>
+      <div>
+        {/* <Popup modal trigger={<p className="createText">CREATE</p>}>
           {(close) => (
             <div>
               {active === "event" && (
@@ -94,32 +40,42 @@ const SideBar = () => {
               )}
             </div>
           )}
-          {/* {(close) => <FormEvent close={close} />} */}
-          {/* {active === "todo" && ((close) => <FormTodo close={close} />)} */}
-          {/* {(close) => <FormReminder close={close} />} */}
-          {/* {(close) => <FormEditTodo close={close} />} */}
-        </Popup>
+        </Popup> */}
       </div>
-      <div className="miniCalendar">
-        <MiniCalendar />
+      <div className="navbar">
+        <div
+          className="dashboard"
+          onClick={() => {
+            setTab("dashboard");
+          }}
+        >
+          <p>Dashboard</p>
+        </div>
+        <div
+          className="calendar"
+          onClick={() => {
+            setTab("calendar");
+          }}
+        >
+          <p>Calendar</p>
+        </div>
+        <div
+          className="todolist"
+          onClick={() => {
+            setTab("todolist");
+          }}
+        >
+          <p>To-do list</p>
+        </div>
+        <div
+          className=""
+          onClick={() => {
+            setTab("workspace");
+          }}
+        >
+          <p>Workspace</p>
+        </div>
       </div>
-      <Popup
-        modal
-        trigger={
-          <div className="todolistButton">
-            <TodolistIcon src={TodolistIconImg} />
-            <p className="todolistText">TO DO LIST</p>
-          </div>
-        }
-      >
-        {(close) => (
-          <ToDoModal
-            close={close}
-            toDoData={toDoData}
-            setToDoData={setToDoData}
-          />
-        )}
-      </Popup>
     </Sidebar>
   );
 };

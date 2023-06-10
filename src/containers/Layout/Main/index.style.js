@@ -4,11 +4,12 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: 100%;
+  width: 98%;
+  padding: 10px;
+  padding-right: 20px;
   .content {
     display: flex;
     height: 100%;
-    padding: 10px 10px;
     .container {
       width: 100%;
     }
