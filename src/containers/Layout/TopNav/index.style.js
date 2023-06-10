@@ -3,9 +3,11 @@ import styled from "styled-components";
 const NavBar = styled.div`
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   width: 100%;
   border-bottom: 1px solid;
   padding: 5px 0px;
+  min-height: 6%;
   .header {
     padding: 0px 2%;
     display: flex;

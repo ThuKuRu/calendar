@@ -10,7 +10,7 @@ const Layout = () => {
   return (
     <LayOut>
       <div className="sidebar">
-        <SideBar setTab={setTab} />
+        <SideBar tab={tab} setTab={setTab} />
       </div>
       <div className="rightContent">
         <TopNav />

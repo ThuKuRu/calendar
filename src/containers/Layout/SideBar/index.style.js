@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const Sidebar = styled.div`
   display: flex;
@@ -6,6 +6,7 @@ const Sidebar = styled.div`
   width: 100%;
   background-color: #ffffff;
   height: 100%;
+  font-family: "Roboto";
   .headLogo {
     width: 100%;
     display: flex;
@@ -17,20 +18,49 @@ const Sidebar = styled.div`
       margin-left: 10px;
       color: #000000;
       font-size: 40px;
-      font-family: "Poppins";
       font-weight: bold;
     }
   }
-  .navbar{
+  .navbar {
     flex-direction: column;
     height: 100%;
-    padding-left: 5%;
+    padding-left: 12%;
     display: flex;
-    div{
-      margin: 10px 0px;
-      display: flex;
-      justify-content: center;
+    .container {
+      padding: 0px 5px;
+      margin-top: 5px;
+      width: 76%;
+      div {
+        margin: 10px 0px;
+        display: flex;
+        align-items: center;
+        p {
+          font-size: 16px;
+          cursor: pointer;
+          color: #828388;
+        }
+      }
+      &.active {
+        background-color: #2d7fe0;
+        border-radius: 12px;
+        div {
+          p {
+            color: #ffffff;
+          }
+          span {
+            color: #ffffff;
+          }
+        }
+      }
     }
+  }
+  .material-symbols-outlined {
+    color: #828388;
+    margin-right: 5px;
+    cursor: pointer;
+    font-size: 48px;
+    font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 48;
+  }
 `;
 
 const HeaderLogo = styled.img`
@@ -38,4 +68,4 @@ const HeaderLogo = styled.img`
   height: 40px;
 `;
 
-export { Sidebar, HeaderLogo};
+export { Sidebar, HeaderLogo };
