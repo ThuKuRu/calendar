@@ -2,36 +2,18 @@ import format from "date-fns/format";
 import getDay from "date-fns/getDay";
 import parse from "date-fns/parse";
 import startOfWeek from "date-fns/startOfWeek";
+import vi from "date-fns/locale/vi";
 import React, { useState } from "react";
 import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import "react-datepicker/dist/react-datepicker.css";
 import { Container } from "./index.style";
 
-const MainCalendar = () => {
-  const events = [
-    {
-      title: "Big Meeting",
-      allDay: true,
-      start: new Date(2021, 6, 0),
-      end: new Date(2021, 6, 0),
-    },
-    {
-      title: "Vacation",
-      start: new Date(2021, 6, 7),
-      end: new Date(2021, 6, 10),
-    },
-    {
-      title: "Conference",
-      start: new Date(2021, 6, 20),
-      end: new Date(2021, 6, 23),
-    },
-  ];
-  const [newEvent, setNewEvent] = useState({ title: "", start: "", end: "" });
-  const [allEvents, setAllEvents] = useState(events);
+const MainCalendar = (props, events) => {
   const locales = {
-    vi: require("date-fns/locale/vi"),
+    "vi-VN": vi,
   };
+
   const localizer = dateFnsLocalizer({
     format,
     parse,
@@ -42,12 +24,21 @@ const MainCalendar = () => {
 
   return (
     <Container>
+      <link
+        href="https://fonts.googleapis.com/css?family=Roboto"
+        rel="stylesheet"
+      ></link>
       <Calendar
         localizer={localizer}
-        events={allEvents}
+        // events={events}
         startAccessor="start"
         endAccessor="end"
       />
+      <div className="createDiv">
+        <div className="createButton">
+          <p className="create">Create</p>
+        </div>
+      </div>
     </Container>
   );
 };
