@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 const Sidebar = styled.div`
   display: flex;
@@ -14,8 +14,11 @@ const Sidebar = styled.div`
     align-items: center;
     padding: 10px 0;
     height: 60px;
+    img {
+      height: 50px;
+      width: 50px;
+    }
     p {
-      margin-left: 10px;
       color: #000000;
       font-size: 40px;
       font-weight: bold;
@@ -63,9 +66,4 @@ const Sidebar = styled.div`
   }
 `;
 
-const HeaderLogo = styled.img`
-  width: 40px;
-  height: 40px;
-`;
-
-export { Sidebar, HeaderLogo };
+export { Sidebar };

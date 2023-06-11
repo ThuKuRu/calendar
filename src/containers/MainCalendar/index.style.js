@@ -16,7 +16,6 @@ const Container = styled.div`
       font-family: "Roboto" !important;
       font-size: 25px;
     }
-    
     .rbc-toolbar {
       border-bottom: 1px solid #000000;
       padding: 10px 0px;
@@ -37,15 +36,49 @@ const Container = styled.div`
         }
       }
     }
-    .rbc-header{
-      height: 22px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    .rbc-show-more{
+      font-size: 16px;
+      color: #6E6B7B;
+    }
+    .rbc-month-view{
+      .rbc-header{
+        height: 22px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        button{
+          font-size 14px;
+          font-weight: bold;
+        }
+      }
+    }
+    .rbc-time-view{
+      .rbc-header{
+        height: 22px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        button{
+          font-size 14px;
+          font-weight: bold;
+        }
+      }
+    }
+    .rbc-events-container{
+      width: 100%;
+    }
+    .rbc-event{
+      background-color: #FF0000;
+      padding: 5px 5px;
+      border-radius: 4px;
       font-size: 14px;
-      button{
-        font-size 14px;
-        font-weight: bold;
+      .rbc-event-label{
+        display: none !important;
+      }
+      .rbc-event-content{
+        padding: 5px 0px;
       }
     }
   }

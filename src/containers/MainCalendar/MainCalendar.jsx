@@ -3,13 +3,56 @@ import getDay from "date-fns/getDay";
 import parse from "date-fns/parse";
 import startOfWeek from "date-fns/startOfWeek";
 import vi from "date-fns/locale/vi";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import "react-datepicker/dist/react-datepicker.css";
 import { Container } from "./index.style";
+import { Overlay, Tooltip} from "react-bootstrap";
+import EventPopup from "./EventPopup/EventPopup";
 
-const MainCalendar = (props, events) => {
+function Event(event) {
+  const [showTooltip, setShowTooltip] = useState(false);
+
+  const closeTooltip = () => {
+    setShowTooltip(false);
+  };
+
+  const openTooltip = () => {
+    setShowTooltip(true);
+  };
+  const ref = useRef(null);
+
+  const getTarget = () => {
+    return ref.current;
+  };
+
+  return (
+    <div ref={ref} onMouseLeave={closeTooltip}>
+      <span onMouseOver={openTooltip}>{event.title}</span>
+      <Overlay
+        rootClose
+        target={getTarget}
+        show={showTooltip}
+        placement={
+          ref.current === null
+            ? "top"
+            : ref.current.getBoundingClientRect().y > 467
+            ? "top"
+            : "bottom"
+        }
+        onHide={closeTooltip}
+      >
+        <Tooltip id="test" style={{ zIndex: 10 }}>
+          <EventPopup event={event} />
+        </Tooltip>
+      </Overlay>
+    </div>
+  );
+}
+
+const MainCalendar = (props, { setEvents }) => {
+  const { events } = props;
   const locales = {
     "vi-VN": vi,
   };
@@ -30,7 +73,8 @@ const MainCalendar = (props, events) => {
       ></link>
       <Calendar
         localizer={localizer}
-        // events={events}
+        components={{ event: Event }}
+        events={events}
         startAccessor="start"
         endAccessor="end"
       />

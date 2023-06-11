@@ -1,10 +1,9 @@
 import React from "react";
-import ToDoModal from "./ToDoModal/ToDoModal";
 import { useState } from "react";
+import { Sidebar} from "./index.style";
+import Logo from "../../../img/logo.png";
+import ToDoModal from "./ToDoModal/ToDoModal";
 import Popup from "reactjs-popup";
-import { Sidebar, HeaderLogo } from "./index.style";
-import Logo from "../../../img/calendar_logo.png";
-import CreateIconImg from "../../../img/create_icon.png";
 import FormEvent from "./FormEvent/FormEvent";
 import FormTodo from "./FormTodo/FormTodo";
 import FormReminder from "./FormReminder/FormReminder";
@@ -12,9 +11,7 @@ import FormEditTodo from "./FormEditTodo/FormEditTodo";
 import TodolistIconImg from "../../../img/todolist_icon.png";
 
 const SideBar = ({ tab, setTab }) => {
-  const [open, setOpen] = React.useState(false);
-
-  const [active, setActive] = React.useState("event");
+  const [open, setOpen] = useState(false);
 
   return (
     <Sidebar>
@@ -27,7 +24,8 @@ const SideBar = ({ tab, setTab }) => {
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
       />
       <div className="headLogo">
-        <p>Logo</p>
+        <img src={Logo} className="logo" alt=""/>
+        <p>arenda</p>
       </div>
       <div>
         {/* <Popup modal trigger={<p className="createText">CREATE</p>}>
