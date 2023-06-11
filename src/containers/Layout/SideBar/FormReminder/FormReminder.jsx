@@ -4,7 +4,7 @@ const FormReminder = ({ close, setActive }) => {
   return (
     <FormReminderStyle>
       <link
-        href="https://fonts.googleapis.com/css?family=Poppins"
+        href="https://fonts.googleapis.com/css?family=Roboto"
         rel="stylesheet"
       ></link>
 
@@ -14,7 +14,9 @@ const FormReminder = ({ close, setActive }) => {
       />
       <div className="modal">
         <div className="modal-container">
-          <div className="header"> Create New Reminder </div>
+          <div className="header">
+            <div className="headerText">Create New Reminder</div>
+          </div>
           <div className="content">
             <input
               className="add-form"
@@ -72,7 +74,9 @@ const FormReminder = ({ close, setActive }) => {
                   Cancel
                 </a>
               </div>
-              <div className="Save"> Save </div>
+              <div className="Save">
+                <a className="save" href="/#">Save </a>
+              </div>
             </div>
           </div>
         </div>

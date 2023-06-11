@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const FormEventStyle = styled.div`
-  font-family: "Poppins";
+  font-family: "Roboto";
   .modal {
     position: fixed;
     color: black;
@@ -12,14 +12,13 @@ const FormEventStyle = styled.div`
     background-color: rgba(0, 0, 0, 0.5);
     justify-content: center;
     align-items: center;
-     display: flex;
+    display: flex;
     .modal-container {
       width: 35%;
-      max-width: 700px;
+      max-width: 650px;
       height: auto;
-      max-height: 450px;
-      border: 1px solid #011627;
-      border-radius: 1em;
+      border: 1.5px solid #011627;
+      border-radius: 15px;
       background-color: #fdfffc;
       display: flex;
       flex-direction: column;
@@ -27,26 +26,30 @@ const FormEventStyle = styled.div`
       color: #011627;
 
       .header {
-        font-size: 32px;
-        text-align: center;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         padding: 5px;
-        background-color: white;
+        .headerText{
+          font-size: 32px;
+        }
       }
 
       .content {
         width: 80%;
         padding: 10px 5px;
-        background-color: white;
         font-size: 20px;
         
         .add-form {
           height: 30px;
           width: 95%;
-          border: 1px solid #011627;
-          border-radius: 1em;
+          margin-bottom: 10px;
+          border: 1px solid #000000;
+          border-radius: 15px;
           padding: 8px 12px;
           font-size: 20px;
-          margin-bottom: 10px;         
+          font-family: "Roboto";         
         }
         .formCreate-container {
           .formCreate-container-things {
@@ -55,7 +58,7 @@ const FormEventStyle = styled.div`
             margin: 10px 0;
             height: 40px;
             button {
-              font-family: "Poppins" !important;
+              font-family: "Roboto" !important;
             }
             .formCreate-things {
               width: auto;
@@ -115,22 +118,14 @@ const FormEventStyle = styled.div`
           .Save {
             margin-left: 20px;
             background-color: #d9d9d9;
-            border-radius: 16px;
+            border-radius: 15px;
             padding: 5px 10px;
-             cursor: pointer;
+            a{
+              text-decoration: none;
+              color: #978F8F;
+            }
           }
         }   
-      }
-        .close {
-          cursor: pointer;
-          display: block;
-          padding: 2px 5px;
-          line-height: 20px;
-          font-size: 24px;
-          background: #ffffff;
-          border-radius: 18px;
-          border: 1px solid #cfcece;
-        }
       }
     }
   }

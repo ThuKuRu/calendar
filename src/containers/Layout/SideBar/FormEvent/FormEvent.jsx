@@ -4,7 +4,7 @@ const FormEvent = ({ close, setActive }) => {
   return (
     <FormEventStyle>
       <link
-        href="https://fonts.googleapis.com/css?family=Poppins"
+        href="https://fonts.googleapis.com/css?family=Roboto"
         rel="stylesheet"
       ></link>
 
@@ -14,7 +14,9 @@ const FormEvent = ({ close, setActive }) => {
       />
       <div className="modal">
         <div className="modal-container">
-          <div className="header"> Create New Event </div>
+          <div className="header">
+            <div className="headerText"> Create New Event </div>
+          </div>
           <div className="content">
             <input
               className="add-form"
@@ -76,7 +78,11 @@ const FormEvent = ({ close, setActive }) => {
                   Cancel
                 </a>
               </div>
-              <div className="Save"> Save </div>
+              <div className="Save">
+                <a className="save" href="/#">
+                  Save{" "}
+                </a>
+              </div>
             </div>
           </div>
         </div>

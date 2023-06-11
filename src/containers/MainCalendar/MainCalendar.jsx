@@ -8,8 +8,12 @@ import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import "react-datepicker/dist/react-datepicker.css";
 import { Container } from "./index.style";
-import { Overlay, Tooltip} from "react-bootstrap";
+import { Overlay, Tooltip } from "react-bootstrap";
 import EventPopup from "./EventPopup/EventPopup";
+import Popup from "reactjs-popup";
+import FormEvent from "../Layout/SideBar/FormEvent/FormEvent";
+import FormTodo from "../Layout/SideBar/FormTodo/FormTodo";
+import FormReminder from "../Layout/SideBar/FormReminder/FormReminder";
 
 function Event(event) {
   const [showTooltip, setShowTooltip] = useState(false);
@@ -53,6 +57,7 @@ function Event(event) {
 
 const MainCalendar = (props, { setEvents }) => {
   const { events } = props;
+  const [active, setActive] = useState("event");
   const locales = {
     "vi-VN": vi,
   };
@@ -79,9 +84,28 @@ const MainCalendar = (props, { setEvents }) => {
         endAccessor="end"
       />
       <div className="createDiv">
-        <div className="createButton">
-          <p className="create">Create</p>
-        </div>
+        <Popup
+          modal
+          trigger={
+            <div className="createButton">
+              <p className="create">Create</p>
+            </div>
+          }
+        >
+          {(close) => (
+            <div>
+              {active === "event" && (
+                <FormEvent close={close} setActive={setActive} />
+              )}
+              {active === "todo" && (
+                <FormTodo close={close} setActive={setActive} />
+              )}
+              {active === "reminder" && (
+                <FormReminder close={close} setActive={setActive} />
+              )}
+            </div>
+          )}
+        </Popup>
       </div>
     </Container>
   );
