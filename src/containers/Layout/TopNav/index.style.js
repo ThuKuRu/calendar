@@ -12,15 +12,22 @@ const NavBar = styled.div`
     padding: 0px 2%;
     display: flex;
     justify-content: center;
+    align-items: center;
+    .material-symbols-outlined {
+      background-color: #2D7FE0;
+      border-radius: 50%;
+      color: #FFFFFF;
+      padding: 3px;
+      cursor: pointer;
+      font-variation-settings:
+      'FILL' 0,
+      'wght' 0,
+      'GRAD' 0,
+      'opsz' 48
+    }
   }
 `;
 
-const Icon = styled.img`
-  width: 30px;
-  height: 30px;
-  text-aligns: center;
-  cursor: pointer;
-`;
 
 const Button = styled.button`
   height: 40px;
@@ -61,4 +68,4 @@ const Avatar = styled.img`
   text-aligns: center;
 `;
 
-export { NavBar, Button, Icon, SelectList, MenuItem, Avatar };
+export { NavBar, Button, SelectList, MenuItem, Avatar };
