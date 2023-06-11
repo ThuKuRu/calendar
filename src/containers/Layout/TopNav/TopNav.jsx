@@ -1,5 +1,5 @@
 import React from "react";
-import { NavBar, Icon, SelectList, MenuItem, Avatar } from "./index.style";
+import { NavBar, SelectList, MenuItem, Avatar } from "./index.style";
 import AvatarImg from "../../../img/thu_1.png";
 import Notification from "../../Notification/Notification";
 import Popup from "reactjs-popup";

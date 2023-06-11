@@ -1,17 +1,13 @@
 import React from "react";
-import { useState } from "react";
 import { Sidebar} from "./index.style";
 import Logo from "../../../img/logo.png";
-import ToDoModal from "./ToDoModal/ToDoModal";
 import Popup from "reactjs-popup";
 import FormEvent from "./FormEvent/FormEvent";
 import FormTodo from "./FormTodo/FormTodo";
 import FormReminder from "./FormReminder/FormReminder";
 import FormEditTodo from "./FormEditTodo/FormEditTodo";
-import TodolistIconImg from "../../../img/todolist_icon.png";
 
 const SideBar = ({ tab, setTab }) => {
-  const [open, setOpen] = useState(false);
 
   return (
     <Sidebar>
