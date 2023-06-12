@@ -3,6 +3,7 @@ import { LoginStyle } from "./index.style";
 import { Link } from "react-router-dom";
 import Facebook from "../../img/facebook.png";
 import Google from "../../img/google.png";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [inputs, setInputs] = useState({
@@ -22,6 +23,14 @@ const Login = () => {
   const handleChange = (e) => {
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
+
+  const navigate = useNavigate();
+
+  // Handle the login button click
+  const handleLogin = () => {
+    navigate("/");
+  };
+
   console.log(inputs);
   return (
     <div>
@@ -59,7 +68,9 @@ const Login = () => {
               )}
             </div>
           </div>
-          <button type="submit">Login</button>
+          <button type="submit" onClick={handleLogin}>
+            Login
+          </button>
 
           <div className="formLink">
             <span>Don't have an account?</span>
