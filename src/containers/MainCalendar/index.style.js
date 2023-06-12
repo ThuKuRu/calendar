@@ -18,7 +18,7 @@ const Container = styled.div`
     }
     .rbc-toolbar {
       border-bottom: 1px solid #000000;
-      padding: 10px 0px;
+      padding: 10px 10px;
       button {
         font-size 12px;
       }
