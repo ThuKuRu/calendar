@@ -56,6 +56,7 @@ const Container = styled.div`
     .rbc-time-view{
       .rbc-header{
         height: 22px;
+        max-height: 70vh;
         display: flex;
         justify-content: center;
         align-items: center;
