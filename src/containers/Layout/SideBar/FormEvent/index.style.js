@@ -31,7 +31,7 @@ const FormEventStyle = styled.div`
         justify-content: center;
         align-items: center;
         padding: 5px;
-        .headerText{
+        .headerText {
           font-size: 32px;
         }
       }
@@ -40,7 +40,7 @@ const FormEventStyle = styled.div`
         width: 80%;
         padding: 10px 5px;
         font-size: 20px;
-        
+
         .add-form {
           height: 30px;
           width: 95%;
@@ -49,7 +49,7 @@ const FormEventStyle = styled.div`
           border-radius: 15px;
           padding: 8px 12px;
           font-size: 20px;
-          font-family: "Roboto";         
+          font-family: "Roboto";
         }
         .formCreate-container {
           .formCreate-container-things {
@@ -69,31 +69,69 @@ const FormEventStyle = styled.div`
               background-color: #d9d9d9;
               cursor: pointer;
             }
-           
+
             .formCreate-event {
               background-color: #3f80ea;
               color: #fff;
             }
           }
-          
+
           .formCreate-time-container {
+            width: 100%;
             display: flex;
-            justify-content: center;
             background-color: #d9d9d9;
             border-radius: 16px;
-            padding: 10px 10px;
+            padding: 10px 0px;
             font-size: 18px;
             margin: 20px 0;
-            .formCreate-sche-day {
+            .react-datepicker__input-container {
               display: flex;
               align-items: center;
-              
+              justify-content: center;
+              input {
+                font-size: 18px;
+                font-family: "Roboto" !important;
+                text-align: center;
+              }
+            }
+            .formCreate-sche-day {
+              width: 44%;
+              display: flex;
+              align-items: center;
+              padding: 0px 10px;
+              .react-datepicker-wrapper {
+                margin-left: 10px;
+                width: 150px;
+                display: flex;
+                align-items: center;
+                input {
+                  width: 100%;
+                  margin: 0px;
+                  padding: 0px 0px;
+                  border: none !important;
+                  background-color: transparent;
+                }
+              }
             }
             .formCreate-times {
+              padding: 0px 10px;
               display: flex;
               align-items: center;
+              justify-content: space-between;
               .dash {
-                margin: 0 5px;
+                margin-right: 10px;
+              }
+              .react-datepicker-wrapper {
+                width: auto;
+                display: flex;
+                justify-content: center;
+                input {
+                  width: 70%;
+                  margin: 0px;
+                  padding: 0px;
+                  border: none !important;
+                  background-color: transparent;
+                }
               }
             }
           }
@@ -102,17 +140,13 @@ const FormEventStyle = styled.div`
           display: flex;
           justify-content: end;
           margin: 10px 0;
-          cursor: pointer;  
+          cursor: pointer;
           .Cancel {
-            background-color: #d9d9d9;
-            border-radius: 16px;
             padding: 5px 10px;
-            cursor: pointer;
-              a {
-                text-decoration: none;
-                font-size: 20px;
-                color: #000;
-              }
+            a {
+              text-decoration: none;
+              font-size: 20px;
+              color: rgba(0, 0, 0, 0.8);
             }
           }
           .Save {
@@ -120,12 +154,12 @@ const FormEventStyle = styled.div`
             background-color: #d9d9d9;
             border-radius: 15px;
             padding: 5px 10px;
-            a{
+            a {
               text-decoration: none;
-              color: #978F8F;
+              color: #978f8f;
             }
           }
-        }   
+        }
       }
     }
   }

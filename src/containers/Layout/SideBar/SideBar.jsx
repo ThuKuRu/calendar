@@ -1,5 +1,5 @@
 import React from "react";
-import { Sidebar} from "./index.style";
+import { Sidebar } from "./index.style";
 import Logo from "../../../img/logo.png";
 import Popup from "reactjs-popup";
 import FormEvent from "./FormEvent/FormEvent";
@@ -8,7 +8,6 @@ import FormReminder from "./FormReminder/FormReminder";
 import FormEditTodo from "./FormEditTodo/FormEditTodo";
 
 const SideBar = ({ tab, setTab }) => {
-
   return (
     <Sidebar>
       <link
@@ -20,39 +19,22 @@ const SideBar = ({ tab, setTab }) => {
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
       />
       <div className="headLogo">
-        <img src={Logo} className="logo" alt=""/>
+        <img src={Logo} className="logo" alt="" />
         <p>arenda</p>
       </div>
-      <div>
-        {/* <Popup modal trigger={<p className="createText">CREATE</p>}>
-          {(close) => (
-            <div>
-              {active === "event" && (
-                <FormEvent close={close} setActive={setActive} />
-              )}
-              {active === "todo" && (
-                <FormTodo close={close} setActive={setActive} />
-              )}
-              {active === "reminder" && (
-                <FormReminder close={close} setActive={setActive} />
-              )}
-            </div>
-          )}
-        </Popup> */}
-      </div>
       <div className="navbar">
-        <div className={tab==="dashboard" ? "container active" : "container"}>
+        <div className={tab === "dashboard" ? "container active" : "container"}>
           <div
             className="dashboard"
             onClick={() => {
               setTab("dashboard");
             }}
-          >{console.log(tab)}
+          >
             <span class="material-symbols-outlined">grid_view</span>
             <p>Dashboard</p>
           </div>
         </div>
-        <div className={tab==="calendar" ? "container active" : "container"}>
+        <div className={tab === "calendar" ? "container active" : "container"}>
           <div
             className="calendar"
             onClick={() => {
@@ -63,7 +45,7 @@ const SideBar = ({ tab, setTab }) => {
             <p>Calendar</p>
           </div>
         </div>
-        <div className={tab==="todolist" ? "container active" : "container"}>
+        <div className={tab === "todolist" ? "container active" : "container"}>
           <div
             className="todolist"
             onClick={() => {
@@ -74,7 +56,7 @@ const SideBar = ({ tab, setTab }) => {
             <p>To-do list</p>
           </div>
         </div>
-        <div className={tab==="workspace" ? "container active" : "container"}>
+        <div className={tab === "workspace" ? "container active" : "container"}>
           <div
             className=""
             onClick={() => {
