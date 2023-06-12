@@ -12,15 +12,21 @@ const Main = ({ tab }) => {
       title: "Học UIUX",
       start: new Date(2023, 5, 20, 5),
       end: new Date(2023, 5, 20, 6),
-      description: "Cô chấm bài round 1"
+      description: "Cô chấm bài round 1",
     },
     {
       title: "Tâm lý học",
       start: new Date(2023, 5, 21, 10),
       end: new Date(2023, 5, 21, 15),
+      description: "",
+    },
+    {
+      title: "Công nghệ phần mềm",
+      start: new Date(2023, 5, 22, 9),
+      end: new Date(2023, 5, 22, 10),
+      description: "",
     },
   ];
-
   const [events, setEvents] = useState(tempEvents);
 
   return (

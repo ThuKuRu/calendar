@@ -55,8 +55,7 @@ function Event(event) {
   );
 }
 
-const MainCalendar = (props, { setEvents }) => {
-  const { events } = props;
+const MainCalendar = ({ events, setEvents }) => {
   const [active, setActive] = useState("event");
   const locales = {
     "vi-VN": vi,
@@ -95,13 +94,28 @@ const MainCalendar = (props, { setEvents }) => {
           {(close) => (
             <div>
               {active === "event" && (
-                <FormEvent close={close} setActive={setActive} />
+                <FormEvent
+                  close={close}
+                  setActive={setActive}
+                  events={events}
+                  setEvents={setEvents}
+                />
               )}
               {active === "todo" && (
-                <FormTodo close={close} setActive={setActive} />
+                <FormTodo
+                  close={close}
+                  setActive={setActive}
+                  events={events}
+                  setEvents={setEvents}
+                />
               )}
               {active === "reminder" && (
-                <FormReminder close={close} setActive={setActive} />
+                <FormReminder
+                  close={close}
+                  setActive={setActive}
+                  events={events}
+                  setEvents={setEvents}
+                />
               )}
             </div>
           )}

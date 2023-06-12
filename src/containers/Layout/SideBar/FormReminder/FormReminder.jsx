@@ -1,6 +1,41 @@
 import React from "react";
 import { FormReminderStyle } from "./index.style";
-const FormReminder = ({ close, setActive }) => {
+import { useState } from "react";
+import ReactDatePicker from "react-datepicker";
+
+const FormReminder = ({ close, setActive, events, setEvents }) => {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [date, setDate] = useState(new Date());
+  const [startTime, setStartTime] = useState("");
+
+  const submitForm = () => {
+    if (startTime === "" || title === "") return;
+    const year = date.getFullYear();
+    const month = date.getMonth();
+    const day = date.getDate();
+    const event = {
+      title: title,
+      start: new Date(
+        year,
+        month,
+        day,
+        startTime.getHours(),
+        startTime.getMinutes()
+      ),
+      end: new Date(
+        year,
+        month,
+        day,
+        startTime.getHours(),
+        startTime.getMinutes()
+      ),
+      description: description,
+    };
+    setEvents([...events, event]);
+    close();
+  };
+
   return (
     <FormReminderStyle>
       <link
@@ -22,6 +57,8 @@ const FormReminder = ({ close, setActive }) => {
               className="add-form"
               type="text"
               placeholder="Add article..."
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
             />
             <div className="formCreate-container">
               <div className="formCreate-container-things">
@@ -47,17 +84,26 @@ const FormReminder = ({ close, setActive }) => {
               </div>
               <div className="formCreate-time-container">
                 <div className="formCreate-sche-day">
-                  <div className="material-symbols-outlined">schedule</div>
-                  <div className="formCreate-day">Friday, May 19</div>
-                  <span className="material-symbols-outlined">
-                    arrow_drop_down
-                  </span>
+                  <div class="material-symbols-outlined">schedule</div>
+                  <ReactDatePicker
+                    selected={date}
+                    dateFormat="EEEE, MMMM d"
+                    onChange={(date) => setDate(date)}
+                  />
                 </div>
                 <div className="formCreate-times">
-                  <div className="formCreate-time">9:30 AM</div>
-                  <span className="material-symbols-outlined">
-                    arrow_drop_down
-                  </span>
+                  <ReactDatePicker
+                    showTimeSelect
+                    showTimeSelectOnly
+                    timeIntervals={30}
+                    timeCaption="Time"
+                    dateFormat="h:mm aa"
+                    selected={startTime}
+                    placeholderText="Time"
+                    onChange={(time) => {
+                      setStartTime(time);
+                    }}
+                  />
                 </div>
               </div>
             </div>
@@ -66,6 +112,8 @@ const FormReminder = ({ close, setActive }) => {
               className="add-form"
               type="text"
               placeholder="Add description..."
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
             />
 
             <div className="buttonFormCreate">
@@ -75,7 +123,9 @@ const FormReminder = ({ close, setActive }) => {
                 </a>
               </div>
               <div className="Save">
-                <a className="save" href="/#">Save </a>
+                <a className="save" onClick={submitForm} href="/#">
+                  Save
+                </a>
               </div>
             </div>
           </div>

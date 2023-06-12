@@ -1,6 +1,36 @@
 import React from "react";
 import { FormEventStyle } from "./index.style";
-const FormEvent = ({ close, setActive }) => {
+import { useState } from "react";
+import ReactDatePicker from "react-datepicker";
+
+const FormEvent = ({ close, setActive, events, setEvents }) => {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [date, setDate] = useState(new Date());
+  const [startTime, setStartTime] = useState("");
+  const [endTime, setEndTime] = useState("");
+
+  const submitForm = () => {
+    if (startTime === "" || endTime === "" || title === "") return;
+    const year = date.getFullYear();
+    const month = date.getMonth();
+    const day = date.getDate();
+    const event = {
+      title: title,
+      start: new Date(
+        year,
+        month,
+        day,
+        startTime.getHours(),
+        startTime.getMinutes()
+      ),
+      end: new Date(year, month, day, endTime.getHours(), endTime.getMinutes()),
+      description: description,
+    };
+    setEvents([...events, event]);
+    close();
+  };
+
   return (
     <FormEventStyle>
       <link
@@ -22,6 +52,8 @@ const FormEvent = ({ close, setActive }) => {
               className="add-form"
               type="text"
               placeholder="Add article..."
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
             />
             <div className="formCreate-container">
               <div className="formCreate-container-things">
@@ -49,19 +81,38 @@ const FormEvent = ({ close, setActive }) => {
               <div className="formCreate-time-container">
                 <div className="formCreate-sche-day">
                   <div class="material-symbols-outlined">schedule</div>
-                  <div className="formCreate-day">Friday, May 19</div>
-                  <span className="material-symbols-outlined">
-                    arrow_drop_down
-                  </span>
+                  <ReactDatePicker
+                    selected={date}
+                    dateFormat="EEEE, MMMM d"
+                    onChange={(date) => setDate(date)}
+                  />
                 </div>
                 <div className="formCreate-times">
-                  <div className="formCreate-time">9:30 AM</div>
-                  <span class="material-symbols-outlined">arrow_drop_down</span>
-                  <span class="dash">-</span>
-                  <div className="formCreate-time">10:30 AM</div>
-                  <span className="material-symbols-outlined">
-                    arrow_drop_down
-                  </span>
+                  <ReactDatePicker
+                    showTimeSelect
+                    showTimeSelectOnly
+                    timeIntervals={30}
+                    timeCaption="Time"
+                    dateFormat="h:mm aa"
+                    selected={startTime}
+                    placeholderText="Start time"
+                    onChange={(time) => {
+                      setStartTime(time);
+                    }}
+                  />
+                  <div class="dash">-</div>
+                  <ReactDatePicker
+                    showTimeSelect
+                    showTimeSelectOnly
+                    timeIntervals={30}
+                    timeCaption="Time"
+                    dateFormat="h:mm aa"
+                    selected={endTime}
+                    placeholderText="End time"
+                    onChange={(time) => {
+                      setEndTime(time);
+                    }}
+                  />
                 </div>
               </div>
             </div>
@@ -70,6 +121,8 @@ const FormEvent = ({ close, setActive }) => {
               className="add-form"
               type="text"
               placeholder="Add description..."
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
             />
 
             <div className="buttonFormCreate">
@@ -79,8 +132,8 @@ const FormEvent = ({ close, setActive }) => {
                 </a>
               </div>
               <div className="Save">
-                <a className="save" href="/#">
-                  Save{" "}
+                <a className="save" onClick={submitForm} href="/#">
+                  Save
                 </a>
               </div>
             </div>
