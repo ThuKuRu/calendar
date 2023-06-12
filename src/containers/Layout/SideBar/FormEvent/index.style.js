@@ -101,7 +101,7 @@ const FormEventStyle = styled.div`
               padding: 0px 10px;
               .react-datepicker-wrapper {
                 margin-left: 10px;
-                width: 150px;
+                width: 170px;
                 display: flex;
                 align-items: center;
                 input {
