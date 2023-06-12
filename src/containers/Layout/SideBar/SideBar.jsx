@@ -1,11 +1,6 @@
 import React from "react";
 import { Sidebar } from "./index.style";
 import Logo from "../../../img/logo.png";
-import Popup from "reactjs-popup";
-import FormEvent from "./FormEvent/FormEvent";
-import FormTodo from "./FormTodo/FormTodo";
-import FormReminder from "./FormReminder/FormReminder";
-import FormEditTodo from "./FormEditTodo/FormEditTodo";
 
 const SideBar = ({ tab, setTab }) => {
   return (
