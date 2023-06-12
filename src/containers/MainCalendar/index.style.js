@@ -54,9 +54,9 @@ const Container = styled.div`
       }
     }
     .rbc-time-view{
+      max-height: 70vh;
       .rbc-header{
         height: 22px;
-        max-height: 70vh;
         display: flex;
         justify-content: center;
         align-items: center;
