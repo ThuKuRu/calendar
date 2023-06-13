@@ -1,7 +1,10 @@
 import React from "react";
 import { Container } from "./index.style";
+import { useState } from "react";
 
 const EventPopup = ({ event }) => {
+  
+
   return (
     <Container>
       <link

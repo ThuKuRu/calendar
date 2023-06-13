@@ -3,7 +3,7 @@ import { FormReminderStyle } from "./index.style";
 import { useState } from "react";
 import ReactDatePicker from "react-datepicker";
 
-const FormReminder = ({ close, setActive, events, setEvents }) => {
+const FormReminder = ({ close, setActive, events, setEvents, id, setId }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [date, setDate] = useState(new Date());
@@ -15,6 +15,7 @@ const FormReminder = ({ close, setActive, events, setEvents }) => {
     const month = date.getMonth();
     const day = date.getDate();
     const event = {
+      id: id,
       title: title,
       start: new Date(
         year,
@@ -32,6 +33,7 @@ const FormReminder = ({ close, setActive, events, setEvents }) => {
       ),
       description: description,
     };
+    setId(id+1);
     setEvents([...events, event]);
     close();
   };
