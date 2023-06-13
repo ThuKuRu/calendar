@@ -16,17 +16,33 @@ const WorkspaceCard = ({ workspace }) => {
           alt=""
         />
         <div className="name">{workspace.name}</div>
-        <div className="teamMems">
-          {workspace.teamMems.map(() => {
-            return (
-              <img
-                className="avatar"
-                src={require("../../../img/" + workspace.avatar)}
-                alt=""
-              />
-            );
-          })}
-        </div>
+        {workspace.teamMems.length <= 4 && (
+          <div className="teamMems">
+            {workspace.teamMems.map(() => {
+              return (
+                <img
+                  className="avatar"
+                  src={require("../../../img/" + workspace.avatar)}
+                  alt=""
+                />
+              );
+            })}
+          </div>
+        )}
+        {workspace.teamMems.length > 4 && (
+          <div className="teamMems">
+            {workspace.teamMems.slice(0, 3).map(() => {
+              return (
+                <img
+                  className="avatar"
+                  src={require("../../../img/" + workspace.avatar)}
+                  alt=""
+                />
+              );
+            })}
+            <div className="avatar leftover">+{workspace.teamMems.length - 4}</div>
+          </div>
+        )}
       </div>
     </Container>
   );
