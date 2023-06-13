@@ -16,6 +16,7 @@ const Color = styled.p`
 const TodolistStyle = styled.div`
   display: flex;
   flex-direction: column;
+  font-family: "Roboto";
   .header {
     display: flex;
     justify-content: space-between;
