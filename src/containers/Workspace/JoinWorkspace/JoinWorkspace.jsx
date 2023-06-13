@@ -25,7 +25,7 @@ const WorkspaceHome = ({ setTab }) => {
           Join workspace
         </div>
         <div className="searchBar">
-          <div className="searchText">Search for a workspace</div>
+          <input className="searchText" placeholder="Search for a workspace" />
           <span class="material-symbols-outlined">search</span>
         </div>
       </div>

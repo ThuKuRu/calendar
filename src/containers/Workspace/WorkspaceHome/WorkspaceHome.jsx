@@ -26,8 +26,16 @@ const WorkspaceHome = ({ workspaces, setTab }) => {
         </div>
       </div>
       <div className="main">
-        <div className="workspaceComponent-create">hay qua</div>
-        <WorkspaceCard />
+        <div className="workspaceComponent-create">
+          <div className="logo">
+            <span className="material-symbols-outlined">add_box</span>
+          </div>
+          <div className="createText">Create a workspace</div>
+          <div className="eg">e.g : Fluck, Tliet</div>
+        </div>
+        {workspaces.map((workspace) => (
+          <WorkspaceCard workspace={workspace} />
+        ))}
       </div>
     </Container>
   );

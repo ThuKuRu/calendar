@@ -30,6 +30,10 @@ const Container = styled.div`
         font-size: 25px;
         font-family: "Roboto";
         font-weight: semibold;
+        border: none;
+        &:focus {
+          outline: none;
+        }
       }
       span {
         margin-left: 10px;
