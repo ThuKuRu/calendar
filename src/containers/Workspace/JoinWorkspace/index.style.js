@@ -63,7 +63,7 @@ const Container = styled.div`
         font-size: 30px;
       }
       .createText {
-        font-size: 25px;
+        font-size: 23px;
         font-weight: bold;
         margin-top: 10px;
         margin-bottom: 5px;
