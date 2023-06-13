@@ -20,7 +20,7 @@ const SideBar = ({ tab, setTab }) => {
       />
       <div className="headLogo">
         <img src={Logo} className="logo" alt="" />
-        <p>arenda</p>
+        <p>arenda-</p>
       </div>
       <div className="navbar">
         <div className={tab === "dashboard" ? "container active" : "container"}>
