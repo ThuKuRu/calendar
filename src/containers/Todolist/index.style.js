@@ -1,5 +1,4 @@
 import styled from "styled-components";
-
 const levelColor = {
   5: "#FF0000",
   4: "#FFA500",
@@ -7,6 +6,12 @@ const levelColor = {
   2: "#1AC71A",
   1: "#00BFFF",
 };
+
+const Color = styled.p`
+  padding: 1px 25px 0;
+  border-radius: 20px;
+  background-color: ${({ value }) => levelColor[value]};
+`;
 
 const TodolistStyle = styled.div`
   display: flex;
@@ -81,10 +86,10 @@ const TodolistStyle = styled.div`
       .level {
         padding: 1px 20px 0;
         border-radius: 20px;
-        background-color: ${({ value }) => levelColor[value]};
       }
       .sort {
         margin-left: 5px;
+        cursor: pointer;
       }
 
       .check {
@@ -102,4 +107,4 @@ const Img = styled.img`
   width: 22px;
 `;
 
-export { TodolistStyle, Img };
+export { TodolistStyle, Img, Color };
