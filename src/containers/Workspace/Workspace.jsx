@@ -7,9 +7,24 @@ const Workspace = () => {
   const [tab, setTab] = useState("home");
   const [workspaces, setWorkspaces] = useState([
     {
-      avatar: "Avatar",
-      name: "Name",
-      size: 4,
+      avatar: "thu_1.png",
+      name: "Thu thút",
+      teamMems: [1, 2, 3, 4],
+    },
+    {
+      avatar: "thu_1.png",
+      name: "Thu thút",
+      teamMems: [1, 2, 3, 4],
+    },
+    {
+      avatar: "thu_1.png",
+      name: "Thu thút",
+      teamMems: [1, 2, 3, 4],
+    },
+    {
+      avatar: "thu_1.png",
+      name: "Thu thút",
+      teamMems: [1, 2, 3, 4],
     },
   ]);
 

@@ -10,9 +10,23 @@ const WorkspaceCard = ({ workspace }) => {
         </div>
       </div>
       <div className="content">
-        <div className="avatar">{workspace.avatar}</div>
+        <img
+          className="avatar"
+          src={require("../../../img/" + workspace.avatar)}
+          alt=""
+        />
         <div className="name">{workspace.name}</div>
-        <div className="teamMems">{workspace.size}</div>
+        <div className="teamMems">
+          {workspace.teamMems.map(() => {
+            return (
+              <img
+                className="avatar"
+                src={require("../../../img/" + workspace.avatar)}
+                alt=""
+              />
+            );
+          })}
+        </div>
       </div>
     </Container>
   );
