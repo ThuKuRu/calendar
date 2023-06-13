@@ -3,6 +3,7 @@ import styled from "styled-components";
 const Container = styled.div`
   height: 100%;
   width: 100%;
+  font-family: "Roboto";
   .header {
     height: 10%;
     display: flex;
@@ -37,6 +38,38 @@ const Container = styled.div`
       }
       span {
         margin-left: 10px;
+      }
+    }
+  }
+  .main {
+    over-flow: auto !important;
+    height: auto;
+    display: grid;
+    gap: 50px 8%;
+    padding: 25px 4%;
+    grid-template-columns: 19% 19% 19% 19%;
+    .workspaceComponent-create {
+      border: 1px dashed #000000;
+      border-radius: 20px;
+      height: 25vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .logo {
+        cursor: pointer;
+      }
+      span {
+        font-size: 30px;
+      }
+      .createText {
+        font-size: 25px;
+        font-weight: bold;
+        margin-top: 10px;
+        margin-bottom: 5px;
+      }
+      .eg {
+        color: #828388;
       }
     }
   }
