@@ -167,8 +167,8 @@ function getDate(day, index) {
   return console.log(new Date(year, month, day));
 }
 
-export function setDate(newDate) {
-  date = newDate;
-}
+// export function setDate(newDate) {
+//   date = newDate;
+// }
 
 export default MiniCalendar;

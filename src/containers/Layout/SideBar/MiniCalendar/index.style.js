@@ -2,9 +2,11 @@ import styled from "styled-components";
 
 const MinicalendarStyle = styled.div`
   .wrapper {
-    width: 100%;
-    background-color: #041820;
-    border-radius: 10px;
+    width: 35%;
+    background-color: #fff;
+    border-radius: 36px;
+    border: 1px solid #b7b7b7;
+    box-shadow: 1px 5px 5px #aaaa;
     header {
       display: flex;
       align-items: center;
@@ -24,7 +26,8 @@ const MinicalendarStyle = styled.div`
           border-radius: 50%;
           cursor: pointer;
           &:hover {
-            background-color: #2f2f2f;
+            background-color: #3f80ea;
+            color: #fff;
           }
         }
       }
@@ -71,14 +74,19 @@ const MinicalendarStyle = styled.div`
             transform: translate(-50%, -50%);
           }
           &:hover {
+            color: #fff;
+            &.inactive {
+              color: #fff;
+            }
             &::before {
-              background-color: #2f2f2f;
+              background-color: #3f80ea;
             }
           }
           &.inactive {
             color: #aaa;
           }
           &.active {
+            color: #fff;
             &::before {
               background-color: #3f80ea;
             }
