@@ -33,8 +33,17 @@ const Container = styled.div`
     }
   }
   .main {
-    height: 90%;
-    display: flex;
+    over-flow: auto !important;
+    height: auto;
+    display: grid;
+    gap: 50px 4%;
+    padding: 25px 4%;
+    grid-template-columns: auto auto auto auto;
+    .workspaceComponent-create {
+      border: 1px dashed #000000;
+      border-radius: 20px;
+      height: 25vh;
+    }
   }
 `;
 

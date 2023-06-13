@@ -5,7 +5,7 @@ import JoinWorkspace from "./JoinWorkspace/JoinWorkspace";
 
 const Workspace = () => {
   const [tab, setTab] = useState("home");
-  const [workspace, setWorkspace] = useState([
+  const [Workspaces, setWorkspaces] = useState([
     {
         avatar: "Avatar",
         name: "Name",

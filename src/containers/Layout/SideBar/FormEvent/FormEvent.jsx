@@ -3,7 +3,7 @@ import { FormEventStyle } from "./index.style";
 import { useState } from "react";
 import ReactDatePicker from "react-datepicker";
 
-const FormEvent = ({ close, setActive, events, setEvents }) => {
+const FormEvent = ({ close, setActive, events, setEvents, id, setId }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [date, setDate] = useState(new Date());
@@ -16,6 +16,7 @@ const FormEvent = ({ close, setActive, events, setEvents }) => {
     const month = date.getMonth();
     const day = date.getDate();
     const event = {
+      id: id,
       title: title,
       start: new Date(
         year,
@@ -27,6 +28,7 @@ const FormEvent = ({ close, setActive, events, setEvents }) => {
       end: new Date(year, month, day, endTime.getHours(), endTime.getMinutes()),
       description: description,
     };
+    setId(id+1);
     setEvents([...events, event]);
     close();
   };

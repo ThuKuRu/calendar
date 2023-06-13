@@ -1,7 +1,8 @@
 import React from "react";
 import { Container } from "./index.style";
+import WorkspaceCard from "../WorkspaceCard/WorkspaceCard";
 
-const WorkspaceHome = ({ workspace, setTab }) => {
+const WorkspaceHome = ({ workspaces, setTab }) => {
   return (
     <Container>
       <link
@@ -25,6 +26,8 @@ const WorkspaceHome = ({ workspace, setTab }) => {
         </div>
       </div>
       <div className="main">
+        <div className="workspaceComponent-create">hay qua</div>
+        <WorkspaceCard />
       </div>
     </Container>
   );
