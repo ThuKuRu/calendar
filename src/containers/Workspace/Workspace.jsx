@@ -14,12 +14,12 @@ const Workspace = () => {
     {
       avatar: "thu_1.png",
       name: "Thu thút",
-      teamMems: [1, 2, 3, 4],
+      teamMems: [1, 2, 3, 4, 5],
     },
     {
       avatar: "thu_1.png",
       name: "Thu thút",
-      teamMems: [1, 2, 3, 4],
+      teamMems: [1, 2, 3, 4, 1, 1, 1, 1],
     },
     {
       avatar: "thu_1.png",
