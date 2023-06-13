@@ -32,19 +32,28 @@ const Container = styled.div`
     align-items: center;
     .avatar {
       margin-top: 10%;
-      margin-bottom: 5%;
+      margin-bottom: 1%;
       height: 4vh;
       border-radius: 50px;
     }
     .name {
-      font-size: 25px;
+      font-size: 23px;
       font-weight: bold;
-      margin-bottom: 5%;
+      margin-bottom: 1%;
     }
     .teamMems{
       display: flex;
       .avatar{
-        margin-left: -5px;
+        margin-left: -0.5vw;
+        height: 4vh;
+      }
+      .leftover{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #d9d9d9;
+        font-weight: bold;
+        width: 4vh;
       }
     }
   }
