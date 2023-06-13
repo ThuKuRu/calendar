@@ -25,7 +25,7 @@ const SideBar = ({ tab, setTab }) => {
               setTab("dashboard");
             }}
           >
-            <span class="material-symbols-outlined">grid_view</span>
+            <span className="material-symbols-outlined">grid_view</span>
             <p>Dashboard</p>
           </div>
         </div>
@@ -36,7 +36,7 @@ const SideBar = ({ tab, setTab }) => {
               setTab("calendar");
             }}
           >
-            <span class="material-symbols-outlined">calendar_month</span>
+            <span className="material-symbols-outlined">calendar_month</span>
             <p>Calendar</p>
           </div>
         </div>
@@ -47,7 +47,7 @@ const SideBar = ({ tab, setTab }) => {
               setTab("todolist");
             }}
           >
-            <span class="material-symbols-outlined">checklist</span>
+            <span className="material-symbols-outlined">checklist</span>
             <p>To-do list</p>
           </div>
         </div>
@@ -58,7 +58,7 @@ const SideBar = ({ tab, setTab }) => {
               setTab("workspace");
             }}
           >
-            <span class="material-symbols-outlined">lan</span>
+            <span className="material-symbols-outlined">lan</span>
             <p>Workspace</p>
           </div>
         </div>

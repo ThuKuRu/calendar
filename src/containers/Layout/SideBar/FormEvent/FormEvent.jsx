@@ -82,7 +82,7 @@ const FormEvent = ({ close, setActive, events, setEvents, id, setId }) => {
               </div>
               <div className="formCreate-time-container">
                 <div className="formCreate-sche-day">
-                  <div class="material-symbols-outlined">schedule</div>
+                  <div className="material-symbols-outlined">schedule</div>
                   <ReactDatePicker
                     selected={date}
                     dateFormat="EEEE, MMMM d"
@@ -102,7 +102,7 @@ const FormEvent = ({ close, setActive, events, setEvents, id, setId }) => {
                       setStartTime(time);
                     }}
                   />
-                  <div class="dash">-</div>
+                  <div className="dash">-</div>
                   <ReactDatePicker
                     showTimeSelect
                     showTimeSelectOnly
