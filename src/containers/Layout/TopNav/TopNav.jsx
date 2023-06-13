@@ -19,7 +19,9 @@ const TopNav = () => {
       />
       <div className="header">
         <Popup
-          trigger={<span class="material-symbols-outlined">notifications</span>}
+          trigger={
+            <span className="material-symbols-outlined">notifications</span>
+          }
         >
           <Notification />
         </Popup>

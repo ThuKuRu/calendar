@@ -1,9 +1,14 @@
 import React from "react";
-import { FormTodoStyle } from "./index.style";
+import { CreateTodoStyle, SelectList, MenuItem } from "./index.style";
 
-const FormTodo = ({ close, setActive }) => {
+const CreateToDo = ({ close }) => {
+  const [value, setValue] = React.useState("1");
+
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
   return (
-    <FormTodoStyle>
+    <CreateTodoStyle>
       <link
         href="https://fonts.googleapis.com/css?family=Poppins"
         rel="stylesheet"
@@ -23,35 +28,13 @@ const FormTodo = ({ close, setActive }) => {
               placeholder="Add article..."
             />
             <div className="formCreate-container">
-              <div className="formCreate-container-things">
-                <button
-                  className="formCreate-things "
-                  onClick={() => {
-                    setActive("event");
-                  }}
-                >
-                  Event
-                </button>
-                <button className="formCreate-things formCreate-todo">
-                  To-do
-                </button>
-                <button
-                  className="formCreate-things"
-                  onClick={() => {
-                    setActive("reminder");
-                  }}
-                >
-                  Reminder
-                </button>
-              </div>
-
               <div className="formTodo-time-container">
-                Duration:
-                <div className="formTodo-sche-day">
-                  <span className="material-symbols-outlined">
-                    arrow_drop_down
-                  </span>
-                </div>
+                Assignee:
+                <input
+                  className="add"
+                  type="text"
+                  placeholder="Add article..."
+                />
               </div>
               <div className="formTodo-time-container">
                 Deadline:
@@ -69,20 +52,25 @@ const FormTodo = ({ close, setActive }) => {
                 </div>
               </div>
               <div className="formTodo-time-container">
-                Importance:
-                <div className="formTodo-sche-day">
-                  <span className="material-symbols-outlined">
-                    arrow_drop_down
-                  </span>
-                </div>
+                Priority:
+                <SelectList value={value} onChange={handleChange}>
+                  <MenuItem value="1" selected="selected">
+                    Level 1
+                  </MenuItem>
+                  <MenuItem value="2">Level 2</MenuItem>
+                  <MenuItem value="3">Level 3</MenuItem>
+                  <MenuItem value="4">Level 4</MenuItem>
+                  <MenuItem value="5">Level 5</MenuItem>
+                </SelectList>
               </div>
             </div>
 
-            <div className="formTodo-address">
-              Address:
-              <br />
-              Hanoi University of Science and Technology
-            </div>
+            <div className="formTodo-des">Description: </div>
+            <input
+              className="add-form"
+              type="text"
+              placeholder="Add description..."
+            />
 
             <div className="buttonFormCreate">
               <div className="Cancel">
@@ -95,8 +83,8 @@ const FormTodo = ({ close, setActive }) => {
           </div>
         </div>
       </div>
-    </FormTodoStyle>
+    </CreateTodoStyle>
   );
 };
 
-export default FormTodo;
+export default CreateToDo;
