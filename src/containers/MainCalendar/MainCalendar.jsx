@@ -30,7 +30,7 @@ function Event(event) {
   const getTarget = () => {
     return ref.current;
   };
-
+  console.log(event);
   return (
     <div ref={ref} onMouseLeave={closeTooltip}>
       <span onMouseOver={openTooltip}>{event.title}</span>
@@ -41,7 +41,7 @@ function Event(event) {
         placement={
           ref.current === null
             ? "top"
-            : ref.current.getBoundingClientRect().y > 467
+            : ref.current.getBoundingClientRect().y > 420
             ? "top"
             : "bottom"
         }
