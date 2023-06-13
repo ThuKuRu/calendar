@@ -33,7 +33,9 @@ const Workspace = () => {
       {tab === "home" && (
         <WorkspaceHome setTab={setTab} workspaces={workspaces} />
       )}
-      {tab === "join" && <JoinWorkspace setTab={setTab} />}
+      {tab === "join" && (
+        <JoinWorkspace setTab={setTab} workspaces={workspaces} />
+      )}
     </Container>
   );
 };
