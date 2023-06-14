@@ -150,6 +150,8 @@ const FormReminderStyle = styled.div`
           }
         }
           .Save {
+            width: 20%;
+            text-align: center;
             margin-left: 20px;
             background-color: #d9d9d9;
             border-radius: 15px;
