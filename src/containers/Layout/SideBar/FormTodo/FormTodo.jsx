@@ -1,12 +1,86 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FormTodoStyle, SelectList, MenuItem } from "./index.style";
 import { useState } from "react";
 import ReactDatePicker from "react-datepicker";
 
-const FormTodo = ({ close, setActive }) => {
+function isNotNegativeInteger(number) {
+  return Number.isInteger(number) && number >= 0;
+}
+
+const FormTodo = ({ close, setActive, id, setId, toDoData, setToDoData }) => {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
   const [time, setTime] = useState();
   const [date, setDate] = useState(new Date());
   const [value, setValue] = React.useState("1");
+  const [day, setDay] = useState();
+  const [hour, setHour] = useState();
+  const [minute, setMinute] = useState();
+  const [saveColor, setSaveColor] = useState("#978f8f");
+
+  const submitForm = () => {
+    if (
+      isNaN(day) ||
+      isNotNegativeInteger(day) ||
+      isNaN(hour) ||
+      isNotNegativeInteger(hour) ||
+      isNaN(minute) ||
+      isNotNegativeInteger(minute) ||
+      time === "" ||
+      title === "" ||
+      description === "" ||
+      day === "" ||
+      hour === "" ||
+      minute === ""
+    )
+      return;
+    const todo = {
+      id: id,
+      name: title,
+      name_img: "thu_1.png",
+      assignee: "you",
+      assignee_img: "thu_1.png",
+      duration: {
+        day: day,
+        hour: hour,
+        minute: minute,
+      },
+      description: description,
+      deadline: new Date(
+        date.getFullYear(),
+        date.getMonth(),
+        date.getDate(),
+        time.getHours(),
+        time.getMinutes()
+      ).toDateString(),
+      level: value,
+      comple: "false",
+    };
+    setId(id + 1);
+    setToDoData([...toDoData, todo]);
+    close();
+  };
+
+  useEffect(() => {
+    if (
+      isNaN(day) ||
+      isNotNegativeInteger(day) ||
+      isNaN(hour) ||
+      isNotNegativeInteger(hour) ||
+      isNaN(minute) ||
+      isNotNegativeInteger(minute) ||
+      time === "" ||
+      title === "" ||
+      description === "" ||
+      day === "" ||
+      hour === "" ||
+      minute === ""
+    ) {
+      setSaveColor("#978f8f");
+      return;
+    }
+    setSaveColor("#3f80ea");
+  }, [title, description, time, day, hour, minute, date]);
 
   const handleChange = (event) => {
     setValue(event.target.value);
@@ -32,6 +106,8 @@ const FormTodo = ({ close, setActive }) => {
               className="add-form"
               type="text"
               placeholder="Add article..."
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
             />
             <div className="formCreate-container">
               <div className="formCreate-container-things">
@@ -58,10 +134,39 @@ const FormTodo = ({ close, setActive }) => {
 
               <div className="formTodo-time-container">
                 Duration:
-                <div className="formTodo-sche-day">
-                  <span className="material-symbols-outlined">
-                    arrow_drop_down
-                  </span>
+                <div className="formTodo-duration">
+                  <div className="duration">
+                    <input
+                      className="add-form-duration"
+                      type="text"
+                      placeholder="Day..."
+                      value={day}
+                      onChange={(e) => {
+                        setDay(e.target.value);
+                      }}
+                    />
+                    <label>Day</label>
+                    <input
+                      className="add-form-duration"
+                      type="text"
+                      placeholder="hour..."
+                      value={hour}
+                      onChange={(e) => {
+                        setHour(e.target.value);
+                      }}
+                    />
+                    <label>h</label>
+                    <input
+                      className="add-form-duration"
+                      type="text"
+                      placeholder="minute..."
+                      value={minute}
+                      onChange={(e) => {
+                        setMinute(e.target.value);
+                      }}
+                    />
+                    <label>m</label>
+                  </div>
                 </div>
               </div>
               <div className="formTodo-time-container">
@@ -100,11 +205,13 @@ const FormTodo = ({ close, setActive }) => {
                 </SelectList>
               </div>
             </div>
-            <div className="description">
-              Description:
-            </div>
+            <div className="description">Description:</div>
             <div className="formTodo-address">
-              <textarea placeholder="Add description ..."></textarea>
+              <textarea
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+                placeholder="Add description ..."
+              ></textarea>
             </div>
             <div className="buttonFormCreate">
               <div className="Cancel">
@@ -113,7 +220,12 @@ const FormTodo = ({ close, setActive }) => {
                 </a>
               </div>
               <div className="Save">
-                <a className="save" href="/#">
+                <a
+                  className="save"
+                  style={{ color: saveColor }}
+                  onClick={submitForm}
+                  href="/#"
+                >
                   Save
                 </a>
               </div>

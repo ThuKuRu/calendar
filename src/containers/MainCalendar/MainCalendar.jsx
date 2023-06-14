@@ -54,7 +54,14 @@ function Event(event) {
   );
 }
 
-const MainCalendar = ({ events, setEvents, id, setId }) => {
+const MainCalendar = ({
+  events,
+  setEvents,
+  id,
+  setId,
+  toDoData,
+  setToDoData,
+}) => {
   const [active, setActive] = useState("event");
   const locales = {
     "vi-VN": vi,
@@ -110,6 +117,8 @@ const MainCalendar = ({ events, setEvents, id, setId }) => {
                   setEvents={setEvents}
                   id={id}
                   setId={setId}
+                  toDoData={toDoData}
+                  setToDoData={setToDoData}
                 />
               )}
               {active === "reminder" && (
