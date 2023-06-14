@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TodolistStyle, Img, Color } from "./index.style";
+import { TodolistStyle, Img, Color, Percent } from "./index.style";
 import Popup from "reactjs-popup";
 import CreateToDo from "./CreateToDo/CreateToDo";
 
@@ -96,6 +96,10 @@ const Todolist = ({ toDoData, setToDoData, id, setId }) => {
             filter_alt
           </span>
         </div>
+        <div className="col">
+          <span className="material-symbols-outlined">percent</span>
+          <p className="name">Percent</p>
+        </div>
         <div className="col ">
           <span className="material-symbols-outlined">
             assignment_turned_in
@@ -128,6 +132,13 @@ const Todolist = ({ toDoData, setToDoData, id, setId }) => {
             </div>
             <div className="col ">
               <Color value={todo.level}>Level {todo.level}</Color>
+            </div>
+            <div className="col">
+              <div className="percent">
+                <Percent percent={todo.percent}>
+                  <div className="percentContent">{todo.percent}</div>
+                </Percent>
+              </div>
             </div>
             <div className="col ">
               <span

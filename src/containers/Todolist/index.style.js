@@ -7,10 +7,39 @@ const levelColor = {
   1: "#00BFFF",
 };
 
+const percentToDo = {
+  0: "0%",
+  10: "10%",
+  20: "20%",
+  30: "30%",
+  40: "40%",
+  50: "50%",
+  60: "60%",
+  70: "70%",
+  80: "80%",
+  90: "90%",
+};
+
 const Color = styled.p`
   padding: 1px 25px 0;
   border-radius: 20px;
   background-color: ${({ value }) => levelColor[value]};
+`;
+
+const Percent = styled.p`
+  display: flex;
+  background-color: #2d7fe0;
+  height: 24px;
+  border-radius: 1em;
+  margin: 0px !important;
+  width: ${({ percent }) => percentToDo[percent]};
+  text-align: center;
+  justify-content: center;
+  .percentContent {
+    font-size: 10px;
+    color: #fff;
+    font-weight: 600;
+  }
 `;
 
 const TodolistStyle = styled.div`
@@ -36,6 +65,7 @@ const TodolistStyle = styled.div`
     padding: 5px 0px 5px 50px;
     text-align: center;
     align-items: center;
+    margin-left: 10px;
     .col {
       display: flex;
       align-items: center;
@@ -85,6 +115,15 @@ const TodolistStyle = styled.div`
         cursor: pointer;
         margin-left: 5px;
       }
+      .percent {
+        display: flex;
+        justify-content: flex-start;
+        width: 120px;
+        height: 24px;
+        border-radius: 1em;
+        border: 1px solid #ccc;
+        padding: 0px;
+      }
     }
   }
   .footer {
@@ -127,4 +166,4 @@ const Img = styled.img`
   width: 22px;
 `;
 
-export { TodolistStyle, Img, Color };
+export { TodolistStyle, Img, Color, Percent };
