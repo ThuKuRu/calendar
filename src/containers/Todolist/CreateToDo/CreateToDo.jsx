@@ -52,6 +52,7 @@ const CreateToDo = ({ close, setActive, id, setId, toDoData, setToDoData }) => {
         time.getHours(),
         time.getMinutes()
       ),
+      percent: "0",
       level: value,
       comple: "false",
     };
