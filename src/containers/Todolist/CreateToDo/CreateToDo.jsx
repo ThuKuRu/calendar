@@ -1,23 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import { CreateTodoStyle, SelectList, MenuItem } from "./index.style";
+import ReactDatePicker from "react-datepicker";
 
-const CreateToDo = ({ close }) => {
+const CreateToDo = ({ close, setActive }) => {
   const [value, setValue] = React.useState("1");
 
   const handleChange = (event) => {
     setValue(event.target.value);
   };
+
+  const [duration, setDuration] = React.useState("15m");
+
+  const handleChangeDuration = (event) => {
+    setValue(event.target.value);
+  };
+
+  const [time, setTime] = useState();
+  const [date, setDate] = useState(new Date());
+
   return (
     <CreateTodoStyle>
       <link
-        href="https://fonts.googleapis.com/css?family=Poppins"
+        href="https://fonts.googleapis.com/css?family=Roboto"
         rel="stylesheet"
       ></link>
-
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-      />
       <div className="modal">
         <div className="modal-container">
           <div className="header"> Add To Do </div>
@@ -29,26 +35,58 @@ const CreateToDo = ({ close }) => {
             />
             <div className="formCreate-container">
               <div className="formTodo-time-container">
-                Assignee:
-                <input
-                  className="add"
-                  type="text"
-                  placeholder="Add article..."
-                />
+                Duration:
+                {/* <SelectList value={duration} onChange={handleChangeDuration}>
+                  <MenuItem value="15m" selected="selected">
+                    15 minutes
+                  </MenuItem>
+                  <MenuItem value="30m">30 minutes</MenuItem>
+                  <MenuItem value="45m">45 minutes</MenuItem>
+                  <MenuItem value="1h">1 hour</MenuItem>
+                  <MenuItem value="2h">2 hours</MenuItem>
+                  <MenuItem value="3h">3 hours</MenuItem>
+                </SelectList> */}
+                <div className="duration">
+                  <input
+                    className="add-form-duration"
+                    type="text"
+                    placeholder="Day..."
+                  />
+                  <label>Day</label>
+                  <input
+                    className="add-form-duration"
+                    type="text"
+                    placeholder="hour..."
+                  />
+                  <label>h</label>
+                  <input
+                    className="add-form-duration"
+                    type="text"
+                    placeholder="minute..."
+                  />
+                  <label>m</label>
+                </div>
               </div>
               <div className="formTodo-time-container">
                 Deadline:
                 <div className="formTodo-sche-day">
-                  <div class="material-symbols-outlined">schedule</div>
-                  <div className="formTodo-day">Friday, May 19</div>
-                  <span className="material-symbols-outlined">
-                    arrow_drop_down
-                  </span>
-
-                  <div className="formCreate-time">9:30 AM</div>
-                  <span className="material-symbols-outlined">
-                    arrow_drop_down
-                  </span>
+                  <ReactDatePicker
+                    selected={date}
+                    dateFormat="EEEE, MMMM d"
+                    onChange={(date) => setDate(date)}
+                  />
+                  <ReactDatePicker
+                    showTimeSelect
+                    showTimeSelectOnly
+                    timeIntervals={30}
+                    timeCaption="Time"
+                    dateFormat="h:mm aa"
+                    selected={time}
+                    placeholderText="Time"
+                    onChange={(time) => {
+                      setTime(time);
+                    }}
+                  />
                 </div>
               </div>
               <div className="formTodo-time-container">

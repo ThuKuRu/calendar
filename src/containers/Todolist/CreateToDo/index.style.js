@@ -8,7 +8,7 @@ const levelColor = {
 };
 
 const CreateTodoStyle = styled.div`
-font-family: "Poppins" !important;
+font-family: "Roboto" !important;
   .modal {
     position: fixed;
     color: black;
@@ -36,7 +36,7 @@ font-family: "Poppins" !important;
       .header {
         font-size: 32px;
         text-align: center;
-        padding: 5px;
+        padding: 15px 5px 5px;
         background-color: white;
       }
 
@@ -65,6 +65,7 @@ font-family: "Poppins" !important;
         .formTodo-des {
           text-align: left;
           margin-top: 10px;
+          margin-bottom: 10px;
           border-radius: 1em;
           font-size: 20px;
           font-weight: bold;
@@ -75,17 +76,54 @@ font-family: "Poppins" !important;
             margin: 20px 0;
             font-weight: bold;
             align-items: center;
+            .duration{
+              padding: 8px 12px;
+              margin-left: 20px;
+              display: flex;
+              height: 30px;
+              width: 90%;
+              border: 1px solid #011627;
+              border-radius: 1em;
+              .add-form-duration{
+              border: none;
+              width: 30%;
+              padding: 8px 12px;
+              font-size: 18px;    
+            }
+            label{
+              font-size: 16px; 
+              margin-top: 5px;
+            }
+            }
+           
             .formTodo-sche-day {
               display: flex;
               align-items: center;
+              background-color: #d9d9d9;
               border: 1px solid #000;
-              border-radius: 1em;
+              border-radius: 22px;
               margin-left: 20px;
               width: 100%;
               padding: 8px 12px;
               font-weight: normal;
               font-size: 18px;
-            
+              .react-datepicker-wrapper {
+                .react-datepicker__input-container {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  input {
+                    width: 100%;
+                    height: 100%;
+                    border: none;
+                    background-color: transparent;
+                    text-align: center;
+                  }
+                }
+              }
+            .formTodo-day {
+              margin-left: 5px;
+            }
               .material-symbols-outlined {
                 font-size: 30px;
               }
@@ -152,7 +190,7 @@ const SelectList = styled.select`
   width: 100%;
   padding: 8px 12px;
   font-size: 18px;
-  font-family: Poppins !important;
+  font-family: "Roboto" !important;
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
@@ -166,7 +204,7 @@ const MenuItem = styled.option`
   color: #000;
   list-style: none;
   font-size: 18px;
-  font-family: Poppins !important;
+  font-family: "Roboto" !important;
   background-color: ${({ value }) => levelColor[value]};
 `;
 

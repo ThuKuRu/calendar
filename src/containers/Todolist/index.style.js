@@ -24,23 +24,6 @@ const TodolistStyle = styled.div`
     .headerContent {
       display: flex;
     }
-    .createDiv {
-      display: flex;
-      align-items: center;
-      .createButton {
-        height: 16px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 10px;
-        background-color: #2d7fe0;
-        border-radius: 5px;
-        color: #ffffff;
-        font-family: "Roboto" !important;
-        font-size: 20px;
-        cursor: pointer;
-      }
-    }
   }
   .table {
     display: flex;
@@ -96,6 +79,42 @@ const TodolistStyle = styled.div`
       .check {
         height: 24px;
         width: 24px;
+      }
+
+      .delete {
+        cursor: pointer;
+        margin-left: 5px;
+      }
+    }
+  }
+  .footer {
+    display: flex;
+    justify-content: flex-end;
+    .createDiv {
+      display: flex;
+      align-items: center;
+      margin-left: 20px;
+      margin-top: 10px;
+      .createButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #ffffff;
+        font-family: "Roboto" !important;
+        font-size: 20px;
+        cursor: pointer;
+        font-weight: 600;
+        .create {
+          background-color: #2d7fe0;
+          padding: 10px 20px;
+          border-radius: 14px;
+        }
+        .fill {
+          background-color: #d9d9d9;
+          padding: 10px 20px;
+          border-radius: 14px;
+          color: #000;
+        }
       }
     }
   }
