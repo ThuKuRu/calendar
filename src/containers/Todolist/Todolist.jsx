@@ -3,13 +3,11 @@ import { TodolistStyle, Img, Color } from "./index.style";
 import Popup from "reactjs-popup";
 import CreateToDo from "./CreateToDo/CreateToDo";
 
-const Todolist = ({toDoData, setToDoData}) => {
-
+const Todolist = ({ toDoData, setToDoData }) => {
   const onClickDelete = (key) => {
     const newToDoData = toDoData.filter((current, index) => {
       return index !== key;
     });
-    console.log(newToDoData);
     setToDoData(newToDoData);
   };
 
