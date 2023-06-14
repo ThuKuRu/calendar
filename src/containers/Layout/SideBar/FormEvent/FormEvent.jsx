@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FormEventStyle } from "./index.style";
 import { useState } from "react";
 import ReactDatePicker from "react-datepicker";
@@ -9,6 +9,7 @@ const FormEvent = ({ close, setActive, events, setEvents, id, setId }) => {
   const [date, setDate] = useState(new Date());
   const [startTime, setStartTime] = useState("");
   const [endTime, setEndTime] = useState("");
+  const [saveColor, setSaveColor] = useState("#978f8f");
 
   const submitForm = () => {
     if (startTime === "" || endTime === "" || title === "") return;
@@ -28,10 +29,18 @@ const FormEvent = ({ close, setActive, events, setEvents, id, setId }) => {
       end: new Date(year, month, day, endTime.getHours(), endTime.getMinutes()),
       description: description,
     };
-    setId(id+1);
+    setId(id + 1);
     setEvents([...events, event]);
     close();
   };
+
+  useEffect(() => {
+    if (startTime === "" || endTime === "" || title === "") {
+      setSaveColor("#978f8f");
+      return;
+    }
+    setSaveColor("#3f80ea");
+  }, [title, startTime, endTime]);
 
   return (
     <FormEventStyle>
@@ -47,7 +56,7 @@ const FormEvent = ({ close, setActive, events, setEvents, id, setId }) => {
       <div className="modal">
         <div className="modal-container">
           <div className="header">
-            <div className="headerText"> Create New Event </div>
+            <div className="headerText"> Create new Event </div>
           </div>
           <div className="content">
             <input
@@ -134,7 +143,12 @@ const FormEvent = ({ close, setActive, events, setEvents, id, setId }) => {
                 </a>
               </div>
               <div className="Save">
-                <a className="save" onClick={submitForm} href="/#">
+                <a
+                  className="save"
+                  style={{ color: saveColor }}
+                  onClick={submitForm}
+                  href="/#"
+                >
                   Save
                 </a>
               </div>

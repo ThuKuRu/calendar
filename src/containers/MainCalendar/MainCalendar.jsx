@@ -30,7 +30,6 @@ function Event(event) {
   const getTarget = () => {
     return ref.current;
   };
-  console.log(event);
   return (
     <div ref={ref} onMouseLeave={closeTooltip}>
       <span onMouseOver={openTooltip}>{event.title}</span>
