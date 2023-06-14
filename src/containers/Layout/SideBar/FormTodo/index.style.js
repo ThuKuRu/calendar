@@ -64,7 +64,7 @@ const FormTodoStyle = styled.div`
         }
         .formTodo-address {
           text-align: left;
-          height: 6vh;
+          height: 8.2vh;
           width: 100%;
           border: 1px solid #000000;
           border-radius: 15px;
@@ -111,6 +111,36 @@ const FormTodoStyle = styled.div`
             margin: 20px 0;
             font-weight: bold;
             align-items: center;
+            .formTodo-duration {
+              display: flex;
+              align-items: center;
+              background-color: transparent;
+              border: 1px solid #000;
+              border-radius: 22px;
+              margin-left: 20px;
+              width: 100%;
+              padding: 8px 12px;
+              font-weight: normal;
+              font-size: 16px;
+            }
+            .duration {
+              display: flex;
+              border-radius: 1em;
+              .add-form-duration {
+                border: none;
+                width: 30%;
+                padding: 8px 12px;
+                font-size: 16px;
+                text-align: end;
+              }
+            }
+            label {
+              margin: 0px 5px;
+              font-size: 16px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
             .formTodo-sche-day {
               display: flex;
               align-items: center;
@@ -133,9 +163,6 @@ const FormTodoStyle = styled.div`
                     border: none;
                     background-color: transparent;
                     text-align: center;
-                    // &:focus{
-                    //   outline: none;
-                    // }
                   }
                 }
               }
@@ -173,11 +200,10 @@ const FormTodoStyle = styled.div`
             padding: 5px 10px;
             a {
               text-decoration: none;
-              color: #978f8f;
             }
           }
         }
-        .description{
+        .description {
           width: 100%;
           margin-bottom: 2%;
           font-weight: bold;
