@@ -48,7 +48,7 @@ const FormEventStyle = styled.div`
           border: 1px solid #000000;
           border-radius: 15px;
           padding: 8px 12px;
-          font-size: 20px;
+          font-size: 18px;
           font-family: "Roboto";
         }
         .formCreate-container {
@@ -64,7 +64,7 @@ const FormEventStyle = styled.div`
               width: auto;
               border: 1px solid #fff;
               border-radius: 22px;
-              font-size: 20px;
+              font-size: 18px;
               padding: 5px 30px;
               background-color: #d9d9d9;
               cursor: pointer;
@@ -89,7 +89,7 @@ const FormEventStyle = styled.div`
               align-items: center;
               justify-content: center;
               input {
-                font-size: 18px;
+                font-size: 14px;
                 font-family: "Roboto" !important;
                 text-align: center;
               }
@@ -138,7 +138,7 @@ const FormEventStyle = styled.div`
         }
         .buttonFormCreate {
           display: flex;
-          justify-content: end;
+          justify-content: flex-end;
           margin: 10px 0;
           cursor: pointer;
           .Cancel {
@@ -150,13 +150,14 @@ const FormEventStyle = styled.div`
             }
           }
           .Save {
+            width: 20%;
+            text-align: center;
             margin-left: 20px;
             background-color: #d9d9d9;
             border-radius: 15px;
             padding: 5px 10px;
             a {
               text-decoration: none;
-              color: #978f8f;
             }
           }
         }

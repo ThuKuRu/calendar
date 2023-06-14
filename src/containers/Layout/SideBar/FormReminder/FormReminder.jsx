@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FormReminderStyle } from "./index.style";
 import { useState } from "react";
 import ReactDatePicker from "react-datepicker";
@@ -8,6 +8,7 @@ const FormReminder = ({ close, setActive, events, setEvents, id, setId }) => {
   const [description, setDescription] = useState("");
   const [date, setDate] = useState(new Date());
   const [startTime, setStartTime] = useState("");
+  const [saveColor, setSaveColor] = useState("#978f8f");
 
   const submitForm = () => {
     if (startTime === "" || title === "") return;
@@ -33,10 +34,18 @@ const FormReminder = ({ close, setActive, events, setEvents, id, setId }) => {
       ),
       description: description,
     };
-    setId(id+1);
+    setId(id + 1);
     setEvents([...events, event]);
     close();
   };
+
+  useEffect(() => {
+    if (startTime === "" || title === "") {
+      setSaveColor("#978f8f");
+      return;
+    }
+    setSaveColor("#3f80ea");
+  }, [title, startTime]);
 
   return (
     <FormReminderStyle>
@@ -52,7 +61,7 @@ const FormReminder = ({ close, setActive, events, setEvents, id, setId }) => {
       <div className="modal">
         <div className="modal-container">
           <div className="header">
-            <div className="headerText">Create New Reminder</div>
+            <div className="headerText">Create new Reminder</div>
           </div>
           <div className="content">
             <input
@@ -125,7 +134,12 @@ const FormReminder = ({ close, setActive, events, setEvents, id, setId }) => {
                 </a>
               </div>
               <div className="Save">
-                <a className="save" onClick={submitForm} href="/#">
+                <a
+                  className="save"
+                  style={{ color: saveColor }}
+                  onClick={submitForm}
+                  href="/#"
+                >
                   Save
                 </a>
               </div>
