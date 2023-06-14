@@ -64,7 +64,7 @@ const FormTodoStyle = styled.div`
         }
         .formTodo-address {
           text-align: left;
-          height: 9vh;
+          height: 6vh;
           width: 100%;
           border: 1px solid #000000;
           border-radius: 15px;
@@ -176,6 +176,11 @@ const FormTodoStyle = styled.div`
               color: #978f8f;
             }
           }
+        }
+        .description{
+          width: 100%;
+          margin-bottom: 2%;
+          font-weight: bold;
         }
       }
     }
