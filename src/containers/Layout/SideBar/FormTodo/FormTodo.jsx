@@ -88,7 +88,7 @@ const FormTodo = ({ close, setActive }) => {
                 </div>
               </div>
               <div className="formTodo-time-container">
-                Importance:
+                Priority:
                 <SelectList value={value} onChange={handleChange}>
                   <MenuItem value="1" selected="selected">
                     Level 1
@@ -100,11 +100,12 @@ const FormTodo = ({ close, setActive }) => {
                 </SelectList>
               </div>
             </div>
-
+            <div className="description">
+              Description:
+            </div>
             <div className="formTodo-address">
               <textarea placeholder="Add description ..."></textarea>
             </div>
-
             <div className="buttonFormCreate">
               <div className="Cancel">
                 <a className="cancel" onClick={close} href="/#">
