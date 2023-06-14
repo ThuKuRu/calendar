@@ -1,7 +1,8 @@
 import React from "react";
 import { Container } from "./index.style";
+import JoinWorkspaceCard from "../JoinWorkspaceCard/JoinWorkspaceCard";
 
-const WorkspaceHome = ({ setTab }) => {
+const WorkspaceHome = ({ workspaces, setTab }) => {
   return (
     <Container>
       <link
@@ -37,6 +38,9 @@ const WorkspaceHome = ({ setTab }) => {
           <div className="createText">Create a workspace</div>
           <div className="eg">e.g : Fluck, Tliet</div>
         </div>
+        {workspaces.map((workspace) => (
+          <JoinWorkspaceCard workspace={workspace} />
+        ))}
       </div>
     </Container>
   );
