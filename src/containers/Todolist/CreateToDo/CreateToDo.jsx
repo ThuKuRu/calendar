@@ -1,75 +1,155 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { CreateTodoStyle, SelectList, MenuItem } from "./index.style";
 import ReactDatePicker from "react-datepicker";
 
-const CreateToDo = ({ close, setActive }) => {
+function isNotNegativeInteger(number) {
+  return Number.isInteger(number) && number >= 0;
+}
+
+const CreateToDo = ({ close, setActive, id, setId, toDoData, setToDoData }) => {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [time, setTime] = useState();
+  const [date, setDate] = useState(new Date());
   const [value, setValue] = React.useState("1");
+  const [day, setDay] = useState();
+  const [hour, setHour] = useState();
+  const [minute, setMinute] = useState();
+  const [saveColor, setSaveColor] = useState("#978f8f");
+
+  const submitForm = () => {
+    if (
+      isNaN(day) ||
+      isNotNegativeInteger(day) ||
+      isNaN(hour) ||
+      isNotNegativeInteger(hour) ||
+      isNaN(minute) ||
+      isNotNegativeInteger(minute) ||
+      time === "" ||
+      title === "" ||
+      description === "" ||
+      day === "" ||
+      hour === "" ||
+      minute === ""
+    )
+      return;
+    const todo = {
+      id: id,
+      name: title,
+      name_img: "thu_1.png",
+      assignee: "you",
+      assignee_img: "thu_1.png",
+      duration: {
+        day: day,
+        hour: hour,
+        minute: minute,
+      },
+      description: description,
+      deadline: new Date(
+        date.getFullYear(),
+        date.getMonth(),
+        date.getDate(),
+        time.getHours(),
+        time.getMinutes()
+      ),
+      level: value,
+      comple: "false",
+    };
+    setId(id + 1);
+    setToDoData([...toDoData, todo]);
+    close();
+  };
+
+  useEffect(() => {
+    if (
+      isNaN(day) ||
+      isNotNegativeInteger(day) ||
+      isNaN(hour) ||
+      isNotNegativeInteger(hour) ||
+      isNaN(minute) ||
+      isNotNegativeInteger(minute) ||
+      time === "" ||
+      title === "" ||
+      description === "" ||
+      day === "" ||
+      hour === "" ||
+      minute === ""
+    ) {
+      setSaveColor("#978f8f");
+      return;
+    }
+    setSaveColor("#3f80ea");
+  }, [title, description, time, day, hour, minute, date]);
 
   const handleChange = (event) => {
     setValue(event.target.value);
   };
-
-  const [duration, setDuration] = React.useState("15m");
-
-  const handleChangeDuration = (event) => {
-    setValue(event.target.value);
-  };
-
-  const [time, setTime] = useState();
-  const [date, setDate] = useState(new Date());
-
   return (
     <CreateTodoStyle>
       <link
         href="https://fonts.googleapis.com/css?family=Roboto"
         rel="stylesheet"
       ></link>
+
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      />
       <div className="modal">
         <div className="modal-container">
-          <div className="header"> Add To Do </div>
+          <div className="header">
+            <div className="headerText">Create new To-do</div>
+          </div>
           <div className="content">
             <input
               className="add-form"
               type="text"
               placeholder="Add article..."
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
             />
             <div className="formCreate-container">
               <div className="formTodo-time-container">
                 Duration:
-                {/* <SelectList value={duration} onChange={handleChangeDuration}>
-                  <MenuItem value="15m" selected="selected">
-                    15 minutes
-                  </MenuItem>
-                  <MenuItem value="30m">30 minutes</MenuItem>
-                  <MenuItem value="45m">45 minutes</MenuItem>
-                  <MenuItem value="1h">1 hour</MenuItem>
-                  <MenuItem value="2h">2 hours</MenuItem>
-                  <MenuItem value="3h">3 hours</MenuItem>
-                </SelectList> */}
-                <div className="duration">
-                  <input
-                    className="add-form-duration"
-                    type="text"
-                    placeholder="Day..."
-                  />
-                  <label>Day</label>
-                  <input
-                    className="add-form-duration"
-                    type="text"
-                    placeholder="hour..."
-                  />
-                  <label>h</label>
-                  <input
-                    className="add-form-duration"
-                    type="text"
-                    placeholder="minute..."
-                  />
-                  <label>m</label>
+                <div className="formTodo-duration">
+                  <div className="duration">
+                    <input
+                      className="add-form-duration"
+                      type="text"
+                      placeholder="Day..."
+                      value={day}
+                      onChange={(e) => {
+                        setDay(e.target.value);
+                      }}
+                    />
+                    <label>Day</label>
+                    <input
+                      className="add-form-duration"
+                      type="text"
+                      placeholder="hour..."
+                      value={hour}
+                      onChange={(e) => {
+                        setHour(e.target.value);
+                      }}
+                    />
+                    <label>h</label>
+                    <input
+                      className="add-form-duration"
+                      type="text"
+                      placeholder="minute..."
+                      value={minute}
+                      onChange={(e) => {
+                        setMinute(e.target.value);
+                      }}
+                    />
+                    <label>m</label>
+                  </div>
                 </div>
               </div>
               <div className="formTodo-time-container">
                 Deadline:
                 <div className="formTodo-sche-day">
+                  <div class="material-symbols-outlined">schedule</div>
                   <ReactDatePicker
                     selected={date}
                     dateFormat="EEEE, MMMM d"
@@ -102,21 +182,30 @@ const CreateToDo = ({ close, setActive }) => {
                 </SelectList>
               </div>
             </div>
-
-            <div className="formTodo-des">Description: </div>
-            <input
-              className="add-form"
-              type="text"
-              placeholder="Add description..."
-            />
-
+            <div className="description">Description:</div>
+            <div className="formTodo-address">
+              <textarea
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+                placeholder="Add description ..."
+              ></textarea>
+            </div>
             <div className="buttonFormCreate">
               <div className="Cancel">
                 <a className="cancel" onClick={close} href="/#">
                   Cancel
                 </a>
               </div>
-              <div className="Save"> Save </div>
+              <div className="Save">
+                <a
+                  className="save"
+                  style={{ color: saveColor }}
+                  onClick={submitForm}
+                  href="/#"
+                >
+                  Save
+                </a>
+              </div>
             </div>
           </div>
         </div>

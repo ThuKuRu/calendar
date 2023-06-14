@@ -39,8 +39,8 @@ const Main = ({ tab }) => {
       assignee: "you",
       assignee_img: "thu_1.png",
       description: "Study arrow function",
-      deadline: "Dec 10 9:00 PM",
-      priority: "Level 5",
+      deadline: new Date(2023, 4, 25, 3, 30),
+
       level: "5",
       comple: "false",
     },
@@ -50,8 +50,8 @@ const Main = ({ tab }) => {
       assignee: "Team SE",
       assignee_img: "se_1.jpg",
       description: "Draw Diagram",
-      deadline: "Dec 14 0:00 AM",
-      priority: "Level 5",
+      deadline: new Date(2023, 4, 25, 3, 30),
+
       level: "5",
       comple: "false",
     },
@@ -61,8 +61,8 @@ const Main = ({ tab }) => {
       assignee: "T2 Team",
       assignee_img: "t2.jpg",
       description: "Coding Homepage",
-      deadline: "Dec 7 2:00 PM",
-      priority: "Level 2",
+      deadline: new Date(2023, 4, 25, 3, 30),
+
       level: "2",
       comple: "false",
     },
@@ -72,8 +72,8 @@ const Main = ({ tab }) => {
       assignee: "Team design",
       assignee_img: "design_1.webp",
       description: "Design Figma",
-      deadline: "Dec 17 9:00 AM",
-      priority: "Level 3",
+      deadline: new Date(2023, 4, 25, 3, 30),
+
       level: "3",
       comple: "false",
     },
@@ -83,8 +83,8 @@ const Main = ({ tab }) => {
       assignee: "You",
       assignee_img: "thu_1.png",
       description: "Design MVC Model",
-      deadline: "Dec 10 11:00 PM",
-      priority: "Level 4",
+      deadline: new Date(2023, 4, 25, 3, 30),
+
       level: "4",
       comple: "false",
     },
@@ -94,8 +94,8 @@ const Main = ({ tab }) => {
       assignee: "You",
       assignee_img: "thu_1.png",
       description: "ML research",
-      deadline: "Dec 10 4:00 PM",
-      priority: "Level 3",
+      deadline: new Date(2023, 4, 25, 3, 30),
+
       level: "3",
       comple: "false",
     },
@@ -105,8 +105,8 @@ const Main = ({ tab }) => {
       assignee: "you",
       assignee_img: "thu_1.png",
       description: "Complete the code",
-      deadline: "Dec 10 8:00 AM",
-      priority: "Level 5",
+      deadline: new Date(2023, 4, 25, 3, 30),
+
       level: "5",
       comple: "false",
     },
@@ -116,8 +116,8 @@ const Main = ({ tab }) => {
       assignee: "you",
       assignee_img: "thu_1.png",
       description: "Update database",
-      deadline: "Dec 25 3:00 PM",
-      priority: "Level 1",
+      deadline: new Date(2023, 4, 25, 3, 30),
+
       level: "1",
       comple: "false",
     },
@@ -136,7 +136,12 @@ const Main = ({ tab }) => {
         />
       )}
       {tab === "todolist" && (
-        <Todolist toDoData={toDoData} setToDoData={setToDoData} />
+        <Todolist
+          id={id}
+          setId={setId}
+          toDoData={toDoData}
+          setToDoData={setToDoData}
+        />
       )}
       {tab === "workspace" && <Workspace />}
     </Content>
