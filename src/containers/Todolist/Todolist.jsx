@@ -1,48 +1,7 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { TodolistStyle, Img, Color } from "./index.style";
 import Popup from "reactjs-popup";
 import CreateToDo from "./CreateToDo/CreateToDo";
-import { Overlay, Tooltip } from "react-bootstrap";
-
-function Event(event) {
-  const [showTooltip, setShowTooltip] = useState(false);
-
-  const closeTooltip = () => {
-    setShowTooltip(false);
-  };
-
-  const openTooltip = () => {
-    setShowTooltip(true);
-  };
-  const ref = useRef(null);
-
-  const getTarget = () => {
-    return ref.current;
-  };
-
-  return (
-    <div ref={ref} onMouseLeave={closeTooltip}>
-      <span onMouseOver={openTooltip}>{event.title}</span>
-      <Overlay
-        rootClose
-        target={getTarget}
-        show={showTooltip}
-        placement={
-          ref.current === null
-            ? "top"
-            : ref.current.getBoundingClientRect().y > 467
-            ? "top"
-            : "bottom"
-        }
-        onHide={closeTooltip}
-      >
-        <Tooltip id="test" style={{ zIndex: 10 }}>
-          <CreateToDo event={event} />
-        </Tooltip>
-      </Overlay>
-    </div>
-  );
-}
 
 const Todolist = () => {
   const [toDoData, setToDoData] = useState([
@@ -55,6 +14,7 @@ const Todolist = () => {
       deadline: "Dec 10 9:00 PM",
       priority: "Level 5",
       level: "5",
+      comple: "false",
     },
     {
       name: "SE Project",
@@ -65,6 +25,7 @@ const Todolist = () => {
       deadline: "Dec 14 0:00 AM",
       priority: "Level 5",
       level: "5",
+      comple: "false",
     },
     {
       name: "UI UX",
@@ -75,6 +36,7 @@ const Todolist = () => {
       deadline: "Dec 7 2:00 PM",
       priority: "Level 2",
       level: "2",
+      comple: "false",
     },
     {
       name: "Figma",
@@ -85,26 +47,29 @@ const Todolist = () => {
       deadline: "Dec 17 9:00 AM",
       priority: "Level 3",
       level: "3",
+      comple: "false",
     },
     {
       name: "Java",
       name_img: "java.png",
-      assignee: "Team design",
+      assignee: "You",
       assignee_img: "thu_1.png",
       description: "Design MVC Model",
       deadline: "Dec 10 11:00 PM",
       priority: "Level 4",
       level: "4",
+      comple: "false",
     },
     {
       name: "Python",
       name_img: "python.jpg",
-      assignee: "Team design",
+      assignee: "You",
       assignee_img: "thu_1.png",
       description: "ML research",
       deadline: "Dec 10 4:00 PM",
       priority: "Level 3",
       level: "3",
+      comple: "false",
     },
     {
       name: "HTML",
@@ -115,6 +80,7 @@ const Todolist = () => {
       deadline: "Dec 10 8:00 AM",
       priority: "Level 5",
       level: "5",
+      comple: "false",
     },
     {
       name: "Database",
@@ -125,8 +91,17 @@ const Todolist = () => {
       deadline: "Dec 25 3:00 PM",
       priority: "Level 1",
       level: "1",
+      comple: "false",
     },
   ]);
+
+  const onClickDelete = (key) => {
+    const newToDoData = toDoData.filter((current, index) => {
+      return index !== key;
+    });
+    console.log(newToDoData);
+    setToDoData(newToDoData);
+  };
 
   const sortToDoList = () => {
     const newToDoData = [...toDoData];
@@ -213,7 +188,7 @@ const Todolist = () => {
         </div>
       </div>
       <div>
-        {toDoData.map((todo) => (
+        {toDoData.map((todo, index) => (
           <div className="table">
             <div className="col">
               <span>
@@ -239,34 +214,30 @@ const Todolist = () => {
               <Color value={todo.level}>{todo.priority}</Color>
             </div>
             <div className="col ">
-              <input className="check" type="checkbox" />
+              <span
+                class="material-symbols-outlined delete"
+                onClick={() => {
+                  onClickDelete(index);
+                }}
+              >
+                delete
+              </span>
             </div>
           </div>
         ))}
       </div>
       <div className="footer">
         <div className="createDiv">
+          <div className="createButton">
+            <p className="fill">Auto Fill</p>
+          </div>
+        </div>
+        <div className="createDiv">
           <Popup
             modal
             trigger={
               <div className="createButton">
                 <p className="create">Create To Do</p>
-              </div>
-            }
-          >
-            {(close) => (
-              <div>
-                <CreateToDo close={close} setActive={setActive} />
-              </div>
-            )}
-          </Popup>
-        </div>
-        <div className="autoFill">
-          <Popup
-            modal
-            trigger={
-              <div className="fillButton">
-                <p className="fill">Auto Fill</p>
               </div>
             }
           >
