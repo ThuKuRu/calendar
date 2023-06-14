@@ -1,11 +1,20 @@
 import React from "react";
-import { FormTodoStyle } from "./index.style";
+import { FormTodoStyle, SelectList, MenuItem } from "./index.style";
+import { useState } from "react";
+import ReactDatePicker from "react-datepicker";
 
 const FormTodo = ({ close, setActive }) => {
+  const [time, setTime] = useState();
+  const [date, setDate] = useState(new Date());
+  const [value, setValue] = React.useState("1");
+
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
   return (
     <FormTodoStyle>
       <link
-        href="https://fonts.googleapis.com/css?family=Poppins"
+        href="https://fonts.googleapis.com/css?family=Roboto"
         rel="stylesheet"
       ></link>
 
@@ -15,7 +24,9 @@ const FormTodo = ({ close, setActive }) => {
       />
       <div className="modal">
         <div className="modal-container">
-          <div className="header"> Add To Do </div>
+          <div className="header">
+            <div className="headerText">Create new To-do</div>
+          </div>
           <div className="content">
             <input
               className="add-form"
@@ -57,31 +68,41 @@ const FormTodo = ({ close, setActive }) => {
                 Deadline:
                 <div className="formTodo-sche-day">
                   <div class="material-symbols-outlined">schedule</div>
-                  <div className="formTodo-day">Friday, May 19</div>
-                  <span className="material-symbols-outlined">
-                    arrow_drop_down
-                  </span>
-
-                  <div className="formCreate-time">9:30 AM</div>
-                  <span className="material-symbols-outlined">
-                    arrow_drop_down
-                  </span>
+                  <ReactDatePicker
+                    selected={date}
+                    dateFormat="EEEE, MMMM d"
+                    onChange={(date) => setDate(date)}
+                  />
+                  <ReactDatePicker
+                    showTimeSelect
+                    showTimeSelectOnly
+                    timeIntervals={30}
+                    timeCaption="Time"
+                    dateFormat="h:mm aa"
+                    selected={time}
+                    placeholderText="Time"
+                    onChange={(time) => {
+                      setTime(time);
+                    }}
+                  />
                 </div>
               </div>
               <div className="formTodo-time-container">
                 Importance:
-                <div className="formTodo-sche-day">
-                  <span className="material-symbols-outlined">
-                    arrow_drop_down
-                  </span>
-                </div>
+                <SelectList value={value} onChange={handleChange}>
+                  <MenuItem value="1" selected="selected">
+                    Level 1
+                  </MenuItem>
+                  <MenuItem value="2">Level 2</MenuItem>
+                  <MenuItem value="3">Level 3</MenuItem>
+                  <MenuItem value="4">Level 4</MenuItem>
+                  <MenuItem value="5">Level 5</MenuItem>
+                </SelectList>
               </div>
             </div>
 
             <div className="formTodo-address">
-              Address:
-              <br />
-              Hanoi University of Science and Technology
+              <textarea placeholder="Add description ..."></textarea>
             </div>
 
             <div className="buttonFormCreate">
@@ -90,7 +111,11 @@ const FormTodo = ({ close, setActive }) => {
                   Cancel
                 </a>
               </div>
-              <div className="Save"> Save </div>
+              <div className="Save">
+                <a className="save" href="/#">
+                  Save
+                </a>
+              </div>
             </div>
           </div>
         </div>

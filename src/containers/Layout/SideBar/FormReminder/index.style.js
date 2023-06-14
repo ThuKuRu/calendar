@@ -48,7 +48,7 @@ const FormReminderStyle = styled.div`
           border: 1px solid #000000;
           border-radius: 15px;
           padding: 8px 12px;
-          font-size: 20px;
+          font-size: 18px;
           font-family: "Roboto";         
         }
         .formCreate-container {
@@ -56,7 +56,7 @@ const FormReminderStyle = styled.div`
             display: flex;
             justify-content: space-between;
             margin: 10px 0;
-            align-items: center;
+            height: 40px;
             button {
               font-family: "Roboto" !important;
             }
@@ -64,7 +64,7 @@ const FormReminderStyle = styled.div`
               width: auto;
               border: 1px solid #fff;
               border-radius: 22px;
-              font-size: 20px;
+              font-size: 18px;
               padding: 5px 30px;
               background-color: #d9d9d9;
               cursor: pointer;
@@ -89,7 +89,7 @@ const FormReminderStyle = styled.div`
               align-items: center;
               justify-content: center;
               input{
-                font-size: 18px;
+                font-size: 14px;
                 font-family: "Roboto" !important;
                 text-align: center;
               }
@@ -156,7 +156,6 @@ const FormReminderStyle = styled.div`
             padding: 5px 10px;
             a{
               text-decoration: none;
-              color: #978F8F;
             }
           }
         }
