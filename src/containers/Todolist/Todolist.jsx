@@ -3,12 +3,20 @@ import { TodolistStyle, Img, Color } from "./index.style";
 import Popup from "reactjs-popup";
 import CreateToDo from "./CreateToDo/CreateToDo";
 
-const Todolist = ({ toDoData, setToDoData }) => {
+const Todolist = ({ toDoData, setToDoData, id, setId }) => {
   const onClickDelete = (key) => {
     const newToDoData = toDoData.filter((current, index) => {
       return index !== key;
     });
     setToDoData(newToDoData);
+  };
+
+  const options = {
+    month: "short",
+    day: "numeric",
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true,
   };
 
   const sortToDoList = () => {
@@ -116,7 +124,7 @@ const Todolist = ({ toDoData, setToDoData }) => {
               <p>{todo.description}</p>
             </div>
             <div className="col">
-              <p>{todo.deadline}</p>
+              <p>{todo.deadline.toLocaleString("en-US", options)}</p>
             </div>
             <div className="col ">
               <Color value={todo.level}>Level {todo.level}</Color>
@@ -151,7 +159,14 @@ const Todolist = ({ toDoData, setToDoData }) => {
           >
             {(close) => (
               <div>
-                <CreateToDo close={close} setActive={setActive} />
+                <CreateToDo
+                  close={close}
+                  id={id}
+                  setId={setId}
+                  setActive={setActive}
+                  toDoData={toDoData}
+                  setToDoData={setToDoData}
+                />
               </div>
             )}
           </Popup>

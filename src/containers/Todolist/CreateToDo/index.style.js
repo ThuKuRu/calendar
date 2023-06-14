@@ -70,6 +70,28 @@ font-family: "Roboto" !important;
           font-size: 20px;
           font-weight: bold;
         }
+        .formTodo-address {
+          text-align: left;
+          height: 8.2vh;
+          width: 100%;
+          border: 1px solid #000000;
+          border-radius: 15px;
+          box-sizing: border-box;
+          font-size: 18px;
+          textarea {
+            height: 100%;
+            width: 100%;
+            padding: 6px 10px;
+            background-color: transparent;
+            border: none;
+            resize: none;
+            box-sizing: border-box;
+            font-family: inherit;
+            &:focus {
+              outline: none;
+            }
+          }
+        }
         .formCreate-container {
           .formTodo-time-container {
             display: flex;
@@ -154,12 +176,16 @@ font-family: "Roboto" !important;
               }
             }
           }
-          .Save {
+          .Save {  
             margin-left: 20px;
             background-color: #d9d9d9;
             border-radius: 16px;
             padding: 5px 10px;
              cursor: pointer;
+             a {
+                text-decoration: none;
+                
+              }
           }
         }     
       }

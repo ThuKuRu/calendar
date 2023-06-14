@@ -52,7 +52,7 @@ const FormTodo = ({ close, setActive, id, setId, toDoData, setToDoData }) => {
         date.getDate(),
         time.getHours(),
         time.getMinutes()
-      ).toDateString(),
+      ),
       level: value,
       comple: "false",
     };
