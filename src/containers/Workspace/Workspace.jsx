@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Container } from "./index.style";
 import WorkspaceHome from "./WorkspaceHome/WorkspaceHome";
 import JoinWorkspace from "./JoinWorkspace/JoinWorkspace";
+import CreateWorkspace from "./CreateWorkspace/CreateWorkspace";
 
 const Workspace = () => {
   const [tab, setTab] = useState("home");
@@ -36,6 +37,7 @@ const Workspace = () => {
       {tab === "join" && (
         <JoinWorkspace setTab={setTab} workspaces={workspaces} />
       )}
+      {tab === "create" && <CreateWorkspace setTab={setTab} />}
     </Container>
   );
 };
