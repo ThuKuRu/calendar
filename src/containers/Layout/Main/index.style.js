@@ -5,8 +5,8 @@ const Content = styled.div`
   flex-direction: column;
   height: 100%;
   width: 98%;
-  padding: 10px;
-  padding-right: 20px;
+  padding: 0.625rem;
+  padding-right: 1.25rem;
   .content {
     display: flex;
     height: 100%;

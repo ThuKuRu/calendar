@@ -5,33 +5,28 @@ const NavBar = styled.div`
   justify-content: flex-end;
   align-items: center;
   width: 100%;
-  border-bottom: 1px solid;
-  padding: 5px 0px;
-  min-height: 6%;
+  border-bottom: 0.0625rem solid;
+  padding: 0.3125em 0em;
+  min-height: 3em;
   .header {
-    padding: 0px 2%;
+    padding: 0 2%;
     display: flex;
     justify-content: center;
     align-items: center;
     .material-symbols-outlined {
-      background-color: #2D7FE0;
+      background-color: #2d7fe0;
       border-radius: 50%;
-      color: #FFFFFF;
-      padding: 3px;
+      color: #ffffff;
+      padding: 0.1875em;
       cursor: pointer;
-      font-variation-settings:
-      'FILL' 0,
-      'wght' 0,
-      'GRAD' 0,
-      'opsz' 48
+      font-variation-settings: "FILL" 0, "wght" 0, "GRAD" 0, "opsz" 48;
     }
   }
 `;
 
-
 const Button = styled.button`
-  height: 40px;
-  width: 40px;
+  height: 2.5em;
+  width: 2.5em;
   text-aligns: center;
   border: none;
   background-color: #fff;
@@ -39,9 +34,9 @@ const Button = styled.button`
 `;
 
 const SelectList = styled.select`
-  height: 30px;
+  height: 1.875em;
   text-decoration: none !important;
-  font-size: 20px;
+  font-size: 1.25em;
   font-weight: 700;
   border-top: none;
   border-right: none;
@@ -60,11 +55,10 @@ const MenuItem = styled.option`
 `;
 
 const Avatar = styled.img`
-  margin-left: 10px;
-  border: 1px solid #000;
+  margin-left: 0.625em;
+  border: 0.0625em, solid #000;
   border-radius: 6px;
   height: 30px;
-  weight: 30px;
   text-aligns: center;
 `;
 

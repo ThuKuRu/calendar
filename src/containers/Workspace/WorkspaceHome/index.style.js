@@ -59,6 +59,7 @@ const Container = styled.div`
         font-weight: bold;
         margin-top: 10px;
         margin-bottom: 5px;
+        text-align: center;
       }
       .eg{
         color: #828388;
