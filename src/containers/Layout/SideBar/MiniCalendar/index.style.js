@@ -2,27 +2,27 @@ import styled from "styled-components";
 
 const MinicalendarStyle = styled.div`
   .wrapper {
-    width: 35%;
     background-color: #fff;
     border-radius: 36px;
     border: 1px solid #b7b7b7;
     box-shadow: 1px 5px 5px #aaaa;
+
     header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       .current-date {
-        font-size: 20px;
+        font-size: 16px;
         font-weight: 750;
         font-family: "Poppins";
       }
       .icons {
         span {
-          height: 38px;
-          width: 38px;
+          height: 34px;
+          width: 34px;
           margin: 0 1px;
           text-align: center;
-          line-height: 38px;
+          line-height: 34px;
           border-radius: 50%;
           cursor: pointer;
           &:hover {
@@ -47,26 +47,26 @@ const MinicalendarStyle = styled.div`
           position: relative;
           width: calc(100% / 7);
           text-align: center;
-          font-size: 16px;
+          font-size: 12px;
         }
       }
       .weeks {
         li {
           font-weight: 750;
-          font-size: 16px;
+          font-size: 12px;
         }
       }
       .days {
         li {
-          font-size: 13px;
+          font-size: 9px;
           z-index: 1;
           cursor: pointer;
           margin-top: 20px;
           &::before {
             position: absolute;
             content: "";
-            height: 40px;
-            width: 40px;
+            height: 36px;
+            width: 36px;
             top: 50%;
             left: 50%;
             z-index: -1;

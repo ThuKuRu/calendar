@@ -7,7 +7,7 @@ const NavBar = styled.div`
   width: 100%;
   border-bottom: 0.0625rem solid;
   padding: 0.3125em 0em;
-  min-height: 3em;
+  min-height: 2em;
   .header {
     padding: 0 2%;
     display: flex;
