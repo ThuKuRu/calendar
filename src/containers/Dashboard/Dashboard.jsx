@@ -42,11 +42,9 @@ const Dashboard = () => {
               <div className="taskStatus">Upcoming Task</div>
               <div className="upComingTaskDate">Dec 7 2PM</div>
             </div>
-          </div>
-          <div className="upNextComingTask">
-            <div className="upComingTask-top">
-              <div className="taskStatus">Upcoming Task</div>
-              <div className="upComingTaskDate">Dec 7 2PM</div>
+            <div className="upComingTaskNotify">
+              <img src={t1img} />
+              UIUX DESIGN
             </div>
           </div>
           <div className="upNextComingTask">
@@ -54,11 +52,29 @@ const Dashboard = () => {
               <div className="taskStatus">Upcoming Task</div>
               <div className="upComingTaskDate">Dec 7 2PM</div>
             </div>
+            <div className="upComingTaskNotify">
+              <img src={t1img} />
+              UIUX DESIGN
+            </div>
           </div>
           <div className="upNextComingTask">
             <div className="upComingTask-top">
               <div className="taskStatus">Upcoming Task</div>
               <div className="upComingTaskDate">Dec 7 2PM</div>
+            </div>
+            <div className="upComingTaskNotify">
+              <img src={t1img} />
+              UIUX DESIGN
+            </div>
+          </div>
+          <div className="upNextComingTask">
+            <div className="upComingTask-top">
+              <div className="taskStatus">Upcoming Task</div>
+              <div className="upComingTaskDate">Dec 7 2PM</div>
+            </div>
+            <div className="upComingTaskNotify">
+              <img src={t1img} />
+              UIUX DESIGN
             </div>
           </div>
         </div>

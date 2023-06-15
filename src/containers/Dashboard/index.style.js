@@ -8,8 +8,8 @@ const DashBoard = styled.div`
     padding: 0.5em 2em 0 2em;
 
     .upComingTask {
-      background-color: #ffcdff;
-      border-radius: 36px;
+      background-color: #76bdff;
+      border-radius: 2.25rem;
       border: 1px solid #b7b7b7;
       box-shadow: 1px 5px 5px #aaaa;
       .upComingTask-top {
@@ -85,8 +85,11 @@ const DashBoard = styled.div`
       gap: 1em 2em;
       padding: 0.5em 2em 0 2em;
       .upNextComingTask {
-        background-color: #76bdff;
+        background-color: #8af;
         border-radius: 36px;
+        border: 1px solid #b7b7b7;
+        box-shadow: 1px 5px 5px #aaaa;
+        border-radius: 2.25rem;
         border: 1px solid #b7b7b7;
         box-shadow: 1px 5px 5px #aaaa;
         .upComingTask-top {
@@ -106,18 +109,18 @@ const DashBoard = styled.div`
             align-items: center;
           }
         }
-        // .upComingTaskNotify {
-        //   display: flex;
-        //   align-items: center;
-        //   width: 60%;
-
-        //   font-size: claim(0.75rem, 1.25rem, 3rem);
-        //   img {
-        //     border-radius: 50%;
-        //     width: 16px;
-        //     margin-right: 3%;
-        //   }
-        // }
+        .upComingTaskNotify {
+          display: flex;
+          align-items: center;
+          width: 60%;
+          font-size: claim(0.75rem, 1.25rem, 3rem);
+          margin-left: 0.5rem;
+          img {
+            border-radius: 50%;
+            width: 2em;
+            margin-right: 3%;
+          }
+        
       }
     }
   }
