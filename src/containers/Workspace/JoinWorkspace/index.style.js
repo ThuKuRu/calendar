@@ -42,7 +42,6 @@ const Container = styled.div`
   }
   .main {
     over-flow: auto !important;
-    height: auto;
     display: grid;
     gap: 3.125em 8%;
     padding: 1.5625em 4%;
