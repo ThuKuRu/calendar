@@ -138,17 +138,17 @@ const FormTodo = ({ close, setActive, id, setId, toDoData, setToDoData }) => {
                 <div className="formTodo-duration">
                   <div className="duration">
                     <input
-                      className="add-form-duration"
+                      className="add-form-duration day"
                       type="text"
-                      placeholder="Day..."
+                      placeholder="day..."
                       value={day}
                       onChange={(e) => {
                         setDay(e.target.value);
                       }}
                     />
-                    <label>Day</label>
+                    <label>day</label>
                     <input
-                      className="add-form-duration"
+                      className="add-form-duration hour"
                       type="text"
                       placeholder="hour..."
                       value={hour}
@@ -158,7 +158,7 @@ const FormTodo = ({ close, setActive, id, setId, toDoData, setToDoData }) => {
                     />
                     <label>h</label>
                     <input
-                      className="add-form-duration"
+                      className="add-form-duration minute"
                       type="text"
                       placeholder="minute..."
                       value={minute}
@@ -172,25 +172,29 @@ const FormTodo = ({ close, setActive, id, setId, toDoData, setToDoData }) => {
               </div>
               <div className="formTodo-time-container">
                 Deadline:
-                <div className="formTodo-sche-day">
-                  <div class="material-symbols-outlined">schedule</div>
-                  <ReactDatePicker
-                    selected={date}
-                    dateFormat="EEEE, MMMM d"
-                    onChange={(date) => setDate(date)}
-                  />
-                  <ReactDatePicker
-                    showTimeSelect
-                    showTimeSelectOnly
-                    timeIntervals={30}
-                    timeCaption="Time"
-                    dateFormat="h:mm aa"
-                    selected={time}
-                    placeholderText="Time"
-                    onChange={(time) => {
-                      setTime(time);
-                    }}
-                  />
+                <div className="deadline">
+                  <div className="formTodo-sche-day">
+                    <div class="material-symbols-outlined">schedule</div>
+                    <ReactDatePicker
+                      selected={date}
+                      dateFormat="EEEE, MMMM d"
+                      onChange={(date) => setDate(date)}
+                    />
+                  </div>
+                  <div className="formCreate-times">
+                    <ReactDatePicker
+                      showTimeSelect
+                      showTimeSelectOnly
+                      timeIntervals={30}
+                      timeCaption="Time"
+                      dateFormat="h:mm aa"
+                      selected={time}
+                      placeholderText="Time"
+                      onChange={(time) => {
+                        setTime(time);
+                      }}
+                    />
+                  </div>
                 </div>
               </div>
               <div className="formTodo-time-container">
