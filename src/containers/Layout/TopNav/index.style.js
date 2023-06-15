@@ -25,7 +25,6 @@ const NavBar = styled.div`
 `;
 
 const Button = styled.button`
-  height: 2.5em;
   width: 2.5em;
   text-aligns: center;
   border: none;

@@ -32,7 +32,7 @@ const Sidebar = styled.div`
     .container {
       padding: 0em 0.3125em;
       margin-top: 0.3125em;
-      font-size: 1rem;
+      font-size: clamp(0.9rem, 0.83vw, 1rem);
       width: 76%;
       div {
         margin: 0.625em 0em;
@@ -61,7 +61,7 @@ const Sidebar = styled.div`
     color: #828388;
     margin-right: 0.3125em;
     cursor: pointer;
-    font-size: 3rem;
+    font-size: clamp(2.7rem ,2.5vw, 3rem);
     font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 48;
   }
 `;

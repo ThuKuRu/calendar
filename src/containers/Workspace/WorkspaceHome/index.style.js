@@ -9,9 +9,9 @@ const Container = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 30px;
+    padding: 0 1.875em;
     .headerText {
-      font-size: 30px;
+      font-size: clamp(1.2rem, 1.5625vw, 1.875rem);
       color: #6c757d;
       font-family: "Roboto";
     }
@@ -19,17 +19,16 @@ const Container = styled.div`
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 60%;
-      padding: 5px 10px;
+      padding: 0.8em 0.625em;
       border: 1px solid #000;
       cursor: pointer;
+      font-size: clamp(1rem, 1.3vw, 1.5625rem);
       .joinText {
-        font-size: 25px;
         font-family: "Roboto";
         font-weight: semibold;
       }
       span {
-        margin-right: 10px;
+        margin-right: 0.625em;
       }
     }
   }
@@ -37,8 +36,8 @@ const Container = styled.div`
     over-flow: auto !important;
     height: auto;
     display: grid;
-    gap: 50px 8%;
-    padding: 25px 4%;
+    gap: 3.125em 8%;
+    padding: 1.5625em 4%;
     grid-template-columns: 19% 19% 19% 19%;
     .workspaceComponent-create {
       border: 1px dashed #000000;
@@ -48,21 +47,23 @@ const Container = styled.div`
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      .logo{
+      .logo {
         cursor: pointer;
       }
-      span{
-        font-size: 30px;
+      span {
+        font-size: 1.875em;
       }
       .createText {
-        font-size: 23px;
+        font-size: clamp(1rem, 1.3vw, 1.5625rem);
         font-weight: bold;
-        margin-top: 10px;
-        margin-bottom: 5px;
+        margin-top: 0.625em;
+        margin-bottom: 0.3125em;
         text-align: center;
       }
-      .eg{
+      .eg {
+        font-size: clamp(0.64rem, 0.83vw, 1rem);
         color: #828388;
+        text-align: center;
       }
     }
   }

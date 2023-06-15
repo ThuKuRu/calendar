@@ -13,25 +13,25 @@ const Container = styled.div`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     .colorHeading {
       background-color: #2d7fe0;
-      height: 44px;
+      height: clamp(1em, 4.7vh, 2.3em);
       width: 100%;
       border-top-left-radius: 10px;
       border-top-right-radius: 10px;
     }
     .content {
       display: flex;
-      padding: 10px;
+      padding: 0.625rem;
       height: 100%;
       flex-direction: column;
       .header {
         color: #303f9f;
-        font-size: 27px;
+        font-size: clamp(1.6875rem, 1.4vw, 1.6875rem);
         font-weight: semi-bold;
         display: flex;
-        margin-bottom: 10px;
+        margin-bottom: 0.5em;
       }
       .time {
-        margin-bottom: 10px;
+        margin-bottom: 0.625em;
       }
     }
   }
