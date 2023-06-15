@@ -8,95 +8,94 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
   .rbc-calendar {
-    border: 1px solid #000000;
-    border-radius: 5px;
+    border: 0.0625rem solid #000000;
+    border-radius: 0.3125rem;
     width: 100%;
     height: 90%;
     button {
       font-family: "Roboto" !important;
-      font-size: 25px;
+      font-size: clamp(0.8rem, 1.3vw, 1.5625rem);
     }
     .rbc-toolbar {
-      border-bottom: 1px solid #000000;
-      padding: 10px 10px;
+      border-bottom: 0.0625rem solid #000000;
+      padding: 0.625rem;
       button {
-        font-size 12px;
+        font-size: clamp(0.8rem, 0.625vw, 1.5625rem);
       }
-      .rbc-toolbar-label{
-        font-size: 20px;
+      .rbc-toolbar-label {
+        font-size: clamp(0.8rem, 1vw, 1.25rem);
         font-weight: bold !important;
       }
       .rbc-btn-group {
-        button{
-          color: #7367F0;
-          border: 1px solid #696CFF;
+        button {
+          color: #7367f0;
+          border: 0.0625rem solid #696cff;
         }
-        .rbc-active{
+        .rbc-active {
           background-color: rgba(104, 93, 216, 0.2);
         }
       }
     }
-    .rbc-show-more{
-      font-size: 16px;
-      color: #6E6B7B;
+    .rbc-show-more {
+      font-size: 1rem;
+      color: #6e6b7b;
     }
-    .rbc-month-view{
-      .rbc-header{
-        height: 22px;
+    .rbc-month-view {
+      .rbc-header {
+        padding: 0.25em;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 14px;
-        button{
-          font-size 14px;
+        font-size: clamp(0.8rem, 0.73vw, 0.875rem);
+        button {
+          font-size: clamp(0.8rem, 0.73vw, 0.875rem);
           font-weight: bold;
         }
       }
     }
-    .rbc-time-view{
+    .rbc-time-view {
       max-height: 70vh;
-      .rbc-header{
-        height: 22px;
+      .rbc-header {
+        padding: 0.25em;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 14px;
-        button{
-          font-size 14px;
+        font-size: clamp(0.8rem, 0.73vw, 0.875rem);
+        button {
+          font-size: clamp(0.8rem, 0.73vw, 0.875rem);
           font-weight: bold;
         }
       }
     }
-    .rbc-events-container{
+    .rbc-events-container {
       width: 100%;
     }
-    .rbc-event{
-      background-color: #FF0000;
-      padding: 5px 5px;
+    .rbc-event {
+      background-color: #ff0000;
+      padding: 0.3125em;
       border-radius: 4px;
-      font-size: 14px;
-      .rbc-event-label{
+      font-size: clamp(0.8rem, 0.73vw, 0.875rem);
+      .rbc-event-label {
         display: none !important;
       }
-      .rbc-event-content{
-        padding: 5px 0px;
+      .rbc-event-content {
+        padding: 0.3125em 0px;
       }
     }
   }
-  .createDiv{
+  .createDiv {
     display: flex;
     justify-content: flex-end;
-    .createButton{
-      height: 22px;
+    .createButton {
+      padding: 0.3125em 1em;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 20px;
-      background-color: #2D7FE0;
+      background-color: #2d7fe0;
       border-radius: 14px;
       color: #ffffff;
       font-family: "Roboto" !important;
-      font-size: 20px;
+      font-size: clamp(0.8rem, 1vw, 1.25rem);
       cursor: pointer;
     }
   }

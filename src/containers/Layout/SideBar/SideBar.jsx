@@ -19,47 +19,79 @@ const SideBar = ({ tab, setTab }) => {
       </div>
       <div className="navbar">
         <div className={tab === "dashboard" ? "container active" : "container"}>
-          <div
-            className="dashboard"
-            onClick={() => {
-              setTab("dashboard");
-            }}
-          >
-            <span className="material-symbols-outlined">grid_view</span>
-            <p>Dashboard</p>
+          <div className="dashboard">
+            <span
+              className="material-symbols-outlined"
+              onClick={() => {
+                setTab("dashboard");
+              }}
+            >
+              grid_view
+            </span>
+            <p
+              onClick={() => {
+                setTab("dashboard");
+              }}
+            >
+              Dashboard
+            </p>
           </div>
         </div>
         <div className={tab === "calendar" ? "container active" : "container"}>
-          <div
-            className="calendar"
-            onClick={() => {
-              setTab("calendar");
-            }}
-          >
-            <span className="material-symbols-outlined">calendar_month</span>
-            <p>Calendar</p>
+          <div className="calendar">
+            <span
+              className="material-symbols-outlined"
+              onClick={() => {
+                setTab("calendar");
+              }}
+            >
+              calendar_month
+            </span>
+            <p
+              onClick={() => {
+                setTab("calendar");
+              }}
+            >
+              Calendar
+            </p>
           </div>
         </div>
         <div className={tab === "todolist" ? "container active" : "container"}>
-          <div
-            className="todolist"
-            onClick={() => {
-              setTab("todolist");
-            }}
-          >
-            <span className="material-symbols-outlined">checklist</span>
-            <p>To-do list</p>
+          <div className="todolist">
+            <span
+              className="material-symbols-outlined"
+              onClick={() => {
+                setTab("todolist");
+              }}
+            >
+              checklist
+            </span>
+            <p
+              onClick={() => {
+                setTab("todolist");
+              }}
+            >
+              To-do list
+            </p>
           </div>
         </div>
         <div className={tab === "workspace" ? "container active" : "container"}>
-          <div
-            className=""
-            onClick={() => {
-              setTab("workspace");
-            }}
-          >
-            <span className="material-symbols-outlined">lan</span>
-            <p>Workspace</p>
+          <div className="">
+            <span
+              className="material-symbols-outlined"
+              onClick={() => {
+                setTab("workspace");
+              }}
+            >
+              lan
+            </span>
+            <p
+              onClick={() => {
+                setTab("workspace");
+              }}
+            >
+              Workspace
+            </p>
           </div>
         </div>
       </div>
