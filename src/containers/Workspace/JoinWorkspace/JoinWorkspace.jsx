@@ -23,7 +23,7 @@ const WorkspaceHome = ({ workspaces, setTab }) => {
           >
             arrow_back_ios
           </span>
-          Join workspace
+          <span>Join workspace</span>
         </div>
         <div className="searchBar">
           <input className="searchText" placeholder="Search for a workspace" />

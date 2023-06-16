@@ -87,7 +87,8 @@ const Container = styled.div`
     display: flex;
     justify-content: flex-end;
     .createButton {
-      padding: 0.3125em 1em;
+      margin-top: 1em;
+      padding: 0 1em;
       display: flex;
       justify-content: center;
       align-items: center;

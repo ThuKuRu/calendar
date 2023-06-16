@@ -2,7 +2,7 @@ import React from "react";
 import { Container } from "./index.style";
 import WorkspaceCard from "../WorkspaceCard/WorkspaceCard";
 
-const WorkspaceHome = ({ workspaces, setTab }) => {
+const WorkspaceHome = ({ workspaces, setWorkspaces, setTab, id, setId }) => {
   return (
     <Container>
       <link
@@ -39,7 +39,13 @@ const WorkspaceHome = ({ workspaces, setTab }) => {
           <div className="eg">e.g : Fluck, Tliet</div>
         </div>
         {workspaces.map((workspace) => (
-          <WorkspaceCard workspace={workspace} />
+          <WorkspaceCard
+            workspace={workspace}
+            workspaces={workspaces}
+            setWorkspaces={setWorkspaces}
+            id={id}
+            setId={setId}
+          />
         ))}
       </div>
     </Container>

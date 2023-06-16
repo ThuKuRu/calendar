@@ -33,6 +33,18 @@ const Container = styled.div`
     align-items: center;
     justify-content: center;
     margin-top: 20px;
+    .file-upload {
+      position: absolute;
+      top: 20px;
+      right: 0px;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+      width: 10vw;
+      height: auto;
+    }
   }
 
   .image-upload-label {

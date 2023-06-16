@@ -4,7 +4,7 @@ const LayOut = styled.div`
   display: flex;
   height: 100vh;
   width: 100vw;
-  overflow-y: auto;
+  overflow: hidden;
   .sidebar {
     position: sticky;
     top: 0;
