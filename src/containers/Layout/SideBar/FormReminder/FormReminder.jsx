@@ -9,6 +9,7 @@ const FormReminder = ({ close, setActive, events, setEvents, id, setId }) => {
   const [date, setDate] = useState(new Date());
   const [startTime, setStartTime] = useState("");
   const [saveColor, setSaveColor] = useState("#978f8f");
+  const [saveBgColor, setSaveBgColor] = useState("#d9d9d9");
 
   const submitForm = () => {
     if (startTime === "" || title === "") return;
@@ -42,9 +43,11 @@ const FormReminder = ({ close, setActive, events, setEvents, id, setId }) => {
   useEffect(() => {
     if (startTime === "" || title === "") {
       setSaveColor("#978f8f");
+      setSaveBgColor("#d9d9d9");
       return;
     }
     setSaveColor("#3f80ea");
+    setSaveBgColor("#fff");
   }, [title, startTime]);
 
   return (
@@ -133,7 +136,7 @@ const FormReminder = ({ close, setActive, events, setEvents, id, setId }) => {
                   Cancel
                 </a>
               </div>
-              <div className="Save">
+              <div className="Save" style={{ backgroundColor: saveBgColor }}>
                 <a
                   className="save"
                   style={{ color: saveColor }}

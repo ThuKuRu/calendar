@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+
+
 const Container = styled.div`
   width: 100%;
   height: 95%;
@@ -98,6 +100,16 @@ const Container = styled.div`
       font-family: "Roboto" !important;
       font-size: clamp(0.8rem, 1vw, 1.25rem);
       cursor: pointer;
+      &:focus {
+        box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+        transform: translateY(-0.25em);
+      }
+      &:hover {
+        box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+        border-radius: 0.75em;
+        transform: translateY(-0.25em);
+        background-color: #004796;
+      }
     }
   }
 `;

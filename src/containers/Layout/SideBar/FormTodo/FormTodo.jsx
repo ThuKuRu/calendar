@@ -17,6 +17,7 @@ const FormTodo = ({ close, setActive, id, setId, toDoData, setToDoData }) => {
   const [hour, setHour] = useState();
   const [minute, setMinute] = useState();
   const [saveColor, setSaveColor] = useState("#978f8f");
+  const [saveBgColor, setSaveBgColor] = useState("#d9d9d9");
 
   const submitForm = () => {
     if (
@@ -78,9 +79,11 @@ const FormTodo = ({ close, setActive, id, setId, toDoData, setToDoData }) => {
       minute === ""
     ) {
       setSaveColor("#978f8f");
+      setSaveBgColor("#d9d9d9");
       return;
     }
     setSaveColor("#3f80ea");
+    setSaveBgColor("#fff");
   }, [title, description, time, day, hour, minute, date]);
 
   const handleChange = (event) => {
@@ -224,7 +227,7 @@ const FormTodo = ({ close, setActive, id, setId, toDoData, setToDoData }) => {
                   Cancel
                 </a>
               </div>
-              <div className="Save">
+              <div className="Save" style={{ backgroundColor: saveBgColor }}>
                 <a
                   className="save"
                   style={{ color: saveColor }}

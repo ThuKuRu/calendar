@@ -16,7 +16,7 @@ const Container = styled.div`
       background-color: #d6d6d6;
       border-radius: 10px;
       margin-top: 0.4375em;
-      margin-right: 0.25em;
+      margin-right: 0.4em;
       padding: 0.125em;
       display: flex;
       justify-content: center;

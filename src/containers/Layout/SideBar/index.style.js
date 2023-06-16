@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const Sidebar = styled.div`
+  --hover: #1849aa;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -54,6 +55,31 @@ const Sidebar = styled.div`
             color: #ffffff;
           }
         }
+        &:focus {
+          box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+          transform: translateY(-0.25em);
+        }
+        &:hover {
+          box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+          border-radius: 0.75em;
+          transform: translateY(-0.25em);
+          background-color: #004796;
+        }
+      }
+      &:focus {
+        box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+        transform: translateY(-0.25em);
+      }
+      &:hover {
+        box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+        border-radius: 0.75em;
+        transform: translateY(-0.25em);
+        span {
+          color: #004796;
+        }
+        p {
+          color: #004796;
+        }
       }
     }
   }
@@ -61,7 +87,7 @@ const Sidebar = styled.div`
     color: #828388;
     margin-right: 0.3125em;
     cursor: pointer;
-    font-size: clamp(2.7rem ,2.5vw, 3rem);
+    font-size: clamp(2.7rem, 2.5vw, 3rem);
     font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 48;
   }
 `;
