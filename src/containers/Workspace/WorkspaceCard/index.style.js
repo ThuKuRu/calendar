@@ -15,13 +15,14 @@ const Container = styled.div`
     .leaveButton {
       background-color: #d6d6d6;
       border-radius: 10px;
-      margin-top: 7px;
-      margin-right: 4px;
-      padding: 2px;
+      margin-top: 0.4375em;
+      margin-right: 0.25em;
+      padding: 0.125em;
       display: flex;
       justify-content: center;
       align-items: center;
       cursor: pointer;
+      font-size: clamp(0.625rem, 1.06vw, 0.875rem);
     }
   }
   font-family: "Roboto";
@@ -33,27 +34,27 @@ const Container = styled.div`
     .avatar {
       margin-top: 10%;
       margin-bottom: 1%;
-      height: 4vh;
+      height: 2vw;
       border-radius: 50px;
     }
     .name {
-      font-size: 23px;
+      font-size: clamp(1rem, 1.3vw, 1.5625rem);
       font-weight: bold;
       margin-bottom: 1%;
     }
-    .teamMems{
+    .teamMems {
       display: flex;
-      .avatar{
+      .avatar {
         margin-left: -0.5vw;
-        height: 4vh;
+        height: 2vw;
       }
-      .leftover{
+      .leftover {
         display: flex;
         justify-content: center;
         align-items: center;
         background-color: #d9d9d9;
         font-weight: bold;
-        width: 4vh;
+        width: 2vw;
       }
     }
   }

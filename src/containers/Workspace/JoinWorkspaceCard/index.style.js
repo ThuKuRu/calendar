@@ -21,7 +21,7 @@ const Container = styled.div`
       border-radius: 50px;
     }
     .name {
-      font-size: 23px;
+      font-size: clamp(1rem, 1.3vw, 1.5625rem);
       font-weight: bold;
       margin-bottom: 1%;
     }
@@ -29,7 +29,7 @@ const Container = styled.div`
       display: flex;
       .avatar {
         margin-left: -0.5vw;
-        height: 4vh;
+        height: 2vw;
       }
       .leftover {
         display: flex;
@@ -37,7 +37,7 @@ const Container = styled.div`
         align-items: center;
         background-color: #d9d9d9;
         font-weight: bold;
-        width: 4vh;
+        width: 2vw;
       }
     }
   }
