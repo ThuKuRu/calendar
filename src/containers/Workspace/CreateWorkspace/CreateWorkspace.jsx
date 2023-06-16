@@ -15,7 +15,6 @@ function CreateWorkspace({ setTab }) {
     e.preventDefault();
     // Handle form submission, e.g., send data to backend or perform any required actions
     // After submitting the form, you can navigate back to the home screen or perform any other desired action
-    setTab("home");
   };
 
   const handleCancel = () => {
