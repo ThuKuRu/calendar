@@ -27,6 +27,7 @@ const Container = styled.div`
     }
     .teamMems {
       display: flex;
+      padding-left: 0.5vw;
       .avatar {
         margin-left: -0.5vw;
         height: 2vw;
