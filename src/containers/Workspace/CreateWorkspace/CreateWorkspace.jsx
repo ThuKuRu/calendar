@@ -1,6 +1,8 @@
 import React, { useState, useRef } from "react";
 import { Container } from "./index.style";
 
+function ImageFileURL() {}
+
 function CreateWorkspace({ setTab }) {
   const [workspaceName, setWorkspaceName] = useState("");
   const [assignees, setAssignees] = useState("");
@@ -24,9 +26,30 @@ function CreateWorkspace({ setTab }) {
     fileInputRef.current.click();
   };
 
-  const handleImageChange = (e) => {
-    const file = e.target.files[0];
-    // Handle the selected image file as per your requirements
+  // const [image, setImage] = useState("");
+  // const [url, setUrl] = useState("");
+
+  // const uploadImage = () => {
+  //   const data = new FormData();
+  //   data.append("file", image);
+  //   data.append("upload_present", "tutorial");
+  //   data.append("cloud_name", "breellz");
+  //   fetch(" http://localhost:3000/image/upload", {
+  //     method: "post",
+  //     body: data,
+  //   })
+  //     .then((resp) => resp.json())
+  //     .then((data) => {
+  //       setUrl(data.url);
+  //     })
+  //     .catch((err) => console.log(err));
+  // };
+
+  const [file, setFile] = useState();
+  console.log(file);
+  const handleChange = (e) => {
+    console.log(e.target.files);
+    setFile(URL.createObjectURL(e.target.files[0]));
   };
 
   return (
@@ -82,23 +105,29 @@ function CreateWorkspace({ setTab }) {
         </div>
 
         <div className="image-upload">
-          <label className="image-upload-label" htmlFor="workspaceImage">
-            <span
-              className="material-symbols-outlined"
-              onClick={handleChooseImage}
-            >
-              add_photo_alternate
-            </span>
-            <span className="image-upload-label-text">Add image here</span>
-          </label>
-          <input
-            type="file"
-            id="workspaceImage"
-            accept="image/*"
-            ref={fileInputRef}
-            className="input-file"
-            onChange={handleImageChange}
-          />
+          {file === undefined && (
+            <div>
+              <label className="image-upload-label" htmlFor="workspaceImage">
+                <span className="material-symbols-outlined">
+                  add_photo_alternate
+                </span>
+                <span className="image-upload-label-text">Add image here</span>
+              </label>
+              <input
+                type="file"
+                id="workspaceImage"
+                accept="image/*"
+                ref={fileInputRef}
+                className="input-file"
+                onChange={handleChange}
+              />
+            </div>
+          )}
+          {file !== undefined && (
+            <div>
+              <img className="file-upload" src={file} alt="/" />
+            </div>
+          )}
         </div>
 
         <div className="buttons">
