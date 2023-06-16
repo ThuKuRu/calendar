@@ -56,10 +56,9 @@ const Todolist = ({ toDoData, setToDoData, id, setId, events, setEvents }) => {
         start: currTime,
         end: new Date(currTime.getTime() + 60 * 60 * 1000),
         description: current.description,
+        level: current.level,
       };
       currTime = new Date(event.end.getTime() + 60 * 60 * 1000 * 8);
-      console.log(event.start);
-      console.log(event.end);
       return event;
     });
     setEvents([...events, ...newEventsList]);
