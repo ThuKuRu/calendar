@@ -93,6 +93,17 @@ const Container = styled.div`
     font-family: "Roboto" !important;
     font-size: 20px;
     cursor: pointer;
+
+    &:focus {
+      box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+      transform: translateY(-0.25em);
+    }
+    &:hover {
+      box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+      border-radius: 0.75em;
+      transform: translateY(-0.25em);
+      background-color: #004796;
+    }
   }
 
   .cancel-button {
@@ -108,6 +119,17 @@ const Container = styled.div`
     font-family: "Roboto" !important;
     font-size: 20px;
     cursor: pointer;
+
+    &:focus {
+      box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+      transform: translateY(-0.25em);
+    }
+    &:hover {
+      box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+      border-radius: 0.75em;
+      transform: translateY(-0.25em);
+      background-color: #ffffff;
+    }
   }
 `;
 
