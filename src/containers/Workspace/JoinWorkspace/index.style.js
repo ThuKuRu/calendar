@@ -14,6 +14,8 @@ const Container = styled.div`
       font-size: clamp(1.2rem, 1.5625vw, 1.875rem);
       color: #6c757d;
       font-family: "Roboto";
+      display: flex;
+      align-items: center;
       span {
         margin-right: 0.625em;
         cursor: pointer;
