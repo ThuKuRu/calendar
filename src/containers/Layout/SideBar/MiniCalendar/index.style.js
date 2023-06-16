@@ -12,19 +12,20 @@ const MinicalendarStyle = styled.div`
       align-items: center;
       justify-content: space-between;
       .current-date {
-        font-size: 16px;
+        font-size: clamp(0.75rem, 1.3vw, 3rem);
         font-weight: 750;
         font-family: "Poppins";
       }
       .icons {
         span {
-          height: 34px;
-          width: 34px;
+          height: 2.125em;
+          width: 2.125em;
           margin: 0 1px;
           text-align: center;
-          line-height: 34px;
+          line-height: 2.125em;
           border-radius: 50%;
           cursor: pointer;
+          font-size: clamp(0.75rem, 1.3vw, 3rem);
           &:hover {
             background-color: #3f80ea;
             color: #fff;
@@ -35,8 +36,9 @@ const MinicalendarStyle = styled.div`
     .miniCalendar {
       font-family: "Poppins";
       width: 90%;
-      margin-left: 15px;
-      margin-top: -10px;
+      margin-left: 0.9375em;
+      margin-top: -0.625em;
+      font-size: clamp(0.75rem, 1.3vw, 3rem);
       ul {
         padding-inline-start: 0px;
         display: flex;
@@ -47,26 +49,27 @@ const MinicalendarStyle = styled.div`
           position: relative;
           width: calc(100% / 7);
           text-align: center;
-          font-size: 12px;
+          font-size: clamp(0.75rem, 0.97vw, 3rem);
         }
       }
       .weeks {
         li {
           font-weight: 750;
-          font-size: 12px;
+          font-size: clamp(0.75rem, 0.97vw, 3rem);
         }
       }
       .days {
         li {
-          font-size: 9px;
           z-index: 1;
           cursor: pointer;
-          margin-top: 20px;
+          margin-top: 2em;
+          font-size: clamp(0.625rem, 0.809vw, 3rem); //10px
           &::before {
+            font-size: clamp(0.75rem, 1.3vw, 3rem);
             position: absolute;
             content: "";
-            height: 36px;
-            width: 36px;
+            height: 2.25em;
+            width: 2.25em;
             top: 50%;
             left: 50%;
             z-index: -1;
