@@ -12,6 +12,7 @@ const FormEvent = ({ close, setActive, events, setEvents, id, setId }) => {
   const [startTime, setStartTime] = useState("");
   const [endTime, setEndTime] = useState("");
   const [saveColor, setSaveColor] = useState("#978f8f");
+  const [saveBgColor, setSaveBgColor] = useState("#d9d9d9");
 
   const submitForm = () => {
     if (startTime === "" || endTime === "" || title === "") return;
@@ -40,9 +41,11 @@ const FormEvent = ({ close, setActive, events, setEvents, id, setId }) => {
   useEffect(() => {
     if (startTime === "" || endTime === "" || title === "") {
       setSaveColor("#978f8f");
+      setSaveBgColor("#d9d9d9");
       return;
     }
     setSaveColor("#3f80ea");
+    setSaveBgColor("#fff");
   }, [title, startTime, endTime]);
 
   const handleEvent = () => {
@@ -174,7 +177,7 @@ const FormEvent = ({ close, setActive, events, setEvents, id, setId }) => {
                   Cancel
                 </a>
               </div>
-              <div className="Save">
+              <div className="Save" style={{ backgroundColor: saveBgColor }}>
                 <a
                   className="save"
                   style={{ color: saveColor }}

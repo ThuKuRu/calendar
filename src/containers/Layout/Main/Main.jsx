@@ -122,6 +122,32 @@ const Main = ({ tab }) => {
       comple: "false",
     },
   ]);
+  const [workspaces, setWorkspaces] = useState([
+    {
+      id: 1,
+      avatar: "thu_1.png",
+      name: "Thu thút",
+      teamMems: [1, 2, 3, 4],
+    },
+    {
+      id: 2,
+      avatar: "thu_1.png",
+      name: "Thu thút",
+      teamMems: [1, 2, 3, 4, 5],
+    },
+    {
+      id: 3,
+      avatar: "thu_1.png",
+      name: "Thu thút",
+      teamMems: [1, 2, 3, 4, 1, 1, 1, 1],
+    },
+    {
+      id: 4,
+      avatar: "thu_1.png",
+      name: "Thu thút",
+      teamMems: [1, 2, 3, 4],
+    },
+  ]);
   return (
     <Content>
       {tab === "dashboard" && <Dashboard />}
@@ -143,7 +169,9 @@ const Main = ({ tab }) => {
           setToDoData={setToDoData}
         />
       )}
-      {tab === "workspace" && <Workspace />}
+      {tab === "workspace" && (
+        <Workspace workspaces={workspaces} setWorkspaces={setWorkspaces} />
+      )}
     </Content>
   );
 };
