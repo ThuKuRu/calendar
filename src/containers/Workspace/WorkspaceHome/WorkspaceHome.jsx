@@ -2,7 +2,15 @@ import React from "react";
 import { Container } from "./index.style";
 import WorkspaceCard from "../WorkspaceCard/WorkspaceCard";
 
-const WorkspaceHome = ({ workspaces, setWorkspaces, setTab, id, setId }) => {
+const WorkspaceHome = ({
+  workspaces,
+  setWorkspaces,
+  setTab,
+  id,
+  setId,
+  setCurrentWorkspace,
+}) => {
+  console.log(setCurrentWorkspace);
   return (
     <Container>
       <link
@@ -45,6 +53,8 @@ const WorkspaceHome = ({ workspaces, setWorkspaces, setTab, id, setId }) => {
             setWorkspaces={setWorkspaces}
             id={id}
             setId={setId}
+            setTab={setTab}
+            setCurrentWorkspace={setCurrentWorkspace}
           />
         ))}
       </div>

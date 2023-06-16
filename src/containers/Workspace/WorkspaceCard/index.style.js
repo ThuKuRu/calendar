@@ -30,6 +30,7 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    cursor: pointer;
     .avatar {
       margin-top: 10%;
       margin-bottom: 1%;
@@ -41,13 +42,14 @@ const Container = styled.div`
       font-weight: bold;
       margin-bottom: 1%;
     }
-    .teamMems{
+    .teamMems {
       display: flex;
-      .avatar{
+      .avatar {
         margin-left: -0.5vw;
         height: 4vh;
+        width: 2vw;
       }
-      .leftover{
+      .leftover {
         display: flex;
         justify-content: center;
         align-items: center;
