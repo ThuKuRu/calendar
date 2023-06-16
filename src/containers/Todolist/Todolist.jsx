@@ -3,7 +3,7 @@ import { TodolistStyle, Img, Color, Percent } from "./index.style";
 import Popup from "reactjs-popup";
 import CreateToDo from "./CreateToDo/CreateToDo";
 
-const Todolist = ({ toDoData, setToDoData, id, setId }) => {
+const Todolist = ({ toDoData, setToDoData, id, setId, events, setEvents }) => {
   const onClickDelete = (key) => {
     const newToDoData = toDoData.filter((current, index) => {
       return index !== key;
@@ -45,6 +45,25 @@ const Todolist = ({ toDoData, setToDoData, id, setId }) => {
     setToDoData(newToDoData);
   };
   const [active, setActive] = useState("event");
+  const autoFill = () => {
+    const sortedTodoList = [...toDoData].sort(
+      (a, b) => a.deadline - b.deadline
+    );
+    let currTime = new Date();
+    const newEventsList = sortedTodoList.map((current) => {
+      const event = {
+        title: current.name,
+        start: currTime,
+        end: new Date(currTime.getTime() + 60 * 60 * 1000),
+        description: current.description,
+      };
+      currTime = new Date(event.end.getTime() + 60 * 60 * 1000 * 8);
+      console.log(event.start);
+      console.log(event.end);
+      return event;
+    });
+    setEvents([...events, ...newEventsList]);
+  };
 
   return (
     <TodolistStyle>
@@ -156,7 +175,9 @@ const Todolist = ({ toDoData, setToDoData, id, setId }) => {
       <div className="footer">
         <div className="createDiv">
           <div className="createButton">
-            <p className="fill">Auto Fill</p>
+            <p className="fill" onClick={autoFill}>
+              Auto Fill
+            </p>
           </div>
         </div>
         <div className="createDiv">
