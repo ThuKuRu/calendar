@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { FormTodoStyle, SelectList, MenuItem } from "./index.style";
 import { useState } from "react";
 import ReactDatePicker from "react-datepicker";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function isNotNegativeInteger(number) {
   return Number.isInteger(number) && number >= 0;
@@ -10,7 +12,7 @@ function isNotNegativeInteger(number) {
 const FormTodo = ({ close, setActive, id, setId, toDoData, setToDoData }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [time, setTime] = useState();
+  const [time, setTime] = useState("");
   const [date, setDate] = useState(new Date());
   const [value, setValue] = React.useState("1");
   const [day, setDay] = useState();
@@ -18,22 +20,53 @@ const FormTodo = ({ close, setActive, id, setId, toDoData, setToDoData }) => {
   const [minute, setMinute] = useState();
   const [saveColor, setSaveColor] = useState("#978f8f");
 
-  const submitForm = () => {
+  const handleToastError = (message) => {
+    toast.error(`Error: ${message}`);
+  };
+
+  const handleToastSuccess = () => {
+    toast.success("Success: Todo created successfully");
+  };
+
+  const handleTodo = () => {
+    const currentTime = new Date();
+
     if (
-      isNaN(day) ||
-      isNotNegativeInteger(day) ||
-      isNaN(hour) ||
-      isNotNegativeInteger(hour) ||
-      isNaN(minute) ||
-      isNotNegativeInteger(minute) ||
-      time === "" ||
       title === "" ||
       description === "" ||
+      time === "" ||
+      date === "" ||
       day === "" ||
       hour === "" ||
       minute === ""
-    )
+    ) {
+      handleToastError("Please fill in all required fields.");
       return;
+    }
+
+    if (time < currentTime) {
+      handleToastError("Deadline must be in the future.");
+      return;
+    }
+
+    if (
+      isNotNegativeInteger(day) ||
+      isNotNegativeInteger(hour) ||
+      isNotNegativeInteger(minute)
+    ) {
+      handleToastError(
+        "Please enter positive integers for day, hour, and minute"
+      );
+      return;
+    }
+
+    if (day < 0 || hour < 0 || minute < 0) {
+      handleToastError(
+        "Please enter positive integers for day, hour, and minute"
+      );
+      return;
+    }
+
     const todo = {
       id: id,
       name: title,
@@ -57,25 +90,24 @@ const FormTodo = ({ close, setActive, id, setId, toDoData, setToDoData }) => {
       level: value,
       comple: "false",
     };
+
     setId(id + 1);
     setToDoData([...toDoData, todo]);
     close();
+
+    handleToastSuccess();
   };
 
   useEffect(() => {
     if (
-      isNaN(day) ||
-      isNotNegativeInteger(day) ||
-      isNaN(hour) ||
-      isNotNegativeInteger(hour) ||
-      isNaN(minute) ||
-      isNotNegativeInteger(minute) ||
-      time === "" ||
+      !isNotNegativeInteger(day) ||
+      !isNotNegativeInteger(hour) ||
+      !isNotNegativeInteger(minute) ||
+      day < 0 ||
+      hour < 0 ||
+      minute < 0 ||
       title === "" ||
-      description === "" ||
-      day === "" ||
-      hour === "" ||
-      minute === ""
+      description === ""
     ) {
       setSaveColor("#978f8f");
       return;
@@ -86,6 +118,7 @@ const FormTodo = ({ close, setActive, id, setId, toDoData, setToDoData }) => {
   const handleChange = (event) => {
     setValue(event.target.value);
   };
+
   return (
     <FormTodoStyle>
       <link
@@ -228,7 +261,7 @@ const FormTodo = ({ close, setActive, id, setId, toDoData, setToDoData }) => {
                 <a
                   className="save"
                   style={{ color: saveColor }}
-                  onClick={submitForm}
+                  onClick={handleTodo}
                   href="/#"
                 >
                   Save

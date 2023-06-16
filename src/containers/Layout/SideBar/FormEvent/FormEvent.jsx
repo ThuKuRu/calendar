@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { FormEventStyle } from "./index.style";
 import { useState } from "react";
 import ReactDatePicker from "react-datepicker";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const FormEvent = ({ close, setActive, events, setEvents, id, setId }) => {
   const [title, setTitle] = useState("");
@@ -31,6 +33,7 @@ const FormEvent = ({ close, setActive, events, setEvents, id, setId }) => {
     };
     setId(id + 1);
     setEvents([...events, event]);
+    toast.success("Event created successfully");
     close();
   };
 
@@ -41,6 +44,34 @@ const FormEvent = ({ close, setActive, events, setEvents, id, setId }) => {
     }
     setSaveColor("#3f80ea");
   }, [title, startTime, endTime]);
+
+  const handleEvent = () => {
+    if (startTime === "" || endTime === "" || title === "") {
+      toast.error("Error: Please fill in all required fields.");
+      return;
+    }
+    const now = new Date();
+    const selectedDateTime = new Date(
+      date.getFullYear(),
+      date.getMonth(),
+      date.getDate(),
+      startTime.getHours(),
+      startTime.getMinutes()
+    );
+
+    if (
+      selectedDateTime < now ||
+      (date.getTime() === now.getTime() && startTime < now)
+    ) {
+      toast.error("Error: Selected date and time must be in the future.");
+      return;
+    }
+    if (startTime > endTime) {
+      toast.error("Error: End time must be later than start time.");
+      return;
+    }
+    submitForm();
+  };
 
   return (
     <FormEventStyle>
@@ -55,6 +86,7 @@ const FormEvent = ({ close, setActive, events, setEvents, id, setId }) => {
       />
       <div className="modal">
         <div className="modal-container">
+          <ToastContainer />
           <div className="header">
             <div className="headerText"> Create new Event </div>
           </div>
@@ -146,7 +178,7 @@ const FormEvent = ({ close, setActive, events, setEvents, id, setId }) => {
                 <a
                   className="save"
                   style={{ color: saveColor }}
-                  onClick={submitForm}
+                  onClick={handleEvent}
                   href="/#"
                 >
                   Save
@@ -156,6 +188,7 @@ const FormEvent = ({ close, setActive, events, setEvents, id, setId }) => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </FormEventStyle>
   );
 };
