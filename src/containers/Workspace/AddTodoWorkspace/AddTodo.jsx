@@ -2,8 +2,6 @@ import React, { useEffect } from "react";
 import { FormTodoStyle, SelectList, MenuItem } from "./index.style";
 import { useState } from "react";
 import ReactDatePicker from "react-datepicker";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 function isNotNegativeInteger(number) {
   return Number.isInteger(number) && number >= 0;
@@ -12,62 +10,30 @@ function isNotNegativeInteger(number) {
 const FormTodo = ({ close, setActive, id, setId, toDoData, setToDoData }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [time, setTime] = useState("");
+  const [time, setTime] = useState();
   const [date, setDate] = useState(new Date());
   const [value, setValue] = React.useState("1");
   const [day, setDay] = useState();
   const [hour, setHour] = useState();
   const [minute, setMinute] = useState();
   const [saveColor, setSaveColor] = useState("#978f8f");
-  const [saveBgColor, setSaveBgColor] = useState("#d9d9d9");
 
-  const handleToastError = (message) => {
-    toast.error(`Error: ${message}`);
-  };
-
-  const handleToastSuccess = () => {
-    toast.success("Success: Todo created successfully");
-  };
-
-  const handleTodo = () => {
-    const currentTime = new Date();
-
+  const submitForm = () => {
     if (
+      isNaN(day) ||
+      isNotNegativeInteger(day) ||
+      isNaN(hour) ||
+      isNotNegativeInteger(hour) ||
+      isNaN(minute) ||
+      isNotNegativeInteger(minute) ||
+      time === "" ||
       title === "" ||
       description === "" ||
-      time === "" ||
-      date === "" ||
       day === "" ||
       hour === "" ||
       minute === ""
-    ) {
-      handleToastError("Please fill in all required fields.");
+    )
       return;
-    }
-
-    if (time < currentTime) {
-      handleToastError("Deadline must be in the future.");
-      return;
-    }
-
-    if (
-      isNotNegativeInteger(day) ||
-      isNotNegativeInteger(hour) ||
-      isNotNegativeInteger(minute)
-    ) {
-      handleToastError(
-        "Please enter positive integers for day, hour, and minute"
-      );
-      return;
-    }
-
-    if (day < 0 || hour < 0 || minute < 0) {
-      handleToastError(
-        "Please enter positive integers for day, hour, and minute"
-      );
-      return;
-    }
-
     const todo = {
       id: id,
       name: title,
@@ -91,37 +57,35 @@ const FormTodo = ({ close, setActive, id, setId, toDoData, setToDoData }) => {
       level: value,
       comple: "false",
     };
-
     setId(id + 1);
     setToDoData([...toDoData, todo]);
     close();
-
-    handleToastSuccess();
   };
 
   useEffect(() => {
     if (
-      !isNotNegativeInteger(day) ||
-      !isNotNegativeInteger(hour) ||
-      !isNotNegativeInteger(minute) ||
-      day < 0 ||
-      hour < 0 ||
-      minute < 0 ||
+      isNaN(day) ||
+      isNotNegativeInteger(day) ||
+      isNaN(hour) ||
+      isNotNegativeInteger(hour) ||
+      isNaN(minute) ||
+      isNotNegativeInteger(minute) ||
+      time === "" ||
       title === "" ||
-      description === ""
+      description === "" ||
+      day === "" ||
+      hour === "" ||
+      minute === ""
     ) {
       setSaveColor("#978f8f");
-      setSaveBgColor("#d9d9d9");
       return;
     }
     setSaveColor("#3f80ea");
-    setSaveBgColor("#fff");
   }, [title, description, time, day, hour, minute, date]);
 
   const handleChange = (event) => {
     setValue(event.target.value);
   };
-
   return (
     <FormTodoStyle>
       <link
@@ -260,11 +224,11 @@ const FormTodo = ({ close, setActive, id, setId, toDoData, setToDoData }) => {
                   Cancel
                 </a>
               </div>
-              <div className="Save" style={{ backgroundColor: saveBgColor }}>
+              <div className="Save">
                 <a
                   className="save"
                   style={{ color: saveColor }}
-                  onClick={handleTodo}
+                  onClick={submitForm}
                   href="/#"
                 >
                   Save

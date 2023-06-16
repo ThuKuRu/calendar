@@ -2,17 +2,34 @@ import styled from "styled-components";
 
 const DashBoard = styled.div`
   .container {
+    font-family: "Roboto";
     display: grid;
     grid-template-columns: 35% 65%;
     grid-template-rows: 45% 45%;
-    gap: 15% 2em;
+    gap: 12% 2em;
     padding: 0.5em 2em 0 2em;
     font-size: clamp(0.75rem, 1.3vw, 3rem);
+    .topRightDash {
+      font-family: inherit;
+      .chart{
+        border-radius: 2.25rem;
+        border: 1px solid #b7b7b7;
+        box-shadow: 1px 5px 5px #aaaa;
+        transform: scaleX(0.9);
+        margin-left: -2.2vw;
+        .title{
+          font-size: clamp(0.75rem, 1.3vw, 3rem);
+          margin-left: 2em;
+          font-weight: 750;
+        }
+      }
+    }
     .upComingTask {
       background-color: #76bdff;
       border-radius: 2.25rem;
       border: 1px solid #b7b7b7;
       box-shadow: 1px 5px 5px #aaaa;
+      
       .upComingTask-top {
         display: flex;
         justify-content: space-between;
@@ -88,7 +105,7 @@ const DashBoard = styled.div`
       gap: 1em 2em;
       
       .upNextComingTask {
-        background-color: #8af;
+        background-color: #76BDFF;
         border-radius: 36px;
         border: 1px solid #b7b7b7;
         box-shadow: 1px 5px 5px #aaaa;

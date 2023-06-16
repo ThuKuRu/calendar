@@ -1,19 +1,21 @@
 import React from "react";
 import { NotiItem, NotiList, NotificationContainer } from "./index.style";
+import { TYPE } from "./index.style";
 
 const Notification = () => {
   const notiList = [
     {
-      title: "You have been slain",
-      message: "You have been slain",
+      message: "A task is now overdue. Try better to complete all of them!",
+      type: TYPE.ERROR,
     },
     {
-      title: "You have been slain",
-      message: "You have been slain",
+      message:
+        "You have been added to a new workspace. Get ready to achieve great things together!",
+      type: TYPE.INFO,
     },
     {
-      title: "You have been slain",
-      message: "You have been slain",
+      message: "Successfully create an event.Well done!",
+      type: TYPE.SUCCESS,
     },
   ];
 
@@ -21,10 +23,10 @@ const Notification = () => {
     <NotificationContainer>
       <NotiList>
         {notiList.map((noti) => (
-          <NotiItem>
-            <h3>{noti.title}</h3>
-            <p>{noti.message}</p>
-            <hr />
+          <NotiItem notiType={noti.type}>
+            <div>
+              <p>{noti.message}</p>
+            </div>
           </NotiItem>
         ))}
       </NotiList>

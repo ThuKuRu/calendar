@@ -14,7 +14,7 @@ const MinicalendarStyle = styled.div`
       .current-date {
         font-size: clamp(0.75rem, 1.3vw, 3rem);
         font-weight: 750;
-        font-family: "Poppins";
+        font-family: inherit;
       }
       .icons {
         span {
@@ -34,7 +34,7 @@ const MinicalendarStyle = styled.div`
       }
     }
     .miniCalendar {
-      font-family: "Poppins";
+      font-family: inherit;
       width: 90%;
       margin-left: 0.9375em;
       margin-top: -0.625em;

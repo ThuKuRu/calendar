@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container } from "./index.style";
 import WorkspaceCard from "../WorkspaceCard/WorkspaceCard";
+import CreateWorkspace from "../CreateWorkspace/CreateWorkspace";
+
 
 const WorkspaceHome = ({
   workspaces,
@@ -11,6 +13,7 @@ const WorkspaceHome = ({
   setCurrentWorkspace,
 }) => {
   console.log(setCurrentWorkspace);
+
   return (
     <Container>
       <link
@@ -46,6 +49,7 @@ const WorkspaceHome = ({
           <div className="createText">Create a workspace</div>
           <div className="eg">e.g : Fluck, Tliet</div>
         </div>
+       
         {workspaces.map((workspace) => (
           <WorkspaceCard
             workspace={workspace}

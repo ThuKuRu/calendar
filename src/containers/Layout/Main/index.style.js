@@ -7,6 +7,7 @@ const Content = styled.div`
   width: 98%;
   padding: 0.625rem;
   padding-right: 1.25rem;
+  overflow-y: auto;
   .content {
     display: flex;
     height: 100%;

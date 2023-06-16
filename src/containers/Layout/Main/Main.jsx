@@ -39,7 +39,7 @@ const Main = ({ tab }) => {
       assignee: "You",
       assignee_img: "thu_1.png",
       description: "Study arrow function",
-      deadline: new Date(2023, 4, 25, 3, 30),
+      deadline: new Date(2023, 6, 25, 3, 30),
       percent: "70",
       level: "5",
       comple: "false",
@@ -50,7 +50,7 @@ const Main = ({ tab }) => {
       assignee: "Team SE",
       assignee_img: "se_1.jpg",
       description: "Draw Diagram",
-      deadline: new Date(2023, 2, 12, 5, 0),
+      deadline: new Date(2023, 6, 12, 5, 0),
       percent: "50",
       level: "5",
       comple: "false",
@@ -72,7 +72,7 @@ const Main = ({ tab }) => {
       assignee: "Team design",
       assignee_img: "design_1.webp",
       description: "Design Figma",
-      deadline: new Date(2023, 1, 1, 7, 0),
+      deadline: new Date(2023, 7, 1, 7, 0),
       percent: "30",
       level: "3",
       comple: "false",
@@ -94,7 +94,7 @@ const Main = ({ tab }) => {
       assignee: "You",
       assignee_img: "thu_1.png",
       description: "ML research",
-      deadline: new Date(2023, 4, 25, 13, 30),
+      deadline: new Date(2023, 6, 25, 13, 30),
       percent: "20",
       level: "3",
       comple: "false",
@@ -105,7 +105,7 @@ const Main = ({ tab }) => {
       assignee: "You",
       assignee_img: "thu_1.png",
       description: "Complete the code",
-      deadline: new Date(2023, 3, 25, 19, 30),
+      deadline: new Date(2023, 5, 25, 19, 30),
       percent: "80",
       level: "5",
       comple: "false",
@@ -116,12 +116,39 @@ const Main = ({ tab }) => {
       assignee: "You",
       assignee_img: "thu_1.png",
       description: "Update database",
-      deadline: new Date(2023, 4, 20, 21, 0),
+      deadline: new Date(2023, 5, 20, 21, 0),
       percent: "10",
       level: "1",
       comple: "false",
     },
   ]);
+  const [workspaces, setWorkspaces] = useState([
+    {
+      id: 1,
+      avatar: "thu_1.png",
+      name: "Thu thút",
+      teamMems: [1, 2, 3, 4],
+    },
+    {
+      id: 2,
+      avatar: "thu_1.png",
+      name: "Thu thút",
+      teamMems: [1, 2, 3, 4, 5],
+    },
+    {
+      id: 3,
+      avatar: "thu_1.png",
+      name: "Thu thút",
+      teamMems: [1, 2, 3, 4, 1, 1, 1, 1],
+    },
+    {
+      id: 4,
+      avatar: "thu_1.png",
+      name: "Thu thút",
+      teamMems: [1, 2, 3, 4],
+    },
+  ]);
+
   return (
     <Content>
       {tab === "dashboard" && <Dashboard />}
@@ -141,9 +168,13 @@ const Main = ({ tab }) => {
           setId={setId}
           toDoData={toDoData}
           setToDoData={setToDoData}
+          events={events}
+          setEvents={setEvents}
         />
       )}
-      {tab === "workspace" && <Workspace />}
+      {tab === "workspace" && (
+        <Workspace workspaces={workspaces} setWorkspaces={setWorkspaces} />
+      )}
     </Content>
   );
 };

@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const FormEventStyle = styled.div`
   font-family: "Roboto";
+
   .modal {
     position: fixed;
     color: black;
@@ -61,11 +62,34 @@ const FormEventStyle = styled.div`
               padding: 0.23em 1.36em;
               background-color: #d9d9d9;
               cursor: pointer;
+              &:focus {
+                box-shadow: 0 0.5em 0.5em -0.4em #1849aa;
+                transform: translateY(-0.25em);
+                background-color: #3f80ea;
+                color: #fff;
+              }
+              &:hover {
+                box-shadow: 0 0.5em 0.5em -0.4em #1849aa;
+                border-radius: 0.75em;
+                transform: translateY(-0.25em);
+                background-color: #3f80ea;
+                color: #fff;
+              }
             }
 
             .formCreate-event {
               background-color: #3f80ea;
               color: #fff;
+              &:focus {
+                box-shadow: 0 0.5em 0.5em -0.4em #1849aa;
+                transform: translateY(-0.25em);
+              }
+              &:hover {
+                box-shadow: 0 0.5em 0.5em -0.4em #1849aa;
+                border-radius: 0.75em;
+                transform: translateY(-0.25em);
+                background-color: #004796;
+              }
             }
           }
 
@@ -133,10 +157,10 @@ const FormEventStyle = styled.div`
           display: flex;
           justify-content: flex-end;
           margin: 0.625em 0;
-          cursor: pointer;
           .Cancel {
             padding: 0.5em 1em;
             font-size: clamp(1.04rem, 1.04vw, 1.4rem);
+            cursor: pointer;
             a {
               text-decoration: none;
               color: rgba(0, 0, 0, 0.8);
@@ -147,8 +171,8 @@ const FormEventStyle = styled.div`
             font-size: clamp(1.04rem, 1.04vw, 1.4rem);
             text-align: center;
             margin-left: 1em;
-            background-color: #d9d9d9;
             border-radius: 15px;
+            cursor: pointer;
             a {
               text-decoration: none;
             }
