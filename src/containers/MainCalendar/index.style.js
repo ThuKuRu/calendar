@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 const Container = styled.div`
   width: 100%;
   height: 95%;
@@ -87,6 +88,7 @@ const Container = styled.div`
       padding: 0.3125em;
       border-radius: 4px;
       font-size: clamp(0.8rem, 0.73vw, 0.875rem);
+      color: #fff;
       .rbc-event-label {
         display: none !important;
       }
