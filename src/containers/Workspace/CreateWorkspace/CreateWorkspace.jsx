@@ -1,8 +1,6 @@
 import React, { useState, useRef } from "react";
 import { Container } from "./index.style";
 
-function ImageFileURL() {}
-
 function CreateWorkspace({ setTab }) {
   const [workspaceName, setWorkspaceName] = useState("");
   const [assignees, setAssignees] = useState("");
@@ -13,8 +11,7 @@ function CreateWorkspace({ setTab }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission, e.g., send data to backend or perform any required actions
-    // After submitting the form, you can navigate back to the home screen or perform any other desired action
+    setTab("home");
   };
 
   const handleCancel = () => {
@@ -24,25 +21,6 @@ function CreateWorkspace({ setTab }) {
   const handleChooseImage = () => {
     fileInputRef.current.click();
   };
-
-  // const [image, setImage] = useState("");
-  // const [url, setUrl] = useState("");
-
-  // const uploadImage = () => {
-  //   const data = new FormData();
-  //   data.append("file", image);
-  //   data.append("upload_present", "tutorial");
-  //   data.append("cloud_name", "breellz");
-  //   fetch(" http://localhost:3000/image/upload", {
-  //     method: "post",
-  //     body: data,
-  //   })
-  //     .then((resp) => resp.json())
-  //     .then((data) => {
-  //       setUrl(data.url);
-  //     })
-  //     .catch((err) => console.log(err));
-  // };
 
   const [file, setFile] = useState();
   console.log(file);

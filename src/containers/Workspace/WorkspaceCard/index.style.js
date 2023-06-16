@@ -31,6 +31,7 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    cursor: pointer;
     .avatar {
       margin-top: 10%;
       margin-bottom: 1%;
@@ -49,6 +50,7 @@ const Container = styled.div`
       .avatar {
         margin-left: -0.5vw;
         height: 2vw;
+
       }
       .leftover {
         display: flex;
