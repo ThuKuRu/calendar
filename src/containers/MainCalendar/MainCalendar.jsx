@@ -14,6 +14,8 @@ import Popup from "reactjs-popup";
 import FormEvent from "../Layout/SideBar/FormEvent/FormEvent";
 import FormTodo from "../Layout/SideBar/FormTodo/FormTodo";
 import FormReminder from "../Layout/SideBar/FormReminder/FormReminder";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Event(event) {
   const [showTooltip, setShowTooltip] = useState(false);
@@ -75,8 +77,13 @@ const MainCalendar = ({
     locales,
   });
 
+  const customClose = (close) => {
+    close();
+  };
+
   return (
     <Container>
+      <ToastContainer />
       <link
         href="https://fonts.googleapis.com/css?family=Roboto"
         rel="stylesheet"
@@ -101,7 +108,9 @@ const MainCalendar = ({
             <div>
               {active === "event" && (
                 <FormEvent
-                  close={close}
+                  close={() => {
+                    customClose(close);
+                  }}
                   setActive={setActive}
                   events={events}
                   setEvents={setEvents}
