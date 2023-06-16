@@ -5,7 +5,23 @@ import t1img from "../../img/t1img.png";
 import user2 from "../../img/user2.jpg";
 import user3 from "../../img/user3.jpg";
 import AvatarImg from "../../img/thu_1.png";
-
+import {
+  AreaChart,
+  Area,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
+const data = [
+  { name: "January", Total: 120 },
+  { name: "February", Total: 51 },
+  { name: "March", Total: 80 },
+  { name: "April", Total: 160 },
+  { name: "May", Total: 90 },
+  { name: "June", Total: 170 },
+];
 const Dashboard = () => {
   return (
     <DashBoard>
@@ -13,7 +29,36 @@ const Dashboard = () => {
         <div className="miniCal">
           <MiniCalendar />
         </div>
-        <div className="topRightDash">BBBBB</div>
+        <div className="topRightDash">
+          <div className="chart">
+            <div className="title">Last 6 Months (Task Completed)</div>
+            <ResponsiveContainer width="90%" aspect={2.4 / 1}>
+              <AreaChart
+                width={730}
+                height={200}
+                data={data}
+                margin={{ top: 10, right: 0, left: 0, bottom: 0 }}
+              >
+                <defs>
+                  <linearGradient id="total" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#76BDFF" stopOpacity={0.8} />
+                    <stop offset="95%" stopColor="#76BDFF" stopOpacity={0} />
+                  </linearGradient>
+                </defs>
+                <XAxis dataKey="name" stroke="gray" />
+                <CartesianGrid strokeDasharray="3 3" className="chartGrid" />
+                <Tooltip />
+                <Area
+                  type="monotone"
+                  dataKey="Total"
+                  stroke="#76BDFF"
+                  fillOpacity={1}
+                  fill="url(#total)"
+                />
+              </AreaChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
         <div className="upComingTask">
           <div className="upComingTask-top">
             <div className="taskStatus">Upcoming Task</div>
@@ -79,17 +124,6 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-      {/* <div className="containerH">
-        <div className="top-container">
-          <div className="miniCal">
-            <MiniCalendar />
-          </div>
-          <div className="graph"></div>
-        </div>
-        <div className="bottom-container">
-          
-        </div>
-      </div> */}
     </DashBoard>
   );
 };
