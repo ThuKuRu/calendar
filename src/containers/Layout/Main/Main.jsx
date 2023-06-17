@@ -784,6 +784,8 @@ const Main = ({ tab }) => {
           workspacesToJoin={workspacesToJoin}
           setWorkspacesToJoin={setWorkspacesToJoin}
           people={people}
+          toDoData={toDoData}
+          setToDoData={setToDoData}
         />
       )}
     </Content>
