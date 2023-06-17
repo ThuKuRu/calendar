@@ -138,11 +138,29 @@ const TodolistStyle = styled.div`
   .footer {
     display: flex;
     justify-content: flex-end;
+    .fillDiv {
+      display: flex;
+      margin-top: 1em;
+      padding: 0 1em;
+      margin-right: 2em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      &:focus {
+        box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+        transform: translateY(-0.25em);
+      }
+      &:hover {
+        box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+        border-radius: 0.75em;
+        transform: translateY(-0.25em);
+        color: #004796;
+      }
+    }
     .createDiv {
       display: flex;
       align-items: center;
-      margin-left: 20px;
-      margin-top: 10px;
       .createButton {
         margin-top: 1em;
         padding: 0 1em;
@@ -150,44 +168,20 @@ const TodolistStyle = styled.div`
         justify-content: center;
         align-items: center;
         background-color: #2d7fe0;
-        border-radius: 14px;
         color: #ffffff;
         font-family: "Roboto" !important;
         font-size: clamp(0.8rem, 1vw, 1.25rem);
         cursor: pointer;
-        .create {
-          background-color: #2d7fe0;
-          padding: 10px 20px;
-          border-radius: 0.75em;
-          &:focus {
-            box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-            transform: translateY(-0.25em);
-          }
-          &:hover {
-            box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-            border-radius: 0.75em;
-            transform: translateY(-0.25em);
-            background-color: #004796;
-          }
+        border-radius: 0.75em;
+        &:focus {
+          box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+          transform: translateY(-0.25em);
         }
-        .fill {
-          background-color: #d9d9d9;
-          padding: 10px 20px;
+        &:hover {
+          box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
           border-radius: 0.75em;
-          color: #000;
-          &:focus {
-            box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-            transform: translateY(-0.25em);
-            background-color: #2d7fe0;
-            color: #fff;
-          }
-          &:hover {
-            box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-            border-radius: 0.75em;
-            transform: translateY(-0.25em);
-            background-color: #2d7fe0;
-            color: #fff;
-          }
+          transform: translateY(-0.25em);
+          background-color: #004796;
         }
       }
     }
