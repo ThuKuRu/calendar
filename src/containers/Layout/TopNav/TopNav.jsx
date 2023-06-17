@@ -1,9 +1,10 @@
 import React from "react";
-import { NavBar, SelectList, MenuItem, Avatar } from "./index.style";
+import { NavBar, Avatar } from "./index.style";
 import AvatarImg from "../../../img/thu_1.png";
 import Notification from "../../Notification/Notification";
 import Popup from "reactjs-popup";
 import { useNavigate } from "react-router-dom";
+import Logout from "./Logout/Logout";
 
 const TopNav = () => {
   const [value, setValue] = React.useState("user");
@@ -30,13 +31,16 @@ const TopNav = () => {
         >
           <Notification />
         </Popup>
-        <Avatar src={AvatarImg} variant="rounded" />
-        <SelectList value={value} onChange={handleChange}>
+        <Popup trigger={<Avatar src={AvatarImg} variant="rounded" />}>
+          <Logout />
+        </Popup>
+        {/* <SelectList value={value} onChange={handleChange}>
+          <img src={AvatarImg} alt="/" />
           <MenuItem value="user" selected="selected">
-            Thu thút
+            <img src={AvatarImg} alt="/" />
           </MenuItem>
           <MenuItem value="logout">Logout</MenuItem>
-        </SelectList>
+        </SelectList> */}
       </div>
     </NavBar>
   );

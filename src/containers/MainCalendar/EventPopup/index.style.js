@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 const Container = styled.div`
   .popup {
-    height: 40vh;
     width: 20vw;
     display: flex;
     flex-direction: column;
@@ -11,6 +10,7 @@ const Container = styled.div`
     font-family: "Roboto";
     border: 1px solid #eff0f6;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding-bottom: 2rem;
     .colorHeading {
       background-color: #2d7fe0;
       height: clamp(1em, 4.7vh, 2.3em);

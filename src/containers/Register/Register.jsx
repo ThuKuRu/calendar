@@ -59,6 +59,10 @@ const Register = () => {
   console.log(inputValues);
   return (
     <div>
+      <link
+        href="https://fonts.googleapis.com/css?family=Roboto"
+        rel="stylesheet"
+      ></link>
       <RegisterStyle>
         <form>
           <h2>Register Karenda</h2>

@@ -11,19 +11,22 @@ function AddUser({ setTab }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setTab("");
+    setTab("specific");
   };
 
   const handleCancel = (e) => {
-    setTab("");
+    setTab("specific");
   };
 
   const handleChooseImage = () => {
     fileInputRef.current.click();
   };
 
-  const handleImageChange = (e) => {
-    const file = e.target.files[0];
+  const [file, setFile] = useState();
+  console.log(file);
+  const handleChange = (e) => {
+    console.log(e.target.files);
+    setFile(URL.createObjectURL(e.target.files[0]));
   };
 
   return (
@@ -77,23 +80,29 @@ function AddUser({ setTab }) {
         </div>
 
         <div className="image-upload">
-          <label className="image-upload-label" htmlFor="workspaceImage">
-            <span
-              className="material-symbols-outlined"
-              onClick={handleChooseImage}
-            >
-              add_photo_alternate
-            </span>
-            <span className="image-upload-label-text">Add image here</span>
-          </label>
-          <input
-            type="file"
-            id="workspaceImage"
-            accept="image/*"
-            ref={fileInputRef}
-            className="input-file"
-            onChange={handleImageChange}
-          />
+          {file === undefined && (
+            <div>
+              <label className="image-upload-label" htmlFor="workspaceImage">
+                <span className="material-symbols-outlined">
+                  add_photo_alternate
+                </span>
+                <span className="image-upload-label-text">Add image here</span>
+              </label>
+              <input
+                type="file"
+                id="workspaceImage"
+                accept="image/*"
+                ref={fileInputRef}
+                className="input-file"
+                onChange={handleChange}
+              />
+            </div>
+          )}
+          {file !== undefined && (
+            <div>
+              <img className="file-upload" src={file} alt="/" />
+            </div>
+          )}
         </div>
 
         <div className="buttons">

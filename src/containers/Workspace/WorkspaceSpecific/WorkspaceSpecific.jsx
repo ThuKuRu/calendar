@@ -8,7 +8,6 @@ const WorkspaceSpecific = ({
   setId,
   setTab,
   currentWorkspace,
-  workspaces,
   setWorkspaces,
 }) => {
   const handleCancel = () => {
@@ -185,7 +184,6 @@ const WorkspaceSpecific = ({
                     id={id}
                     setId={setId}
                     currentWorkspace={currentWorkspace.teamMems}
-                    workspaces={workspaces}
                     setWorkspaces={setWorkspaces}
                   />
                 </div>
@@ -223,7 +221,12 @@ const WorkspaceSpecific = ({
                 );
               })}
           </div>
-          <div className="add-member">
+          <div
+            className="add-member"
+            onClick={() => {
+              setTab("addUser");
+            }}
+          >
             <span class="material-symbols-outlined">add_circle</span>
             <p>Add more user</p>
           </div>

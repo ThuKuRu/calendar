@@ -4,6 +4,7 @@ import WorkspaceHome from "./WorkspaceHome/WorkspaceHome";
 import JoinWorkspace from "./JoinWorkspace/JoinWorkspace";
 import CreateWorkspace from "./CreateWorkspace/CreateWorkspace";
 import WorkspaceSpecific from "./WorkspaceSpecific/WorkspaceSpecific";
+import AddUser from "./AddUserWorkspace/AddUser";
 
 const Workspace = ({ workspaces, setWorkspaces }) => {
   const [tab, setTab] = useState("home");
@@ -31,6 +32,7 @@ const Workspace = ({ workspaces, setWorkspaces }) => {
           setWorkspaces={setWorkspaces}
         />
       )}
+      {tab === "addUser" && <AddUser setTab={setTab} />}
     </Container>
   );
 };
