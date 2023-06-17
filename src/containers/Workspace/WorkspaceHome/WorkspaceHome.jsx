@@ -11,8 +11,6 @@ const WorkspaceHome = ({
   setId,
   setCurrentWorkspace,
 }) => {
-  console.log(setCurrentWorkspace);
-
   return (
     <Container>
       <ToastContainer />

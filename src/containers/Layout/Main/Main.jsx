@@ -7,7 +7,7 @@ import Todolist from "../../Todolist/Todolist";
 import Workspace from "../../Workspace/Workspace";
 
 const Main = ({ tab }) => {
-  const [id, setId] = useState(3);
+  const [id, setId] = useState(500);
   const tempEvents = [
     {
       id: 0,
@@ -715,6 +715,8 @@ const Main = ({ tab }) => {
       )}
       {tab === "workspace" && (
         <Workspace
+          id={id}
+          setId={setId}
           workspaces={workspaces}
           setWorkspaces={setWorkspaces}
           workspacesToJoin={workspacesToJoin}
