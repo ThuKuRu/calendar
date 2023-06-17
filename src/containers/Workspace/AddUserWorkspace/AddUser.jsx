@@ -11,11 +11,11 @@ function AddUser({ setTab }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setTab("");
+    setTab("specific");
   };
 
   const handleCancel = (e) => {
-    setTab("");
+    setTab("specific");
   };
 
   const handleChooseImage = () => {
