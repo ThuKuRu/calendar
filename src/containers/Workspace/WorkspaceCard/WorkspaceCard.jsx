@@ -120,25 +120,11 @@ const WorkspaceCard = ({
           Are you sure you want to leave this workspace?
         </p>
         <button
-          onClick={confirmLeave}
-          style={{
-            border: "none",
-            height: "22px",
-            marginRight: "10px",
-            borderRadius: "10px",
-            backgroundColor: isYesHovered ? "#1849aa" : "#2d7fe0",
-            color: isYesHovered ? "white" : "white",
-          }}
-          onMouseEnter={() => setIsYesHovered(true)}
-          onMouseLeave={() => setIsYesHovered(false)}
-        >
-          Yes
-        </button>
-        <button
           onClick={cancelLeave}
           style={{
             border: "none",
             height: "22px",
+            marginRight: "10px",
             borderRadius: "10px",
             backgroundColor: isNoHovered ? "white" : "#f5f5f5",
             color: isNoHovered ? "#868686" : "#868686",
@@ -147,6 +133,20 @@ const WorkspaceCard = ({
           onMouseLeave={() => setIsNoHovered(false)}
         >
           No
+        </button>
+        <button
+          onClick={confirmLeave}
+          style={{
+            border: "none",
+            height: "22px",
+            borderRadius: "10px",
+            backgroundColor: isYesHovered ? "#1849aa" : "#2d7fe0",
+            color: isYesHovered ? "white" : "white",
+          }}
+          onMouseEnter={() => setIsYesHovered(true)}
+          onMouseLeave={() => setIsYesHovered(false)}
+        >
+          Yes
         </button>
       </Modal>
     </Container>
