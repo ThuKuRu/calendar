@@ -36,6 +36,7 @@ const Container = styled.div`
       margin-top: 10%;
       margin-bottom: 1%;
       height: 2vw;
+      width: 2vw;
       border-radius: 50px;
     }
     .name {
@@ -49,8 +50,6 @@ const Container = styled.div`
       padding-left: 0.5vw;
       .avatar {
         margin-left: -0.5vw;
-        height: 2vw;
-
       }
       .leftover {
         display: flex;
