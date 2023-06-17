@@ -13,7 +13,7 @@ const LayOut = styled.div`
     width: 16%;
     min-width: 14em;
     max-width: 20em;
-    border-right: 0.25em solid #212329;
+    border-right: 0.2em solid #e5e4e2;
   }
   .rightContent {
     display: flex;
