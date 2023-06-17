@@ -21,28 +21,32 @@ const percentToDo = {
 };
 
 const Color = styled.p`
-  padding: 1px 25px 0;
+  padding: 0.0625em 1.5625em 0;
   border-radius: 20px;
   background-color: ${({ value }) => levelColor[value]};
+  color: ${({ value }) => {
+    if (value === "5") return "#ffffff";
+  }};
 `;
 
 const Percent = styled.p`
   display: flex;
   background-color: #2d7fe0;
-  height: 24px;
   border-radius: 1em;
   margin: 0px !important;
   width: ${({ percent }) => percentToDo[percent]};
   text-align: center;
   justify-content: center;
+  padding: 0.24em 0;
   .percentContent {
-    font-size: 10px;
+    font-size: clamp(0.53rem, 0.53vw, 0.625rem);
     color: #fff;
     font-weight: 600;
   }
 `;
 
 const TodolistStyle = styled.div`
+  --hover: #1849aa;
   display: flex;
   flex-direction: column;
   font-family: "Roboto";
@@ -57,69 +61,74 @@ const TodolistStyle = styled.div`
   .table {
     display: flex;
     width: 95%;
-    font-size: 16px;
-    height: 28px;
+    font-size: clamp(0.83rem, 0.83vw, 1rem);
     border-bottom: 2px solid #ccc;
     align-items: baseline;
     justify-content: center;
-    padding: 5px 0px 5px 50px;
+    padding: 0.3125em 0 0.3125em 3.125em;
     text-align: center;
     align-items: center;
-    margin-left: 10px;
+    margin-left: 0.6125em;
     .col {
       display: flex;
       align-items: center;
       text-align: center;
       flex: 1;
       span {
-        height: 24px;
-        margin-right: 5px;
+        margin-right: 0.3125em;
       }
       p {
         text-align: center;
-        height: 24px;
-        font-size: 18px;
+        font-size: clamp(0.9375rem, 0.9375vw, 1.125rem);
         align-items: center;
-        margin: 0px 0px 0px 5px;
+        margin: 0px 0px 0px 0.3125em;
       }
       .name {
-        font-size: 20px;
+        font-size: clamp(1.04rem, 1.04vw, 1.4rem);
         font-weight: 600;
       }
       .avatar {
-        height: 25px;
-        width: 25px;
+        height: 1.5625em;
+        width: 1.5625em;
         border-radius: 50%;
-        margin-right: 5px;
+        margin-right: 0.3125em;
       }
       .done {
         background-color: #00ff00;
-        padding: 1px 15px 0;
-        border-radius: 20px;
-      }
-      .level {
-        padding: 1px 20px 0;
+        padding: 0.0625em 0.9375em 0;
         border-radius: 20px;
       }
       .sort {
-        margin-left: 5px;
+        margin-left: 0.3125em;
         cursor: pointer;
-      }
-
-      .check {
-        height: 24px;
-        width: 24px;
+        &:focus {
+          transform: translateY(-0.25em);
+          color: #2d7fe0;
+        }
+        &:hover {
+          border-radius: 0.75em;
+          transform: translateY(-0.25em);
+          color: #2d7fe0;
+        }
       }
 
       .delete {
         cursor: pointer;
-        margin-left: 5px;
+        margin-left: 0.3125em;
+        &:focus {
+          transform: translateY(-0.25em);
+          color: #2d7fe0;
+        }
+        &:hover {
+          border-radius: 0.75em;
+          transform: translateY(-0.25em);
+          color: #2d7fe0;
+        }
       }
       .percent {
         display: flex;
         justify-content: flex-start;
-        width: 120px;
-        height: 24px;
+        width: clamp(5em, 6.25vw, 7.5em);
         border-radius: 1em;
         border: 1px solid #ccc;
         padding: 0px;
@@ -146,38 +155,39 @@ const TodolistStyle = styled.div`
         font-family: "Roboto" !important;
         font-size: clamp(0.8rem, 1vw, 1.25rem);
         cursor: pointer;
-        &:focus {
-          box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-          transform: translateY(-0.25em);
-        }
-        &:hover {
-          box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+        .create {
+          background-color: #2d7fe0;
+          padding: 10px 20px;
           border-radius: 0.75em;
-          transform: translateY(-0.25em);
-          background-color: #004796;
+          &:focus {
+            box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+            transform: translateY(-0.25em);
+          }
+          &:hover {
+            box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+            border-radius: 0.75em;
+            transform: translateY(-0.25em);
+            background-color: #004796;
+          }
         }
-      }
-      .fillButton {
-        margin-top: 1em;
-        padding: 0 1em;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #d9d9d9;
-        border-radius: 14px;
-        color: #000;
-        font-family: "Roboto" !important;
-        font-size: clamp(0.8rem, 1vw, 1.25rem);
-        cursor: pointer;
-        &:focus {
-          box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-          transform: translateY(-0.25em);
-        }
-        &:hover {
-          box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+        .fill {
+          background-color: #d9d9d9;
+          padding: 10px 20px;
           border-radius: 0.75em;
-          transform: translateY(-0.25em);
-          background-color: #797979;
+          color: #000;
+          &:focus {
+            box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+            transform: translateY(-0.25em);
+            background-color: #2d7fe0;
+            color: #fff;
+          }
+          &:hover {
+            box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+            border-radius: 0.75em;
+            transform: translateY(-0.25em);
+            background-color: #2d7fe0;
+            color: #fff;
+          }
         }
       }
     }
