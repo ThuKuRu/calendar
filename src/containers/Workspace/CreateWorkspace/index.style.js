@@ -93,7 +93,7 @@ const Container = styled.div`
     font-family: "Roboto" !important;
     font-size: 20px;
     cursor: pointer;
-
+    border: none;
     &:focus {
       box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
       transform: translateY(-0.25em);
@@ -119,7 +119,7 @@ const Container = styled.div`
     font-family: "Roboto" !important;
     font-size: 20px;
     cursor: pointer;
-
+    border: none;
     &:focus {
       box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
       transform: translateY(-0.25em);

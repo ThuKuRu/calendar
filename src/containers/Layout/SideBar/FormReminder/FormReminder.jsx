@@ -48,7 +48,7 @@ const FormReminder = ({ close, setActive, events, setEvents, id, setId }) => {
     };
     setId(id + 1);
     setEvents([...events, event]);
-    toast.success("Success: Reminder created successfully");
+    toast.success("Reminder created successfully");
     close();
   };
 

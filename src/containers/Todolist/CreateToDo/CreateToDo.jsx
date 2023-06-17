@@ -25,7 +25,7 @@ const CreateToDo = ({ close, setActive, id, setId, toDoData, setToDoData }) => {
   };
 
   const handleToastSuccess = () => {
-    toast.success("Success: Todo created successfully");
+    toast.success("To-do created successfully");
   };
   const handleTodo = () => {
     const now = new Date();
