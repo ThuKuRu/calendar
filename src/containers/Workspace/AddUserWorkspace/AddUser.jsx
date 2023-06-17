@@ -3,7 +3,6 @@ import { Container } from "./index.style";
 
 function AddUser({ setTab }) {
   const [assignees, setAssignees] = useState("");
-  const [name, setName] = useState("");
   const [role, setRole] = useState("");
   const [workingStatus, setWorkingStatus] = useState("");
   const [message, setMessage] = useState("");
@@ -48,13 +47,6 @@ function AddUser({ setTab }) {
             id="assignees"
             value={assignees}
             onChange={(e) => setAssignees(e.target.value)}
-          />
-          <label htmlFor="name">Name:</label>
-          <input
-            type="text"
-            id="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
           />
           <label htmlFor="role">Role:</label>
           <input

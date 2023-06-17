@@ -4,8 +4,6 @@ import { Container } from "./index.style";
 function CreateWorkspace({ setTab }) {
   const [workspaceName, setWorkspaceName] = useState("");
   const [assignees, setAssignees] = useState("");
-  const [tasks, setTasks] = useState("");
-  const [workingStatus, setWorkingStatus] = useState("");
   const [description, setDescription] = useState("");
   const fileInputRef = useRef(null);
 
@@ -56,21 +54,6 @@ function CreateWorkspace({ setTab }) {
             id="assignees"
             value={assignees}
             onChange={(e) => setAssignees(e.target.value)}
-          />
-
-          <label htmlFor="tasks">Todo:</label>
-          <textarea
-            id="tasks"
-            value={tasks}
-            onChange={(e) => setTasks(e.target.value)}
-          />
-
-          <label htmlFor="workingStatus">Working Status:</label>
-          <input
-            type="text"
-            id="workingStatus"
-            value={workingStatus}
-            onChange={(e) => setWorkingStatus(e.target.value)}
           />
 
           <label htmlFor="description">Description:</label>
