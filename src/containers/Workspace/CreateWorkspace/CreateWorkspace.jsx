@@ -35,22 +35,34 @@ function CreateWorkspace({
     ) {
       return;
     }
-
+    const you = {
+      id: 1,
+      memberName: "Thu thút",
+      memberAvatar: "thu_1.png",
+      pjName: "Python",
+      pjImg: "python.jpg",
+      description: "Coding Homepage",
+      deadline: new Date(2023, 5, 20, 16, 30),
+      percent: "20",
+      level: "3",
+      comple: "false",
+    };
+    const newMembers = people.filter((current) => {
+      return current.memberName === members;
+    });
     const newWorkspace = {
       id: id,
       avatar: fileName,
       name: workspaceName,
-      teamMems: [],
+      teamMems: [you, ...newMembers],
     };
     setId(id + 1);
     setWorkspaces([...workspaces, newWorkspace]);
     setTab("home");
   };
 
-  const [value, setValue] = useState("1");
-
   const handleChangeSelect = (event) => {
-    setValue(event.target.value);
+    setMembers(event.target.value);
   };
 
   return (
@@ -81,7 +93,12 @@ function CreateWorkspace({
             value={members}
             onChange={(e) => setMembers(e.target.value)}
           /> */}
-          <SelectList value={value} onChange={handleChangeSelect}>
+          <SelectList value={members} onChange={handleChangeSelect}>
+            {
+              <MenuItem value="" disable hidden>
+                Choose a member
+              </MenuItem>
+            }
             {people.map((member) => (
               <MenuItem key={member.id}>{member.memberName}</MenuItem>
             ))}

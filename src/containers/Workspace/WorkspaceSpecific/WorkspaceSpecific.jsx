@@ -8,6 +8,7 @@ const WorkspaceSpecific = ({
   setId,
   setTab,
   currentWorkspace,
+  setCurrentWorkspace,
   workspaces,
   setWorkspaces,
   toDoData,
@@ -132,50 +133,51 @@ const WorkspaceSpecific = ({
               </div>
             </div>
             <div>
-              {currentWorkspace.teamMems.map((todo, index) => (
-                <div className="table">
-                  <div className="col">
-                    <span>
-                      <Img src={require("../../../img/" + todo.pjImg)} />
-                    </span>
-                    <p>{todo.pjName}</p>
-                  </div>
-                  <div className="col">
-                    <img
-                      className="avatar"
-                      src={require("../../../img/" + todo.memberAvatar)}
-                      alt="/"
-                    />
-                    <p>{todo.memberName}</p>
-                  </div>
-                  <div className="col">
-                    <p>{todo.description}</p>
-                  </div>
-                  <div className="col">
-                    <p>{todo.deadline.toLocaleString("en-US", options)}</p>
-                  </div>
-                  <div className="col ">
-                    <Color value={todo.level}>Level {todo.level}</Color>
-                  </div>
-                  <div className="col">
-                    <div className="percent">
-                      <Percent percent={todo.percent}>
-                        <div className="percentContent">{todo.percent}</div>
-                      </Percent>
+              {currentWorkspace.todolist !== undefined &&
+                currentWorkspace.todolist.map((todo, index) => (
+                  <div className="table">
+                    <div className="col">
+                      <span>
+                        <Img src={require("../../../img/" + todo.pjImg)} />
+                      </span>
+                      <p>{todo.pjName}</p>
+                    </div>
+                    <div className="col">
+                      <img
+                        className="avatar"
+                        src={require("../../../img/" + todo.memberAvatar)}
+                        alt="/"
+                      />
+                      <p>{todo.memberName}</p>
+                    </div>
+                    <div className="col">
+                      <p>{todo.description}</p>
+                    </div>
+                    <div className="col">
+                      <p>{todo.deadline.toLocaleString("en-US", options)}</p>
+                    </div>
+                    <div className="col ">
+                      <Color value={todo.level}>Level {todo.level}</Color>
+                    </div>
+                    <div className="col">
+                      <div className="percent">
+                        <Percent percent={todo.percent}>
+                          <div className="percentContent">{todo.percent}</div>
+                        </Percent>
+                      </div>
+                    </div>
+                    <div className="col ">
+                      <span
+                        class="material-symbols-outlined delete"
+                        onClick={() => {
+                          onClickDelete(index);
+                        }}
+                      >
+                        delete
+                      </span>
                     </div>
                   </div>
-                  <div className="col ">
-                    <span
-                      class="material-symbols-outlined delete"
-                      onClick={() => {
-                        onClickDelete(index);
-                      }}
-                    >
-                      delete
-                    </span>
-                  </div>
-                </div>
-              ))}
+                ))}
             </div>
           </div>
           <div className="buttons">
@@ -195,6 +197,12 @@ const WorkspaceSpecific = ({
                     setId={setId}
                     toDoData={toDoData}
                     setToDoData={setToDoData}
+                    members={currentWorkspace.teamMems}
+                    todolist={currentWorkspace.todolist}
+                    currentWorkspace={currentWorkspace}
+                    setCurrentWorkspace={setCurrentWorkspace}
+                    workspaces={workspaces}
+                    setWorkspaces={setWorkspaces}
                   />
                 </div>
               )}

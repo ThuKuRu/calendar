@@ -1,5 +1,11 @@
 import React, { useEffect } from "react";
-import { FormTodoStyle, SelectList, MenuItem } from "./index.style";
+import {
+  FormTodoStyle,
+  SelectList,
+  MenuItem,
+  MemberList,
+  MemberMenu,
+} from "./index.style";
 import { useState } from "react";
 import ReactDatePicker from "react-datepicker";
 import { toast } from "react-toastify";
@@ -9,7 +15,18 @@ function isNotNegativeInteger(number) {
   return Number.isInteger(number) && number >= 0;
 }
 
-const AddTask = ({ close, id, setId, toDoData, setToDoData }) => {
+const AddTask = ({
+  close,
+  id,
+  setId,
+  currentWorkspace,
+  setCurrentWorkspace,
+  workspaces,
+  setWorkspaces,
+  members,
+  toDoData,
+  setToDoData,
+}) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [time, setTime] = useState("");
@@ -20,6 +37,7 @@ const AddTask = ({ close, id, setId, toDoData, setToDoData }) => {
   const [minute, setMinute] = useState();
   const [saveColor, setSaveColor] = useState("#978f8f");
   const [saveBgColor, setSaveBgColor] = useState("#d9d9d9");
+  const [assignee, setAssignee] = useState("");
 
   const handleToastError = (message) => {
     toast.error(`Error: ${message}`);
@@ -38,7 +56,8 @@ const AddTask = ({ close, id, setId, toDoData, setToDoData }) => {
       date === "" ||
       day === "" ||
       hour === "" ||
-      minute === ""
+      minute === "" ||
+      assignee === ""
     ) {
       handleToastError("Please fill in all required fields.");
       return;
@@ -77,12 +96,14 @@ const AddTask = ({ close, id, setId, toDoData, setToDoData }) => {
       return;
     }
 
+    const workspaceImage = currentWorkspace.teamMems.filter((current) => {
+      return current.memberName === assignee;
+    });
     const todo = {
       id: id,
-      name: title,
       name_img: "thu_1.png",
-      assignee: "you",
-      assignee_img: "thu_1.png",
+      memberName: assignee,
+      memberAvatar: workspaceImage[0].memberAvatar,
       duration: {
         day: day,
         hour: hour,
@@ -99,12 +120,44 @@ const AddTask = ({ close, id, setId, toDoData, setToDoData }) => {
       percent: "0",
       level: value,
       comple: "false",
+      pjName: title,
+      pjImg: "python.jpg",
     };
 
     setId(id + 1);
-    setToDoData([...toDoData, todo]);
+    let newCurrentWorkspace = {};
+    let newWorkspaces = workspaces.map((current) => {
+      if (current.id === currentWorkspace.id) {
+        let currentNewWorkspace = {
+          id: current.id,
+          avatar: current.avatar,
+          name: current.name,
+          todolist: current.todolist,
+          teamMems: current.teamMems,
+        };
+        currentNewWorkspace.todolist = [...currentWorkspace.todolist, todo];
+        newCurrentWorkspace = currentNewWorkspace;
+        return currentNewWorkspace;
+      }
+      return current;
+    });
+    setWorkspaces(newWorkspaces);
+    setCurrentWorkspace(newCurrentWorkspace);
+    if (todo.memberName === "Thu thút") {
+      const newTodo = {
+        name: todo.pjName,
+        name_img: "python.jpg",
+        assignee: currentWorkspace.name,
+        assignee_img: currentWorkspace.avatar,
+        description: todo.description,
+        deadline: todo.deadline,
+        percent: todo.percent,
+        level: todo.level,
+        comple: todo.comple,
+      };
+      setToDoData([...toDoData, newTodo]);
+    }
     close();
-
     handleToastSuccess();
   };
 
@@ -157,6 +210,10 @@ const AddTask = ({ close, id, setId, toDoData, setToDoData }) => {
     setValue(event.target.value);
   };
 
+  const handleChangeSelect = (e) => {
+    setAssignee(e.target.value);
+  };
+
   return (
     <FormTodoStyle>
       <link
@@ -182,7 +239,25 @@ const AddTask = ({ close, id, setId, toDoData, setToDoData }) => {
               onChange={(e) => setTitle(e.target.value)}
             />
             <div className="formCreate-container">
-
+              <div className="formTodo-time-container">
+                Assignee:
+                <div className="assignee">
+                  <MemberMenu value={assignee} onChange={handleChangeSelect}>
+                    {
+                      <MemberList value="" disabled hidden>
+                        Choose an Assignee
+                      </MemberList>
+                    }
+                    {members.map((member) => {
+                      return (
+                        <MemberList key={member.id}>
+                          {member.memberName}
+                        </MemberList>
+                      );
+                    })}
+                  </MemberMenu>
+                </div>
+              </div>
               <div className="formTodo-time-container">
                 Duration:
                 <div className="formTodo-duration">
