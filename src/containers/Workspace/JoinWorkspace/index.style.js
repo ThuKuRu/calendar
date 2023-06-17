@@ -48,33 +48,6 @@ const Container = styled.div`
     gap: 3.125em 8%;
     padding: 1.5625em 4%;
     grid-template-columns: 19% 19% 19% 19%;
-    .workspaceComponent-create {
-      border: 1px dashed #000000;
-      border-radius: 20px;
-      height: 25vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      .logo {
-        cursor: pointer;
-      }
-      span {
-        font-size: 30px;
-      }
-      .createText {
-        font-size: clamp(1rem, 1.3vw, 1.5625rem);
-        font-weight: bold;
-        margin-top: 0.625em;
-        margin-bottom: 0.3125em;
-        text-align: center;
-      }
-      .eg {
-        font-size: clamp(0.64rem, 0.83vw, 1rem);
-        color: #828388;
-        text-align: center;
-      }
-    }
   }
 `;
 

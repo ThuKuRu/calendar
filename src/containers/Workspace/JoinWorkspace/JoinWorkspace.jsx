@@ -31,20 +31,6 @@ const WorkspaceHome = ({ workspaces, setTab }) => {
         </div>
       </div>
       <div className="main">
-        <div className="workspaceComponent-create">
-          <div className="logo">
-            <span
-              className="material-symbols-outlined"
-              onClick={() => {
-                setTab("create");
-              }}
-            >
-              add_box
-            </span>
-          </div>
-          <div className="createText">Create a workspace</div>
-          <div className="eg">e.g : Fluck, Tliet</div>
-        </div>
         {workspaces.map((workspace) => (
           <JoinWorkspaceCard workspace={workspace} />
         ))}
