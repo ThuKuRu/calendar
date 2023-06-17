@@ -14,7 +14,7 @@ import Popup from "reactjs-popup";
 import FormEvent from "../Layout/SideBar/FormEvent/FormEvent";
 import FormTodo from "../Layout/SideBar/FormTodo/FormTodo";
 import FormReminder from "../Layout/SideBar/FormReminder/FormReminder";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function Event(event) {

@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { TodolistStyle, Img, Color, Percent } from "./index.style";
 import Popup from "reactjs-popup";
 import CreateToDo from "./CreateToDo/CreateToDo";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Todolist = ({ toDoData, setToDoData, id, setId, events, setEvents }) => {
   const onClickDelete = (key) => {
@@ -66,6 +68,7 @@ const Todolist = ({ toDoData, setToDoData, id, setId, events, setEvents }) => {
 
   return (
     <TodolistStyle>
+      <ToastContainer />
       <link
         href="https://fonts.googleapis.com/css?family=Roboto"
         rel="stylesheet"

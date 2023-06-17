@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { CreateTodoStyle, SelectList, MenuItem } from "./index.style";
 import ReactDatePicker from "react-datepicker";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function isNotNegativeInteger(number) {
   return Number.isInteger(number) && number >= 0;
@@ -16,23 +18,62 @@ const CreateToDo = ({ close, setActive, id, setId, toDoData, setToDoData }) => {
   const [hour, setHour] = useState();
   const [minute, setMinute] = useState();
   const [saveColor, setSaveColor] = useState("#978f8f");
+  const [saveBgColor, setSaveBgColor] = useState("#d9d9d9");
 
-  const submitForm = () => {
+  const handleToastError = (message) => {
+    toast.error(`Error: ${message}`);
+  };
+
+  const handleToastSuccess = () => {
+    toast.success("Success: Todo created successfully");
+  };
+  const handleTodo = () => {
+    const now = new Date();
     if (
-      isNaN(day) ||
-      isNotNegativeInteger(day) ||
-      isNaN(hour) ||
-      isNotNegativeInteger(hour) ||
-      isNaN(minute) ||
-      isNotNegativeInteger(minute) ||
-      time === "" ||
       title === "" ||
       description === "" ||
+      time === "" ||
+      date === "" ||
       day === "" ||
       hour === "" ||
       minute === ""
-    )
+    ) {
+      handleToastError("Please fill in all required fields.");
       return;
+    }
+    const selectedDateTime = new Date(
+      date.getFullYear(),
+      date.getMonth(),
+      date.getDate(),
+      time.getHours(),
+      time.getMinutes()
+    );
+
+    if (
+      selectedDateTime < now ||
+      (date.getTime() === now.getTime() && time < now)
+    ) {
+      handleToastError("Deadline must be in the future.");
+      return;
+    }
+
+    if (
+      isNotNegativeInteger(day) ||
+      isNotNegativeInteger(hour) ||
+      isNotNegativeInteger(minute)
+    ) {
+      handleToastError(
+        "Please enter positive integers for day, hour, and minute"
+      );
+      return;
+    }
+
+    if (day < 0 || hour < 0 || minute < 0) {
+      handleToastError(
+        "Please enter positive integers for day, hour, and minute"
+      );
+      return;
+    }
     const todo = {
       id: id,
       name: title,
@@ -58,28 +99,55 @@ const CreateToDo = ({ close, setActive, id, setId, toDoData, setToDoData }) => {
     };
     setId(id + 1);
     setToDoData([...toDoData, todo]);
+    console.log(1);
     close();
+
+    handleToastSuccess();
   };
 
   useEffect(() => {
+    const now = new Date();
+    setSaveColor("#978f8f");
+    setSaveBgColor("#d9d9d9");
     if (
-      isNaN(day) ||
-      isNotNegativeInteger(day) ||
-      isNaN(hour) ||
-      isNotNegativeInteger(hour) ||
-      isNaN(minute) ||
-      isNotNegativeInteger(minute) ||
-      time === "" ||
       title === "" ||
       description === "" ||
+      time === "" ||
+      date === "" ||
       day === "" ||
       hour === "" ||
       minute === ""
     ) {
-      setSaveColor("#978f8f");
       return;
     }
-    setSaveColor("#3f80ea");
+    const selectedDateTime = new Date(
+      date.getFullYear(),
+      date.getMonth(),
+      date.getDate(),
+      time.getHours(),
+      time.getMinutes()
+    );
+
+    if (
+      selectedDateTime < now ||
+      (date.getTime() === now.getTime() && time < now)
+    ) {
+      return;
+    }
+
+    if (
+      isNotNegativeInteger(day) ||
+      isNotNegativeInteger(hour) ||
+      isNotNegativeInteger(minute)
+    ) {
+      return;
+    }
+
+    if (day < 0 || hour < 0 || minute < 0) {
+      return;
+    }
+    setSaveColor("#2d7fe0");
+    setSaveBgColor("#fff");
   }, [title, description, time, day, hour, minute, date]);
 
   const handleChange = (event) => {
@@ -197,11 +265,11 @@ const CreateToDo = ({ close, setActive, id, setId, toDoData, setToDoData }) => {
                   Cancel
                 </a>
               </div>
-              <div className="Save">
+              <div className="Save" style={{ backgroundColor: saveBgColor }}>
                 <a
                   className="save"
                   style={{ color: saveColor }}
-                  onClick={submitForm}
+                  onClick={handleTodo}
                   href="/#"
                 >
                   Save
