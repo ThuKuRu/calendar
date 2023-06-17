@@ -8,6 +8,7 @@ const WorkspaceSpecific = ({
   setId,
   setTab,
   currentWorkspace,
+  workspaces,
   setWorkspaces,
 }) => {
   const handleCancel = () => {
@@ -26,7 +27,14 @@ const WorkspaceSpecific = ({
     const newToDoData = currentWorkspace.teamMems.filter((current) => {
       return current.id !== key;
     });
-    setWorkspaces(newToDoData);
+    setWorkspaces([...workspaces, newToDoData]);
+  };
+
+  const onClickOutTeam = (key) => {
+    const newWorkspaces = workspaces.filter((current) => {
+      return current.id !== key;
+    });
+    setWorkspaces([...newWorkspaces]);
   };
 
   return (
@@ -51,7 +59,7 @@ const WorkspaceSpecific = ({
               <span
                 className="material-symbols-outlined"
                 onClick={() => {
-                  onClickDelete(currentWorkspace.id);
+                  onClickOutTeam(currentWorkspace.id);
                 }}
               >
                 logout
