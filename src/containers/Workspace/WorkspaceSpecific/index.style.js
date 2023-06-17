@@ -164,7 +164,7 @@ const WorkspaceSpecificStyle = styled.div`
             }
             .delete {
               cursor: pointer;
-              margin-left: 0.3125em;
+              margin-left: 2em;
               &:focus {
                 transform: translateY(-0.25em);
                 color: #2d7fe0;
