@@ -1,26 +1,42 @@
 import React, { useState, useRef } from "react";
 import { Container } from "./index.style";
 
-function CreateWorkspace({ setTab }) {
+function CreateWorkspace({ setTab, id, setId, workspaces, setWorkspaces }) {
   const [workspaceName, setWorkspaceName] = useState("");
-  const [assignees, setAssignees] = useState("");
+  const [members, setMembers] = useState("");
   const [description, setDescription] = useState("");
+  const [file, setFile] = useState();
+  const [fileName, setFileName] = useState("");
   const fileInputRef = useRef(null);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setTab("home");
-  };
 
   const handleCancel = () => {
     setTab("home");
   };
 
-  const [file, setFile] = useState();
-  console.log(file);
   const handleChange = (e) => {
-    console.log(e.target.files);
     setFile(URL.createObjectURL(e.target.files[0]));
+    setFileName(e.target.files[0].name);
+  };
+
+  const createWorkspace = (e) => {
+    e.preventDefault();
+    if (
+      workspaceName === "" ||
+      members === "" ||
+      description === "" ||
+      fileName === ""
+    ) {
+      return;
+    }
+
+    const newWorkspace = {
+      id: id,
+      avatar: fileName,
+      name: workspaceName,
+      teamMems: [],
+    };
+    setWorkspaces([...workspaces, newWorkspace]);
+    setTab("home");
   };
 
   return (
@@ -34,7 +50,7 @@ function CreateWorkspace({ setTab }) {
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
       />
       <h2>Create Workspace</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={createWorkspace}>
         <div className="form">
           <label htmlFor="workspaceName">Workspace Name:</label>
           <input
@@ -48,8 +64,8 @@ function CreateWorkspace({ setTab }) {
           <input
             type="text"
             id="assignees"
-            value={assignees}
-            onChange={(e) => setAssignees(e.target.value)}
+            value={members}
+            onChange={(e) => setMembers(e.target.value)}
           />
 
           <label htmlFor="description">Description:</label>

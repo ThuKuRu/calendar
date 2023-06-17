@@ -11,6 +11,8 @@ const Workspace = ({
   setWorkspaces,
   workspacesToJoin,
   setWorkspacesToJoin,
+  id,
+  setId,
 }) => {
   const [tab, setTab] = useState("home");
 
@@ -34,7 +36,15 @@ const Workspace = ({
           setWorkspacesToJoin={setWorkspacesToJoin}
         />
       )}
-      {tab === "create" && <CreateWorkspace setTab={setTab} />}
+      {tab === "create" && (
+        <CreateWorkspace
+          setTab={setTab}
+          id={id}
+          setId={setId}
+          workspaces={workspaces}
+          setWorkspaces={setWorkspaces}
+        />
+      )}
       {tab === "specific" && (
         <WorkspaceSpecific
           setTab={setTab}

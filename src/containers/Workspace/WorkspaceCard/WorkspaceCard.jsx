@@ -76,7 +76,7 @@ const WorkspaceCard = ({
           alt=""
         />
         <div className="name">{workspace.name}</div>
-        {workspace.teamMems.length <= 4 && (
+        {workspace.teamMems !== null && workspace.teamMems.length <= 4 && (
           <div className="teamMems">
             {workspace.teamMems.map((member) => {
               return (
