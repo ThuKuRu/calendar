@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { TodolistStyle, Img, Color, Percent } from "./index.style";
 import Popup from "reactjs-popup";
 import CreateToDo from "./CreateToDo/CreateToDo";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Todolist = ({ toDoData, setToDoData, id, setId, events, setEvents }) => {
@@ -11,6 +11,8 @@ const Todolist = ({ toDoData, setToDoData, id, setId, events, setEvents }) => {
       return index !== key;
     });
     setToDoData(newToDoData);
+
+    toast.success("To-do deleted successfully");
   };
 
   const options = {
@@ -64,6 +66,8 @@ const Todolist = ({ toDoData, setToDoData, id, setId, events, setEvents }) => {
       return event;
     });
     setEvents([...events, ...newEventsList]);
+
+    toast.success("Success: Auto Fill completed successfully");
   };
 
   return (
