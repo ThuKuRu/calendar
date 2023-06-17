@@ -20,6 +20,9 @@ const NavBar = styled.div`
       padding: 0.1875em;
       cursor: pointer;
       font-variation-settings: "FILL" 0, "wght" 0, "GRAD" 0, "opsz" 48;
+      &:hover {
+        background-color: #004796;
+      }
     }
   }
 `;
