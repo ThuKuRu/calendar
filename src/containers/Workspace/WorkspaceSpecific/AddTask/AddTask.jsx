@@ -6,14 +6,7 @@ function isNotNegativeInteger(number) {
   return Number.isInteger(number) && number >= 0;
 }
 
-const AddTask = ({
-  close,
-  id,
-  setId,
-  currentWorkspace,
-  workspaces,
-  setWorkspaces,
-}) => {
+const AddTask = ({ close, id, setId, currentWorkspace, setWorkSpaces }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [time, setTime] = useState();
@@ -64,7 +57,7 @@ const AddTask = ({
       comple: "false",
     };
     setId(id + 1);
-    setWorkspaces([...workspaces, todo]);
+    setWorkSpaces([...currentWorkspace.teamMems, todo]);
     close();
   };
 

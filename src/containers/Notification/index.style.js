@@ -13,10 +13,20 @@ const color = {
 };
 
 const NotificationContainer = styled.div`
-  border: 1px solid black;
+  position: relative;
+  right: 145px;
+  top: -5px;
+  display: flex;
+  justify-content: flex-end;
+  margin-left: 10px;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
   padding: 10px;
   background-color: white;
-  margin-top: 10px;
+  margin-top: 5px;
+  border-radius: 1em;
+  box-shadow: 1px 5px 5px #aaaa;
 `;
 
 const NotiList = styled.div`
@@ -30,6 +40,7 @@ const NotiItem = styled.div`
   align-item: center;
   margin-bottom: 5px;
   padding-left: 10px;
+  border-radius: 1em;
 `;
 
 export { NotificationContainer, NotiList, NotiItem, TYPE };
