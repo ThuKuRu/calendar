@@ -189,7 +189,7 @@ const Main = ({ tab }) => {
       id: 1,
       avatar: "thu_1.png",
       name: "Thu thút",
-      teamMems: [
+      todolist: [
         {
           id: 1,
           memberName: "Thu thút",
@@ -239,12 +239,35 @@ const Main = ({ tab }) => {
           comple: "false",
         },
       ],
+
+      teamMems: [
+        {
+          id: 1,
+          memberName: "Thu thút",
+          memberAvatar: "thu_1.png",
+        },
+        {
+          id: 2,
+          memberName: "Bá Hoàng",
+          memberAvatar: "python.jpg",
+        },
+        {
+          id: 3,
+          memberName: "Tuấn Anh",
+          memberAvatar: "user6.jpg",
+        },
+        {
+          id: 4,
+          memberName: "Quang Huy",
+          memberAvatar: "user5.jpg",
+        },
+      ],
     },
     {
       id: 2,
       avatar: "database.png",
       name: "Database",
-      teamMems: [
+      todolist: [
         {
           id: 1,
           memberName: "Thu thút",
@@ -306,12 +329,39 @@ const Main = ({ tab }) => {
           comple: "false",
         },
       ],
+      teamMems: [
+        {
+          id: 1,
+          memberName: "Thu thút",
+          memberAvatar: "thu_1.png",
+        },
+        {
+          id: 2,
+          memberName: "Bá Hoàng",
+          memberAvatar: "python.jpg",
+        },
+        {
+          id: 3,
+          memberName: "Tuấn Anh",
+          memberAvatar: "user6.jpg",
+        },
+        {
+          id: 4,
+          memberName: "Quang Huy",
+          memberAvatar: "user5.jpg",
+        },
+        {
+          id: 5,
+          memberName: "Vũ Hoàng",
+          memberAvatar: "user7.jpg",
+        },
+      ],
     },
     {
       id: 3,
       avatar: "design_1.webp",
       name: "Team Design",
-      teamMems: [
+      todolist: [
         {
           id: 1,
           memberName: "Thu thút",
@@ -410,12 +460,55 @@ const Main = ({ tab }) => {
           comple: "false",
         },
       ],
+      teamMems: [
+        {
+          id: 1,
+          memberName: "Thu thút",
+          memberAvatar: "thu_1.png",
+        },
+
+        {
+          id: 2,
+          memberName: "Bá Hoàng",
+          memberAvatar: "python.jpg",
+        },
+        {
+          id: 3,
+          memberName: "Tuấn Anh",
+          memberAvatar: "user6.jpg",
+        },
+        {
+          id: 4,
+          memberName: "Quang Huy",
+          memberAvatar: "user5.jpg",
+        },
+        {
+          id: 5,
+          memberName: "Vũ Hoàng",
+          memberAvatar: "user7.jpg",
+        },
+        {
+          id: 6,
+          memberName: "Huy Hoàng",
+          memberAvatar: "user3.jpg",
+        },
+        {
+          id: 7,
+          memberName: "Hào Quang",
+          memberAvatar: "user2.jpg",
+        },
+        {
+          id: 8,
+          memberName: "Minh Quang",
+          memberAvatar: "user1.jpg",
+        },
+      ],
     },
     {
       id: 4,
       avatar: "se_2.jpg",
       name: "SE Project",
-      teamMems: [
+      todolist: [
         {
           id: 1,
           memberName: "Thu thút",
@@ -463,6 +556,28 @@ const Main = ({ tab }) => {
           percent: "70",
           level: "3",
           comple: "false",
+        },
+      ],
+      teamMems: [
+        {
+          id: 1,
+          memberName: "Thu thút",
+          memberAvatar: "thu_1.png",
+        },
+        {
+          id: 2,
+          memberName: "Bá Hoàng",
+          memberAvatar: "python.jpg",
+        },
+        {
+          id: 3,
+          memberName: "Tuấn Anh",
+          memberAvatar: "user6.jpg",
+        },
+        {
+          id: 4,
+          memberName: "Quang Huy",
+          memberAvatar: "user5.jpg",
         },
       ],
     },

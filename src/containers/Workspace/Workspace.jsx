@@ -53,6 +53,7 @@ const Workspace = ({
         <WorkspaceSpecific
           setTab={setTab}
           currentWorkspace={currentWorkspace}
+          setCurrentWorkspace={setCurrentWorkspace}
           workspaces={workspaces}
           setWorkspaces={setWorkspaces}
           toDoData={toDoData}

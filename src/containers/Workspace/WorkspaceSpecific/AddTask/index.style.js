@@ -290,4 +290,26 @@ const MenuItem = styled.option`
   background-color: ${({ value }) => levelColor[value]};
 `;
 
-export { FormTodoStyle, SelectList, MenuItem };
+const MemberMenu = styled.select`
+  text-decoration: none !important;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 18px;
+  font-family: "Roboto" !important;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+`;
+const MemberList = styled.option`
+  padding: 5px 10px;
+  text-align: center;
+  background-color: #ccc;
+  color: #000;
+  list-style: none;
+  font-size: 18px;
+  font-family: "Roboto" !important;
+`;
+
+export { FormTodoStyle, SelectList, MenuItem, MemberList, MemberMenu };

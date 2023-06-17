@@ -50,7 +50,6 @@ function CreateWorkspace({
     const newMembers = people.filter((current) => {
       return current.memberName === members;
     });
-    console.log([newMembers]);
     const newWorkspace = {
       id: id,
       avatar: fileName,
