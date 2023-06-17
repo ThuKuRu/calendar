@@ -214,6 +214,7 @@ const FormTodoStyle = styled.div`
                   align-items: center;
                   input {
                     width: 80%;
+                    margin-left: 20%;
                     border: none !important;
                     background-color: transparent;
                     &:focus {
@@ -295,12 +296,18 @@ const MemberMenu = styled.select`
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 8px 12px;
+  padding: 0.5rem 2.5rem;
   font-size: 18px;
   font-family: "Roboto" !important;
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
+  border-radius: 2.25rem;
+  border: 1px solid #000;
+  margin-left: 1.25rem;
+  &:focus {
+    outline: none;
+  }
 `;
 const MemberList = styled.option`
   padding: 5px 10px;
@@ -310,6 +317,7 @@ const MemberList = styled.option`
   list-style: none;
   font-size: 18px;
   font-family: "Roboto" !important;
+  margin-right: 4rem;
 `;
 
 export { FormTodoStyle, SelectList, MenuItem, MemberList, MemberMenu };
