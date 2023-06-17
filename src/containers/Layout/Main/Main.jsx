@@ -122,6 +122,68 @@ const Main = ({ tab }) => {
       comple: "false",
     },
   ]);
+  const [people, setPeople] = useState([
+    {
+      id: 1,
+      memberName: "Thu thút",
+      memberAvatar: "thu_1.png",
+      pjName: "Python",
+      pjImg: "python.jpg",
+      description: "Coding Homepage",
+      deadline: new Date(2023, 5, 20, 16, 30),
+      percent: "20",
+      level: "3",
+      comple: "false",
+    },
+    {
+      id: 2,
+      memberName: "Bá Hoàng",
+      memberAvatar: "python.jpg",
+      pjName: "Python",
+      pjImg: "python.jpg",
+      description: "Coding Login/Sign up",
+      deadline: new Date(2023, 5, 20, 21, 30),
+      percent: "60",
+      level: "3",
+      comple: "false",
+    },
+    {
+      id: 3,
+      memberName: "Tuấn Anh",
+      memberAvatar: "user6.jpg",
+      pjName: "Python",
+      pjImg: "python.jpg",
+      description: "Learning Design Rules",
+      deadline: new Date(2023, 5, 20, 22, 0),
+      percent: "30",
+      level: "4",
+      comple: "false",
+    },
+    {
+      id: 4,
+      memberName: "Quang Huy",
+      memberAvatar: "user5.jpg",
+      pjName: "Python",
+      pjImg: "python.jpg",
+      description: "Coding Layout",
+      deadline: new Date(2023, 5, 21, 13, 30),
+      percent: "80",
+      level: "2",
+      comple: "false",
+    },
+    {
+      id: 5,
+      memberName: "Vũ Hoàng",
+      memberAvatar: "user7.jpg",
+      pjName: "UI UX",
+      pjImg: "uiux.png",
+      description: "Design admin page",
+      deadline: new Date(2023, 5, 26, 10, 0),
+      percent: "60",
+      level: "2",
+      comple: "false",
+    },
+  ]);
   const [workspaces, setWorkspaces] = useState([
     {
       id: 1,
@@ -721,6 +783,7 @@ const Main = ({ tab }) => {
           setWorkspaces={setWorkspaces}
           workspacesToJoin={workspacesToJoin}
           setWorkspacesToJoin={setWorkspacesToJoin}
+          people={people}
         />
       )}
     </Content>
