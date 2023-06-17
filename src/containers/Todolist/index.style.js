@@ -79,12 +79,12 @@ const TodolistStyle = styled.div`
       }
       p {
         text-align: left;
-        font-size: clamp(0.9375rem, 0.9375vw, 1.125rem);
+        font-size: clamp(0.8rem, 0.93vw, 1.125rem);
         align-items: center;
         margin: 0px 0px 0px 0.3125em;
       }
       .name {
-        font-size: clamp(1.04rem, 1.04vw, 1.4rem);
+        font-size: clamp(1rem, 1.04vw, 1.4rem);
         font-weight: 600;
       }
       .avatar {
