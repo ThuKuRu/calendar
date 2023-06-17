@@ -21,6 +21,9 @@ const DashBoard = styled.div`
           font-size: clamp(0.75rem, 1.3vw, 3rem);
           margin-left: 2em;
           font-weight: 750;
+          background: -webkit-linear-gradient(#2d7fe0, #76bdff);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
         }
       }
     }
@@ -38,10 +41,11 @@ const DashBoard = styled.div`
         .taskStatus {
           font-size: clamp(0.75rem, 1.3vw, 3rem);
           background-color: #2d7fe0;
-          color: white;
-          width: 50%;
           border-radius: 12px;
           padding: 5px 10px;
+          color: white;
+          width: 50%;
+          
           text-align: center;
         }
         .upComingTaskDone {

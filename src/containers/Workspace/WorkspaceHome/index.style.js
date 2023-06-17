@@ -20,7 +20,10 @@ const Container = styled.div`
       justify-content: center;
       align-items: center;
       padding: 0.8em 0.625em;
-      border: 1px solid #000;
+      background-color: #2d7fe0;
+      border-radius: 12px;
+      padding: 5px 10px;
+      color: #fff;
       cursor: pointer;
       font-size: clamp(1rem, 1.3vw, 1.5625rem);
       .joinText {
