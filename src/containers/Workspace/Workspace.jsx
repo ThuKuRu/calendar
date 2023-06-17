@@ -13,6 +13,7 @@ const Workspace = ({
   setWorkspacesToJoin,
   id,
   setId,
+  people,
 }) => {
   const [tab, setTab] = useState("home");
 
@@ -43,6 +44,7 @@ const Workspace = ({
           setId={setId}
           workspaces={workspaces}
           setWorkspaces={setWorkspaces}
+          people={people}
         />
       )}
       {tab === "specific" && (

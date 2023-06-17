@@ -1,7 +1,14 @@
 import React, { useState, useRef } from "react";
 import { Container } from "./index.style";
 
-function CreateWorkspace({ setTab, id, setId, workspaces, setWorkspaces }) {
+function CreateWorkspace({
+  setTab,
+  id,
+  setId,
+  workspaces,
+  setWorkspaces,
+  people,
+}) {
   const [workspaceName, setWorkspaceName] = useState("");
   const [members, setMembers] = useState("");
   const [description, setDescription] = useState("");
@@ -35,6 +42,7 @@ function CreateWorkspace({ setTab, id, setId, workspaces, setWorkspaces }) {
       name: workspaceName,
       teamMems: [],
     };
+    setId(id + 1);
     setWorkspaces([...workspaces, newWorkspace]);
     setTab("home");
   };
