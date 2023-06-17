@@ -9,64 +9,72 @@ const FormReminder = ({ close, setActive, events, setEvents, id, setId }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [date, setDate] = useState(new Date());
-  const [startTime, setStartTime] = useState("");
+  const [time, setStartTime] = useState("");
   const [saveColor, setSaveColor] = useState("#978f8f");
   const [saveBgColor, setSaveBgColor] = useState("#d9d9d9");
 
   const handleRemind = () => {
-    const currentDate = new Date();
-
-    if (title === "" || description === "" || startTime === "") {
+    const now = new Date();
+    if (title === "" || description === "" || time === "" || date === " ") {
       toast.error("Error: Please fill in all required fields.");
       return;
     }
-    if (date.getTime() < currentDate.getTime) {
-      toast.error("Reminder date must be in the future");
+    const selectedDateTime = new Date(
+      date.getFullYear(),
+      date.getMonth(),
+      date.getDate(),
+      time.getHours(),
+      time.getMinutes()
+    );
+    if (
+      selectedDateTime < now ||
+      (date.getTime() === now.getTime() && time < now)
+    ) {
+      toast.error("Error: Reminder time must be in the future");
       return;
     }
 
-    if (startTime < currentDate) {
-      toast.error("Reminder time must be in the future");
-      return;
-    }
-
-    const year = date.getFullYear();
-    const month = date.getMonth();
-    const day = date.getDate();
     const event = {
       id: id,
       title: title,
-      start: new Date(
-        year,
-        month,
-        day,
-        startTime.getHours(),
-        startTime.getMinutes()
-      ),
-      end: new Date(
-        year,
-        month,
-        day,
-        startTime.getHours(),
-        startTime.getMinutes()
+      deadline: new Date(
+        date.getFullYear(),
+        date.getMonth(),
+        date.getDate(),
+        time.getHours(),
+        time.getMinutes()
       ),
       description: description,
     };
     setId(id + 1);
     setEvents([...events, event]);
-    toast.success("Reminder created successfully");
+    toast.success("Success: Reminder created successfully");
     close();
   };
 
   useEffect(() => {
-    if (startTime === "" || title === "") {
-      setSaveColor("#978f8f");
-      setSaveBgColor("#d9d9d9");
+    const now = new Date();
+    setSaveColor("#978f8f");
+    setSaveBgColor("#d9d9d9");
+    if (title === "" || description === "" || time === "" || date === " ") {
       return;
     }
-    setSaveColor("#3f80ea");
+    const selectedDateTime = new Date(
+      date.getFullYear(),
+      date.getMonth(),
+      date.getDate(),
+      time.getHours(),
+      time.getMinutes()
+    );
+    if (
+      selectedDateTime < now ||
+      (date.getTime() === now.getTime() && time < now)
+    ) {
+      return;
+    }
+    setSaveColor("#2d7fe0");
     setSaveBgColor("#fff");
-  }, [title, startTime]);
+  }, [title, time, description, date]);
 
   return (
     <FormReminderStyle>
@@ -130,7 +138,7 @@ const FormReminder = ({ close, setActive, events, setEvents, id, setId }) => {
                     timeIntervals={30}
                     timeCaption="Time"
                     dateFormat="h:mm aa"
-                    selected={startTime}
+                    selected={time}
                     placeholderText="Time"
                     onChange={(time) => {
                       setStartTime(time);

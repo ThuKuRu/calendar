@@ -8,7 +8,6 @@ const WorkspaceSpecific = ({
   setId,
   setTab,
   currentWorkspace,
-  workspaces,
   setWorkspaces,
 }) => {
   const handleCancel = () => {
@@ -185,7 +184,6 @@ const WorkspaceSpecific = ({
                     id={id}
                     setId={setId}
                     currentWorkspace={currentWorkspace.teamMems}
-                    workspaces={workspaces}
                     setWorkspaces={setWorkspaces}
                   />
                 </div>

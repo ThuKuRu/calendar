@@ -30,8 +30,7 @@ const FormTodo = ({ close, setActive, id, setId, toDoData, setToDoData }) => {
   };
 
   const handleTodo = () => {
-    const currentTime = new Date();
-
+    const now = new Date();
     if (
       title === "" ||
       description === "" ||
@@ -44,8 +43,18 @@ const FormTodo = ({ close, setActive, id, setId, toDoData, setToDoData }) => {
       handleToastError("Please fill in all required fields.");
       return;
     }
+    const selectedDateTime = new Date(
+      date.getFullYear(),
+      date.getMonth(),
+      date.getDate(),
+      time.getHours(),
+      time.getMinutes()
+    );
 
-    if (time < currentTime) {
+    if (
+      selectedDateTime < now ||
+      (date.getTime() === now.getTime() && time < now)
+    ) {
       handleToastError("Deadline must be in the future.");
       return;
     }
@@ -100,21 +109,47 @@ const FormTodo = ({ close, setActive, id, setId, toDoData, setToDoData }) => {
   };
 
   useEffect(() => {
+    const now = new Date();
+    setSaveColor("#978f8f");
+    setSaveBgColor("#d9d9d9");
     if (
-      !isNotNegativeInteger(day) ||
-      !isNotNegativeInteger(hour) ||
-      !isNotNegativeInteger(minute) ||
-      day < 0 ||
-      hour < 0 ||
-      minute < 0 ||
       title === "" ||
-      description === ""
+      description === "" ||
+      time === "" ||
+      date === "" ||
+      day === "" ||
+      hour === "" ||
+      minute === ""
     ) {
-      setSaveColor("#978f8f");
-      setSaveBgColor("#d9d9d9");
       return;
     }
-    setSaveColor("#3f80ea");
+    const selectedDateTime = new Date(
+      date.getFullYear(),
+      date.getMonth(),
+      date.getDate(),
+      time.getHours(),
+      time.getMinutes()
+    );
+
+    if (
+      selectedDateTime < now ||
+      (date.getTime() === now.getTime() && time < now)
+    ) {
+      return;
+    }
+
+    if (
+      isNotNegativeInteger(day) ||
+      isNotNegativeInteger(hour) ||
+      isNotNegativeInteger(minute)
+    ) {
+      return;
+    }
+
+    if (day < 0 || hour < 0 || minute < 0) {
+      return;
+    }
+    setSaveColor("#2d7fe0");
     setSaveBgColor("#fff");
   }, [title, description, time, day, hour, minute, date]);
 

@@ -38,6 +38,9 @@ const SelectList = styled.select`
   font-size: 1.25em;
   font-weight: 700;
   border-top: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
   border-right: none;
   border-left: none;
   border-bottom: none;
@@ -59,6 +62,7 @@ const Avatar = styled.img`
   border-radius: 6px;
   height: 30px;
   text-aligns: center;
+  cursor: pointer;
 `;
 
 export { NavBar, Button, SelectList, MenuItem, Avatar };
