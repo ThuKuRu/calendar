@@ -214,6 +214,7 @@ const FormTodoStyle = styled.div`
                   align-items: center;
                   input {
                     width: 80%;
+                    margin-left: 20%;
                     border: none !important;
                     background-color: transparent;
                     &:focus {
@@ -229,7 +230,7 @@ const FormTodoStyle = styled.div`
           width: 100%;
           display: flex;
           justify-content: flex-end;
-          margin: 0.625em 0;        
+          margin: 0.625em 0;
           .Cancel {
             padding: 0.5em 1em;
             font-size: clamp(1.04rem, 1.04vw, 1.4rem);
