@@ -67,7 +67,7 @@ const Todolist = ({ toDoData, setToDoData, id, setId, events, setEvents }) => {
     });
     setEvents([...events, ...newEventsList]);
 
-    toast.success("Success: Auto Fill completed successfully");
+    toast.success("Calendar has been successfully updated");
   };
 
   return (

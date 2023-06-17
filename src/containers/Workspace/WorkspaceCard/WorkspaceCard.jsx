@@ -114,7 +114,7 @@ const WorkspaceCard = ({
         style={customStyles}
       >
         <h2>Leave Workspace</h2>
-        <p>Are you sure you want to leave this workspace?</p>
+        <p>Are you sure to leave this workspace?</p>
         <button on onClick={confirmLeave} style={{ marginRight: "10px" }}>
           Yes
         </button>
