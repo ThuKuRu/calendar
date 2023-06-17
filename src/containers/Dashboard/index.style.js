@@ -25,7 +25,7 @@ const DashBoard = styled.div`
       }
     }
     .upComingTask {
-      background-color: #76bdff;
+      background-image: linear-gradient(#76bdff,#fff);
       border-radius: 2.25rem;
       border: 1px solid #b7b7b7;
       box-shadow: 1px 5px 5px #aaaa;
@@ -124,7 +124,7 @@ const DashBoard = styled.div`
       gap: 1em 2em;
       
       .upNextComingTask {
-        background-color: #76BDFF;
+        background-image: linear-gradient(#76bdff,#fff0);
         border-radius: 36px;
         border: 1px solid #b7b7b7;
         box-shadow: 1px 5px 5px #aaaa;
