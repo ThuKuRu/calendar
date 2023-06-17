@@ -39,17 +39,46 @@ const FormEvent = ({ close, setActive, events, setEvents, id, setId }) => {
   };
 
   useEffect(() => {
-    if (startTime === "" || endTime === "" || title === "") {
-      setSaveColor("#978f8f");
-      setSaveBgColor("#d9d9d9");
+    const now = new Date();
+    setSaveColor("#978f8f");
+    setSaveBgColor("#d9d9d9");
+    if (
+      title === "" ||
+      description === "" ||
+      startTime === "" ||
+      date === "" ||
+      endTime === ""
+    ) {
       return;
     }
-    setSaveColor("#3f80ea");
+    const selectedDateTime = new Date(
+      date.getFullYear(),
+      date.getMonth(),
+      date.getDate(),
+      startTime.getHours(),
+      startTime.getMinutes()
+    );
+    if (
+      selectedDateTime < now ||
+      (date.getTime() === now.getTime() && startTime < now)
+    ) {
+      return;
+    }
+    if (startTime > endTime) {
+      return;
+    }
+    setSaveColor("#2d7fe0");
     setSaveBgColor("#fff");
-  }, [title, startTime, endTime]);
+  }, [title, startTime, endTime, description, date]);
 
   const handleEvent = () => {
-    if (startTime === "" || endTime === "" || title === "") {
+    if (
+      startTime === "" ||
+      endTime === "" ||
+      title === "" ||
+      description === "" ||
+      title === ""
+    ) {
       toast.error("Error: Please fill in all required fields.");
       return;
     }
