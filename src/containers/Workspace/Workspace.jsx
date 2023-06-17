@@ -14,6 +14,8 @@ const Workspace = ({
   id,
   setId,
   people,
+  toDoData,
+  setToDoData,
 }) => {
   const [tab, setTab] = useState("home");
 
@@ -53,6 +55,10 @@ const Workspace = ({
           currentWorkspace={currentWorkspace}
           workspaces={workspaces}
           setWorkspaces={setWorkspaces}
+          toDoData={toDoData}
+          setToDoData={setToDoData}
+          id={id}
+          setId={setId}
         />
       )}
       {tab === "addUser" && <AddUser setTab={setTab} />}

@@ -10,6 +10,8 @@ const WorkspaceSpecific = ({
   currentWorkspace,
   workspaces,
   setWorkspaces,
+  toDoData,
+  setToDoData,
 }) => {
   const handleCancel = () => {
     setTab("home");
@@ -191,8 +193,8 @@ const WorkspaceSpecific = ({
                     close={close}
                     id={id}
                     setId={setId}
-                    currentWorkspace={currentWorkspace.teamMems}
-                    setWorkspaces={setWorkspaces}
+                    toDoData={toDoData}
+                    setToDoData={setToDoData}
                   />
                 </div>
               )}
