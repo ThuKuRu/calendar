@@ -221,15 +221,13 @@ const WorkspaceSpecific = ({
                 );
               })}
           </div>
-          <div className="add-member">
-            <span
-              class="material-symbols-outlined"
-              onClick={() => {
-                setTab("addUser");
-              }}
-            >
-              add_circle
-            </span>
+          <div
+            className="add-member"
+            onClick={() => {
+              setTab("addUser");
+            }}
+          >
+            <span class="material-symbols-outlined">add_circle</span>
             <p>Add more user</p>
           </div>
         </div>
