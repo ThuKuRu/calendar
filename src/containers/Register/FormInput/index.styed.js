@@ -11,6 +11,9 @@ const FormInputStyle = styled.div`
     outline: none;
     font-size: 16px;
     font-weight: 400;
+    border: 2px solid #76bdff;
+    border-radius: 2px;
+    box-sizing: border-box;
 
     &:focus {
       border-bottom-width: 2px;

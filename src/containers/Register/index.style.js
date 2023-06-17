@@ -6,7 +6,7 @@ const RegisterStyle = styled.div`
   justify-content: center;
   height: 100vh;
   width: 100%;
-  background-color: #4070f4;
+  background-color: #fff;
   font-family: "Roboto";
 
   form {
@@ -17,23 +17,26 @@ const RegisterStyle = styled.div`
     border-radius: 5px;
 
     h2 {
-      font-size: 20px;
-      font-weight: bold;
+      font-size: clamp(0.75rem, 2.6vw, 3rem);
+      font-weight: 900;
       color: #232836;
       text-align: center;
+      background: -webkit-linear-gradient(#2d7fe0, #76bdff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     button {
       height: 50px;
       width: 100%;
-      background-color: #0171d3;
+      background-color: #2d7fe0;
       color: white;
       padding: 10px;
       border: 10px;
       border-radius: 5px;
       font-weight: 400;
       font-size: 18px;
-      margin: 15px 0 10px 0;
+      margin: 12px 0 10px 0;
       transition: 0.5s;
       cursor: pointer;
 
@@ -44,13 +47,16 @@ const RegisterStyle = styled.div`
 
     .formLink {
       text-align: center;
+      .formSignup {
+        color: #76bdff;
+      }
     }
 
     .line {
       position: relative;
       height: 1px;
       width: 100%;
-      margin: 20px 0px;
+      margin: 15px 0px;
       background-color: #d4d4d4;
 
       &::before {
@@ -70,16 +76,17 @@ const RegisterStyle = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: #4267b2;
-      color: white;
+      background-color: #fff;
+      color: #7f869b;
+      border: 1px solid #d4d4d4;
       height: 50px;
       width: 100%;
-      margin-top: 20px;
+      margin-top: 15px;
       border-radius: 5px;
       transition: all 0.3s ease;
 
       &:hover {
-        background-color: #1849aa;
+        background-color: rgba(0, 0, 0, 0.1);
       }
     }
 
@@ -99,12 +106,11 @@ const RegisterStyle = styled.div`
     }
 
     .facebook.google {
-      background-color: #222;
-      color: white;
-      border: 1px solid #cacaca;
-
+      background-color: #fff;
+      color: #7f869b;
+      border: 1px solid #d4d4d4;
       &:hover {
-        background-color: #000;
+        background-color: rgba(0, 0, 0, 0.1);
       }
     }
   }

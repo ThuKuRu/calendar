@@ -6,7 +6,8 @@ const LoginStyle = styled.div`
   justify-content: center;
   height: 100vh;
   width: 100%;
-  background-color: #4070f4;
+  // background-color: #4070f4;
+  background-color: #fff;
   font-family: "Roboto";
   form {
     background-color: white;
@@ -16,15 +17,19 @@ const LoginStyle = styled.div`
     border-radius: 5px;
 
     h2 {
-      font-size: 20px;
-      font-weight: bold;
+      font-size: clamp(0.75rem, 2.6vw, 3rem);
+      font-weight: 900;
       color: #232836;
       text-align: center;
+      background: -webkit-linear-gradient(#2d7fe0, #76bdff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     .formInput {
       display: flex;
       flex-direction: column;
       width: 100%;
+
       input {
         padding: 10px;
         margin: 7px 0px;
@@ -32,6 +37,9 @@ const LoginStyle = styled.div`
         outline: none;
         font-size: 16px;
         font-weight: 400;
+        border: 2px solid #76bdff;
+        border-radius: 2px;
+        box-sizing: border-box;
 
         &:focus {
           border-bottom-width: 2px;
@@ -67,7 +75,7 @@ const LoginStyle = styled.div`
     button {
       height: 50px;
       width: 100%;
-      background-color: #0171d3;
+      background-color: #2d7fe0;
       color: white;
       padding: 10px;
       border: 10px;
@@ -79,12 +87,15 @@ const LoginStyle = styled.div`
       cursor: pointer;
 
       &:hover {
-        background-color: #00527a;
+        background-color: #004796;
       }
     }
 
     .formLink {
       text-align: center;
+      .formSignup {
+        color: #76bdff;
+      }
     }
 
     .line {
@@ -111,8 +122,9 @@ const LoginStyle = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: #4267b2;
-      color: white;
+      background-color: #fff;
+      color: #7f869b;
+      border: 1px solid #d4d4d4;
       height: 50px;
       width: 100%;
       margin-top: 20px;
@@ -120,7 +132,7 @@ const LoginStyle = styled.div`
       transition: all 0.3s ease;
 
       &:hover {
-        background-color: #1849aa;
+        background-color: rgba(0, 0, 0, 0.1);
       }
     }
 
@@ -140,12 +152,11 @@ const LoginStyle = styled.div`
     }
 
     .facebook.google {
-      background-color: #222;
-      color: white;
-      border: 1px solid #cacaca;
-
+      background-color: #fff;
+      color: #7f869b;
+      border: 1px solid #d4d4d4;
       &:hover {
-        background-color: #000;
+        background-color: rgba(0, 0, 0, 0.1);
       }
     }
   }
