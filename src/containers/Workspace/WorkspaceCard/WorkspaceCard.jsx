@@ -14,6 +14,7 @@ const customStyles = {
     transform: "translate(-50%, -50%)",
     textAlign: "center",
     fontFamily: "Roboto",
+    borderRadius: "14px",
   },
 };
 
@@ -45,7 +46,8 @@ const WorkspaceCard = ({
   const cancelLeave = () => {
     setShowConfirmation(false);
   };
-
+  const [isYesHovered, setIsYesHovered] = useState(false);
+  const [isNoHovered, setIsNoHovered] = useState(false);
   return (
     <Container>
       <link
@@ -113,15 +115,41 @@ const WorkspaceCard = ({
         contentLabel="Leave Confirmation"
         style={customStyles}
       >
-        <h2>Leave Workspace</h2>
-        <p>Are you sure you want to leave this workspace?</p>
-        <button on onClick={confirmLeave} style={{ marginRight: "10px" }}>
+        <h2 style={{ color: "#2d7fe0", fontSize: "24px" }}>Leave Workspace</h2>
+        <p style={{ fontWeight: "regular" }}>
+          Are you sure you want to leave this workspace?
+        </p>
+        <button
+          onClick={confirmLeave}
+          style={{
+            border: "none",
+            height: "22px",
+            marginRight: "10px",
+            borderRadius: "10px",
+            backgroundColor: isYesHovered ? "#1849aa" : "#2d7fe0",
+            color: isYesHovered ? "white" : "white",
+          }}
+          onMouseEnter={() => setIsYesHovered(true)}
+          onMouseLeave={() => setIsYesHovered(false)}
+        >
           Yes
         </button>
-        <button onClick={cancelLeave}>No</button>
+        <button
+          onClick={cancelLeave}
+          style={{
+            border: "none",
+            height: "22px",
+            borderRadius: "10px",
+            backgroundColor: isNoHovered ? "white" : "#f5f5f5",
+            color: isNoHovered ? "#868686" : "#868686",
+          }}
+          onMouseEnter={() => setIsNoHovered(true)}
+          onMouseLeave={() => setIsNoHovered(false)}
+        >
+          No
+        </button>
       </Modal>
     </Container>
   );
 };
-
 export default WorkspaceCard;
