@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { Container } from "./index.style";
+import { Container, SelectList, MenuItem } from "./index.style";
 
 function CreateWorkspace({
   setTab,
@@ -47,6 +47,12 @@ function CreateWorkspace({
     setTab("home");
   };
 
+  const [value, setValue] = useState("1");
+
+  const handleChangeSelect = (event) => {
+    setValue(event.target.value);
+  };
+
   return (
     <Container>
       <link
@@ -69,12 +75,17 @@ function CreateWorkspace({
           />
 
           <label htmlFor="assignees">Members:</label>
-          <input
+          {/* <input
             type="text"
             id="assignees"
             value={members}
             onChange={(e) => setMembers(e.target.value)}
-          />
+          /> */}
+          <SelectList value={value} onChange={handleChangeSelect}>
+            {people.map((member) => (
+              <MenuItem key={member.id}>{member.memberName}</MenuItem>
+            ))}
+          </SelectList>
 
           <label htmlFor="description">Description:</label>
           <textarea
