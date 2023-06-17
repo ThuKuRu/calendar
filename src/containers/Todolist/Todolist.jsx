@@ -163,7 +163,7 @@ const Todolist = ({ toDoData, setToDoData, id, setId, events, setEvents }) => {
             </div>
             <div className="col ">
               <span
-                class="material-symbols-outlined delete"
+                className="material-symbols-outlined delete "
                 onClick={() => {
                   onClickDelete(index);
                 }}
