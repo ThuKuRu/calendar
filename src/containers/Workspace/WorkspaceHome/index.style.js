@@ -21,17 +21,27 @@ const Container = styled.div`
       align-items: center;
       padding: 0.8em 0.625em;
       background-color: #2d7fe0;
-      border-radius: 12px;
-      padding: 5px 10px;
+      border-radius: 0.75em;
+      padding: 0.3125em 0.625em;
       color: #fff;
       cursor: pointer;
       font-size: clamp(1rem, 1.3vw, 1.5625rem);
       .joinText {
         font-family: "Roboto";
-        font-weight: semibold;
+        font-weight: semi-bold;
       }
       span {
         margin-right: 0.625em;
+      }
+      &:focus {
+        box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+        transform: translateY(-0.25em);
+      }
+      &:hover {
+        box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+        border-radius: 0.75em;
+        transform: translateY(-0.25em);
+        background-color: #004796;
       }
     }
   }
