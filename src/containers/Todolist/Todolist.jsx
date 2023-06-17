@@ -173,7 +173,7 @@ const Todolist = ({ toDoData, setToDoData, id, setId, events, setEvents }) => {
       </div>
       <div className="footer">
         <div className="createDiv">
-          <div className="createButton">
+          <div className="fillButton">
             <p className="fill" onClick={autoFill}>
               Auto Fill
             </p>

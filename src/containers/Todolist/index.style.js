@@ -144,12 +144,16 @@ const TodolistStyle = styled.div`
       margin-left: 20px;
       margin-top: 10px;
       .createButton {
+        margin-top: 1em;
+        padding: 0 1em;
         display: flex;
         justify-content: center;
         align-items: center;
+        background-color: #2d7fe0;
+        border-radius: 14px;
         color: #ffffff;
         font-family: "Roboto" !important;
-        font-size: 20px;
+        font-size: clamp(0.8rem, 1vw, 1.25rem);
         cursor: pointer;
         .create {
           background-color: #2d7fe0;
