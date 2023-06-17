@@ -135,24 +135,49 @@ const TodolistStyle = styled.div`
       margin-left: 20px;
       margin-top: 10px;
       .createButton {
+        margin-top: 1em;
+        padding: 0 1em;
         display: flex;
         justify-content: center;
         align-items: center;
+        background-color: #2d7fe0;
+        border-radius: 14px;
         color: #ffffff;
         font-family: "Roboto" !important;
-        font-size: 20px;
+        font-size: clamp(0.8rem, 1vw, 1.25rem);
         cursor: pointer;
-        font-weight: 600;
-        .create {
-          background-color: #2d7fe0;
-          padding: 10px 20px;
-          border-radius: 14px;
+        &:focus {
+          box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+          transform: translateY(-0.25em);
         }
-        .fill {
-          background-color: #d9d9d9;
-          padding: 10px 20px;
-          border-radius: 14px;
-          color: #000;
+        &:hover {
+          box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+          border-radius: 0.75em;
+          transform: translateY(-0.25em);
+          background-color: #004796;
+        }
+      }
+      .fillButton {
+        margin-top: 1em;
+        padding: 0 1em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #d9d9d9;
+        border-radius: 14px;
+        color: #000;
+        font-family: "Roboto" !important;
+        font-size: clamp(0.8rem, 1vw, 1.25rem);
+        cursor: pointer;
+        &:focus {
+          box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+          transform: translateY(-0.25em);
+        }
+        &:hover {
+          box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+          border-radius: 0.75em;
+          transform: translateY(-0.25em);
+          background-color: #797979;
         }
       }
     }

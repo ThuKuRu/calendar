@@ -5,7 +5,7 @@ import JoinWorkspace from "./JoinWorkspace/JoinWorkspace";
 import CreateWorkspace from "./CreateWorkspace/CreateWorkspace";
 import WorkspaceSpecific from "./WorkspaceSpecific/WorkspaceSpecific";
 
-const Workspace = ({workspaces, setWorkspaces}) => {
+const Workspace = ({ workspaces, setWorkspaces }) => {
   const [tab, setTab] = useState("home");
 
   const [currentWorkspace, setCurrentWorkspace] = useState({});
