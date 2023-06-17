@@ -29,7 +29,7 @@ const WorkspaceHome = ({
           >
             arrow_back_ios
           </span>
-          <span>Join workspace</span>
+          <div>Join workspace</div>
         </div>
         <div className="searchBar">
           <input className="searchText" placeholder="Search for a workspace" />
