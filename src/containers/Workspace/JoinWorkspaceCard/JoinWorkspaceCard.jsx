@@ -1,5 +1,7 @@
 import React from "react";
 import { Container } from "./index.style";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const WorkspaceCard = ({
   workspace,
@@ -14,6 +16,7 @@ const WorkspaceCard = ({
       return current.id !== workspace.id;
     });
     setWorkspacesToJoin([...newWorkspaces]);
+    toast.success("Workspace joined successfully!");
   };
 
   return (

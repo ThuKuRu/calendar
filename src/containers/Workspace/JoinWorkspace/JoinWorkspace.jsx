@@ -1,6 +1,7 @@
 import React from "react";
 import { Container } from "./index.style";
 import JoinWorkspaceCard from "../JoinWorkspaceCard/JoinWorkspaceCard";
+import { ToastContainer } from "react-toastify";
 
 const WorkspaceHome = ({
   workspaces,
@@ -11,6 +12,7 @@ const WorkspaceHome = ({
 }) => {
   return (
     <Container>
+      <ToastContainer />
       <link
         href="https://fonts.googleapis.com/css?family=Roboto"
         rel="stylesheet"
