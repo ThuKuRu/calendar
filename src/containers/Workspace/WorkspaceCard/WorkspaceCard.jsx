@@ -1,7 +1,14 @@
 import React from "react";
 import { Container } from "./index.style";
 
-const WorkspaceCard = ({ workspace, workspaces, setWorkspaces, id, setId }) => {
+const WorkspaceCard = ({
+  workspace,
+  workspaces,
+  setWorkspaces,
+  setTab,
+  setCurrentWorkspace,
+}) => {
+  console.log(setCurrentWorkspace);
   const onClickDelete = (key) => {
     const newToDoData = workspaces.filter((current) => {
       return current.id !== key;
@@ -22,7 +29,14 @@ const WorkspaceCard = ({ workspace, workspaces, setWorkspaces, id, setId }) => {
           </span>
         </div>
       </div>
-      <div className="content">
+      <div
+        className="content"
+        onClick={() => {
+          setCurrentWorkspace(workspace);
+          console.log(workspace);
+          setTab("specific");
+        }}
+      >
         <img
           className="avatar"
           src={require("../../../img/" + workspace.avatar)}
@@ -31,11 +45,11 @@ const WorkspaceCard = ({ workspace, workspaces, setWorkspaces, id, setId }) => {
         <div className="name">{workspace.name}</div>
         {workspace.teamMems.length <= 4 && (
           <div className="teamMems">
-            {workspace.teamMems.map(() => {
+            {workspace.teamMems.map((member) => {
               return (
                 <img
                   className="avatar"
-                  src={require("../../../img/" + workspace.avatar)}
+                  src={require("../../../img/" + member.memberAvatar)}
                   alt=""
                 />
               );
@@ -44,11 +58,11 @@ const WorkspaceCard = ({ workspace, workspaces, setWorkspaces, id, setId }) => {
         )}
         {workspace.teamMems.length > 4 && (
           <div className="teamMems">
-            {workspace.teamMems.slice(0, 3).map(() => {
+            {workspace.teamMems.slice(0, 3).map((member) => {
               return (
                 <img
                   className="avatar"
-                  src={require("../../../img/" + workspace.avatar)}
+                  src={require("../../../img/" + member.memberAvatar)}
                   alt=""
                 />
               );
