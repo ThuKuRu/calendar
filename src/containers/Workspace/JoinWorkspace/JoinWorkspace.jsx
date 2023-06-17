@@ -2,7 +2,13 @@ import React from "react";
 import { Container } from "./index.style";
 import JoinWorkspaceCard from "../JoinWorkspaceCard/JoinWorkspaceCard";
 
-const WorkspaceHome = ({ workspaces, setTab }) => {
+const WorkspaceHome = ({
+  workspaces,
+  setTab,
+  setWorkspaces,
+  workspacesToJoin,
+  setWorkspacesToJoin,
+}) => {
   return (
     <Container>
       <link
@@ -23,7 +29,7 @@ const WorkspaceHome = ({ workspaces, setTab }) => {
           >
             arrow_back_ios
           </span>
-          <span>Join workspace</span>
+          <div>Join workspace</div>
         </div>
         <div className="searchBar">
           <input className="searchText" placeholder="Search for a workspace" />
@@ -31,8 +37,14 @@ const WorkspaceHome = ({ workspaces, setTab }) => {
         </div>
       </div>
       <div className="main">
-        {workspaces.map((workspace) => (
-          <JoinWorkspaceCard workspace={workspace} />
+        {workspacesToJoin.map((workspace) => (
+          <JoinWorkspaceCard
+            workspace={workspace}
+            workspaces={workspaces}
+            setWorkspaces={setWorkspaces}
+            workspacesToJoin={workspacesToJoin}
+            setWorkspacesToJoin={setWorkspacesToJoin}
+          />
         ))}
       </div>
     </Container>

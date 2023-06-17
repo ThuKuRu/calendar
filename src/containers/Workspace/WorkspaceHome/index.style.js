@@ -51,6 +51,15 @@ const Container = styled.div`
       }
       span {
         font-size: 1.875em;
+        &:focus {
+          transform: translateY(-0.25em);
+          color: #2d7fe0;
+        }
+        &:hover {
+          border-radius: 0.75em;
+          transform: translateY(-0.25em);
+          color: #2d7fe0;
+        }
       }
       .createText {
         font-size: clamp(1rem, 1.3vw, 1.5625rem);

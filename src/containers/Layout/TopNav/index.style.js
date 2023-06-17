@@ -5,7 +5,7 @@ const NavBar = styled.div`
   justify-content: flex-end;
   align-items: center;
   width: 100%;
-  border-bottom: 0.0625rem solid;
+  border-bottom: 0.2rem solid #e5e4e2;
   padding: 0.3125em 0em;
   min-height: 2em;
   .header {

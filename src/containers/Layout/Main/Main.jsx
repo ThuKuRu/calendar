@@ -406,6 +406,8 @@ const Main = ({ tab }) => {
     },
   ]);
 
+  const [workspacesToJoin, setWorkspacesToJoin] = useState([...workspaces]);
+
   return (
     <Content>
       {tab === "dashboard" && <Dashboard />}
@@ -430,7 +432,10 @@ const Main = ({ tab }) => {
         />
       )}
       {tab === "workspace" && (
-        <Workspace workspaces={workspaces} setWorkspaces={setWorkspaces} />
+        <Workspace workspaces={workspaces} 
+        setWorkspaces={setWorkspaces} 
+        workspacesToJoin={workspacesToJoin}
+        setWorkspacesToJoin={setWorkspacesToJoin}/>
       )}
     </Content>
   );

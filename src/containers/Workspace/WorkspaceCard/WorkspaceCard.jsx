@@ -67,7 +67,6 @@ const WorkspaceCard = ({
         className="content"
         onClick={() => {
           setCurrentWorkspace(workspace);
-          console.log(workspace);
           setTab("specific");
         }}
       >

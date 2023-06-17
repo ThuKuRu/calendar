@@ -19,6 +19,15 @@ const Container = styled.div`
       span {
         margin-right: 0.625em;
         cursor: pointer;
+        &:focus {
+          transform: translateY(-0.25em);
+          color: #2d7fe0;
+        }
+        &:hover {
+          border-radius: 0.75em;
+          transform: translateY(-0.25em);
+          color: #2d7fe0;
+        }
       }
     }
     .searchBar {

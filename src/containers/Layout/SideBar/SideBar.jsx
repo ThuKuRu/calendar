@@ -1,7 +1,7 @@
 import React from "react";
 import { Sidebar } from "./index.style";
 import Logo from "../../../img/logo.png";
-
+import Logo2 from "../../../img/logo2.png";
 const SideBar = ({ tab, setTab }) => {
   return (
     <Sidebar>
@@ -14,8 +14,8 @@ const SideBar = ({ tab, setTab }) => {
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
       />
       <div className="headLogo">
-        <img src={Logo} className="logo" alt="" />
-        <p>arenda-</p>
+        <img src={Logo2} className="logo" alt="" />
+        <p className="textLogo">arenda-</p>
       </div>
       <div className="navbar">
         <div className={tab === "dashboard" ? "container active" : "container"}>

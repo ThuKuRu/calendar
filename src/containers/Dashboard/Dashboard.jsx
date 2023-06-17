@@ -5,6 +5,10 @@ import t1img from "../../img/t1img.png";
 import user2 from "../../img/user2.jpg";
 import user3 from "../../img/user3.jpg";
 import AvatarImg from "../../img/thu_1.png";
+import figma from "../../img/figma.png";
+import database from "../../img/database.png";
+import python from "../../img/python.jpg";
+import t2img from "../../img/t2.jpg";
 import {
   AreaChart,
   Area,
@@ -62,12 +66,16 @@ const Dashboard = () => {
         <div className="upComingTask">
           <div className="upComingTask-top">
             <div className="taskStatus">Upcoming Task</div>
-            <div className="upComingTaskDate">Dec 7 2PM</div>
+            <div className="upComingTaskDone">
+              <span class="material-symbols-outlined">done_outline</span>
+            </div>
           </div>
+
           <div className="upComingTaskNoti">
             <div className="upComingTaskNotify">
               <img src={t1img} />
-              UIUX DESIGN
+              UIUX PRESENT
+              <div className="upComingTaskDate">Jun 20 2PM</div>
             </div>
             <div className="upComingTaskNotifyDes">
               Time to practice UI/UX. Hurry up or you will be punish~~~
@@ -85,41 +93,53 @@ const Dashboard = () => {
           <div className="upNextComingTask">
             <div className="upComingTask-top">
               <div className="taskStatus">Upcoming Task</div>
-              <div className="upComingTaskDate">Dec 7 2PM</div>
+              <div className="upComingTaskDone">
+                <span class="material-symbols-outlined">done_outline</span>
+              </div>
             </div>
             <div className="upComingTaskNotify">
-              <img src={t1img} />
-              UIUX DESIGN
+              <img src={database} />
+              DB MONGO
+              <div className="upComingTaskDate">JUN 20 5PM</div>
             </div>
           </div>
           <div className="upNextComingTask">
             <div className="upComingTask-top">
               <div className="taskStatus">Upcoming Task</div>
-              <div className="upComingTaskDate">Dec 7 2PM</div>
+              <div className="upComingTaskDone">
+                <span class="material-symbols-outlined">done_outline</span>
+              </div>
             </div>
             <div className="upComingTaskNotify">
-              <img src={t1img} />
-              UIUX DESIGN
+              <img src={python} />
+              PYTHON STT
+              <div className="upComingTaskDate">JUN 20 7PM</div>
             </div>
           </div>
           <div className="upNextComingTask">
             <div className="upComingTask-top">
               <div className="taskStatus">Upcoming Task</div>
-              <div className="upComingTaskDate">Dec 7 2PM</div>
+              <div className="upComingTaskDone">
+                <span class="material-symbols-outlined">done_outline</span>
+              </div>
             </div>
             <div className="upComingTaskNotify">
-              <img src={t1img} />
-              UIUX DESIGN
+              <img src={t2img} />
+              T2 MATCH
+              <div className="upComingTaskDate">Jun 20 10PM</div>
             </div>
           </div>
           <div className="upNextComingTask">
             <div className="upComingTask-top">
               <div className="taskStatus">Upcoming Task</div>
-              <div className="upComingTaskDate">Dec 7 2PM</div>
+              <div className="upComingTaskDone">
+                <span class="material-symbols-outlined">done_outline</span>
+              </div>
             </div>
             <div className="upComingTaskNotify">
-              <img src={t1img} />
-              UIUX DESIGN
+              <img src={figma} />
+              FIGMA COURSE
+              <div className="upComingTaskDate">Jun 21 9AM</div>
             </div>
           </div>
         </div>

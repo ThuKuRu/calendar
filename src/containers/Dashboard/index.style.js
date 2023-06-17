@@ -25,7 +25,7 @@ const DashBoard = styled.div`
       }
     }
     .upComingTask {
-      background-color: #76bdff;
+      background-image: linear-gradient(#76bdff,#fff);
       border-radius: 2.25rem;
       border: 1px solid #b7b7b7;
       box-shadow: 1px 5px 5px #aaaa;
@@ -44,24 +44,41 @@ const DashBoard = styled.div`
           padding: 5px 10px;
           text-align: center;
         }
-        .upComingTaskDate {
+        .upComingTaskDone {
+          display: flex;
+          font-size: clamp(0.75rem, 1.3vw, 3rem);
+          background-color: #2d7fe0;
+          color: white;
+          width: 15%;
+          border-radius: 12px;
+          justify-content: center;
           align-items: center;
+          margin-right: 5%;
         }
+        
       }
+     
       .upComingTaskNoti {
         margin-left: 0.5em;
-        .upComingTaskNotify {
-          display: flex;
-          align-items: center;
-          width: 60%;
-          margin-top: 2em;
-          font-size: clamp(0.75rem, 1.3vw, 3rem);
-          img {
-            border-radius: 50%;
-            width: 2em;
-            margin-right: 3%;
+        margin-top: 2em;
+        .upComingTaskNotify{
+            display: flex;
+            align-items: center;
+            width: 100%;
+            margin-top: 1em;
             font-size: clamp(0.75rem, 1.3vw, 3rem);
-          }
+            img {
+              border-radius: 50%;
+              width: 2em;
+              margin-right: 3%;
+              font-size: clamp(0.75rem, 1.3vw, 3rem);
+            }
+            .upComingTaskDate {
+              margin-left: 20%;
+              weight: bold;
+            }
+          
+         
         }
         .upComingTaskNotifyDes {
           width: 60%;
@@ -73,7 +90,7 @@ const DashBoard = styled.div`
       .upComingTaskMember {
         display: flex;
         flex-direction: row;
-        margin: 2em 0 1.6em 0.5em;
+        margin: 2.5em 0 1.6em 0.5em;
         font-size: clamp(0.75rem, 1.3vw, 3rem);
         img {
           border-radius: 50%;
@@ -97,6 +114,8 @@ const DashBoard = styled.div`
           // font-size: clamp(0.75rem, 1rem, 3rem);
           margin-left: -5%;
         }
+       
+
       }
     }
     .bottomRightDashContainer {
@@ -105,7 +124,7 @@ const DashBoard = styled.div`
       gap: 1em 2em;
       
       .upNextComingTask {
-        background-color: #76BDFF;
+        background-image: linear-gradient(#76bdff,#fff0);
         border-radius: 36px;
         border: 1px solid #b7b7b7;
         box-shadow: 1px 5px 5px #aaaa;
@@ -125,20 +144,34 @@ const DashBoard = styled.div`
             padding: 5px 10px;
             text-align: center;
           }
-          .upComingTaskDate {
+          .upComingTaskDone {
+            display: flex;
+            font-size: clamp(0.75rem, 1.3vw, 3rem);
+            background-color: #2d7fe0;
+            color: white;
+            width: 15%;
+            border-radius: 12px;
+            justify-content: center;
             align-items: center;
+            margin-right: 5%;
           }
+         
         }
         .upComingTaskNotify {
           display: flex;
           align-items: center;
-          width: 60%;
+          width: 100%;
           // font-size: clamp(0.75rem, 1rem, 3rem);
           margin-left: 0.5rem;
+          margin-top: 1.25rem;
           img {
             border-radius: 50%;
             width: 2em;
             margin-right: 3%;
+          }
+          .upComingTaskDate {
+            margin-left: 5%;
+            weight: bold;
           }
         
       }
