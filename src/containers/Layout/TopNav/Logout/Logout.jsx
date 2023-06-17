@@ -1,9 +1,14 @@
 import React from "react";
 import { LogoutStyle } from "./index.style";
 import AvatarImg from "../../../../img/thu_1.png";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Logout = () => {
+  const navigate = useNavigate();
+  const login = () => {
+    navigate("/login");
+  };
+
   return (
     <LogoutStyle>
       <link
@@ -14,22 +19,20 @@ const Logout = () => {
         <img className="userAvatar" src={AvatarImg} alt="/" />
         <p className="userName">Thu Thút</p>
       </div>
-      <div className="users">Xem tất cả trang cá nhân</div>
+      {/* <div className="users">Xem tất cả trang cá nhân</div> */}
       <div className="settingWorkspace">
         <div className="settingButton">
           <span class="material-symbols-outlined">settings</span>
         </div>
-        <p>Cài đặt & Quyền riêng tư</p>
+        <p>Settings & Privacy</p>
       </div>
       <div className="leaveWorkspace">
         <div className="leaveButton">
-          <span className="material-symbols-outlined">logout</span>
+          <span className="material-symbols-outlined" onClick={login}>
+            logout
+          </span>
         </div>
-        <p>
-          <Link className="logout" to="/login">
-            Đăng xuất
-          </Link>
-        </p>
+        <p onClick={login}>Logout</p>
       </div>
     </LogoutStyle>
   );
