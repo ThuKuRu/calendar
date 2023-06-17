@@ -5,6 +5,10 @@ import t1img from "../../img/t1img.png";
 import user2 from "../../img/user2.jpg";
 import user3 from "../../img/user3.jpg";
 import AvatarImg from "../../img/thu_1.png";
+import figma from "../../img/figma.png";
+import database from "../../img/database.png";
+import python from "../../img/python.jpg";
+import t2img from "../../img/t2.jpg";
 import {
   AreaChart,
   Area,
@@ -70,8 +74,8 @@ const Dashboard = () => {
           <div className="upComingTaskNoti">
             <div className="upComingTaskNotify">
               <img src={t1img} />
-              UIUX DESIGN
-              <div className="upComingTaskDate">Dec 7 2PM</div>
+              UIUX PRESENT
+              <div className="upComingTaskDate">Jun 20 2PM</div>
             </div>
             <div className="upComingTaskNotifyDes">
               Time to practice UI/UX. Hurry up or you will be punish~~~
@@ -94,9 +98,9 @@ const Dashboard = () => {
               </div>
             </div>
             <div className="upComingTaskNotify">
-              <img src={t1img} />
-              UIUX DESIGN
-              <div className="upComingTaskDate">Dec 7 2PM</div>
+              <img src={database} />
+              DB MONGO
+              <div className="upComingTaskDate">JUN 20 5PM</div>
             </div>
           </div>
           <div className="upNextComingTask">
@@ -107,9 +111,9 @@ const Dashboard = () => {
               </div>
             </div>
             <div className="upComingTaskNotify">
-              <img src={t1img} />
-              UIUX DESIGN
-              <div className="upComingTaskDate">Dec 7 2PM</div>
+              <img src={python} />
+              PYTHON STT
+              <div className="upComingTaskDate">JUN 20 7PM</div>
             </div>
           </div>
           <div className="upNextComingTask">
@@ -120,9 +124,9 @@ const Dashboard = () => {
               </div>
             </div>
             <div className="upComingTaskNotify">
-              <img src={t1img} />
-              UIUX DESIGN
-              <div className="upComingTaskDate">Dec 7 2PM</div>
+              <img src={t2img} />
+              T2 MATCH
+              <div className="upComingTaskDate">Jun 20 10PM</div>
             </div>
           </div>
           <div className="upNextComingTask">
@@ -133,9 +137,9 @@ const Dashboard = () => {
               </div>
             </div>
             <div className="upComingTaskNotify">
-              <img src={t1img} />
-              UIUX DESIGN
-              <div className="upComingTaskDate">Dec 7 2PM</div>
+              <img src={figma} />
+              FIGMA COURSE
+              <div className="upComingTaskDate">Jun 21 9AM</div>
             </div>
           </div>
         </div>

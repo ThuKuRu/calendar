@@ -16,8 +16,15 @@ const Sidebar = styled.div`
     padding: 0.625rem 0;
     height: 4rem;
     img {
-      height: 3.125rem;
-      width: 3.125rem;
+      height: 5rem;
+      width: 5rem;
+    }
+    .textLogo {
+      margin-left: -1.3rem;
+      background: -webkit-linear-gradient(#2d7fe0, #76bdff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-family: "Rockwell";
     }
     p {
       color: #000000;
