@@ -62,12 +62,16 @@ const Dashboard = () => {
         <div className="upComingTask">
           <div className="upComingTask-top">
             <div className="taskStatus">Upcoming Task</div>
-            <div className="upComingTaskDate">Dec 7 2PM</div>
+            <div className="upComingTaskDone">
+              <span class="material-symbols-outlined">done_outline</span>
+            </div>
           </div>
+
           <div className="upComingTaskNoti">
             <div className="upComingTaskNotify">
               <img src={t1img} />
               UIUX DESIGN
+              <div className="upComingTaskDate">Dec 7 2PM</div>
             </div>
             <div className="upComingTaskNotifyDes">
               Time to practice UI/UX. Hurry up or you will be punish~~~
@@ -85,41 +89,53 @@ const Dashboard = () => {
           <div className="upNextComingTask">
             <div className="upComingTask-top">
               <div className="taskStatus">Upcoming Task</div>
-              <div className="upComingTaskDate">Dec 7 2PM</div>
+              <div className="upComingTaskDone">
+                <span class="material-symbols-outlined">done_outline</span>
+              </div>
             </div>
             <div className="upComingTaskNotify">
               <img src={t1img} />
               UIUX DESIGN
+              <div className="upComingTaskDate">Dec 7 2PM</div>
             </div>
           </div>
           <div className="upNextComingTask">
             <div className="upComingTask-top">
               <div className="taskStatus">Upcoming Task</div>
-              <div className="upComingTaskDate">Dec 7 2PM</div>
+              <div className="upComingTaskDone">
+                <span class="material-symbols-outlined">done_outline</span>
+              </div>
             </div>
             <div className="upComingTaskNotify">
               <img src={t1img} />
               UIUX DESIGN
+              <div className="upComingTaskDate">Dec 7 2PM</div>
             </div>
           </div>
           <div className="upNextComingTask">
             <div className="upComingTask-top">
               <div className="taskStatus">Upcoming Task</div>
-              <div className="upComingTaskDate">Dec 7 2PM</div>
+              <div className="upComingTaskDone">
+                <span class="material-symbols-outlined">done_outline</span>
+              </div>
             </div>
             <div className="upComingTaskNotify">
               <img src={t1img} />
               UIUX DESIGN
+              <div className="upComingTaskDate">Dec 7 2PM</div>
             </div>
           </div>
           <div className="upNextComingTask">
             <div className="upComingTask-top">
               <div className="taskStatus">Upcoming Task</div>
-              <div className="upComingTaskDate">Dec 7 2PM</div>
+              <div className="upComingTaskDone">
+                <span class="material-symbols-outlined">done_outline</span>
+              </div>
             </div>
             <div className="upComingTaskNotify">
               <img src={t1img} />
               UIUX DESIGN
+              <div className="upComingTaskDate">Dec 7 2PM</div>
             </div>
           </div>
         </div>

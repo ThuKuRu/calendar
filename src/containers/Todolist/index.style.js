@@ -78,7 +78,7 @@ const TodolistStyle = styled.div`
         margin-right: 0.3125em;
       }
       p {
-        text-align: center;
+        text-align: left;
         font-size: clamp(0.9375rem, 0.9375vw, 1.125rem);
         align-items: center;
         margin: 0px 0px 0px 0.3125em;
