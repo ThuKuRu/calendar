@@ -50,9 +50,20 @@ const Container = styled.div`
     align-items: center;
     background-color: #f5f5f5;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 6px;
+    border-radius: 0.375em;
     margin-bottom: 1vh;
     cursor: pointer;
+    &:focus {
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      transform: translateY(-0.25em);
+    }
+    &:hover {
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 0.375em;
+      transform: translateY(-0.25em);
+      background-color: #2d7fe0;
+      color: #fff;
+    }
   }
 `;
 
