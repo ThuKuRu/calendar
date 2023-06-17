@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const Container = styled.div`
+  --hover: #1849aa;
   width: 100%;
   height: 95%;
   font-family: "Roboto" !important;
@@ -93,6 +94,16 @@ const Container = styled.div`
       }
       .rbc-event-content {
         padding: 0.3125em 0px;
+      }
+      &:focus {
+        box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+        transform: translateY(-0.25em);
+      }
+      &:hover {
+        box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+        border-radius: 0.25em;
+        transform: translateY(-0.25em);
+        background-color: #004796;
       }
     }
   }

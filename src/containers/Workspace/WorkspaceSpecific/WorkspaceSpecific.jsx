@@ -1,7 +1,11 @@
 import React from "react";
 import { WorkspaceSpecificStyle, Color, Percent, Img } from "./index.style";
+import Popup from "reactjs-popup";
+import AddTask from "./AddTask/AddTask";
 
 const WorkspaceSpecific = ({
+  id,
+  setId,
   setTab,
   currentWorkspace,
   workspaces,
@@ -166,9 +170,27 @@ const WorkspaceSpecific = ({
             </div>
           </div>
           <div className="buttons">
-            <button className="add-button" type="button">
-              Add task
-            </button>
+            <Popup
+              modal
+              trigger={
+                <div className="add-button">
+                  <p className="add">Add task</p>
+                </div>
+              }
+            >
+              {(close) => (
+                <div>
+                  <AddTask
+                    close={close}
+                    id={id}
+                    setId={setId}
+                    currentWorkspace={currentWorkspace.teamMems}
+                    workspaces={workspaces}
+                    setWorkspaces={setWorkspaces}
+                  />
+                </div>
+              )}
+            </Popup>
           </div>
         </div>
         <div className="specificRight">
