@@ -24,6 +24,9 @@ const Color = styled.p`
   padding: 0.0625em 1.5625em 0;
   border-radius: 20px;
   background-color: ${({ value }) => levelColor[value]};
+  color: ${({ value }) => {
+    if (value === "5") return "#ffffff";
+  }};
 `;
 
 const Percent = styled.p`
