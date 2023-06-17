@@ -18,10 +18,6 @@ function CreateWorkspace({ setTab }) {
     setTab("home");
   };
 
-  const handleChooseImage = () => {
-    fileInputRef.current.click();
-  };
-
   const [file, setFile] = useState();
   console.log(file);
   const handleChange = (e) => {
@@ -50,27 +46,12 @@ function CreateWorkspace({ setTab }) {
             onChange={(e) => setWorkspaceName(e.target.value)}
           />
 
-          <label htmlFor="assignees">Assignees:</label>
+          <label htmlFor="assignees">Members:</label>
           <input
             type="text"
             id="assignees"
             value={assignees}
             onChange={(e) => setAssignees(e.target.value)}
-          />
-
-          <label htmlFor="tasks">Todo:</label>
-          <textarea
-            id="tasks"
-            value={tasks}
-            onChange={(e) => setTasks(e.target.value)}
-          />
-
-          <label htmlFor="workingStatus">Working Status:</label>
-          <input
-            type="text"
-            id="workingStatus"
-            value={workingStatus}
-            onChange={(e) => setWorkingStatus(e.target.value)}
           />
 
           <label htmlFor="description">Description:</label>

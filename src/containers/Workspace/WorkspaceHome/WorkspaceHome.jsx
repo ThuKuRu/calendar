@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Container } from "./index.style";
 import WorkspaceCard from "../WorkspaceCard/WorkspaceCard";
 import { ToastContainer } from "react-toastify";
