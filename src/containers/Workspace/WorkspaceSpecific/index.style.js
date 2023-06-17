@@ -8,7 +8,6 @@ const WorkspaceSpecificStyle = styled.div`
   border: 0.0625rem solid #000000;
   border-radius: 0.3125rem;
   width: 100%;
-  height: 90%;
   .header {
     padding: 0.4em 0.9375em;
     margin-top: 0.3125em;
@@ -130,12 +129,12 @@ const WorkspaceSpecificStyle = styled.div`
             }
             p {
               text-align: left;
-              font-size: clamp(0.9375rem, 0.9375vw, 1.125rem);
+              font-size: clamp(0.8rem, 0.93vw, 1.125rem);
               align-items: center;
               margin: 0px 0px 0px 0.3125em;
             }
             .name {
-              font-size: clamp(1.04rem, 1.04vw, 1.4rem);
+              font-size: clamp(1rem, 1.04vw, 1.4rem);
               font-weight: 600;
             }
             .avatar {
@@ -221,7 +220,6 @@ const WorkspaceSpecificStyle = styled.div`
       background-color: #d9d9d9;
       border-radius: 1em;
       flex-direction: column;
-      height: 100%;
       padding: 0 1em;
       .owner {
         display: flex;
@@ -340,22 +338,25 @@ const percentToDo = {
 };
 
 const Color = styled.p`
-  padding: 1px 25px 0;
+  padding: 0.0625em 1.5625em 0;
   border-radius: 20px;
   background-color: ${({ value }) => levelColor[value]};
+  color: ${({ value }) => {
+    if (value === "5") return "#ffffff";
+  }};
 `;
 
 const Percent = styled.p`
   display: flex;
   background-color: #2d7fe0;
-  height: 24px;
   border-radius: 1em;
   margin: 0px !important;
   width: ${({ percent }) => percentToDo[percent]};
   text-align: center;
   justify-content: center;
+  padding: 0.24em 0;
   .percentContent {
-    font-size: 10px;
+    font-size: clamp(0.53rem, 0.53vw, 0.625rem);
     color: #fff;
     font-weight: 600;
   }
