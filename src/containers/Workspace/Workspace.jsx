@@ -8,7 +8,6 @@ import AddUser from "./AddUserWorkspace/AddUser";
 
 const Workspace = ({ workspaces, setWorkspaces }) => {
   const [tab, setTab] = useState("home");
-
   const [currentWorkspace, setCurrentWorkspace] = useState({});
   return (
     <Container>

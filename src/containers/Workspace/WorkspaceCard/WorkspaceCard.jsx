@@ -8,7 +8,6 @@ const WorkspaceCard = ({
   setTab,
   setCurrentWorkspace,
 }) => {
-  console.log(setCurrentWorkspace);
   const onClickDelete = (key) => {
     const newToDoData = workspaces.filter((current) => {
       return current.id !== key;
@@ -33,7 +32,6 @@ const WorkspaceCard = ({
         className="content"
         onClick={() => {
           setCurrentWorkspace(workspace);
-          console.log(workspace);
           setTab("specific");
         }}
       >

@@ -6,8 +6,6 @@ const WorkspaceHome = ({
   workspaces,
   setWorkspaces,
   setTab,
-  id,
-  setId,
   setCurrentWorkspace,
 }) => {
   console.log(setCurrentWorkspace);
@@ -53,8 +51,6 @@ const WorkspaceHome = ({
             workspace={workspace}
             workspaces={workspaces}
             setWorkspaces={setWorkspaces}
-            id={id}
-            setId={setId}
             setTab={setTab}
             setCurrentWorkspace={setCurrentWorkspace}
           />

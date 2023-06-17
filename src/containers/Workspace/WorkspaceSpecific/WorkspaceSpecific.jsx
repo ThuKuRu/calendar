@@ -183,7 +183,7 @@ const WorkspaceSpecific = ({
                     close={close}
                     id={id}
                     setId={setId}
-                    currentWorkspace={currentWorkspace.teamMems}
+                    currentWorkspace={currentWorkspace}
                     setWorkspaces={setWorkspaces}
                   />
                 </div>
