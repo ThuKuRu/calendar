@@ -44,7 +44,7 @@ const AddTask = ({
   };
 
   const handleToastSuccess = () => {
-    toast.success("To-do created successfully");
+    toast.success("Task created successfully");
   };
 
   const handleTodo = () => {

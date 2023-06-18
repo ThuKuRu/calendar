@@ -60,11 +60,11 @@ const FormEvent = ({ close, setActive, events, setEvents, id, setId }) => {
     );
     if (
       selectedDateTime < now ||
-      (date.getTime() === now.getTime() && startTime < now)
+      (date.getTime() === now.getTime() && startTime <= now)
     ) {
       return;
     }
-    if (startTime > endTime) {
+    if (startTime >= endTime) {
       return;
     }
     setSaveColor("#2d7fe0");
@@ -98,7 +98,7 @@ const FormEvent = ({ close, setActive, events, setEvents, id, setId }) => {
       toast.error("Error: Selected date and time must be in the future.");
       return;
     }
-    if (startTime > endTime) {
+    if (startTime >= endTime) {
       toast.error("Error: End time must be later than start time.");
       return;
     }
