@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 const Container = styled.div`
+  font-family: "DIN";
   .popup {
     width: 20vw;
     display: flex;
     flex-direction: column;
     background-color: #ffffff;
     border-radius: 10px;
-    font-family: "Roboto";
     border: 1px solid #eff0f6;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     padding-bottom: 2rem;
@@ -35,7 +35,7 @@ const Container = styled.div`
           cursor: pointer;
           color: #000;
           &:focus,
-          &:hover{
+          &:hover {
             color: #2d7fe0;
           }
         }

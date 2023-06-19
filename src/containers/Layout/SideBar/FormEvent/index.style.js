@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const FormEventStyle = styled.div`
-  font-family: "Roboto";
+  font-family: "DIN";
 
   .modal {
     position: fixed;
@@ -108,15 +108,16 @@ const FormEventStyle = styled.div`
                 font-size: clamp(0.83rem, 0.83vw, 1rem);
                 font-family: inherit;
                 text-align: center;
+                padding: 0;
               }
             }
             .formCreate-sche-day {
-              width: 44%;
+              width: 40%;
               display: flex;
               align-items: center;
-              padding: 0px 0.625em;
+              padding: 0px 0.5em;
               .react-datepicker-wrapper {
-                margin-left: 0.625rem;
+                margin-left: 0rem;
                 min-width: 10.625em;
                 display: flex;
                 align-items: center;

@@ -49,7 +49,6 @@ const TodolistStyle = styled.div`
   --hover: #1849aa;
   display: flex;
   flex-direction: column;
-  font-family: "Roboto";
   .header {
     display: flex;
     justify-content: space-between;
@@ -169,7 +168,6 @@ const TodolistStyle = styled.div`
         align-items: center;
         background-color: #2d7fe0;
         color: #ffffff;
-        font-family: "Roboto" !important;
         font-size: clamp(0.8rem, 1vw, 1.25rem);
         cursor: pointer;
         border-radius: 0.75em;
