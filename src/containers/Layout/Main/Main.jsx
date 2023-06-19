@@ -15,6 +15,8 @@ const Main = ({ tab }) => {
       start: new Date(2023, 5, 20, 5),
       end: new Date(2023, 5, 20, 6),
       description: "Cô chấm bài round 1",
+      color: "#2d7fe0",
+      fontColor: "#fff",
     },
     {
       id: 1,
@@ -22,6 +24,8 @@ const Main = ({ tab }) => {
       start: new Date(2023, 5, 21, 10),
       end: new Date(2023, 5, 21, 15),
       description: "",
+      color: "#2d7fe0",
+      fontColor: "#fff",
     },
     {
       id: 2,
@@ -29,6 +33,8 @@ const Main = ({ tab }) => {
       start: new Date(2023, 5, 22, 9),
       end: new Date(2023, 5, 22, 10),
       description: "",
+      color: "#2d7fe0",
+      fontColor: "#fff",
     },
   ]);
   const [toDoData, setToDoData] = useState([

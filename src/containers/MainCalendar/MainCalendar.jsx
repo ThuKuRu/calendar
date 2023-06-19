@@ -78,6 +78,8 @@ const MainCalendar = ({
     },
     deadline: "",
     level: "1",
+    color: "#2d7fe0",
+    fontColor: "#fff",
   };
   const [event, setEvent] = useState(newEvent);
   const resetCache = () => {
@@ -94,6 +96,16 @@ const MainCalendar = ({
     locales,
   });
 
+  const eventStyleGetter = (e) => {
+    const backgroundColor = e.color;
+    return {
+      style: {
+        backgroundColor: backgroundColor,
+        color: e.fontColor,
+      },
+    };
+  };
+
   return (
     <Container>
       <ToastContainer />
@@ -107,6 +119,7 @@ const MainCalendar = ({
         events={events}
         startAccessor="start"
         endAccessor="end"
+        eventPropGetter={eventStyleGetter}
       />
       <div className="createDiv">
         <Popup
