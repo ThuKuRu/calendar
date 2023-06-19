@@ -4,7 +4,6 @@ const WorkspaceSpecificStyle = styled.div`
   --hover: #1849aa;
   display: flex;
   flex-direction: column;
-  font-family: "Roboto";
   border: 0.0625rem solid #000000;
   border-radius: 0.3125rem;
   width: 100%;
@@ -16,7 +15,6 @@ const WorkspaceSpecificStyle = styled.div`
       width: 100%;
       font-size: clamp(1.2rem, 1.5625vw, 1.875rem);
       color: #6c757d;
-      font-family: "Roboto";
       span {
         cursor: pointer;
         &:focus {
@@ -197,7 +195,6 @@ const WorkspaceSpecificStyle = styled.div`
           align-items: center;
           background-color: #2d7fe0;
           color: #ffffff;
-          font-family: "Roboto" !important;
           font-size: clamp(0.8rem, 1vw, 1.25rem);
           cursor: pointer;
           border-radius: 0.75em;
@@ -225,7 +222,6 @@ const WorkspaceSpecificStyle = styled.div`
         display: flex;
         flex-direction: column;
         p {
-          font-family: "Roboto" !important;
           font-size: clamp(1rem, 1.3vw, 1.5625rem);
           font-weight: 700;
           padding: 0;
@@ -239,7 +235,6 @@ const WorkspaceSpecificStyle = styled.div`
             border-radius: 50px;
           }
           .name {
-            font-family: "Roboto" !important;
             font-size: clamp(0.8rem, 1.04vw, 1.4rem);
             font-weight: 500;
             margin: 0px 0.5em;
@@ -255,7 +250,6 @@ const WorkspaceSpecificStyle = styled.div`
         display: flex;
         flex-direction: column;
         p {
-          font-family: "Roboto" !important;
           font-size: clamp(1rem, 1.3vw, 1.5625rem);
           font-weight: 700;
           padding: 0;
@@ -270,7 +264,6 @@ const WorkspaceSpecificStyle = styled.div`
             border-radius: 50px;
           }
           .name {
-            font-family: "Roboto" !important;
             font-size: clamp(0.8rem, 1.04vw, 1.4rem);
             font-weight: 500;
             margin: 0px 0.5em;
@@ -294,7 +287,6 @@ const WorkspaceSpecificStyle = styled.div`
           align-items: center;
         }
         p {
-          font-family: "Roboto" !important;
           font-size: clamp(0.83rem, 0.83vw, 1rem);
           font-weight: 500;
           margin: 0px 0.5em;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const FormReminderStyle = styled.div`
-  font-family: "Roboto";
+  font-family: "DIN";
   .modal {
     position: fixed;
     color: black;
@@ -105,7 +105,7 @@ const FormReminderStyle = styled.div`
               justify-content: center;
               input {
                 font-size: clamp(0.83rem, 0.83vw, 1rem);
-                font-family: "Roboto" !important;
+                font-family: "DIN" !important;
                 text-align: center;
                 &:focus {
                   outline: none;
@@ -126,6 +126,7 @@ const FormReminderStyle = styled.div`
                   width: 100%;
                   border: none !important;
                   background-color: transparent;
+                  font-family: var(--font);
                   &:focus {
                     outline: none;
                   }

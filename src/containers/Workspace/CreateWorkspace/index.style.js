@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 const Container = styled.div`
+  --font: DIN;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   padding: 20px;
-  font-family: "Roboto";
   .h2 {
     margin-bottom: 20px;
   }
@@ -90,7 +90,7 @@ const Container = styled.div`
     background-color: #2d7fe0;
     border-radius: 14px;
     color: #ffffff;
-    font-family: "Roboto" !important;
+    font-family: var(--font) !important;
     font-size: 20px;
     cursor: pointer;
     border: none;
@@ -116,7 +116,7 @@ const Container = styled.div`
     background-color: #f5f5f5;
     border-radius: 14px;
     color: #868686;
-    font-family: "Roboto" !important;
+    font-family: var(--font) !important;
     font-size: 20px;
     cursor: pointer;
     border: none;
@@ -140,7 +140,7 @@ const SelectList = styled.select`
   width: 100%;
   padding: 8px 12px;
   font-size: 18px;
-  font-family: "Roboto" !important;
+  font-family: var(--font) !important;
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
@@ -153,7 +153,7 @@ const MenuItem = styled.option`
   color: #000;
   list-style: none;
   font-size: 18px;
-  font-family: "Roboto" !important;
+  font-family: var(--font) !important;
 `;
 
 export { Container, SelectList, MenuItem };

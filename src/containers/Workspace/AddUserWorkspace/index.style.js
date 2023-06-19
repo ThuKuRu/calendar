@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 const Container = styled.div`
+  --font: "DIN";
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   padding: 20px;
-  font-family: "Roboto";
   .h2 {
     margin-bottom: 20px;
   }
@@ -90,9 +90,10 @@ const Container = styled.div`
     background-color: #2d7fe0;
     border-radius: 14px;
     color: #ffffff;
-    font-family: "Roboto" !important;
+    font-family: var(--font) !important;
     font-size: 20px;
     cursor: pointer;
+    border: none;
 
     &:focus {
       box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
@@ -116,9 +117,10 @@ const Container = styled.div`
     background-color: #f5f5f5;
     border-radius: 14px;
     color: #868686;
-    font-family: "Roboto" !important;
+    font-family: var(--font) !important;
     font-size: 20px;
     cursor: pointer;
+    border: none;
 
     &:focus {
       box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
