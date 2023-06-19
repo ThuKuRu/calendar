@@ -43,7 +43,6 @@ const FormTodo = ({
     const now = new Date();
     if (
       title === "" ||
-      description === "" ||
       time === "" ||
       date === "" ||
       day === "" ||
@@ -124,7 +123,6 @@ const FormTodo = ({
     setSaveBgColor("#d9d9d9");
     if (
       title === "" ||
-      description === "" ||
       time === "" ||
       date === "" ||
       day === "" ||

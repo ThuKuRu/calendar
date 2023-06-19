@@ -25,7 +25,7 @@ const FormReminder = ({
 
   const handleRemind = () => {
     const now = new Date();
-    if (title === "" || description === "" || time === "" || date === " ") {
+    if (title === "" || time === "" || date === " ") {
       toast.error("Error: Please fill in all required fields.");
       return;
     }
@@ -54,7 +54,6 @@ const FormReminder = ({
         time.getHours(),
         time.getMinutes()
       ),
-      description: description,
     };
     setId(id + 1);
     setEvents([...events, event]);
@@ -67,7 +66,7 @@ const FormReminder = ({
     const now = new Date();
     setSaveColor("#978f8f");
     setSaveBgColor("#d9d9d9");
-    if (title === "" || description === "" || time === "" || date === " ") {
+    if (title === "" || time === "" || date === " ") {
       return;
     }
     const selectedDateTime = new Date(

@@ -53,13 +53,7 @@ const FormEvent = ({
     const now = new Date();
     setSaveColor("#978f8f");
     setSaveBgColor("#d9d9d9");
-    if (
-      title === "" ||
-      description === "" ||
-      startTime === "" ||
-      date === "" ||
-      endTime === ""
-    ) {
+    if (title === "" || startTime === "" || date === "" || endTime === "") {
       return;
     }
     const selectedDateTime = new Date(
@@ -83,13 +77,7 @@ const FormEvent = ({
   }, [title, startTime, endTime, description, date]);
 
   const handleEvent = () => {
-    if (
-      startTime === "" ||
-      endTime === "" ||
-      title === "" ||
-      description === "" ||
-      title === ""
-    ) {
+    if (startTime === "" || endTime === "" || title === "" || title === "") {
       toast.error("Error: Please fill in all required fields.");
       return;
     }

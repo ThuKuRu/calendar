@@ -11,7 +11,7 @@ function isNotNegativeInteger(number) {
 const CreateToDo = ({ close, setActive, id, setId, toDoData, setToDoData }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [time, setTime] = useState();
+  const [time, setTime] = useState("");
   const [date, setDate] = useState(new Date());
   const [value, setValue] = React.useState("1");
   const [day, setDay] = useState();
@@ -31,7 +31,6 @@ const CreateToDo = ({ close, setActive, id, setId, toDoData, setToDoData }) => {
     const now = new Date();
     if (
       title === "" ||
-      description === "" ||
       time === "" ||
       date === "" ||
       day === "" ||
@@ -111,7 +110,6 @@ const CreateToDo = ({ close, setActive, id, setId, toDoData, setToDoData }) => {
     setSaveBgColor("#d9d9d9");
     if (
       title === "" ||
-      description === "" ||
       time === "" ||
       date === "" ||
       day === "" ||

@@ -1,5 +1,7 @@
 import React, { useState, useRef } from "react";
 import { Container, SelectList, MenuItem } from "./index.style";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function CreateWorkspace({
   setTab,
@@ -27,12 +29,13 @@ function CreateWorkspace({
 
   const createWorkspace = (e) => {
     e.preventDefault();
-    if (
-      workspaceName === "" ||
-      members === "" ||
-      description === "" ||
-      fileName === ""
-    ) {
+    if (workspaceName !== "" && members !== "") {
+      if (fileName === "") {
+        toast.error("Please add image for workspace");
+        return;
+      }
+    } else {
+      toast.error("Please fill in all required fields.");
       return;
     }
     const you = {
@@ -59,6 +62,7 @@ function CreateWorkspace({
     setId(id + 1);
     setWorkspaces([...workspaces, newWorkspace]);
     setTab("home");
+    toast.success("Workspace created successfully!");
   };
 
   const handleChangeSelect = (event) => {
