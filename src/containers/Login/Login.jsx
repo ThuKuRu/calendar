@@ -10,7 +10,7 @@ const Login = () => {
     email: "",
     password: "",
   });
-
+  const [showForgotPassword, setShowForgotPassword] = useState(false);
   const [toggleEye, setToggleEye] = useState(false);
 
   const [inputType, setInputType] = useState("password");
@@ -30,7 +30,10 @@ const Login = () => {
   const handleLogin = () => {
     navigate("/");
   };
-
+  const handleForgotPassword = () => {
+    setShowForgotPassword(true);
+    navigate("/forgot-password");
+  };
   console.log(inputs);
   return (
     <div>
@@ -86,6 +89,18 @@ const Login = () => {
               {" "}
               Sign Up
             </Link>
+          </div>
+          <div className="formLink">
+            <span
+              onClick={handleForgotPassword}
+              style={{
+                fontStyle: "italic",
+                textDecoration: "underline",
+                cursor: "pointer",
+              }}
+            >
+              Forgot your password?
+            </span>
           </div>
           <div className="line"></div>
           <div className="media-options">
