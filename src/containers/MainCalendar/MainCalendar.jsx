@@ -65,10 +65,27 @@ const MainCalendar = ({
   setToDoData,
 }) => {
   const [active, setActive] = useState("event");
+  const newEvent = {
+    title: "",
+    date: new Date(),
+    startTime: "",
+    endTime: "",
+    description: "",
+    duration: {
+      day: "",
+      hour: "",
+      minute: "",
+    },
+    deadline: "",
+    level: "1",
+  };
+  const [event, setEvent] = useState(newEvent);
+  const resetCache = () => {
+    setEvent(newEvent);
+  };
   const locales = {
     "vi-VN": vi,
   };
-
   const localizer = dateFnsLocalizer({
     format,
     parse,
@@ -76,10 +93,6 @@ const MainCalendar = ({
     getDay,
     locales,
   });
-
-  const customClose = (close) => {
-    close();
-  };
 
   return (
     <Container>
@@ -108,14 +121,15 @@ const MainCalendar = ({
             <div>
               {active === "event" && (
                 <FormEvent
-                  close={() => {
-                    customClose(close);
-                  }}
+                  close={close}
                   setActive={setActive}
                   events={events}
                   setEvents={setEvents}
                   id={id}
                   setId={setId}
+                  event={event}
+                  setEvent={setEvent}
+                  resetCache={resetCache}
                 />
               )}
               {active === "todo" && (
@@ -128,6 +142,9 @@ const MainCalendar = ({
                   setId={setId}
                   toDoData={toDoData}
                   setToDoData={setToDoData}
+                  event={event}
+                  setEvent={setEvent}
+                  resetCache={resetCache}
                 />
               )}
               {active === "reminder" && (
@@ -138,6 +155,9 @@ const MainCalendar = ({
                   setEvents={setEvents}
                   id={id}
                   setId={setId}
+                  event={event}
+                  setEvent={setEvent}
+                  resetCache={resetCache}
                 />
               )}
             </div>

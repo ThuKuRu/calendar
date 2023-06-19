@@ -19,11 +19,9 @@ const Container = styled.div`
     }
     .rbc-button-link {
       &:focus {
-        box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
         transform: translateY(-0.25em);
       }
       &:hover {
-        box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
         border-radius: 0.75em;
         transform: translateY(-0.25em);
         color: #2d7fe0;

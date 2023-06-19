@@ -9,15 +9,25 @@ function isNotNegativeInteger(number) {
   return Number.isInteger(number) && number >= 0;
 }
 
-const FormTodo = ({ close, setActive, id, setId, toDoData, setToDoData }) => {
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [time, setTime] = useState("");
-  const [date, setDate] = useState(new Date());
-  const [value, setValue] = React.useState("1");
-  const [day, setDay] = useState();
-  const [hour, setHour] = useState();
-  const [minute, setMinute] = useState();
+const FormTodo = ({
+  close,
+  setActive,
+  id,
+  setId,
+  toDoData,
+  setToDoData,
+  event,
+  setEvent,
+  resetCache,
+}) => {
+  const [title, setTitle] = useState(event.title);
+  const [description, setDescription] = useState(event.description);
+  const [time, setTime] = useState(event.deadline);
+  const [date, setDate] = useState(event.date);
+  const [value, setValue] = useState(event.level);
+  const [day, setDay] = useState(event.duration.day);
+  const [hour, setHour] = useState(event.duration.hour);
+  const [minute, setMinute] = useState(event.duration.minute);
   const [saveColor, setSaveColor] = useState("#978f8f");
   const [saveBgColor, setSaveBgColor] = useState("#d9d9d9");
 
@@ -104,7 +114,7 @@ const FormTodo = ({ close, setActive, id, setId, toDoData, setToDoData }) => {
     setId(id + 1);
     setToDoData([...toDoData, todo]);
     close();
-
+    resetCache();
     handleToastSuccess();
   };
 
@@ -153,8 +163,11 @@ const FormTodo = ({ close, setActive, id, setId, toDoData, setToDoData }) => {
     setSaveBgColor("#fff");
   }, [title, description, time, day, hour, minute, date]);
 
-  const handleChange = (event) => {
-    setValue(event.target.value);
+  const handleChange = (e) => {
+    setValue(e.target.value);
+    let newEvent = event;
+    newEvent.level = e.target.value;
+    setEvent(newEvent);
   };
 
   return (
@@ -179,7 +192,12 @@ const FormTodo = ({ close, setActive, id, setId, toDoData, setToDoData }) => {
               type="text"
               placeholder="Add article..."
               value={title}
-              onChange={(e) => setTitle(e.target.value)}
+              onChange={(e) => {
+                setTitle(e.target.value);
+                let newEvent = event;
+                newEvent.title = e.target.value;
+                setEvent(newEvent);
+              }}
             />
             <div className="formCreate-container">
               <div className="formCreate-container-things">
@@ -215,6 +233,9 @@ const FormTodo = ({ close, setActive, id, setId, toDoData, setToDoData }) => {
                       value={day}
                       onChange={(e) => {
                         setDay(e.target.value);
+                        let newEvent = event;
+                        newEvent.duration.day = e.target.value;
+                        setEvent(newEvent);
                       }}
                     />
                     <label>day</label>
@@ -225,6 +246,9 @@ const FormTodo = ({ close, setActive, id, setId, toDoData, setToDoData }) => {
                       value={hour}
                       onChange={(e) => {
                         setHour(e.target.value);
+                        let newEvent = event;
+                        newEvent.duration.hour = e.target.value;
+                        setEvent(newEvent);
                       }}
                     />
                     <label>h</label>
@@ -235,6 +259,9 @@ const FormTodo = ({ close, setActive, id, setId, toDoData, setToDoData }) => {
                       value={minute}
                       onChange={(e) => {
                         setMinute(e.target.value);
+                        let newEvent = event;
+                        newEvent.duration.minute = e.target.value;
+                        setEvent(newEvent);
                       }}
                     />
                     <label>m</label>
@@ -249,7 +276,12 @@ const FormTodo = ({ close, setActive, id, setId, toDoData, setToDoData }) => {
                     <ReactDatePicker
                       selected={date}
                       dateFormat="EEEE, MMMM d"
-                      onChange={(date) => setDate(date)}
+                      onChange={(date) => {
+                        setDate(date);
+                        let newEvent = event;
+                        newEvent.date = date;
+                        setEvent(newEvent);
+                      }}
                     />
                   </div>
                   <div className="formCreate-times">
@@ -263,6 +295,9 @@ const FormTodo = ({ close, setActive, id, setId, toDoData, setToDoData }) => {
                       placeholderText="Time"
                       onChange={(time) => {
                         setTime(time);
+                        let newEvent = event;
+                        newEvent.deadline = time;
+                        setEvent(newEvent);
                       }}
                     />
                   </div>
@@ -285,8 +320,13 @@ const FormTodo = ({ close, setActive, id, setId, toDoData, setToDoData }) => {
             <div className="formTodo-address">
               <textarea
                 value={description}
-                onChange={(e) => setDescription(e.target.value)}
                 placeholder="Add description ..."
+                onChange={(e) => {
+                  setDescription(e.target.value);
+                  let newEvent = event;
+                  newEvent.description = e.target.value;
+                  setEvent(newEvent);
+                }}
               ></textarea>
             </div>
             <div className="buttonFormCreate">

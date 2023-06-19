@@ -29,6 +29,16 @@ const Container = styled.div`
         font-weight: semi-bold;
         display: flex;
         margin-bottom: 0.5em;
+        align-items: center;
+        justify-content: space-between;
+        span {
+          cursor: pointer;
+          color: #000;
+          &:focus,
+          &:hover{
+            color: #2d7fe0;
+          }
+        }
       }
       .time {
         margin-bottom: 0.625em;
