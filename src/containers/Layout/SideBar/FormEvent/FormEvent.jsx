@@ -41,6 +41,8 @@ const FormEvent = ({
       ),
       end: new Date(year, month, day, endTime.getHours(), endTime.getMinutes()),
       description: description,
+      color: "#2d7fe0",
+      fontColor: "#fff",
     };
     setId(id + 1);
     setEvents([...events, event]);

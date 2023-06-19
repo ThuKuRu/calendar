@@ -4,7 +4,7 @@ const Container = styled.div`
   --hover: #1849aa;
   width: 100%;
   height: 95%;
-  font-family: "Roboto" !important;
+  font-family: inherit;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -14,7 +14,7 @@ const Container = styled.div`
     width: 100%;
     height: 90%;
     button {
-      font-family: "Roboto" !important;
+      font-family: inherit;
       font-size: clamp(0.8rem, 1.3vw, 1.5625rem);
     }
     .rbc-button-link {
@@ -39,8 +39,13 @@ const Container = styled.div`
       }
       .rbc-btn-group {
         button {
-          color: #7367f0;
-          border: 0.0625rem solid #696cff;
+          color: #2d7fe0;
+          border: 0.0625rem solid #2d7fe0;
+          &:focus,
+          &:hover {
+            color: #fff;
+            background-color: #2d7fe0;
+          }
         }
         .rbc-active {
           background-color: rgba(104, 93, 216, 0.2);
@@ -82,11 +87,9 @@ const Container = styled.div`
       width: 100%;
     }
     .rbc-event {
-      background-color: #2d7fe0;
       padding: 0.3125em;
       border-radius: 4px;
       font-size: clamp(0.8rem, 0.73vw, 0.875rem);
-      color: #fff;
       .rbc-event-label {
         display: none !important;
       }
@@ -101,7 +104,6 @@ const Container = styled.div`
         box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
         border-radius: 0.25em;
         transform: translateY(-0.25em);
-        background-color: #004796;
       }
     }
   }
@@ -117,7 +119,7 @@ const Container = styled.div`
       background-color: #2d7fe0;
       border-radius: 14px;
       color: #ffffff;
-      font-family: "Roboto" !important;
+      font-family: inherit;
       font-size: clamp(0.8rem, 1vw, 1.25rem);
       cursor: pointer;
       &:focus {

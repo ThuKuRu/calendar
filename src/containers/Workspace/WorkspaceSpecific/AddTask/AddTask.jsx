@@ -135,6 +135,11 @@ const AddTask = ({
           todolist: current.todolist,
           teamMems: current.teamMems,
         };
+        if (current.todolist === undefined) {
+          currentNewWorkspace.todolist = [todo];
+          newCurrentWorkspace = currentNewWorkspace;
+          return currentNewWorkspace;
+        }
         currentNewWorkspace.todolist = [...currentWorkspace.todolist, todo];
         newCurrentWorkspace = currentNewWorkspace;
         return currentNewWorkspace;

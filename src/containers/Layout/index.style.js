@@ -5,6 +5,7 @@ const LayOut = styled.div`
   height: 100vh;
   width: 100vw;
   overflow: hidden;
+  font-family: "Roboto";
   .sidebar {
     position: sticky;
     top: 0;

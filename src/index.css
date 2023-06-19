@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "DIN";
+  src: url("fonts/din/DIN-Medium.ttf") format("truetype");
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
