@@ -4,7 +4,7 @@ const Container = styled.div`
   --hover: #1849aa;
   width: 100%;
   height: 95%;
-  font-family: "Roboto" !important;
+  font-family: inherit;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -14,7 +14,7 @@ const Container = styled.div`
     width: 100%;
     height: 90%;
     button {
-      font-family: "Roboto" !important;
+      font-family: inherit;
       font-size: clamp(0.8rem, 1.3vw, 1.5625rem);
     }
     .rbc-button-link {
@@ -119,7 +119,7 @@ const Container = styled.div`
       background-color: #2d7fe0;
       border-radius: 14px;
       color: #ffffff;
-      font-family: "Roboto" !important;
+      font-family: inherit;
       font-size: clamp(0.8rem, 1vw, 1.25rem);
       cursor: pointer;
       &:focus {
