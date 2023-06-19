@@ -103,7 +103,7 @@ const WorkspaceCard = ({
               );
             })}
             <div className="avatar leftover">
-              +{workspace.teamMems.length - 4}
+              +{workspace.teamMems.length - 3}
             </div>
           </div>
         )}
