@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 const DashBoard = styled.div`
   .container {
-    font-family: "Roboto";
     display: grid;
     grid-template-columns: 35% 65%;
     grid-template-rows: 45% 45%;
@@ -93,7 +92,7 @@ const DashBoard = styled.div`
 
       .upComingTaskMember {
         display: flex;
-        flex-direction: row;
+        align-items: center;
         margin: 2.5em 0 1.6em 0.5em;
         font-size: clamp(0.75rem, 1.3vw, 3rem);
         img {
@@ -110,12 +109,13 @@ const DashBoard = styled.div`
           display: flex;
           justify-content: center;
           align-items: center;
-          width: 2.25rem;
-          height: 2.25rem;
+          width: 2em;
+          height: 2em;
+          margin-right: 3%;
+          font-size: clamp(0.75rem, 1.3vw, 3rem);
           background-color: #d9d9d9;
           border-radius: 50%;
           font-weight: bold;
-          // font-size: clamp(0.75rem, 1rem, 3rem);
           margin-left: -5%;
         }
        

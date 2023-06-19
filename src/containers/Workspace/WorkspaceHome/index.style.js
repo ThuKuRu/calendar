@@ -3,7 +3,6 @@ import styled from "styled-components";
 const Container = styled.div`
   height: 100%;
   width: 100%;
-  font-family: "Roboto";
   .header {
     height: 10%;
     display: flex;
@@ -13,7 +12,6 @@ const Container = styled.div`
     .headerText {
       font-size: clamp(1.2rem, 1.5625vw, 1.875rem);
       color: #6c757d;
-      font-family: "Roboto";
     }
     .joinButton {
       display: flex;
@@ -27,7 +25,6 @@ const Container = styled.div`
       cursor: pointer;
       font-size: clamp(1rem, 1.3vw, 1.5625rem);
       .joinText {
-        font-family: "Roboto";
         font-weight: semi-bold;
       }
       span {

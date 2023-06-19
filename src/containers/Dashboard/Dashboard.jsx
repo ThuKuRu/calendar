@@ -86,7 +86,9 @@ const Dashboard = () => {
             <img src={AvatarImg} />
             <img className="afterImg" src={user2} />
             <img className="afterImg" src={user3} />
-            <div className="numberMore">+3</div>
+            <div className="numberMore">
+              <div>+3</div>
+            </div>
           </div>
         </div>
         <div className="bottomRightDashContainer">
