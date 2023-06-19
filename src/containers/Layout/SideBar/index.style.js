@@ -7,7 +7,7 @@ const Sidebar = styled.div`
   width: 100%;
   background-color: #ffffff;
   height: 100%;
-  font-family: "Roboto";
+  font-family: inherit;
   .headLogo {
     width: 100%;
     display: flex;
