@@ -1,6 +1,6 @@
 @font-face {
   font-family: "DIN";
-  src: url("fonts/din/DIN-Medium.ttf") format("truetype");
+  src: url("fonts/din/zh-cn.ttf") format("truetype");
 }
 
 body {

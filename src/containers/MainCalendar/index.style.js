@@ -48,7 +48,8 @@ const Container = styled.div`
           }
         }
         .rbc-active {
-          background-color: rgba(104, 93, 216, 0.2);
+          color: #fff;
+          background-color: #2d7fe0;
         }
       }
     }
