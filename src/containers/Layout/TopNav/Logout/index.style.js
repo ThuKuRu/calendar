@@ -44,10 +44,12 @@ const LogoutStyle = styled.div`
   .settingWorkspace {
     width: 100%;
     display: flex;
+    cursor: pointer;
     .settingButton {
       background-color: #d6d6d6;
       border-radius: 50px;
-      margin-top: 7px;
+      margin-top: 3px;
+      margin-bottom: 3px;
       margin-right: 4px;
       padding: 0.3em;
       display: flex;
@@ -57,8 +59,12 @@ const LogoutStyle = styled.div`
     }
     p {
       font-size: 16px;
-      margin: 1em 0 0 0.2em;
+      margin: auto 0;
     }
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
   }
   .leaveWorkspace {
     width: 100%;
@@ -67,7 +73,8 @@ const LogoutStyle = styled.div`
     .leaveButton {
       background-color: #d6d6d6;
       border-radius: 50px;
-      margin-top: 7px;
+      margin-top: 3px;
+      margin-bottom: 3px;
       margin-right: 4px;
       padding: 0.3em;
       display: flex;
@@ -77,13 +84,68 @@ const LogoutStyle = styled.div`
     }
     p {
       font-size: 16px;
-      margin: 1em 0 0 0.2em;
+      margin: auto 0;
       .logout {
         text-decoration: none;
         color: #000;
       }
     }
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
   }
 `;
 
-export { LogoutStyle };
+const Modal = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  .modalContent {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    width: 400px; /* Adjust the width as per your requirement */
+    max-width: 100%;
+  }
+  h2 {
+    text-align: center;
+  }
+
+  .formInput {
+    margin-bottom: 1rem;
+    margin-right: 2rem;
+  }
+
+  .formInput label {
+    display: block;
+    font-weight: bold;
+  }
+
+  .formInput input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  button {
+    margin-top: 2rem;
+    float: right;
+    display: block;
+    padding: 0.5rem 1rem;
+    background-color: #2d7fe0;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+`;
+
+export { LogoutStyle, Modal };

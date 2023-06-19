@@ -10,12 +10,12 @@ const TopNav = () => {
   const [value, setValue] = React.useState("user");
   const navigate = useNavigate();
 
-  const handleChange = (event) => {
-    setValue(event.target.value);
-    if (event.target.value === "logout") {
-      navigate("/login");
-    }
-  };
+  // const handleChange = (event) => {
+  //   setValue(event.target.value);
+  //   if (event.target.value === "logout") {
+  //     navigate("/login");
+  //   }
+  // };
 
   return (
     <NavBar>
