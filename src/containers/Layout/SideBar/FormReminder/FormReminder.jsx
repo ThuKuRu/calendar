@@ -5,11 +5,21 @@ import ReactDatePicker from "react-datepicker";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const FormReminder = ({ close, setActive, events, setEvents, id, setId }) => {
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [date, setDate] = useState(new Date());
-  const [time, setStartTime] = useState("");
+const FormReminder = ({
+  close,
+  setActive,
+  events,
+  setEvents,
+  id,
+  setId,
+  event,
+  setEvent,
+  resetCache,
+}) => {
+  const [title, setTitle] = useState(event.title);
+  const [description, setDescription] = useState(event.description);
+  const [date, setDate] = useState(event.date);
+  const [time, setTime] = useState(event.deadline);
   const [saveColor, setSaveColor] = useState("#978f8f");
   const [saveBgColor, setSaveBgColor] = useState("#d9d9d9");
 
@@ -49,6 +59,7 @@ const FormReminder = ({ close, setActive, events, setEvents, id, setId }) => {
     setId(id + 1);
     setEvents([...events, event]);
     toast.success("Reminder created successfully");
+    resetCache();
     close();
   };
 
@@ -98,7 +109,12 @@ const FormReminder = ({ close, setActive, events, setEvents, id, setId }) => {
               type="text"
               placeholder="Add article..."
               value={title}
-              onChange={(e) => setTitle(e.target.value)}
+              onChange={(e) => {
+                setTitle(e.target.value);
+                let newEvent = event;
+                newEvent.title = e.target.value;
+                setEvent(newEvent);
+              }}
             />
             <div className="formCreate-container">
               <div className="formCreate-container-things">
@@ -128,7 +144,12 @@ const FormReminder = ({ close, setActive, events, setEvents, id, setId }) => {
                   <ReactDatePicker
                     selected={date}
                     dateFormat="EEEE, MMMM d"
-                    onChange={(date) => setDate(date)}
+                    onChange={(date) => {
+                      setDate(date);
+                      let newEvent = event;
+                      newEvent.date = date;
+                      setEvent(newEvent);
+                    }}
                   />
                 </div>
                 <div className="formCreate-times">
@@ -141,7 +162,10 @@ const FormReminder = ({ close, setActive, events, setEvents, id, setId }) => {
                     selected={time}
                     placeholderText="Time"
                     onChange={(time) => {
-                      setStartTime(time);
+                      setTime(time);
+                      let newEvent = event;
+                      newEvent.deadline = time;
+                      setEvent(newEvent);
                     }}
                   />
                 </div>
@@ -153,7 +177,12 @@ const FormReminder = ({ close, setActive, events, setEvents, id, setId }) => {
               type="text"
               placeholder="Add description..."
               value={description}
-              onChange={(e) => setDescription(e.target.value)}
+              onChange={(e) => {
+                setDescription(e.target.value);
+                let newEvent = event;
+                newEvent.description = e.target.value;
+                setEvent(newEvent);
+              }}
             />
 
             <div className="buttonFormCreate">

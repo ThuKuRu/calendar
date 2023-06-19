@@ -5,12 +5,22 @@ import ReactDatePicker from "react-datepicker";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const FormEvent = ({ close, setActive, events, setEvents, id, setId }) => {
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [date, setDate] = useState(new Date());
-  const [startTime, setStartTime] = useState("");
-  const [endTime, setEndTime] = useState("");
+const FormEvent = ({
+  close,
+  setActive,
+  events,
+  setEvents,
+  id,
+  setId,
+  event,
+  setEvent,
+  resetCache,
+}) => {
+  const [title, setTitle] = useState(event.title);
+  const [description, setDescription] = useState(event.description);
+  const [date, setDate] = useState(event.date);
+  const [startTime, setStartTime] = useState(event.startTime);
+  const [endTime, setEndTime] = useState(event.endTime);
   const [saveColor, setSaveColor] = useState("#978f8f");
   const [saveBgColor, setSaveBgColor] = useState("#d9d9d9");
 
@@ -35,6 +45,7 @@ const FormEvent = ({ close, setActive, events, setEvents, id, setId }) => {
     setId(id + 1);
     setEvents([...events, event]);
     toast.success("Event created successfully");
+    resetCache();
     close();
   };
 
@@ -128,7 +139,12 @@ const FormEvent = ({ close, setActive, events, setEvents, id, setId }) => {
               type="text"
               placeholder="Add article..."
               value={title}
-              onChange={(e) => setTitle(e.target.value)}
+              onChange={(e) => {
+                setTitle(e.target.value);
+                let newEvent = event;
+                newEvent.title = e.target.value;
+                setEvent(newEvent);
+              }}
             />
             <div className="formCreate-container">
               <div className="formCreate-container-things">
@@ -159,7 +175,12 @@ const FormEvent = ({ close, setActive, events, setEvents, id, setId }) => {
                   <ReactDatePicker
                     selected={date}
                     dateFormat="EEEE, MMMM d"
-                    onChange={(date) => setDate(date)}
+                    onChange={(date) => {
+                      setDate(date);
+                      let newEvent = event;
+                      newEvent.date = date;
+                      setEvent(newEvent);
+                    }}
                   />
                 </div>
                 <div className="formCreate-times">
@@ -173,6 +194,9 @@ const FormEvent = ({ close, setActive, events, setEvents, id, setId }) => {
                     placeholderText="Start time"
                     onChange={(time) => {
                       setStartTime(time);
+                      let newEvent = event;
+                      newEvent.startTime = time;
+                      setEvent(newEvent);
                     }}
                   />
                   <div className="dash">-</div>
@@ -186,6 +210,9 @@ const FormEvent = ({ close, setActive, events, setEvents, id, setId }) => {
                     placeholderText="End time"
                     onChange={(time) => {
                       setEndTime(time);
+                      let newEvent = event;
+                      newEvent.endTime = time;
+                      setEvent(newEvent);
                     }}
                   />
                 </div>
@@ -197,7 +224,12 @@ const FormEvent = ({ close, setActive, events, setEvents, id, setId }) => {
               type="text"
               placeholder="Add description..."
               value={description}
-              onChange={(e) => setDescription(e.target.value)}
+              onChange={(e) => {
+                setDescription(e.target.value);
+                let newEvent = event;
+                newEvent.description = e.target.value;
+                setEvent(newEvent);
+              }}
             />
 
             <div className="buttonFormCreate">

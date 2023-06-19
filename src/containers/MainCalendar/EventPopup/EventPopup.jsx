@@ -22,7 +22,10 @@ const EventPopup = ({ event }) => {
           style={{ backgroundColor: levelColor[event.event.level] }}
         ></div>
         <div className="content">
-          <div className="header">{event.title}</div>
+          <div className="header">
+            <div>{event.title}</div>
+            <span class="material-symbols-outlined">edit</span>
+          </div>
           <div className="time">
             {event.event.start.toLocaleTimeString()} -{" "}
             {event.event.start.toLocaleDateString()}

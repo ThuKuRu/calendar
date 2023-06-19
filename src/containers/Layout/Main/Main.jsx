@@ -8,7 +8,7 @@ import Workspace from "../../Workspace/Workspace";
 
 const Main = ({ tab }) => {
   const [id, setId] = useState(500);
-  const tempEvents = [
+  const [events, setEvents] = useState([
     {
       id: 0,
       title: "Học UIUX",
@@ -30,8 +30,7 @@ const Main = ({ tab }) => {
       end: new Date(2023, 5, 22, 10),
       description: "",
     },
-  ];
-  const [events, setEvents] = useState(tempEvents);
+  ]);
   const [toDoData, setToDoData] = useState([
     {
       name: "HTML",
