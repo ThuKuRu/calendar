@@ -5,6 +5,22 @@ import CreateToDo from "./CreateToDo/CreateToDo";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+const levelColor = {
+  5: "#FF0000",
+  4: "#FFA500",
+  3: "#FFFF00",
+  2: "#1AC71A",
+  1: "#00BFFF",
+};
+
+const levelFontColor = {
+  5: "#fff",
+  4: "#fff",
+  3: "#000",
+  2: "#fff",
+  1: "#fff",
+};
+
 const Todolist = ({ toDoData, setToDoData, id, setId, events, setEvents }) => {
   const onClickDelete = (key) => {
     const newToDoData = toDoData.filter((current, index) => {
@@ -61,6 +77,8 @@ const Todolist = ({ toDoData, setToDoData, id, setId, events, setEvents }) => {
         end: new Date(currTime.getTime() + 60 * 60 * 1000),
         description: current.description,
         level: current.level,
+        color: levelColor[current.level],
+        fontColor: levelFontColor[current.level],
       };
       currTime = new Date(event.end.getTime() + 60 * 60 * 1000 * 8);
       return event;

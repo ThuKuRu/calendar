@@ -9,6 +9,22 @@ function isNotNegativeInteger(number) {
   return Number.isInteger(number) && number >= 0;
 }
 
+const levelColor = {
+  5: "#FF0000",
+  4: "#FFA500",
+  3: "#FFFF00",
+  2: "#1AC71A",
+  1: "#00BFFF",
+};
+
+const levelFontColor = {
+  5: "#fff",
+  4: "#fff",
+  3: "#000",
+  2: "#fff",
+  1: "#fff",
+};
+
 const FormTodo = ({
   close,
   setActive,
@@ -109,6 +125,8 @@ const FormTodo = ({
       percent: "0",
       level: value,
       comple: "false",
+      color: levelColor[value],
+      fontColor: levelFontColor[value],
     };
 
     setId(id + 1);
@@ -167,6 +185,7 @@ const FormTodo = ({
     setValue(e.target.value);
     let newEvent = event;
     newEvent.level = e.target.value;
+    newEvent.color = levelColor[e.target.value];
     setEvent(newEvent);
   };
 
