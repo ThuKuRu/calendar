@@ -34,7 +34,6 @@ const Container = styled.div`
       font-size: clamp(0.625rem, 1.06vw, 0.875rem);
     }
   }
-  font-family: "Roboto";
   .content {
     width: 100%;
     display: flex;
