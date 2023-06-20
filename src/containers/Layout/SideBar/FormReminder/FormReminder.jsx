@@ -46,7 +46,7 @@ const FormReminder = ({
     }
 
     const event = {
-      id: id,
+      id: editMode ? eventCache.id : id,
       title: title,
       deadline: new Date(
         date.getFullYear(),
@@ -62,9 +62,21 @@ const FormReminder = ({
       fontColor: "#fff",
       eventType: "reminder",
     };
-    setId(id + 1);
-    setEvents([...events, event]);
-    toast.success("Reminder created successfully");
+    if (!editMode) {
+      setId(id + 1);
+      setEvents([...events, event]);
+      toast.success("Reminder created successfully");
+    } else {
+      setEvents(
+        [...events].map((current) => {
+          if (current.id === event.id) {
+            return event;
+          }
+          return current;
+        })
+      );
+      toast.success("Reminder changed successfully");
+    }
     resetCache();
     close();
   };

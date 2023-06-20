@@ -133,6 +133,9 @@ const Container = styled.div`
         transform: translateY(-0.25em);
         background-color: #004796;
       }
+      &::before {
+        border-radius: 0.75em;
+      }
     }
   }
 `;
