@@ -8,7 +8,7 @@ const levelColor = {
 };
 
 const FormTodoStyle = styled.div`
-  font-family: "Roboto" !important;
+  font-family: "DIN" !important;
   .modal {
     position: fixed;
     color: black;
@@ -145,6 +145,7 @@ const FormTodoStyle = styled.div`
                 padding: 0.5em 0.75em;
                 font-size: clamp(0.83rem, 0.83vw, 1rem);
                 text-align: end;
+                font-family: "DIN";
               }
               .day {
                 width: 30%;
@@ -298,7 +299,7 @@ const MemberMenu = styled.select`
   width: 100%;
   padding: 0.5rem 2.5rem;
   font-size: 18px;
-  font-family: "Roboto" !important;
+  font-family: "DIN" !important;
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
@@ -316,7 +317,7 @@ const MemberList = styled.option`
   color: #000;
   list-style: none;
   font-size: 18px;
-  font-family: "Roboto" !important;
+  font-family: "DIN" !important;
   margin-right: 4rem;
 `;
 
