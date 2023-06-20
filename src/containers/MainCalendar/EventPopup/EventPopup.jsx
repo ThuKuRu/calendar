@@ -1,9 +1,5 @@
 import React from "react";
 import { Container } from "./index.style";
-import Popup from "reactjs-popup";
-import FormEvent from "../../Layout/SideBar/FormEvent/FormEvent";
-import FormTodo from "../../Layout/SideBar/FormTodo/FormTodo";
-import FormReminder from "../../Layout/SideBar/FormReminder/FormReminder";
 
 const levelColor = {
   5: "#FF0000",
