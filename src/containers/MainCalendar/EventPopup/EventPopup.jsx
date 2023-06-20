@@ -1,5 +1,9 @@
 import React from "react";
 import { Container } from "./index.style";
+import Popup from "reactjs-popup";
+import FormEvent from "../../Layout/SideBar/FormEvent/FormEvent";
+import FormTodo from "../../Layout/SideBar/FormTodo/FormTodo";
+import FormReminder from "../../Layout/SideBar/FormReminder/FormReminder";
 
 const levelColor = {
   5: "#FF0000",
@@ -9,7 +13,7 @@ const levelColor = {
   1: "#00BFFF",
 };
 
-const EventPopup = ({ event }) => {
+const EventPopup = ({ event, editMode, setEditMode }) => {
   return (
     <Container value={event.event.level}>
       <link
@@ -24,7 +28,14 @@ const EventPopup = ({ event }) => {
         <div className="content">
           <div className="header">
             <div>{event.title}</div>
-            <span class="material-symbols-outlined">edit</span>
+            <span
+              className="material-symbols-outlined"
+              onClick={() => {
+                setEditMode(true);
+              }}
+            >
+              edit
+            </span>
           </div>
           <div className="time">
             {event.event.start.toLocaleTimeString()} -{" "}

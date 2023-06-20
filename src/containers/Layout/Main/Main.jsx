@@ -17,6 +17,7 @@ const Main = ({ tab }) => {
       description: "Cô chấm bài round 1",
       color: "#2d7fe0",
       fontColor: "#fff",
+      eventType: "event",
     },
     {
       id: 1,
@@ -26,6 +27,7 @@ const Main = ({ tab }) => {
       description: "",
       color: "#2d7fe0",
       fontColor: "#fff",
+      eventType: "event",
     },
     {
       id: 2,
@@ -35,6 +37,7 @@ const Main = ({ tab }) => {
       description: "",
       color: "#2d7fe0",
       fontColor: "#fff",
+      eventType: "event",
     },
   ]);
   const [toDoData, setToDoData] = useState([

@@ -95,6 +95,7 @@ const CreateToDo = ({ close, setActive, id, setId, toDoData, setToDoData }) => {
       percent: "0",
       level: value,
       comple: "false",
+      eventType: "todo",
     };
     setId(id + 1);
     setToDoData([...toDoData, todo]);
