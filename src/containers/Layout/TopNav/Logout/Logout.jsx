@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { LogoutStyle, Modal } from "./index.style";
 import AvatarImg from "../../../../img/thu_1.png";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Logout = () => {
   const navigate = useNavigate();
@@ -11,6 +13,7 @@ const Logout = () => {
   const [phone, setPhone] = useState("1234567890");
   const [address, setAddress] = useState("123 Main St");
   const [company, setCompany] = useState("Example Company");
+
   const login = () => {
     navigate("/login");
   };
@@ -20,6 +23,9 @@ const Logout = () => {
 
   const closeModal = () => {
     setShowModal(false);
+    toast.success("User information changed successfully", {
+      position: toast.POSITION.TOP_RIGHT,
+    });
   };
 
   return (
@@ -92,6 +98,7 @@ const Logout = () => {
           </div>
         </Modal>
       )}
+      <ToastContainer />
     </LogoutStyle>
   );
 };
