@@ -16,6 +16,7 @@ import FormTodo from "../Layout/SideBar/FormTodo/FormTodo";
 import FormReminder from "../Layout/SideBar/FormReminder/FormReminder";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import CustomButton from "../Buttons/Button/Button";
 
 const MainCalendar = ({
   events,
@@ -128,6 +129,7 @@ const MainCalendar = ({
         eventPropGetter={eventStyleGetter}
       />
       <div className="createDiv">
+        {/* <CustomButton content={"Nút test"}></CustomButton> */}
         <div
           className="createButton"
           onClick={() => {
