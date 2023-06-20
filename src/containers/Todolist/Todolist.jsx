@@ -79,6 +79,7 @@ const Todolist = ({ toDoData, setToDoData, id, setId, events, setEvents }) => {
         level: current.level,
         color: levelColor[current.level],
         fontColor: levelFontColor[current.level],
+        eventType: "todo",
       };
       currTime = new Date(event.end.getTime() + 60 * 60 * 1000 * 8);
       return event;

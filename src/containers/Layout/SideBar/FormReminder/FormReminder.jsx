@@ -19,7 +19,7 @@ const FormReminder = ({
 }) => {
   const [title, setTitle] = useState(eventCache.title);
   const [description, setDescription] = useState(eventCache.description);
-  const [date, setDate] = useState(eventCache.date);
+  const [date, setDate] = useState(eventCache.deadline);
   const [time, setTime] = useState(eventCache.deadline);
   const [saveColor, setSaveColor] = useState("#978f8f");
   const [saveBgColor, setSaveBgColor] = useState("#d9d9d9");
@@ -117,9 +117,11 @@ const FormReminder = ({
               value={title}
               onChange={(e) => {
                 setTitle(e.target.value);
-                let newEvent = eventCache;
-                newEvent.title = e.target.value;
-                setEventCache(newEvent);
+                if (!editMode) {
+                  let newEvent = eventCache;
+                  newEvent.title = e.target.value;
+                  setEventCache(newEvent);
+                }
               }}
             />
             <div className="formCreate-container">
@@ -154,9 +156,11 @@ const FormReminder = ({
                     dateFormat="EEEE, MMMM d"
                     onChange={(date) => {
                       setDate(date);
-                      let newEvent = eventCache;
-                      newEvent.date = date;
-                      setEventCache(newEvent);
+                      if (!editMode) {
+                        let newEvent = eventCache;
+                        newEvent.date = date;
+                        setEventCache(newEvent);
+                      }
                     }}
                   />
                 </div>
@@ -171,9 +175,11 @@ const FormReminder = ({
                     placeholderText="Time"
                     onChange={(time) => {
                       setTime(time);
-                      let newEvent = eventCache;
-                      newEvent.deadline = time;
-                      setEventCache(newEvent);
+                      if (!editMode) {
+                        let newEvent = eventCache;
+                        newEvent.deadline = time;
+                        setEventCache(newEvent);
+                      }
                     }}
                   />
                 </div>
@@ -187,9 +193,11 @@ const FormReminder = ({
               value={description}
               onChange={(e) => {
                 setDescription(e.target.value);
-                let newEvent = eventCache;
-                newEvent.description = e.target.value;
-                setEventCache(newEvent);
+                if (!editMode) {
+                  let newEvent = eventCache;
+                  newEvent.description = e.target.value;
+                  setEventCache(newEvent);
+                }
               }}
             />
 

@@ -9,7 +9,13 @@ const levelColor = {
   1: "#00BFFF",
 };
 
-const EventPopup = ({ event, editMode, setEditMode }) => {
+const EventPopup = ({
+  event,
+  setEditMode,
+  setOpen,
+  setEventCache,
+  setActive,
+}) => {
   return (
     <Container value={event.event.level}>
       <link
@@ -27,7 +33,10 @@ const EventPopup = ({ event, editMode, setEditMode }) => {
             <span
               className="material-symbols-outlined"
               onClick={() => {
+                setOpen(true);
                 setEditMode(true);
+                setEventCache(event.event);
+                setActive(event.event.eventType);
               }}
             >
               edit

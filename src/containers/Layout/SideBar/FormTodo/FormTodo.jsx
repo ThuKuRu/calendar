@@ -40,7 +40,7 @@ const FormTodo = ({
   const [title, setTitle] = useState(eventCache.title);
   const [description, setDescription] = useState(eventCache.description);
   const [time, setTime] = useState(eventCache.deadline);
-  const [date, setDate] = useState(eventCache.date);
+  const [date, setDate] = useState(eventCache.deadline);
   const [value, setValue] = useState(eventCache.level);
   const [day, setDay] = useState(eventCache.duration.day);
   const [hour, setHour] = useState(eventCache.duration.hour);
@@ -213,9 +213,11 @@ const FormTodo = ({
               value={title}
               onChange={(e) => {
                 setTitle(e.target.value);
-                let newEvent = eventCache;
-                newEvent.title = e.target.value;
-                setEventCache(newEvent);
+                if (!editMode) {
+                  let newEvent = eventCache;
+                  newEvent.title = e.target.value;
+                  setEventCache(newEvent);
+                }
               }}
             />
             <div className="formCreate-container">
@@ -253,9 +255,11 @@ const FormTodo = ({
                       value={day}
                       onChange={(e) => {
                         setDay(e.target.value);
-                        let newEvent = eventCache;
-                        newEvent.duration.day = e.target.value;
-                        setEventCache(newEvent);
+                        if (!editMode) {
+                          let newEvent = eventCache;
+                          newEvent.duration.day = e.target.value;
+                          setEventCache(newEvent);
+                        }
                       }}
                     />
                     <label>day</label>
@@ -266,9 +270,11 @@ const FormTodo = ({
                       value={hour}
                       onChange={(e) => {
                         setHour(e.target.value);
-                        let newEvent = eventCache;
-                        newEvent.duration.hour = e.target.value;
-                        setEventCache(newEvent);
+                        if (!editMode) {
+                          let newEvent = eventCache;
+                          newEvent.duration.hour = e.target.value;
+                          setEventCache(newEvent);
+                        }
                       }}
                     />
                     <label>h</label>
@@ -279,9 +285,11 @@ const FormTodo = ({
                       value={minute}
                       onChange={(e) => {
                         setMinute(e.target.value);
-                        let newEvent = eventCache;
-                        newEvent.duration.minute = e.target.value;
-                        setEventCache(newEvent);
+                        if (!editMode) {
+                          let newEvent = eventCache;
+                          newEvent.duration.minute = e.target.value;
+                          setEventCache(newEvent);
+                        }
                       }}
                     />
                     <label>m</label>
@@ -298,9 +306,11 @@ const FormTodo = ({
                       dateFormat="EEEE, MMMM d"
                       onChange={(date) => {
                         setDate(date);
-                        let newEvent = eventCache;
-                        newEvent.date = date;
-                        setEventCache(newEvent);
+                        if (!editMode) {
+                          let newEvent = eventCache;
+                          newEvent.date = date;
+                          setEventCache(newEvent);
+                        }
                       }}
                     />
                   </div>
@@ -315,9 +325,11 @@ const FormTodo = ({
                       placeholderText="Time"
                       onChange={(time) => {
                         setTime(time);
-                        let newEvent = eventCache;
-                        newEvent.deadline = time;
-                        setEventCache(newEvent);
+                        if (!editMode) {
+                          let newEvent = eventCache;
+                          newEvent.deadline = time;
+                          setEventCache(newEvent);
+                        }
                       }}
                     />
                   </div>
@@ -343,9 +355,11 @@ const FormTodo = ({
                 placeholder="Add description ..."
                 onChange={(e) => {
                   setDescription(e.target.value);
-                  let newEvent = eventCache;
-                  newEvent.description = e.target.value;
-                  setEventCache(newEvent);
+                  if (!editMode) {
+                    let newEvent = eventCache;
+                    newEvent.description = e.target.value;
+                    setEventCache(newEvent);
+                  }
                 }}
               ></textarea>
             </div>

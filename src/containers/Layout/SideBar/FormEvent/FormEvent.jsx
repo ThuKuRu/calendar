@@ -19,9 +19,9 @@ const FormEvent = ({
 }) => {
   const [title, setTitle] = useState(eventCache.title);
   const [description, setDescription] = useState(eventCache.description);
-  const [date, setDate] = useState(eventCache.date);
-  const [startTime, setStartTime] = useState(eventCache.startTime);
-  const [endTime, setEndTime] = useState(eventCache.endTime);
+  const [date, setDate] = useState(eventCache.start);
+  const [startTime, setStartTime] = useState(eventCache.start);
+  const [endTime, setEndTime] = useState(eventCache.end);
   const [saveColor, setSaveColor] = useState("#978f8f");
   const [saveBgColor, setSaveBgColor] = useState("#d9d9d9");
 
@@ -133,9 +133,11 @@ const FormEvent = ({
               value={title}
               onChange={(e) => {
                 setTitle(e.target.value);
-                let newEvent = eventCache;
-                newEvent.title = e.target.value;
-                setEventCache(newEvent);
+                if (!editMode) {
+                  let newEvent = eventCache;
+                  newEvent.title = e.target.value;
+                  setEventCache(newEvent);
+                }
               }}
             />
             <div className="formCreate-container">
@@ -171,9 +173,11 @@ const FormEvent = ({
                     dateFormat="EEEE, MMMM d"
                     onChange={(date) => {
                       setDate(date);
-                      let newEvent = setEventCache;
-                      newEvent.date = date;
-                      setEventCache(newEvent);
+                      if (!editMode) {
+                        let newEvent = eventCache;
+                        newEvent.date = date;
+                        setEventCache(newEvent);
+                      }
                     }}
                   />
                 </div>
@@ -188,9 +192,11 @@ const FormEvent = ({
                     placeholderText="Start time"
                     onChange={(time) => {
                       setStartTime(time);
-                      let newEvent = eventCache;
-                      newEvent.startTime = time;
-                      setEventCache(newEvent);
+                      if (!editMode) {
+                        let newEvent = eventCache;
+                        newEvent.start = time;
+                        setEventCache(newEvent);
+                      }
                     }}
                   />
                   <div className="dash">-</div>
@@ -204,9 +210,11 @@ const FormEvent = ({
                     placeholderText="End time"
                     onChange={(time) => {
                       setEndTime(time);
-                      let newEvent = eventCache;
-                      newEvent.endTime = time;
-                      setEventCache(newEvent);
+                      if (!editMode) {
+                        let newEvent = eventCache;
+                        newEvent.end = time;
+                        setEventCache(newEvent);
+                      }
                     }}
                   />
                 </div>
@@ -220,9 +228,11 @@ const FormEvent = ({
               value={description}
               onChange={(e) => {
                 setDescription(e.target.value);
-                let newEvent = eventCache;
-                newEvent.description = e.target.value;
-                setEventCache(newEvent);
+                if (!editMode) {
+                  let newEvent = eventCache;
+                  newEvent.description = e.target.value;
+                  setEventCache(newEvent);
+                }
               }}
             />
 

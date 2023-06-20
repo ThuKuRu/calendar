@@ -3,7 +3,7 @@ import getDay from "date-fns/getDay";
 import parse from "date-fns/parse";
 import startOfWeek from "date-fns/startOfWeek";
 import vi from "date-fns/locale/vi";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import "react-datepicker/dist/react-datepicker.css";
@@ -26,22 +26,18 @@ const MainCalendar = ({
   setToDoData,
 }) => {
   const [active, setActive] = useState("event");
-  var editMode = false;
-  const setEditMode = (bool) => {
-    editMode = bool;
-  };
+  const [editMode, setEditMode] = useState(false);
   const newEvent = {
     title: "",
-    date: new Date(),
-    startTime: "",
-    endTime: "",
+    start: new Date(),
+    end: new Date(),
     description: "",
     duration: {
       day: "",
       hour: "",
       minute: "",
     },
-    deadline: "",
+    deadline: new Date(),
     level: "1",
     color: "#2d7fe0",
     fontColor: "#fff",
@@ -50,13 +46,12 @@ const MainCalendar = ({
   const resetCache = () => {
     setEventCache(newEvent);
   };
-  function Event(event) {
+  function Event(e) {
+    const event = e;
     const [showTooltip, setShowTooltip] = useState(false);
-
     const closeTooltip = () => {
       setShowTooltip(false);
     };
-
     const openTooltip = () => {
       setShowTooltip(true);
     };
@@ -84,26 +79,16 @@ const MainCalendar = ({
           <Tooltip id="test" style={{ zIndex: 4 }}>
             <EventPopup
               event={event}
-              editMode={editMode}
               setEditMode={setEditMode}
-              // eventCache={event.event}
-              // setEventCache={setEventCache}
-              // editMode={editMode}
-              // setEditMode={setEditMode}
-              // events={events}
-              // setEvents={setEvents}
-              // resetCache={resetCache}
-              // toDoData={toDoData}
-              // setToDoData={setToDoData}
-              // closeTooltip={closeTooltip}
+              setOpen={setOpen}
+              setEventCache={setEventCache}
+              setActive={setActive}
             />
           </Tooltip>
         </Overlay>
-        {/* {editMode && <div>éc éc</div>} */}
       </div>
     );
   }
-
   const locales = {
     "vi-VN": vi,
   };
@@ -124,6 +109,7 @@ const MainCalendar = ({
       },
     };
   };
+  const [open, setOpen] = useState(false);
 
   return (
     <Container>
@@ -141,26 +127,25 @@ const MainCalendar = ({
         eventPropGetter={eventStyleGetter}
       />
       <div className="createDiv">
-        <Popup
-          modal
-          trigger={
-            <div className="createButton">
-              <p
-                className="create"
-                onClick={() => {
-                  setEditMode(false);
-                }}
-              >
-                Create
-              </p>
-            </div>
-          }
+        <div
+          className="createButton"
+          onClick={() => {
+            setOpen(true);
+            setEditMode(false);
+            resetCache();
+          }}
         >
+          <p className="create">Create</p>
+        </div>
+        <Popup modal open={open}>
           {(close) => (
             <div>
               {active === "event" && (
                 <FormEvent
-                  close={close}
+                  close={() => {
+                    setOpen((open) => !open);
+                    close();
+                  }}
                   setActive={setActive}
                   events={events}
                   setEvents={setEvents}
@@ -174,7 +159,10 @@ const MainCalendar = ({
               )}
               {active === "todo" && (
                 <FormTodo
-                  close={close}
+                  close={() => {
+                    setOpen((open) => !open);
+                    close();
+                  }}
                   setActive={setActive}
                   events={events}
                   setEvents={setEvents}
@@ -190,7 +178,10 @@ const MainCalendar = ({
               )}
               {active === "reminder" && (
                 <FormReminder
-                  close={close}
+                  close={() => {
+                    setOpen((open) => !open);
+                    close();
+                  }}
                   setActive={setActive}
                   events={events}
                   setEvents={setEvents}
