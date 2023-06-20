@@ -28,6 +28,7 @@ const MainCalendar = ({
   const [active, setActive] = useState("event");
   const [editMode, setEditMode] = useState(false);
   const newEvent = {
+    id: id,
     title: "",
     start: new Date(),
     end: new Date(),

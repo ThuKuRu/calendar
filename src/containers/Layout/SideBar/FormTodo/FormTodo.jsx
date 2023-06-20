@@ -32,6 +32,8 @@ const FormTodo = ({
   setId,
   toDoData,
   setToDoData,
+  events,
+  setEvents,
   eventCache,
   setEventCache,
   resetCache,
@@ -102,9 +104,8 @@ const FormTodo = ({
       );
       return;
     }
-
     const todo = {
-      id: id,
+      id: editMode ? eventCache.id : id,
       name: title,
       name_img: "thu_1.png",
       assignee: "you",
@@ -129,12 +130,31 @@ const FormTodo = ({
       fontColor: levelFontColor[value],
       eventType: "todo",
     };
-
-    setId(id + 1);
-    setToDoData([...toDoData, todo]);
+    if (!editMode) {
+      setId(id + 1);
+      setToDoData([...toDoData, todo]);
+      handleToastSuccess();
+    } else {
+      setEvents(
+        [...events].map((current) => {
+          if (current.id === todo.id) {
+            return todo;
+          }
+          return current;
+        })
+      );
+      setToDoData(
+        [...toDoData].map((current) => {
+          if (current.id === todo.id) {
+            return todo;
+          }
+          return current;
+        })
+      );
+      toast.success("To-do changed successfully");
+    }
     close();
     resetCache();
-    handleToastSuccess();
   };
 
   useEffect(() => {
@@ -203,7 +223,9 @@ const FormTodo = ({
       <div className="modal">
         <div className="modal-container">
           <div className="header">
-            <div className="headerText">Create new To-do</div>
+            <div className="headerText">
+              {!editMode ? "Create new To-do" : "Edit to-do"}
+            </div>
           </div>
           <div className="content">
             <input

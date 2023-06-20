@@ -31,7 +31,7 @@ const FormEvent = ({
     const month = date.getMonth();
     const day = date.getDate();
     const event = {
-      id: id,
+      id: editMode ? eventCache.id : id,
       title: title,
       start: new Date(
         year,
@@ -46,9 +46,21 @@ const FormEvent = ({
       fontColor: "#fff",
       eventType: "event",
     };
-    setId(id + 1);
-    setEvents([...events, event]);
-    toast.success("Event created successfully");
+    if (!editMode) {
+      setId(id + 1);
+      setEvents([...events, event]);
+      toast.success("Event created successfully");
+    } else {
+      setEvents(
+        [...events].map((current) => {
+          if (current.id === event.id) {
+            return event;
+          }
+          return current;
+        })
+      );
+      toast.success("Event changed successfully");
+    }
     resetCache();
     close();
   };
@@ -123,7 +135,7 @@ const FormEvent = ({
         <div className="modal-container">
           <ToastContainer />
           <div className="header">
-            <div className="headerText"> Create new Event </div>
+            <div className="headerText"> {!editMode ?"Create new Event" : "Edit event"} </div>
           </div>
           <div className="content">
             <input
