@@ -13,7 +13,7 @@ const customStyles = {
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
     textAlign: "center",
-    fontFamily: "Roboto",
+    fontFamily: "DIN",
     borderRadius: "14px",
   },
 };

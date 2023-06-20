@@ -12,15 +12,16 @@ const FormEvent = ({
   setEvents,
   id,
   setId,
-  event,
-  setEvent,
+  eventCache,
+  setEventCache,
   resetCache,
+  editMode,
 }) => {
-  const [title, setTitle] = useState(event.title);
-  const [description, setDescription] = useState(event.description);
-  const [date, setDate] = useState(event.date);
-  const [startTime, setStartTime] = useState(event.startTime);
-  const [endTime, setEndTime] = useState(event.endTime);
+  const [title, setTitle] = useState(eventCache.title);
+  const [description, setDescription] = useState(eventCache.description);
+  const [date, setDate] = useState(eventCache.start);
+  const [startTime, setStartTime] = useState(eventCache.start);
+  const [endTime, setEndTime] = useState(eventCache.end);
   const [saveColor, setSaveColor] = useState("#978f8f");
   const [saveBgColor, setSaveBgColor] = useState("#d9d9d9");
 
@@ -43,6 +44,7 @@ const FormEvent = ({
       description: description,
       color: "#2d7fe0",
       fontColor: "#fff",
+      eventType: "event",
     };
     setId(id + 1);
     setEvents([...events, event]);
@@ -131,34 +133,38 @@ const FormEvent = ({
               value={title}
               onChange={(e) => {
                 setTitle(e.target.value);
-                let newEvent = event;
-                newEvent.title = e.target.value;
-                setEvent(newEvent);
+                if (!editMode) {
+                  let newEvent = eventCache;
+                  newEvent.title = e.target.value;
+                  setEventCache(newEvent);
+                }
               }}
             />
             <div className="formCreate-container">
-              <div className="formCreate-container-things">
-                <button className="formCreate-things formCreate-event">
-                  Event
-                </button>
+              {editMode === false && (
+                <div className="formCreate-container-things">
+                  <button className="formCreate-things formCreate-event">
+                    Event
+                  </button>
 
-                <button
-                  className="formCreate-things"
-                  onClick={() => {
-                    setActive("todo");
-                  }}
-                >
-                  To-do
-                </button>
-                <button
-                  className="formCreate-things"
-                  onClick={() => {
-                    setActive("reminder");
-                  }}
-                >
-                  Reminder
-                </button>
-              </div>
+                  <button
+                    className="formCreate-things"
+                    onClick={() => {
+                      setActive("todo");
+                    }}
+                  >
+                    To-do
+                  </button>
+                  <button
+                    className="formCreate-things"
+                    onClick={() => {
+                      setActive("reminder");
+                    }}
+                  >
+                    Reminder
+                  </button>
+                </div>
+              )}
               <div className="formCreate-time-container">
                 <div className="formCreate-sche-day">
                   <div className="material-symbols-outlined">schedule</div>
@@ -167,9 +173,11 @@ const FormEvent = ({
                     dateFormat="EEEE, MMMM d"
                     onChange={(date) => {
                       setDate(date);
-                      let newEvent = event;
-                      newEvent.date = date;
-                      setEvent(newEvent);
+                      if (!editMode) {
+                        let newEvent = eventCache;
+                        newEvent.date = date;
+                        setEventCache(newEvent);
+                      }
                     }}
                   />
                 </div>
@@ -184,9 +192,11 @@ const FormEvent = ({
                     placeholderText="Start time"
                     onChange={(time) => {
                       setStartTime(time);
-                      let newEvent = event;
-                      newEvent.startTime = time;
-                      setEvent(newEvent);
+                      if (!editMode) {
+                        let newEvent = eventCache;
+                        newEvent.start = time;
+                        setEventCache(newEvent);
+                      }
                     }}
                   />
                   <div className="dash">-</div>
@@ -200,9 +210,11 @@ const FormEvent = ({
                     placeholderText="End time"
                     onChange={(time) => {
                       setEndTime(time);
-                      let newEvent = event;
-                      newEvent.endTime = time;
-                      setEvent(newEvent);
+                      if (!editMode) {
+                        let newEvent = eventCache;
+                        newEvent.end = time;
+                        setEventCache(newEvent);
+                      }
                     }}
                   />
                 </div>
@@ -216,9 +228,11 @@ const FormEvent = ({
               value={description}
               onChange={(e) => {
                 setDescription(e.target.value);
-                let newEvent = event;
-                newEvent.description = e.target.value;
-                setEvent(newEvent);
+                if (!editMode) {
+                  let newEvent = eventCache;
+                  newEvent.description = e.target.value;
+                  setEventCache(newEvent);
+                }
               }}
             />
 

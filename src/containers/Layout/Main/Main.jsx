@@ -17,6 +17,7 @@ const Main = ({ tab }) => {
       description: "Cô chấm bài round 1",
       color: "#2d7fe0",
       fontColor: "#fff",
+      eventType: "event",
     },
     {
       id: 1,
@@ -26,6 +27,7 @@ const Main = ({ tab }) => {
       description: "",
       color: "#2d7fe0",
       fontColor: "#fff",
+      eventType: "event",
     },
     {
       id: 2,
@@ -35,6 +37,7 @@ const Main = ({ tab }) => {
       description: "",
       color: "#2d7fe0",
       fontColor: "#fff",
+      eventType: "event",
     },
   ]);
   const [toDoData, setToDoData] = useState([
@@ -48,6 +51,7 @@ const Main = ({ tab }) => {
       percent: "70",
       level: "5",
       comple: "false",
+      eventType: "todo",
     },
     {
       name: "SE Project",
@@ -59,6 +63,7 @@ const Main = ({ tab }) => {
       percent: "50",
       level: "5",
       comple: "false",
+      eventType: "todo",
     },
     {
       name: "UI UX",
@@ -70,6 +75,7 @@ const Main = ({ tab }) => {
       percent: "40",
       level: "2",
       comple: "false",
+      eventType: "todo",
     },
     {
       name: "Figma",
@@ -81,6 +87,7 @@ const Main = ({ tab }) => {
       percent: "30",
       level: "3",
       comple: "false",
+      eventType: "todo",
     },
     {
       name: "Java",
@@ -92,6 +99,7 @@ const Main = ({ tab }) => {
       percent: "90",
       level: "4",
       comple: "false",
+      eventType: "todo",
     },
     {
       name: "Python",
@@ -103,6 +111,7 @@ const Main = ({ tab }) => {
       percent: "20",
       level: "3",
       comple: "false",
+      eventType: "todo",
     },
     {
       name: "HTML",
@@ -114,6 +123,7 @@ const Main = ({ tab }) => {
       percent: "80",
       level: "5",
       comple: "false",
+      eventType: "todo",
     },
     {
       name: "Database",
@@ -125,6 +135,7 @@ const Main = ({ tab }) => {
       percent: "10",
       level: "1",
       comple: "false",
+      eventType: "todo",
     },
   ]);
   const [people, setPeople] = useState([

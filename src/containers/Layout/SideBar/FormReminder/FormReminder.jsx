@@ -12,14 +12,15 @@ const FormReminder = ({
   setEvents,
   id,
   setId,
-  event,
-  setEvent,
+  eventCache,
+  setEventCache,
   resetCache,
+  editMode,
 }) => {
-  const [title, setTitle] = useState(event.title);
-  const [description, setDescription] = useState(event.description);
-  const [date, setDate] = useState(event.date);
-  const [time, setTime] = useState(event.deadline);
+  const [title, setTitle] = useState(eventCache.title);
+  const [description, setDescription] = useState(eventCache.description);
+  const [date, setDate] = useState(eventCache.deadline);
+  const [time, setTime] = useState(eventCache.deadline);
   const [saveColor, setSaveColor] = useState("#978f8f");
   const [saveBgColor, setSaveBgColor] = useState("#d9d9d9");
 
@@ -59,6 +60,7 @@ const FormReminder = ({
       end: selectedDateTime,
       color: "#2d7fe0",
       fontColor: "#fff",
+      eventType: "reminder",
     };
     setId(id + 1);
     setEvents([...events, event]);
@@ -115,33 +117,37 @@ const FormReminder = ({
               value={title}
               onChange={(e) => {
                 setTitle(e.target.value);
-                let newEvent = event;
-                newEvent.title = e.target.value;
-                setEvent(newEvent);
+                if (!editMode) {
+                  let newEvent = eventCache;
+                  newEvent.title = e.target.value;
+                  setEventCache(newEvent);
+                }
               }}
             />
             <div className="formCreate-container">
-              <div className="formCreate-container-things">
-                <button
-                  className="formCreate-things "
-                  onClick={() => {
-                    setActive("event");
-                  }}
-                >
-                  Event
-                </button>
-                <button
-                  className="formCreate-things"
-                  onClick={() => {
-                    setActive("todo");
-                  }}
-                >
-                  To-do
-                </button>
-                <button className="formCreate-things formCreate-reminder">
-                  Reminder
-                </button>
-              </div>
+              {editMode === false && (
+                <div className="formCreate-container-things">
+                  <button
+                    className="formCreate-things "
+                    onClick={() => {
+                      setActive("event");
+                    }}
+                  >
+                    Event
+                  </button>
+                  <button
+                    className="formCreate-things"
+                    onClick={() => {
+                      setActive("todo");
+                    }}
+                  >
+                    To-do
+                  </button>
+                  <button className="formCreate-things formCreate-reminder">
+                    Reminder
+                  </button>
+                </div>
+              )}
               <div className="formCreate-time-container">
                 <div className="formCreate-sche-day">
                   <div className="material-symbols-outlined">schedule</div>
@@ -150,9 +156,11 @@ const FormReminder = ({
                     dateFormat="EEEE, MMMM d"
                     onChange={(date) => {
                       setDate(date);
-                      let newEvent = event;
-                      newEvent.date = date;
-                      setEvent(newEvent);
+                      if (!editMode) {
+                        let newEvent = eventCache;
+                        newEvent.date = date;
+                        setEventCache(newEvent);
+                      }
                     }}
                   />
                 </div>
@@ -167,9 +175,11 @@ const FormReminder = ({
                     placeholderText="Time"
                     onChange={(time) => {
                       setTime(time);
-                      let newEvent = event;
-                      newEvent.deadline = time;
-                      setEvent(newEvent);
+                      if (!editMode) {
+                        let newEvent = eventCache;
+                        newEvent.deadline = time;
+                        setEventCache(newEvent);
+                      }
                     }}
                   />
                 </div>
@@ -183,9 +193,11 @@ const FormReminder = ({
               value={description}
               onChange={(e) => {
                 setDescription(e.target.value);
-                let newEvent = event;
-                newEvent.description = e.target.value;
-                setEvent(newEvent);
+                if (!editMode) {
+                  let newEvent = eventCache;
+                  newEvent.description = e.target.value;
+                  setEventCache(newEvent);
+                }
               }}
             />
 
