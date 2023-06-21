@@ -3,7 +3,7 @@ import getDay from "date-fns/getDay";
 import parse from "date-fns/parse";
 import startOfWeek from "date-fns/startOfWeek";
 import vi from "date-fns/locale/vi";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import "react-datepicker/dist/react-datepicker.css";
@@ -63,19 +63,17 @@ const MainCalendar = ({
       return ref.current;
     };
     return (
-      <div ref={ref} onMouseLeave={closeTooltip}>
-        <span onMouseOver={openTooltip}>{event.title}</span>
+      <div
+        ref={ref}
+        onMouseOver={openTooltip}
+        onMouseOut={closeTooltip}
+        style={{ height: "100%" }}
+      >
+        <span>{event.title}</span>
         <Overlay
           rootClose
           target={getTarget}
           show={showTooltip}
-          placement={
-            ref.current === null
-              ? "top"
-              : ref.current.getBoundingClientRect().y > 420
-              ? "top"
-              : "bottom"
-          }
           onHide={closeTooltip}
         >
           <Tooltip id="test" style={{ zIndex: 4 }}>
@@ -129,7 +127,7 @@ const MainCalendar = ({
         eventPropGetter={eventStyleGetter}
       />
       <div className="createDiv">
-        {/* <CustomButton content={"Nút test"}></CustomButton> */}
+        <CustomButton content={"Nút test"}></CustomButton>
         <div
           className="createButton"
           onClick={() => {
