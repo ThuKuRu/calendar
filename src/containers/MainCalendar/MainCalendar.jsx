@@ -127,7 +127,7 @@ const MainCalendar = ({
         eventPropGetter={eventStyleGetter}
       />
       <div className="createDiv">
-        <CustomButton content={"Nút test"}></CustomButton>
+        {/* <CustomButton content={"Nút test"}></CustomButton> */}
         <div
           className="createButton"
           onClick={() => {

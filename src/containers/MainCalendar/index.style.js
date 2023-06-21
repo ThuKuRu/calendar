@@ -23,6 +23,7 @@ const Container = styled.div`
       }
       &:hover {
         border-radius: 0.75em;
+        background-color: transparent;
         transform: translateY(-0.25em);
         color: #2d7fe0;
       }
