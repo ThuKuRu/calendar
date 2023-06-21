@@ -50,18 +50,33 @@ const AddTask = ({
   const handleTodo = () => {
     const now = new Date();
     if (
-      title === "" ||
-      description === "" ||
-      time === "" ||
-      date === "" ||
-      day === "" ||
-      hour === "" ||
-      minute === "" ||
-      assignee === ""
+      title !== "" &&
+      time !== "" &&
+      date !== "" &&
+      day !== "" &&
+      hour !== "" &&
+      minute !== ""
     ) {
+      if (assignee === "") {
+        handleToastError("Please choose assignee");
+        return;
+      }
+    } else {
       handleToastError("Please fill in all required fields.");
       return;
     }
+    // if (
+    //   title === "" ||
+    //   time === "" ||
+    //   date === "" ||
+    //   day === "" ||
+    //   hour === "" ||
+    //   minute === "" ||
+    //   assignee === ""
+    // ) {
+    //   handleToastError("Please fill in all required fields.");
+    //   return;
+    // }
     const selectedDateTime = new Date(
       date.getFullYear(),
       date.getMonth(),
@@ -172,12 +187,12 @@ const AddTask = ({
     setSaveBgColor("#d9d9d9");
     if (
       title === "" ||
-      description === "" ||
       time === "" ||
       date === "" ||
       day === "" ||
       hour === "" ||
-      minute === ""
+      minute === "" ||
+      assignee === ""
     ) {
       return;
     }
@@ -209,7 +224,7 @@ const AddTask = ({
     }
     setSaveColor("#2d7fe0");
     setSaveBgColor("#fff");
-  }, [title, description, time, day, hour, minute, date]);
+  }, [title, description, time, day, hour, minute, date, assignee]);
 
   const handleChange = (event) => {
     setValue(event.target.value);

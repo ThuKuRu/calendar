@@ -8,7 +8,8 @@ const levelColor = {
 };
 
 const CreateTodoStyle = styled.div`
-font-family: "Roboto" !important;
+--font : "DIN";
+font-family: var(--font) !important;
   .modal {
     position: fixed;
     color: black;
@@ -45,30 +46,14 @@ font-family: "Roboto" !important;
         padding: 10px 5px;
         background-color: white;
         font-size: 20px;
-        .add {
-          margin-left: 20px;
-          height: 30px;
-          width: 95%;
-          border: 1px solid #011627;
-          border-radius: 1em;
-          padding: 8px 12px;
-          font-size: 20px; 
-        }
         .add-form {
           height: 30px;
           width: 95%;
           border: 1px solid #011627;
           border-radius: 1em;
           padding: 8px 12px;
-          font-size: 20px;        
-        }
-        .formTodo-des {
-          text-align: left;
-          margin-top: 10px;
-          margin-bottom: 10px;
-          border-radius: 1em;
-          font-size: 20px;
-          font-weight: bold;
+          font-size: 20px;    
+          font-family : var(--font);    
         }
         .formTodo-address {
           text-align: left;
@@ -86,7 +71,7 @@ font-family: "Roboto" !important;
             border: none;
             resize: none;
             box-sizing: border-box;
-            font-family: inherit;
+            font-family: var(--font);
             &:focus {
               outline: none;
             }
@@ -110,7 +95,8 @@ font-family: "Roboto" !important;
               border: none;
               width: 30%;
               padding: 8px 12px;
-              font-size: 18px;    
+              font-size: 18px; 
+              font-family: var(--font);   
             }
             label{
               font-size: 16px; 
@@ -140,6 +126,7 @@ font-family: "Roboto" !important;
                     border: none;
                     background-color: transparent;
                     text-align: center;
+                    font-family: var(--font);
                   }
                 }
               }
@@ -216,7 +203,7 @@ const SelectList = styled.select`
   width: 100%;
   padding: 8px 12px;
   font-size: 18px;
-  font-family: "Roboto" !important;
+  font-family: var(--font) !important;
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
@@ -230,7 +217,7 @@ const MenuItem = styled.option`
   color: #000;
   list-style: none;
   font-size: 18px;
-  font-family: "Roboto" !important;
+  font-family: var(--font) !important;
   background-color: ${({ value }) => levelColor[value]};
 `;
 

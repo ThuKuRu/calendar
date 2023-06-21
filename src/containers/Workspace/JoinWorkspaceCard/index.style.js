@@ -8,7 +8,6 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  font-family: "Roboto";
   .content {
     width: 100%;
     display: flex;

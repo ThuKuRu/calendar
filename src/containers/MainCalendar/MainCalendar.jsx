@@ -3,7 +3,7 @@ import getDay from "date-fns/getDay";
 import parse from "date-fns/parse";
 import startOfWeek from "date-fns/startOfWeek";
 import vi from "date-fns/locale/vi";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import "react-datepicker/dist/react-datepicker.css";
@@ -17,45 +17,6 @@ import FormReminder from "../Layout/SideBar/FormReminder/FormReminder";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-function Event(event) {
-  const [showTooltip, setShowTooltip] = useState(false);
-
-  const closeTooltip = () => {
-    setShowTooltip(false);
-  };
-
-  const openTooltip = () => {
-    setShowTooltip(true);
-  };
-  const ref = useRef(null);
-
-  const getTarget = () => {
-    return ref.current;
-  };
-  return (
-    <div ref={ref} onMouseLeave={closeTooltip}>
-      <span onMouseOver={openTooltip}>{event.title}</span>
-      <Overlay
-        rootClose
-        target={getTarget}
-        show={showTooltip}
-        placement={
-          ref.current === null
-            ? "top"
-            : ref.current.getBoundingClientRect().y > 420
-            ? "top"
-            : "bottom"
-        }
-        onHide={closeTooltip}
-      >
-        <Tooltip id="test" style={{ zIndex: 10 }}>
-          <EventPopup event={event} />
-        </Tooltip>
-      </Overlay>
-    </div>
-  );
-}
-
 const MainCalendar = ({
   events,
   setEvents,
@@ -65,26 +26,70 @@ const MainCalendar = ({
   setToDoData,
 }) => {
   const [active, setActive] = useState("event");
+  const [editMode, setEditMode] = useState(false);
   const newEvent = {
+    id: id,
     title: "",
-    date: new Date(),
-    startTime: "",
-    endTime: "",
+    start: new Date(),
+    end: new Date(),
     description: "",
     duration: {
       day: "",
       hour: "",
       minute: "",
     },
-    deadline: "",
+    deadline: new Date(),
     level: "1",
     color: "#2d7fe0",
     fontColor: "#fff",
   };
-  const [event, setEvent] = useState(newEvent);
+  const [eventCache, setEventCache] = useState(newEvent);
   const resetCache = () => {
-    setEvent(newEvent);
+    setEventCache(newEvent);
   };
+  function Event(e) {
+    const event = e;
+    const [showTooltip, setShowTooltip] = useState(false);
+    const closeTooltip = () => {
+      setShowTooltip(false);
+    };
+    const openTooltip = () => {
+      setShowTooltip(true);
+    };
+    const ref = useRef(null);
+
+    const getTarget = () => {
+      return ref.current;
+    };
+    return (
+      <div ref={ref} onMouseLeave={closeTooltip}>
+        <span onMouseOver={openTooltip}>{event.title}</span>
+        <Overlay
+          rootClose
+          target={getTarget}
+          show={showTooltip}
+          placement={
+            ref.current === null
+              ? "top"
+              : ref.current.getBoundingClientRect().y > 420
+              ? "top"
+              : "bottom"
+          }
+          onHide={closeTooltip}
+        >
+          <Tooltip id="test" style={{ zIndex: 4 }}>
+            <EventPopup
+              event={event}
+              setEditMode={setEditMode}
+              setOpen={setOpen}
+              setEventCache={setEventCache}
+              setActive={setActive}
+            />
+          </Tooltip>
+        </Overlay>
+      </div>
+    );
+  }
   const locales = {
     "vi-VN": vi,
   };
@@ -105,6 +110,7 @@ const MainCalendar = ({
       },
     };
   };
+  const [open, setOpen] = useState(false);
 
   return (
     <Container>
@@ -122,32 +128,42 @@ const MainCalendar = ({
         eventPropGetter={eventStyleGetter}
       />
       <div className="createDiv">
-        <Popup
-          modal
-          trigger={
-            <div className="createButton">
-              <p className="create">Create</p>
-            </div>
-          }
+        <div
+          className="createButton"
+          onClick={() => {
+            setOpen(true);
+            setEditMode(false);
+            resetCache();
+          }}
         >
+          <p className="create">Create</p>
+        </div>
+        <Popup modal open={open}>
           {(close) => (
             <div>
               {active === "event" && (
                 <FormEvent
-                  close={close}
+                  close={() => {
+                    setOpen((open) => !open);
+                    close();
+                  }}
                   setActive={setActive}
                   events={events}
                   setEvents={setEvents}
                   id={id}
                   setId={setId}
-                  event={event}
-                  setEvent={setEvent}
+                  eventCache={eventCache}
+                  setEventCache={setEventCache}
                   resetCache={resetCache}
+                  editMode={editMode}
                 />
               )}
               {active === "todo" && (
                 <FormTodo
-                  close={close}
+                  close={() => {
+                    setOpen((open) => !open);
+                    close();
+                  }}
                   setActive={setActive}
                   events={events}
                   setEvents={setEvents}
@@ -155,22 +171,27 @@ const MainCalendar = ({
                   setId={setId}
                   toDoData={toDoData}
                   setToDoData={setToDoData}
-                  event={event}
-                  setEvent={setEvent}
+                  eventCache={eventCache}
+                  setEventCache={setEventCache}
                   resetCache={resetCache}
+                  editMode={editMode}
                 />
               )}
               {active === "reminder" && (
                 <FormReminder
-                  close={close}
+                  close={() => {
+                    setOpen((open) => !open);
+                    close();
+                  }}
                   setActive={setActive}
                   events={events}
                   setEvents={setEvents}
                   id={id}
                   setId={setId}
-                  event={event}
-                  setEvent={setEvent}
+                  eventCache={eventCache}
+                  setEventCache={setEventCache}
                   resetCache={resetCache}
+                  editMode={editMode}
                 />
               )}
             </div>

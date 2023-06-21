@@ -13,7 +13,7 @@ const customStyles = {
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
     textAlign: "center",
-    fontFamily: "Roboto",
+    fontFamily: "DIN",
     borderRadius: "14px",
   },
 };
@@ -103,7 +103,7 @@ const WorkspaceCard = ({
               );
             })}
             <div className="avatar leftover">
-              +{workspace.teamMems.length - 4}
+              +{workspace.teamMems.length - 3}
             </div>
           </div>
         )}

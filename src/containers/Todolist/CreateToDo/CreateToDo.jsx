@@ -8,7 +8,7 @@ function isNotNegativeInteger(number) {
   return Number.isInteger(number) && number >= 0;
 }
 
-const CreateToDo = ({ close, setActive, id, setId, toDoData, setToDoData }) => {
+const CreateToDo = ({ close, id, setId, toDoData, setToDoData }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [time, setTime] = useState("");
@@ -95,12 +95,11 @@ const CreateToDo = ({ close, setActive, id, setId, toDoData, setToDoData }) => {
       percent: "0",
       level: value,
       comple: "false",
+      eventType: "todo",
     };
     setId(id + 1);
     setToDoData([...toDoData, todo]);
-    console.log(1);
     close();
-
     handleToastSuccess();
   };
 

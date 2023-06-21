@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const Container = styled.div`
+  --font: "DIN";
   height: 100%;
   width: 100%;
   .header {
@@ -39,6 +40,7 @@ const Container = styled.div`
         font-size: clamp(1rem, 1.3vw, 1.5625rem);
         font-weight: semibold;
         border: none;
+        font-family: var(--font);
         &:focus {
           outline: none;
         }

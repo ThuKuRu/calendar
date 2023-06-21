@@ -8,7 +8,8 @@ const levelColor = {
 };
 
 const FormTodoStyle = styled.div`
-  font-family: "Roboto" !important;
+  --font: "DIN";
+  font-family: var(--font) !important;
   .modal {
     position: fixed;
     color: black;
@@ -52,7 +53,7 @@ const FormTodoStyle = styled.div`
           border-radius: 15px;
           padding: 0.44em 0.66em;
           font-size: clamp(0.9375rem, 0.9375vw, 1.125rem);
-          font-family: inherit;
+          font-family: var(--font);
         }
         .formTodo-address {
           text-align: left;
@@ -71,7 +72,7 @@ const FormTodoStyle = styled.div`
             border: none;
             resize: none;
             box-sizing: border-box;
-            font-family: inherit;
+            font-family: var(--font);
             &:focus {
               outline: none;
             }
@@ -89,6 +90,7 @@ const FormTodoStyle = styled.div`
               font-size: clamp(1.04rem, 1.04vw, 1.4rem);
               padding: 0.23em 1.36em;
               background-color: #d9d9d9;
+              font-family: var(--font);
               cursor: pointer;
               &:focus {
                 box-shadow: 0 0.5em 0.5em -0.4em #1849aa;
@@ -145,6 +147,7 @@ const FormTodoStyle = styled.div`
                 padding: 0.5em 0.75em;
                 font-size: clamp(0.83rem, 0.83vw, 1rem);
                 text-align: end;
+                font-family: var(--font);
               }
               .day {
                 width: 30%;
@@ -178,7 +181,7 @@ const FormTodoStyle = styled.div`
                 justify-content: center;
                 input {
                   font-size: clamp(0.83rem, 0.83vw, 1rem);
-                  font-family: inherit;
+                  font-family: var(--font);
                   text-align: center;
                 }
               }
@@ -190,6 +193,7 @@ const FormTodoStyle = styled.div`
                   min-width: 10.625em;
                   display: flex;
                   align-items: center;
+                  font-family: var(--font);
                   input {
                     width: 100%;
                     border: none !important;
@@ -273,7 +277,7 @@ const SelectList = styled.select`
   width: 100%;
   padding: 8px 12px;
   font-size: 18px;
-  font-family: inherit;
+  font-family: var(--font);
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
@@ -287,7 +291,7 @@ const MenuItem = styled.option`
   color: #000;
   list-style: none;
   font-size: 18px;
-  font-family: inherit;
+  font-family: var(--font);
   background-color: ${({ value }) => levelColor[value]};
 `;
 
