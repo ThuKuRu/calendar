@@ -317,7 +317,6 @@ const MemberList = styled.option`
   list-style: none;
   font-size: 18px;
   font-family: "Roboto" !important;
-  margin-right: 4rem;
 `;
 
 export { FormTodoStyle, SelectList, MenuItem, MemberList, MemberMenu };

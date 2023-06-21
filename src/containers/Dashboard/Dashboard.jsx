@@ -36,7 +36,7 @@ const Dashboard = () => {
         <div className="topRightDash">
           <div className="chart">
             <div className="title">Last 6 Months (Task Completed)</div>
-            <ResponsiveContainer width="90%" aspect={2.4 / 1}>
+            <ResponsiveContainer width="100%" aspect={2.4 / 1}>
               <AreaChart
                 width={730}
                 height={200}
