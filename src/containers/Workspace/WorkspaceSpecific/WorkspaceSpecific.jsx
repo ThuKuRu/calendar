@@ -17,7 +17,7 @@ const WorkspaceSpecific = ({
 }) => {
   const [change, setChange] = useState("specific");
   const handleCancel = () => {
-    setTab("home");
+    setTab("teamlist");
   };
 
   const onClickOutTeam = (key) => {
