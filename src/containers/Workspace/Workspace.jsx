@@ -6,6 +6,7 @@ import CreateWorkspace from "./CreateWorkspace/CreateWorkspace";
 import WorkspaceSpecific from "./WorkspaceSpecific/WorkspaceSpecific";
 import AddUser from "./AddUserWorkspace/AddUser";
 import { ToastContainer } from "react-toastify";
+import TeamList from "./TeamList/TeamList";
 
 const Workspace = ({
   workspaces,
@@ -65,6 +66,19 @@ const Workspace = ({
         />
       )}
       {tab === "addUser" && <AddUser setTab={setTab} />}
+      {tab === "teamlist" && (
+        <TeamList
+          setTab={setTab}
+          id={id}
+          setId={setId}
+          currentWorkspace={currentWorkspace}
+          setCurrentWorkspace={setCurrentWorkspace}
+          workspaces={workspaces}
+          setWorkspaces={setWorkspaces}
+          toDoData={toDoData}
+          setToDoData={setToDoData}
+        />
+      )}
     </Container>
   );
 };

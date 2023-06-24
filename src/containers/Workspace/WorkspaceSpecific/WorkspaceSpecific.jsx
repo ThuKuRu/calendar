@@ -15,7 +15,7 @@ const WorkspaceSpecific = ({
   setToDoData,
 }) => {
   const handleCancel = () => {
-    setTab("home");
+    setTab("teamlist");
   };
 
   const options = {
