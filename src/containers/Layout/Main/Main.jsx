@@ -12,7 +12,7 @@ const Main = ({ tab }) => {
     eventData.map((event) => {
       if (event.start.split === undefined) return event;
       let newEvent = event;
-      console.log(event.start);
+
       newEvent.start = new Date(
         event.start.split("/")[0],
         event.start.split("/")[1],
@@ -30,41 +30,6 @@ const Main = ({ tab }) => {
       return newEvent;
     })
   );
-
-  console.log("a/a/a".split("/"));
-  // [
-  // {
-  //   id: 0,
-  //   title: "Học UIUX",
-  //   start: new Date(2023, 5, 20, 5),
-  //   end: new Date(2023, 5, 20, 6),
-  //   description: "Cô chấm bài round 1",
-  //   color: "#2d7fe0",
-  //   fontColor: "#fff",
-  //   eventType: "event",
-  // },
-  // {
-  //   id: 1,
-  //   title: "Tâm lý học",
-  //   start: new Date(2023, 5, 21, 10),
-  //   end: new Date(2023, 5, 21, 15),
-  //   description: "",
-  //   color: "#2d7fe0",
-  //   fontColor: "#fff",
-  //   eventType: "event",
-  // },
-  // {
-  //   id: 2,
-  //   title: "Công nghệ phần mềm",
-  //   start: new Date(2023, 5, 22, 9),
-  //   end: new Date(2023, 5, 22, 10),
-  //   description: "",
-  //   color: "#2d7fe0",
-  //   fontColor: "#fff",
-  //   eventType: "event",
-  // },
-  // ]
-  // Hàm đọc tệp JSON và gán dữ liệu vào biến events
 
   const [toDoData, setToDoData] = useState([
     {
