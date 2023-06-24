@@ -1,45 +1,71 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Content } from "./index.style";
 import MainCalendar from "../../MainCalendar/MainCalendar";
 import Dashboard from "../../Dashboard/Dashboard";
 import Todolist from "../../Todolist/Todolist";
 import Workspace from "../../Workspace/Workspace";
-
+import eventData from "../../../data/events";
 const Main = ({ tab }) => {
   const [id, setId] = useState(500);
-  const [events, setEvents] = useState([
-    {
-      id: 0,
-      title: "Học UIUX",
-      start: new Date(2023, 5, 20, 5),
-      end: new Date(2023, 5, 20, 6),
-      description: "Cô chấm bài round 1",
-      color: "#2d7fe0",
-      fontColor: "#fff",
-      eventType: "event",
-    },
-    {
-      id: 1,
-      title: "Tâm lý học",
-      start: new Date(2023, 5, 21, 10),
-      end: new Date(2023, 5, 21, 15),
-      description: "",
-      color: "#2d7fe0",
-      fontColor: "#fff",
-      eventType: "event",
-    },
-    {
-      id: 2,
-      title: "Công nghệ phần mềm",
-      start: new Date(2023, 5, 22, 9),
-      end: new Date(2023, 5, 22, 10),
-      description: "",
-      color: "#2d7fe0",
-      fontColor: "#fff",
-      eventType: "event",
-    },
-  ]);
+  const [events, setEvents] = useState(
+    eventData.map((event) => {
+      if (event.start.split === undefined) return event;
+      let newEvent = event;
+      console.log(event.start);
+      newEvent.start = new Date(
+        event.start.split("/")[0],
+        event.start.split("/")[1],
+        event.start.split("/")[2],
+        event.start.split("/")[3],
+        event.start.split("/")[4]
+      );
+      newEvent.end = new Date(
+        event.end.split("/")[0],
+        event.end.split("/")[1],
+        event.end.split("/")[2],
+        event.end.split("/")[3],
+        event.end.split("/")[4]
+      );
+      return newEvent;
+    })
+  );
+
+  console.log("a/a/a".split("/"));
+  // [
+  // {
+  //   id: 0,
+  //   title: "Học UIUX",
+  //   start: new Date(2023, 5, 20, 5),
+  //   end: new Date(2023, 5, 20, 6),
+  //   description: "Cô chấm bài round 1",
+  //   color: "#2d7fe0",
+  //   fontColor: "#fff",
+  //   eventType: "event",
+  // },
+  // {
+  //   id: 1,
+  //   title: "Tâm lý học",
+  //   start: new Date(2023, 5, 21, 10),
+  //   end: new Date(2023, 5, 21, 15),
+  //   description: "",
+  //   color: "#2d7fe0",
+  //   fontColor: "#fff",
+  //   eventType: "event",
+  // },
+  // {
+  //   id: 2,
+  //   title: "Công nghệ phần mềm",
+  //   start: new Date(2023, 5, 22, 9),
+  //   end: new Date(2023, 5, 22, 10),
+  //   description: "",
+  //   color: "#2d7fe0",
+  //   fontColor: "#fff",
+  //   eventType: "event",
+  // },
+  // ]
+  // Hàm đọc tệp JSON và gán dữ liệu vào biến events
+
   const [toDoData, setToDoData] = useState([
     {
       id: 10,
