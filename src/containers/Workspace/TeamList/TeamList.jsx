@@ -97,7 +97,12 @@ const TeamList = ({
         <div className="specific-task">
           <div className="table">
             <div className="col ">
-              <span className="material-symbols-outlined">badge</span>
+              <span
+                className="material-symbols-outlined"
+                style={{ margin: "16px 0" }}
+              >
+                badge
+              </span>
               <p className="name" style={{ display: "inline-block" }}>
                 Name
               </p>

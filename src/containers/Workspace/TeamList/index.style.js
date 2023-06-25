@@ -127,6 +127,7 @@ const Container = styled.div`
               display: flex;
             }
             p {
+              display: flex;
               text-align: left;
               font-size: clamp(0.8rem, 0.93vw, 1.125rem);
               align-items: center;
