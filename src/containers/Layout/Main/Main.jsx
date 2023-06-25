@@ -321,6 +321,28 @@ const Main = ({ tab }) => {
           memberAvatar: "user5.jpg",
         },
       ],
+      team: [
+        {
+          id: 1,
+          name: "Team UIUX",
+        },
+        {
+          id: 2,
+          name: "Team AI",
+        },
+        {
+          id: 3,
+          name: "Team ITSS",
+        },
+        {
+          id: 4,
+          name: "Team Kĩ năng mềm",
+        },
+        {
+          id: 5,
+          name: "Team Thuật toán",
+        },
+      ],
     },
     {
       id: 2,
@@ -413,6 +435,28 @@ const Main = ({ tab }) => {
           id: 5,
           memberName: "Vũ Hoàng",
           memberAvatar: "user7.jpg",
+        },
+      ],
+      team: [
+        {
+          id: 1,
+          name: "Team Toán cao cấp",
+        },
+        {
+          id: 2,
+          name: "Team Vật lý",
+        },
+        {
+          id: 3,
+          name: "Team Pháp luật",
+        },
+        {
+          id: 4,
+          name: "Team Hóa",
+        },
+        {
+          id: 5,
+          name: "Team Quân sự",
         },
       ],
     },
@@ -562,6 +606,28 @@ const Main = ({ tab }) => {
           memberAvatar: "user1.jpg",
         },
       ],
+      team: [
+        {
+          id: 1,
+          name: "Team TC",
+        },
+        {
+          id: 2,
+          name: "Team Naitei",
+        },
+        {
+          id: 3,
+          name: "Team N2",
+        },
+        {
+          id: 4,
+          name: "Team Văn hóa",
+        },
+        {
+          id: 5,
+          name: "Team Tuyển dụng",
+        },
+      ],
     },
     {
       id: 4,
@@ -637,6 +703,28 @@ const Main = ({ tab }) => {
           id: 4,
           memberName: "Quang Huy",
           memberAvatar: "user5.jpg",
+        },
+      ],
+      team: [
+        {
+          id: 1,
+          name: "Team GR1",
+        },
+        {
+          id: 2,
+          name: "Team GR2",
+        },
+        {
+          id: 3,
+          name: "Team GR3",
+        },
+        {
+          id: 4,
+          name: "Team Lab",
+        },
+        {
+          id: 5,
+          name: "Team Tốt nghiệp",
         },
       ],
     },
