@@ -22,6 +22,12 @@ const LayOut = styled.div`
     width: 100%;
     flex-direction: column;
   }
+  .Toastify {
+    font-family: "DIN";
+  }
+  .Toastify__toast {
+    font-family: "DIN";
+  }
 `;
 
 export { LayOut };
