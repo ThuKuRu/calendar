@@ -248,6 +248,7 @@ const Main = ({ tab }) => {
       id: 1,
       avatar: "thu_1.png",
       name: "Việt Nhật 03",
+      link: "https://meet.google.com/trc-wnzm-hra",
       todolist: [
         {
           id: 1,
@@ -348,6 +349,7 @@ const Main = ({ tab }) => {
       id: 2,
       avatar: "database.png",
       name: "ĐH Bách khoa",
+      link: "https://meet.google.com/dsg-sgrs-dfg",
       todolist: [
         {
           id: 1,
@@ -464,6 +466,7 @@ const Main = ({ tab }) => {
       id: 3,
       avatar: "design_1.webp",
       name: "Sun* Asterisk",
+      link: "https://meet.google.com/ats-gstj-lpa",
       todolist: [
         {
           id: 1,
@@ -633,6 +636,7 @@ const Main = ({ tab }) => {
       id: 4,
       avatar: "se_2.jpg",
       name: "Nghiên cứu tốt nghiệp",
+      link: "https://meet.google.com/mvx-tyio-ter",
       todolist: [
         {
           id: 1,

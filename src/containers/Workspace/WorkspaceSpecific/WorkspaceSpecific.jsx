@@ -76,10 +76,25 @@ const WorkspaceSpecific = ({
             </div>
             <div className="specific-name">
               <div className="name">
-                <p>{currentTeam.name} ({currentWorkspace.name})</p>
+                <p>
+                  {currentTeam.name} ({currentWorkspace.name})
+                </p>
               </div>
               <div className="description">
-                <p>This is a place where the runner-up live and work.</p>
+                <p>
+                  This is a place where the runner-up live and work. The link to
+                  Google Meet room:
+                  <p
+                    style={{
+                      padding: "initial",
+                      cursor: "pointer",
+                      textDecoration: "underline",
+                      color: "blue",
+                    }}
+                  >
+                    {currentWorkspace.link}
+                  </p>{" "}
+                </p>
               </div>
             </div>
           </div>
