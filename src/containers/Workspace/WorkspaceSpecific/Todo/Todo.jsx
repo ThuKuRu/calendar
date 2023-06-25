@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { TodoStyle, Img, Color } from "./index.style";
 import Popup from "reactjs-popup";
-import { RangeStepInput } from "react-range-step-input";
 import AddTask from "../AddTask/AddTask";
 
 const Todo = ({
@@ -15,6 +14,22 @@ const Todo = ({
   setToDoData,
   setCurrentWorkspace,
 }) => {
+  // const sliderPercent = toDoData.map((todo) => {
+  //   return todo.percent;
+  // });
+
+  // const [sliderValue, setSliderValue] = useState(sliderPercent);
+  const handleSliderChange = (event, index) => {
+    let newWorkspace = currentWorkspace;
+    newWorkspace.todolist[index].percent = parseInt(event.target.value);
+    setCurrentWorkspace(newWorkspace);
+    setWorkspaces(
+      workspaces.map((workspace) => {
+        return workspace.id === currentWorkspace.id ? newWorkspace : workspace;
+      })
+    );
+  };
+
   const options = {
     month: "short",
     day: "numeric",
@@ -89,13 +104,22 @@ const Todo = ({
                   <p>{todo.deadline.toLocaleString("en-US", options)}</p>
                 </div>
                 <div className="col ">
-                  <Color value={todo.level} className="priorityItems">
-                    {todo.level}
-                  </Color>
+                  <Color value={todo.level}>{todo.level}</Color>
                 </div>
                 <div className="col">
                   <div className="percent">
-                    <RangeStepInput />
+                    <input
+                      id={index}
+                      key={index}
+                      type="range"
+                      min="0"
+                      max="100"
+                      value={todo.percent}
+                      onInput={(e) => {
+                        handleSliderChange(e, index);
+                      }}
+                    />
+                    <p>{todo.percent}</p>
                   </div>
                 </div>
                 <div className="col ">
