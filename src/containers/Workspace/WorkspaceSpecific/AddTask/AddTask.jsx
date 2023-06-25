@@ -345,13 +345,13 @@ const AddTask = ({
               <div className="formTodo-time-container">
                 Priority:
                 <SelectList value={value} onChange={handleChange}>
-                  <MenuItem value="1" selected="selected">
-                    Level 1
+                  <MenuItem value="Critical" selected="selected">
+                    Critical
                   </MenuItem>
-                  <MenuItem value="2">Level 2</MenuItem>
-                  <MenuItem value="3">Level 3</MenuItem>
-                  <MenuItem value="4">Level 4</MenuItem>
-                  <MenuItem value="5">Level 5</MenuItem>
+                  <MenuItem value="High">High</MenuItem>
+                  <MenuItem value="Medium">Medium</MenuItem>
+                  <MenuItem value="Low">Low</MenuItem>
+                  <MenuItem value="Optional">Optional</MenuItem>
                 </SelectList>
               </div>
             </div>

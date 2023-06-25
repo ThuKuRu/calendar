@@ -47,7 +47,7 @@ function CreateWorkspace({
       description: "Coding Homepage",
       deadline: new Date(2023, 5, 20, 16, 30),
       percent: "20",
-      level: "3",
+      level: "Medium",
       comple: "false",
     };
     const newMembers = people.filter((current) => {
