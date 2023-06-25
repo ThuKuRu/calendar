@@ -13,7 +13,9 @@ const color = {
 };
 
 const NotificationContainer = styled.div`
-  font-family: "DIN";
+  font-family: DIN !important;
+  font-weight: 400;
+  font-size: 0.75rem;
   position: relative;
   right: 145px;
   top: -5px;

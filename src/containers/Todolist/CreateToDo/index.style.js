@@ -8,8 +8,8 @@ const levelColor = {
 };
 
 const CreateTodoStyle = styled.div`
---font : "DIN";
-font-family: var(--font) !important;
+  --font: "DIN";
+  font-family: var(--font) !important;
   .modal {
     position: fixed;
     color: black;
@@ -20,14 +20,11 @@ font-family: var(--font) !important;
     background-color: rgba(0, 0, 0, 0.5);
     justify-content: center;
     align-items: center;
-     display: flex;
+    display: flex;
     .modal-container {
-      width: 35%;
-      max-width: 700px;
-      height: auto;
-      max-height: 600px;
-      border: 1px solid #011627;
-      border-radius: 1em;
+      width: clamp(27.5em, 35%, 40em);
+      border: 1.5px solid #011627;
+      border-radius: 15px;
       background-color: #fdfffc;
       display: flex;
       flex-direction: column;
@@ -35,161 +32,183 @@ font-family: var(--font) !important;
       color: #011627;
 
       .header {
-        font-size: 32px;
-        text-align: center;
-        padding: 15px 5px 5px;
-        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1em;
+        font-size: clamp(1.6rem, 1.6vw, 2rem);
       }
-
       .content {
         width: 80%;
-        padding: 10px 5px;
-        background-color: white;
-        font-size: 20px;
+        padding: 0.5em 0.25em;
+        font-size: clamp(1rem, 1vw, 1.25rem);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         .add-form {
-          height: 30px;
           width: 95%;
-          border: 1px solid #011627;
-          border-radius: 1em;
-          padding: 8px 12px;
-          font-size: 20px;    
-          font-family : var(--font);    
-        }
-        .formTodo-address {
-          text-align: left;
-          height: 8.2vh;
-          width: 100%;
+          margin-bottom: 0.55em;
           border: 1px solid #000000;
           border-radius: 15px;
-          box-sizing: border-box;
-          font-size: 18px;
-          textarea {
-            height: 100%;
-            width: 100%;
-            padding: 6px 10px;
-            background-color: transparent;
-            border: none;
-            resize: none;
-            box-sizing: border-box;
-            font-family: var(--font);
-            &:focus {
-              outline: none;
-            }
-          }
+          padding: 0.44em 0.66em;
+          font-size: clamp(0.9375rem, 0.9375vw, 1.125rem);
+          font-family: var(--font);
+        }
+        .formTodo-address {
+          width: 95%;
+          margin-bottom: 0.55em;
+          border: 1px solid #000000;
+          border-radius: 15px;
+          padding: 0.44em 0.66em;
+          font-size: clamp(0.9375rem, 0.9375vw, 1.125rem);
+          font-family: var(--font);
         }
         .formCreate-container {
+          width: 100%;
+
           .formTodo-time-container {
             display: flex;
-            margin: 20px 0;
+            margin: 1.25rem 0;
             font-weight: bold;
             align-items: center;
-            .duration{
-              padding: 8px 12px;
-              margin-left: 20px;
+            .formTodo-duration {
               display: flex;
-              height: 30px;
-              width: 90%;
-              border: 1px solid #011627;
+              align-items: center;
+              background-color: transparent;
+              border: 1px solid #000;
+              border-radius: 22px;
+              margin-left: 1.25em;
+              width: 100%;
+              padding: 0.5em 0.75em;
+              font-weight: normal;
+              font-size: clamp(0.83rem, 0.83vw, 1rem);
+            }
+            .duration {
+              display: flex;
               border-radius: 1em;
-              .add-form-duration{
-              border: none;
-              width: 30%;
-              padding: 8px 12px;
-              font-size: 18px; 
-              font-family: var(--font);   
+              .add-form-duration {
+                border: none;
+                padding: 0.5em 0.75em;
+                font-size: clamp(0.83rem, 0.83vw, 1rem);
+                text-align: end;
+                font-family: var(--font);
+              }
+              .day {
+                width: 30%;
+              }
+              .hour {
+                width: 35%;
+              }
+              .minute {
+                width: 45%;
+              }
             }
-            label{
-              font-size: 16px; 
-              margin-top: 5px;
+            label {
+              margin: 0px 0.3125em;
+              font-size: clamp(0.83rem, 0.83vw, 1rem);
+              display: flex;
+              justify-content: center;
+              align-items: center;
             }
-            }
-           
-            .formTodo-sche-day {
+            .deadline {
               display: flex;
               align-items: center;
               background-color: #d9d9d9;
               border: 1px solid #000;
               border-radius: 22px;
-              margin-left: 20px;
-              width: 100%;
-              padding: 8px 12px;
+              margin-left: 1.25em;
+              padding: 0.5em 0.75em;
               font-weight: normal;
-              font-size: 18px;
-              .react-datepicker-wrapper {
-                .react-datepicker__input-container {
+              .react-datepicker__input-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                input {
+                  font-size: clamp(0.83rem, 0.83vw, 1rem);
+                  font-family: var(--font);
+                  text-align: center;
+                }
+              }
+              .formTodo-sche-day {
+                width: 50%;
+                display: flex;
+                align-items: center;
+                .react-datepicker-wrapper {
+                  min-width: 10.625em;
+                  display: flex;
+                  align-items: center;
+                  font-family: var(--font);
+                  input {
+                    width: 100%;
+                    border: none !important;
+                    background-color: transparent;
+                    &:focus {
+                      outline: none;
+                    }
+                  }
+                }
+                .material-symbols-outlined {
+                  font-size: clamp(1.46rem, 1.46vw, 1.75rem);
+                }
+              }
+              .formCreate-times {
+                padding: 0px 0.625em;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .react-datepicker-wrapper {
                   display: flex;
                   justify-content: center;
                   align-items: center;
                   input {
-                    width: 100%;
-                    height: 100%;
-                    border: none;
+                    width: 80%;
+                    margin-left: 20%;
+                    border: none !important;
                     background-color: transparent;
-                    text-align: center;
-                    font-family: var(--font);
+                    &:focus {
+                      outline: none;
+                    }
                   }
                 }
-              }
-            .formTodo-day {
-              margin-left: 5px;
-            }
-              .material-symbols-outlined {
-                font-size: 30px;
-              }
-            }
-            .formTodo-times {
-              display: flex;
-             
-              .material-symbols-outlined{
-                font-size: 30px;
               }
             }
           }
         }
         .buttonFormCreate {
+          width: 100%;
           display: flex;
-          justify-content: end;
-          margin: 10px 0;
-          cursor: pointer;  
+          justify-content: flex-end;
+          margin: 0.625em 0;
           .Cancel {
-            background-color: #d9d9d9;
-            border-radius: 16px;
-            padding: 5px 10px;
+            padding: 0.5em 1em;
+            font-size: clamp(1.04rem, 1.04vw, 1.4rem);
             cursor: pointer;
-              a {
-                text-decoration: none;
-                font-size: 20px;
-                color: #000;
-              }
+            a {
+              text-decoration: none;
+              color: rgba(0, 0, 0, 0.8);
             }
           }
-          .Save {  
-            margin-left: 20px;
+          .Save {
+            padding: 0.5em 1em;
+            font-size: clamp(1.04rem, 1.04vw, 1.4rem);
+            text-align: center;
+            margin-left: 1em;
             background-color: #d9d9d9;
-            border-radius: 16px;
-            padding: 5px 10px;
-             cursor: pointer;
-             a {
-                text-decoration: none;
-                
-              }
+            border-radius: 15px;
+            cursor: pointer;
+            a {
+              text-decoration: none;
+            }
           }
-        }     
-      }
-        .close {
-          cursor: pointer;
-          position: absolute;
-          display: block;
-          padding: 2px 5px;
-          line-height: 20px;
-          right: -10px;
-          top: -10px;
-          font-size: 24px;
-          background: #ffffff;
-          border-radius: 18px;
-          border: 1px solid #cfcece;
+        }
+        .description {
+          width: 100%;
+          margin-bottom: 2%;
+          font-weight: bold;
         }
       }
+    }
   }
 `;
 

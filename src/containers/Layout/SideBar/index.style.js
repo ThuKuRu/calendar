@@ -24,7 +24,7 @@ const Sidebar = styled.div`
       background: -webkit-linear-gradient(#2d7fe0, #76bdff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      font-family: "Rockwell";
+      font-family: "DIN";
     }
     p {
       color: #000000;

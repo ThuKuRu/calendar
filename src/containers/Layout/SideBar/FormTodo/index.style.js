@@ -56,27 +56,13 @@ const FormTodoStyle = styled.div`
           font-family: var(--font);
         }
         .formTodo-address {
-          text-align: left;
-          height: 4.6em;
-          width: 100%;
+          width: 95%;
+          margin-bottom: 0.55em;
           border: 1px solid #000000;
           border-radius: 15px;
-          box-sizing: border-box;
+          padding: 0.44em 0.66em;
           font-size: clamp(0.9375rem, 0.9375vw, 1.125rem);
-          textarea {
-            height: 100%;
-            width: 100%;
-            padding: 0.375em 0.625em;
-            font-size: clamp(0.9375rem, 0.9375vw, 1.125rem);
-            background-color: transparent;
-            border: none;
-            resize: none;
-            box-sizing: border-box;
-            font-family: var(--font);
-            &:focus {
-              outline: none;
-            }
-          }
+          font-family: var(--font);
         }
         .formCreate-container {
           width: 100%;

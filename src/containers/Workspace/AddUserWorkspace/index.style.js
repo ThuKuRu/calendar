@@ -17,10 +17,13 @@ const Container = styled.div`
 
   .form input[type="text"],
   .form textarea {
-    width: 35vw;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    width: 260%;
+    margin-bottom: 0.55em;
+    border: 1px solid #000000;
+    border-radius: 15px;
+    padding: 0.44em 0.66em;
+    font-size: clamp(0.9375rem, 0.9375vw, 1.125rem);
+    font-family: inherit;
   }
 
   .image-upload {
@@ -91,7 +94,6 @@ const Container = styled.div`
     border-radius: 14px;
     color: #ffffff;
     font-family: var(--font) !important;
-    font-size: 20px;
     cursor: pointer;
     border: none;
 
@@ -118,7 +120,6 @@ const Container = styled.div`
     border-radius: 14px;
     color: #868686;
     font-family: var(--font) !important;
-    font-size: 20px;
     cursor: pointer;
     border: none;
 

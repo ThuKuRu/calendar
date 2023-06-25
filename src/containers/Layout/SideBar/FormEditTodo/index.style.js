@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const FormEditTodoStyle = styled.div`
-font-family: "Poppins";
+font-family: "DIN";
   .modal {
     position: fixed;
     color: black;

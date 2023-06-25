@@ -8,7 +8,7 @@ const LoginStyle = styled.div`
   width: 100%;
   // background-color: #4070f4;
   background-color: #fff;
-  font-family: "Roboto";
+  font-family: "DIN";
   form {
     background-color: white;
     max-width: 400px;

@@ -51,7 +51,7 @@ const WorkspaceCard = ({
   return (
     <Container>
       <link
-        href="https://fonts.googleapis.com/css?family=Roboto"
+        href="https://fonts.googleapis.com/css?family=DIN"
         rel="stylesheet"
       ></link>
       <link

@@ -285,7 +285,7 @@ const AddTask = ({
                     <input
                       className="add-form-duration day"
                       type="text"
-                      placeholder="day..."
+                      placeholder="..."
                       value={day}
                       onChange={(e) => {
                         setDay(e.target.value);
@@ -295,7 +295,7 @@ const AddTask = ({
                     <input
                       className="add-form-duration hour"
                       type="text"
-                      placeholder="hour..."
+                      placeholder="..."
                       value={hour}
                       onChange={(e) => {
                         setHour(e.target.value);
@@ -305,7 +305,7 @@ const AddTask = ({
                     <input
                       className="add-form-duration minute"
                       type="text"
-                      placeholder="minute..."
+                      placeholder="..."
                       value={minute}
                       onChange={(e) => {
                         setMinute(e.target.value);
@@ -356,13 +356,13 @@ const AddTask = ({
               </div>
             </div>
             <div className="description">Description:</div>
-            <div className="formTodo-address">
-              <textarea
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-                placeholder="Add description ..."
-              ></textarea>
-            </div>
+            <input
+              className="formTodo-address"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              placeholder="Add description ..."
+            ></input>
+
             <div className="buttonFormCreate">
               <div className="Cancel">
                 <a className="cancel" onClick={close} href="/#">

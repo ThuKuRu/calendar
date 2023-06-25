@@ -273,7 +273,7 @@ const FormTodo = ({
                     <input
                       className="add-form-duration day"
                       type="text"
-                      placeholder="day..."
+                      placeholder="..."
                       value={day}
                       onChange={(e) => {
                         setDay(e.target.value);
@@ -288,7 +288,7 @@ const FormTodo = ({
                     <input
                       className="add-form-duration hour"
                       type="text"
-                      placeholder="hour..."
+                      placeholder="..."
                       value={hour}
                       onChange={(e) => {
                         setHour(e.target.value);
@@ -303,7 +303,7 @@ const FormTodo = ({
                     <input
                       className="add-form-duration minute"
                       type="text"
-                      placeholder="minute..."
+                      placeholder="..."
                       value={minute}
                       onChange={(e) => {
                         setMinute(e.target.value);
@@ -371,20 +371,19 @@ const FormTodo = ({
               </div>
             </div>
             <div className="description">Description:</div>
-            <div className="formTodo-address">
-              <textarea
-                value={description}
-                placeholder="Add description ..."
-                onChange={(e) => {
-                  setDescription(e.target.value);
-                  if (!editMode) {
-                    let newEvent = eventCache;
-                    newEvent.description = e.target.value;
-                    setEventCache(newEvent);
-                  }
-                }}
-              ></textarea>
-            </div>
+
+            <input
+              className="formTodo-address"
+              value={description}
+              placeholder="Add description ..."
+              onChange={(e) => {
+                setDescription(e.target.value);
+                let newEvent = event;
+                newEvent.description = e.target.value;
+                setEvent(newEvent);
+              }}
+            ></input>
+
             <div className="buttonFormCreate">
               <div className="Cancel">
                 <a className="cancel" onClick={close} href="/#">
