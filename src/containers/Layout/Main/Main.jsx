@@ -180,8 +180,7 @@ const Main = ({ tab }) => {
     },
   ]);
   const [people, setPeople] = useState(userData);
-  console.log(events);
-  console.log(people);
+
   // [
   //   {
   //     id: 1,
