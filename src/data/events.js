@@ -921,8 +921,8 @@ const eventData = [
   {
     id: 100,
     title: "Báo cáo GR1",
-    start: "2023/5/25/10/0",
-    end: "2023/5/25/12/0",
+    start: "2023/5/25/8/0",
+    end: "2023/5/25/10/0",
     color: "#00bfff",
     fontColor: "#fff",
     eventType: "todo",
@@ -939,7 +939,7 @@ const eventData = [
   {
     id: 102,
     title: "Video Kaiwa",
-    start: "2023/5/26/6/0",
+    start: "2023/5/26/7/0",
     end: "2023/5/26/8/30",
     color: "#ffff00",
     fontColor: "#000",
@@ -967,7 +967,7 @@ const eventData = [
     id: 105,
     title: "JSX",
     start: "2023/5/27/7/0",
-    end: "2023/5/27/9/0",
+    end: "2023/5/27/8/30",
     color: "#00bfff",
     fontColor: "#fff",
     eventType: "todo",
