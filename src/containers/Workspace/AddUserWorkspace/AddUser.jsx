@@ -64,7 +64,8 @@ function AddUser({ setTab }) {
           />
 
           <label htmlFor="message">Description:</label>
-          <textarea
+          <input
+            type="text"
             id="message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
