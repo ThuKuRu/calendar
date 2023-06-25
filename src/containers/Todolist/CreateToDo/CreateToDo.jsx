@@ -181,19 +181,19 @@ const CreateToDo = ({ close, setActive, id, setId, toDoData, setToDoData }) => {
                 <div className="formTodo-duration">
                   <div className="duration">
                     <input
-                      className="add-form-duration"
+                      className="add-form-duration day"
                       type="text"
-                      placeholder="Day..."
+                      placeholder="..."
                       value={day}
                       onChange={(e) => {
                         setDay(e.target.value);
                       }}
                     />
-                    <label>Day</label>
+                    <label>day</label>
                     <input
-                      className="add-form-duration"
+                      className="add-form-duration hour"
                       type="text"
-                      placeholder="hour..."
+                      placeholder="..."
                       value={hour}
                       onChange={(e) => {
                         setHour(e.target.value);
@@ -201,9 +201,9 @@ const CreateToDo = ({ close, setActive, id, setId, toDoData, setToDoData }) => {
                     />
                     <label>h</label>
                     <input
-                      className="add-form-duration"
+                      className="add-form-duration minute"
                       type="text"
-                      placeholder="minute..."
+                      placeholder="..."
                       value={minute}
                       onChange={(e) => {
                         setMinute(e.target.value);
@@ -215,25 +215,29 @@ const CreateToDo = ({ close, setActive, id, setId, toDoData, setToDoData }) => {
               </div>
               <div className="formTodo-time-container">
                 Deadline:
-                <div className="formTodo-sche-day">
-                  <div class="material-symbols-outlined">schedule</div>
-                  <ReactDatePicker
-                    selected={date}
-                    dateFormat="EEEE, MMMM d"
-                    onChange={(date) => setDate(date)}
-                  />
-                  <ReactDatePicker
-                    showTimeSelect
-                    showTimeSelectOnly
-                    timeIntervals={30}
-                    timeCaption="Time"
-                    dateFormat="h:mm aa"
-                    selected={time}
-                    placeholderText="Time"
-                    onChange={(time) => {
-                      setTime(time);
-                    }}
-                  />
+                <div className="deadline">
+                  <div className="formTodo-sche-day">
+                    <div class="material-symbols-outlined">schedule</div>
+                    <ReactDatePicker
+                      selected={date}
+                      dateFormat="EEEE, MMMM d"
+                      onChange={(date) => setDate(date)}
+                    />
+                  </div>
+                  <div className="formCreate-times">
+                    <ReactDatePicker
+                      showTimeSelect
+                      showTimeSelectOnly
+                      timeIntervals={30}
+                      timeCaption="Time"
+                      dateFormat="h:mm aa"
+                      selected={time}
+                      placeholderText="Time"
+                      onChange={(time) => {
+                        setTime(time);
+                      }}
+                    />
+                  </div>
                 </div>
               </div>
               <div className="formTodo-time-container">
@@ -250,13 +254,13 @@ const CreateToDo = ({ close, setActive, id, setId, toDoData, setToDoData }) => {
               </div>
             </div>
             <div className="description">Description:</div>
-            <div className="formTodo-address">
-              <textarea
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-                placeholder="Add description ..."
-              ></textarea>
-            </div>
+            <input
+              className="formTodo-address"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              placeholder="Add description ..."
+            ></input>
+
             <div className="buttonFormCreate">
               <div className="Cancel">
                 <a className="cancel" onClick={close} href="/#">

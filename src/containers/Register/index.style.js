@@ -7,7 +7,7 @@ const RegisterStyle = styled.div`
   height: 100vh;
   width: 100%;
   background-color: #fff;
-  font-family: "Roboto";
+  font-family: "DIN";
 
   form {
     background-color: white;

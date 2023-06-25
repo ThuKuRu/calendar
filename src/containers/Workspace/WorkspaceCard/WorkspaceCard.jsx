@@ -13,7 +13,7 @@ const customStyles = {
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
     textAlign: "center",
-    fontFamily: "Roboto",
+    fontFamily: "DIN",
     borderRadius: "14px",
   },
 };
@@ -51,7 +51,7 @@ const WorkspaceCard = ({
   return (
     <Container>
       <link
-        href="https://fonts.googleapis.com/css?family=Roboto"
+        href="https://fonts.googleapis.com/css?family=DIN"
         rel="stylesheet"
       ></link>
       <link

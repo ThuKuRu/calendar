@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const LogoutStyle = styled.div`
-  font-family: "Roboto";
+  font-family: "DIN";
   display: flex;
   flex-direction: column;
   width: 300px;

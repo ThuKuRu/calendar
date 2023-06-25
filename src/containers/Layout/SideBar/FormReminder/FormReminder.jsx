@@ -54,11 +54,6 @@ const FormReminder = ({
         time.getHours(),
         time.getMinutes()
       ),
-      description: description,
-      start: selectedDateTime,
-      end: selectedDateTime,
-      color: "#2d7fe0",
-      fontColor: "#fff",
     };
     setId(id + 1);
     setEvents([...events, event]);
