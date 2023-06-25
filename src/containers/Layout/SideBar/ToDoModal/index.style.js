@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 const levelColor = {
-  5: "#FF0000",
-  4: "#E67C73",
-  3: "#FFBA00",
-  2: "#7986CB",
-  1: "#9DA7FF",
+  Critical: "#FF0000",
+  High: "#E67C73",
+  Medium: "#FFBA00",
+  Low: "#7986CB",
+  Optional: "#9DA7FF",
 };
 
 const ToDoModalContainer = styled.div`

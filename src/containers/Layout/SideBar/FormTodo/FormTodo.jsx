@@ -10,19 +10,19 @@ function isNotNegativeInteger(number) {
 }
 
 const levelColor = {
-  5: "#FF0000",
-  4: "#FFA500",
-  3: "#FFFF00",
-  2: "#1AC71A",
-  1: "#00BFFF",
+  Critical: "#FF0000",
+  High: "#FFA500",
+  Medium: "#FFFF00",
+  Low: "#1AC71A",
+  Optional: "#00BFFF",
 };
 
 const levelFontColor = {
-  5: "#fff",
-  4: "#fff",
-  3: "#000",
-  2: "#fff",
-  1: "#fff",
+  Critical: "#fff",
+  High: "#fff",
+  Medium: "#000",
+  Low: "#fff",
+  Optional: "#fff",
 };
 
 const FormTodo = ({
@@ -360,13 +360,13 @@ const FormTodo = ({
               <div className="formTodo-time-container">
                 Priority:
                 <SelectList value={value} onChange={handleChange}>
-                  <MenuItem value="1" selected="selected">
-                    Level 1
+                  <MenuItem value="Critical" selected="selected">
+                    Critical
                   </MenuItem>
-                  <MenuItem value="2">Level 2</MenuItem>
-                  <MenuItem value="3">Level 3</MenuItem>
-                  <MenuItem value="4">Level 4</MenuItem>
-                  <MenuItem value="5">Level 5</MenuItem>
+                  <MenuItem value="High">High</MenuItem>
+                  <MenuItem value="Medium">Medium</MenuItem>
+                  <MenuItem value="Low">Low</MenuItem>
+                  <MenuItem value="Optional">Optional</MenuItem>
                 </SelectList>
               </div>
             </div>

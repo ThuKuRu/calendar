@@ -6,19 +6,19 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const levelColor = {
-  5: "#FF0000",
-  4: "#FFA500",
-  3: "#FFFF00",
-  2: "#1AC71A",
-  1: "#00BFFF",
+  Critical: "#FF0000",
+  High: "#FFA500",
+  Medium: "#FFFF00",
+  Low: "#1AC71A",
+  Optional: "#00BFFF",
 };
 
 const levelFontColor = {
-  5: "#fff",
-  4: "#fff",
-  3: "#000",
-  2: "#fff",
-  1: "#fff",
+  Critical: "#fff",
+  High: "#fff",
+  Medium: "#000",
+  Low: "#fff",
+  Optional: "#fff",
 };
 
 const Todolist = ({ toDoData, setToDoData, id, setId, events, setEvents }) => {
@@ -182,7 +182,9 @@ const Todolist = ({ toDoData, setToDoData, id, setId, events, setEvents }) => {
               <p>{todo.deadline.toLocaleString("en-US", options)}</p>
             </div>
             <div className="col ">
-              <Color value={todo.level}>Level {todo.level}</Color>
+              <Color value={todo.level} className="priorityItems">
+                {todo.level}
+              </Color>
             </div>
             <div className="col">
               <div className="percent">
