@@ -4,10 +4,10 @@ import WorkspaceSpecific from "../WorkspaceSpecific/WorkspaceSpecific";
 function shuffle(a) {
   var j, x, i;
   for (i = a.length - 1; i > 0; i--) {
-      j = Math.floor(Math.random() * (i + 1));
-      x = a[i];
-      a[i] = a[j];
-      a[j] = x;
+    j = Math.floor(Math.random() * (i + 1));
+    x = a[i];
+    a[i] = a[j];
+    a[j] = x;
   }
   return a;
 }
@@ -21,28 +21,48 @@ const TeamList = ({
   setWorkspaces,
   setCurrentTeam,
 }) => {
-  const team = [
-    {
-      id: 1,
-      name: "Team UIUX",
-    },
-    {
-      id: 2,
-      name: "Team AI",
-    },
-    {
-      id: 3,
-      name: "Team ITSS",
-    },
-    {
-      id: 4,
-      name: "Team Kĩ năng mềm",
-    },
-    {
-      id: 5,
-      name: "Team Thuật toán",
-    },
-  ];
+  // const team = [
+  //   {
+  //     id: 1,
+  //     name: "Team UIUX",
+  //   },
+  //   {
+  //     id: 2,
+  //     name: "Team AI",
+  //   },
+  //   {
+  //     id: 3,
+  //     name: "Team ITSS",
+  //   },
+  //   {
+  //     id: 4,
+  //     name: "Team Kĩ năng mềm",
+  //   },
+  //   {
+  //     id: 5,
+  //     name: "Team Thuật toán",
+  //   },
+  //   {
+  //     id: 6,
+  //     name: "Team Thể thao",
+  //   },
+  //   {
+  //     id: 7,
+  //     name: "Team Thiết bị",
+  //   },
+  //   {
+  //     id: 8,
+  //     name: "Team IoT",
+  //   },
+  //   {
+  //     id: 9,
+  //     name: "Team Mạng",
+  //   },
+  //   {
+  //     id: 10,
+  //     name: "Team Pháp luật",
+  //   },
+  // ];
   const handleTeamClick = (team) => {
     setCurrentTeam(team);
     setTab("specific");
@@ -128,18 +148,18 @@ const TeamList = ({
           </div>
         </div>
         <div className="table">
-          {shuffle(Array.from(team)).slice(0,3).map((team) => (
-            <div
-              key={team.id}
-              data = {team}
-              className="col"
-              onClick={() => handleTeamClick(team)}
-            >
-              <p className="name" style={{ cursor: "pointer" }}>
-                {team.name}
-              </p>
-            </div>
-          ))}
+          {currentWorkspace.team.map((team) => (
+              <div
+                key={team.id}
+                data={team}
+                className="col"
+                onClick={() => handleTeamClick(team)}
+              >
+                <p className="name" style={{ cursor: "pointer" }}>
+                  {team.name}
+                </p>
+              </div>
+            ))}
         </div>
       </div>
     </Container>
