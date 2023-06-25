@@ -1,7 +1,16 @@
 import React, { useState } from "react";
 import { Container } from "./index.style";
 import WorkspaceSpecific from "../WorkspaceSpecific/WorkspaceSpecific";
-
+function shuffle(a) {
+  var j, x, i;
+  for (i = a.length - 1; i > 0; i--) {
+      j = Math.floor(Math.random() * (i + 1));
+      x = a[i];
+      a[i] = a[j];
+      a[j] = x;
+  }
+  return a;
+}
 const TeamList = ({
   id,
   setId,
@@ -15,23 +24,23 @@ const TeamList = ({
   const team = [
     {
       id: 1,
-      name: "Team 1",
+      name: "Team UIUX",
     },
     {
       id: 2,
-      name: "Team 2",
+      name: "Team AI",
     },
     {
       id: 3,
-      name: "Team 3",
+      name: "Team ITSS",
     },
     {
       id: 4,
-      name: "Team 4",
+      name: "Team Kĩ năng mềm",
     },
     {
       id: 5,
-      name: "Team 5",
+      name: "Team Thuật toán",
     },
   ];
   const handleTeamClick = (team) => {
@@ -119,7 +128,7 @@ const TeamList = ({
           </div>
         </div>
         <div className="table">
-          {team.map((team) => (
+          {shuffle(Array.from(team)).slice(0,3).map((team) => (
             <div
               key={team.id}
               data = {team}

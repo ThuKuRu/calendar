@@ -247,7 +247,7 @@ const Main = ({ tab }) => {
     {
       id: 1,
       avatar: "thu_1.png",
-      name: "Công ty Thu Cuối",
+      name: "Việt Nhật 03",
       todolist: [
         {
           id: 1,
@@ -325,7 +325,7 @@ const Main = ({ tab }) => {
     {
       id: 2,
       avatar: "database.png",
-      name: "Quản lý Cuộc đời",
+      name: "ĐH Bách khoa",
       todolist: [
         {
           id: 1,
@@ -419,7 +419,7 @@ const Main = ({ tab }) => {
     {
       id: 3,
       avatar: "design_1.webp",
-      name: "Thiết kế Tương lai",
+      name: "Sun* Asterisk",
       todolist: [
         {
           id: 1,
@@ -566,7 +566,7 @@ const Main = ({ tab }) => {
     {
       id: 4,
       avatar: "se_2.jpg",
-      name: "SE Project",
+      name: "Nghiên cứu tốt nghiệp",
       todolist: [
         {
           id: 1,
@@ -646,7 +646,7 @@ const Main = ({ tab }) => {
     {
       id: 5,
       avatar: "thu_1.png",
-      name: "Công ty Thu cười",
+      name: "Công ty Vui vẻ",
       teamMems: [
         {
           id: 1,
@@ -768,7 +768,7 @@ const Main = ({ tab }) => {
     {
       id: 7,
       avatar: "design_1.webp",
-      name: "Thiết kế nhà đất",
+      name: "Dự án thiết kế",
       teamMems: [
         {
           id: 1,
@@ -872,7 +872,7 @@ const Main = ({ tab }) => {
     {
       id: 8,
       avatar: "se_2.jpg",
-      name: "ES Project",
+      name: "AI Project",
       teamMems: [
         {
           id: 1,
