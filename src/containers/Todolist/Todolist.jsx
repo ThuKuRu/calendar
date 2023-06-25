@@ -64,26 +64,34 @@ const Todolist = ({ toDoData, setToDoData, id, setId, events, setEvents }) => {
     });
     setToDoData(newToDoData);
   };
-  const [active, setActive] = useState("event");
   const autoFill = () => {
     const sortedTodoList = [...toDoData].sort(
       (a, b) => a.deadline - b.deadline
     );
     let currTime = new Date();
+    const filteredEventsList = events.filter(
+      (currentEvent) =>
+        toDoData.filter((currentTodo) => currentTodo.id === currentEvent.id)
+          .length === 0
+    );
     const newEventsList = sortedTodoList.map((current) => {
       const event = {
+        id: current.id,
         title: current.name,
         start: currTime,
         end: new Date(currTime.getTime() + 60 * 60 * 1000),
+        deadline: new Date(currTime.getTime() + 60 * 60 * 1000),
         description: current.description,
         level: current.level,
         color: levelColor[current.level],
         fontColor: levelFontColor[current.level],
+        eventType: "todo",
+        duration: current.duration,
       };
       currTime = new Date(event.end.getTime() + 60 * 60 * 1000 * 8);
       return event;
     });
-    setEvents([...events, ...newEventsList]);
+    setEvents([...filteredEventsList, ...newEventsList]);
 
     toast.success("Calendar has been successfully updated");
   };
@@ -217,7 +225,6 @@ const Todolist = ({ toDoData, setToDoData, id, setId, events, setEvents }) => {
                   close={close}
                   id={id}
                   setId={setId}
-                  setActive={setActive}
                   toDoData={toDoData}
                   setToDoData={setToDoData}
                 />

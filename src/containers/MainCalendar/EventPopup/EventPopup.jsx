@@ -9,7 +9,13 @@ const levelColor = {
   1: "#00BFFF",
 };
 
-const EventPopup = ({ event }) => {
+const EventPopup = ({
+  event,
+  setEditMode,
+  setOpen,
+  setEventCache,
+  setActive,
+}) => {
   return (
     <Container value={event.event.level}>
       <link
@@ -24,7 +30,17 @@ const EventPopup = ({ event }) => {
         <div className="content">
           <div className="header">
             <div>{event.title}</div>
-            <span class="material-symbols-outlined">edit</span>
+            <span
+              className="material-symbols-outlined"
+              onClick={() => {
+                setOpen(true);
+                setEditMode(true);
+                setEventCache(event.event);
+                setActive(event.event.eventType);
+              }}
+            >
+              edit
+            </span>
           </div>
           <div className="time">
             {event.event.start.toLocaleTimeString()} -{" "}

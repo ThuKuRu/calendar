@@ -32,18 +32,21 @@ const FormTodo = ({
   setId,
   toDoData,
   setToDoData,
-  event,
-  setEvent,
+  events,
+  setEvents,
+  eventCache,
+  setEventCache,
   resetCache,
+  editMode,
 }) => {
-  const [title, setTitle] = useState(event.title);
-  const [description, setDescription] = useState(event.description);
-  const [time, setTime] = useState(event.deadline);
-  const [date, setDate] = useState(event.date);
-  const [value, setValue] = useState(event.level);
-  const [day, setDay] = useState(event.duration.day);
-  const [hour, setHour] = useState(event.duration.hour);
-  const [minute, setMinute] = useState(event.duration.minute);
+  const [title, setTitle] = useState(eventCache.title);
+  const [description, setDescription] = useState(eventCache.description);
+  const [time, setTime] = useState(eventCache.deadline);
+  const [date, setDate] = useState(eventCache.deadline);
+  const [value, setValue] = useState(eventCache.level);
+  const [day, setDay] = useState(eventCache.duration.day);
+  const [hour, setHour] = useState(eventCache.duration.hour);
+  const [minute, setMinute] = useState(eventCache.duration.minute);
   const [saveColor, setSaveColor] = useState("#978f8f");
   const [saveBgColor, setSaveBgColor] = useState("#d9d9d9");
 
@@ -101,9 +104,8 @@ const FormTodo = ({
       );
       return;
     }
-
     const todo = {
-      id: id,
+      id: editMode ? eventCache.id : id,
       name: title,
       name_img: "thu_1.png",
       assignee: "you",
@@ -126,13 +128,33 @@ const FormTodo = ({
       comple: "false",
       color: levelColor[value],
       fontColor: levelFontColor[value],
+      eventType: "todo",
     };
-
-    setId(id + 1);
-    setToDoData([...toDoData, todo]);
+    if (!editMode) {
+      setId(id + 1);
+      setToDoData([...toDoData, todo]);
+      handleToastSuccess();
+    } else {
+      setEvents(
+        [...events].map((current) => {
+          if (current.id === todo.id) {
+            return todo;
+          }
+          return current;
+        })
+      );
+      setToDoData(
+        [...toDoData].map((current) => {
+          if (current.id === todo.id) {
+            return todo;
+          }
+          return current;
+        })
+      );
+      toast.success("To-do changed successfully");
+    }
     close();
     resetCache();
-    handleToastSuccess();
   };
 
   useEffect(() => {
@@ -181,10 +203,10 @@ const FormTodo = ({
 
   const handleChange = (e) => {
     setValue(e.target.value);
-    let newEvent = event;
+    let newEvent = eventCache;
     newEvent.level = e.target.value;
     newEvent.color = levelColor[e.target.value];
-    setEvent(newEvent);
+    setEventCache(newEvent);
   };
 
   return (
@@ -201,7 +223,9 @@ const FormTodo = ({
       <div className="modal">
         <div className="modal-container">
           <div className="header">
-            <div className="headerText">Create new To-do</div>
+            <div className="headerText">
+              {!editMode ? "Create new To-do" : "Edit to-do"}
+            </div>
           </div>
           <div className="content">
             <input
@@ -211,34 +235,37 @@ const FormTodo = ({
               value={title}
               onChange={(e) => {
                 setTitle(e.target.value);
-                let newEvent = event;
-                newEvent.title = e.target.value;
-                setEvent(newEvent);
+                if (!editMode) {
+                  let newEvent = eventCache;
+                  newEvent.title = e.target.value;
+                  setEventCache(newEvent);
+                }
               }}
             />
             <div className="formCreate-container">
-              <div className="formCreate-container-things">
-                <button
-                  className="formCreate-things "
-                  onClick={() => {
-                    setActive("event");
-                  }}
-                >
-                  Event
-                </button>
-                <button className="formCreate-things formCreate-todo">
-                  To-do
-                </button>
-                <button
-                  className="formCreate-things"
-                  onClick={() => {
-                    setActive("reminder");
-                  }}
-                >
-                  Reminder
-                </button>
-              </div>
-
+              {editMode === false && (
+                <div className="formCreate-container-things">
+                  <button
+                    className="formCreate-things "
+                    onClick={() => {
+                      setActive("event");
+                    }}
+                  >
+                    Event
+                  </button>
+                  <button className="formCreate-things formCreate-todo">
+                    To-do
+                  </button>
+                  <button
+                    className="formCreate-things"
+                    onClick={() => {
+                      setActive("reminder");
+                    }}
+                  >
+                    Reminder
+                  </button>
+                </div>
+              )}
               <div className="formTodo-time-container">
                 Duration:
                 <div className="formTodo-duration">
@@ -250,9 +277,11 @@ const FormTodo = ({
                       value={day}
                       onChange={(e) => {
                         setDay(e.target.value);
-                        let newEvent = event;
-                        newEvent.duration.day = e.target.value;
-                        setEvent(newEvent);
+                        if (!editMode) {
+                          let newEvent = eventCache;
+                          newEvent.duration.day = e.target.value;
+                          setEventCache(newEvent);
+                        }
                       }}
                     />
                     <label>day</label>
@@ -263,9 +292,11 @@ const FormTodo = ({
                       value={hour}
                       onChange={(e) => {
                         setHour(e.target.value);
-                        let newEvent = event;
-                        newEvent.duration.hour = e.target.value;
-                        setEvent(newEvent);
+                        if (!editMode) {
+                          let newEvent = eventCache;
+                          newEvent.duration.hour = e.target.value;
+                          setEventCache(newEvent);
+                        }
                       }}
                     />
                     <label>h</label>
@@ -276,9 +307,11 @@ const FormTodo = ({
                       value={minute}
                       onChange={(e) => {
                         setMinute(e.target.value);
-                        let newEvent = event;
-                        newEvent.duration.minute = e.target.value;
-                        setEvent(newEvent);
+                        if (!editMode) {
+                          let newEvent = eventCache;
+                          newEvent.duration.minute = e.target.value;
+                          setEventCache(newEvent);
+                        }
                       }}
                     />
                     <label>m</label>
@@ -295,9 +328,11 @@ const FormTodo = ({
                       dateFormat="EEEE, MMMM d"
                       onChange={(date) => {
                         setDate(date);
-                        let newEvent = event;
-                        newEvent.date = date;
-                        setEvent(newEvent);
+                        if (!editMode) {
+                          let newEvent = eventCache;
+                          newEvent.date = date;
+                          setEventCache(newEvent);
+                        }
                       }}
                     />
                   </div>
@@ -312,9 +347,11 @@ const FormTodo = ({
                       placeholderText="Time"
                       onChange={(time) => {
                         setTime(time);
-                        let newEvent = event;
-                        newEvent.deadline = time;
-                        setEvent(newEvent);
+                        if (!editMode) {
+                          let newEvent = eventCache;
+                          newEvent.deadline = time;
+                          setEventCache(newEvent);
+                        }
                       }}
                     />
                   </div>

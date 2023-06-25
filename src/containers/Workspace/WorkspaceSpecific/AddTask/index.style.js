@@ -303,8 +303,10 @@ const MemberList = styled.option`
   color: #000;
   list-style: none;
   font-size: 18px;
+
   font-family: "DIN" !important;
   margin-right: 4rem;
+
 `;
 
 export { FormTodoStyle, SelectList, MenuItem, MemberList, MemberMenu };

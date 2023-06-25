@@ -69,7 +69,7 @@ const WorkspaceCard = ({
         className="content"
         onClick={() => {
           setCurrentWorkspace(workspace);
-          setTab("specific");
+          setTab("teamlist");
         }}
       >
         <img

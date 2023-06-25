@@ -38,9 +38,7 @@ const WorkspaceHome = ({
         <div className="workspaceComponent-create">
           <div
             className="logo"
-            onClick={() => {
-              setTab("create");
-            }}
+             
           >
             <span className="material-symbols-outlined">add_box</span>
           </div>

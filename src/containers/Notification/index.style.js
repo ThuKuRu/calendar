@@ -25,7 +25,7 @@ const NotificationContainer = styled.div`
   border-left: 1px solid black;
   border-right: 1px solid black;
   border-bottom: 1px solid black;
-  padding: 10px;
+  padding: 1em;
   background-color: white;
   margin-top: 5px;
   border-radius: 1em;
@@ -33,11 +33,12 @@ const NotificationContainer = styled.div`
 `;
 
 const NotiList = styled.div`
-  width: 300px;
+  min-width: 300px;
 `;
 
 const NotiItem = styled.div`
   background-color: ${({ notiType }) => color[notiType]};
+  padding: 0 1em;
   color: white;
   display: flex;
   align-item: center;
