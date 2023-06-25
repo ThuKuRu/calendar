@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Container } from "./index.style";
+import WorkspaceSpecific from "../WorkspaceSpecific/WorkspaceSpecific";
 
 const TeamList = ({
   id,
@@ -9,8 +10,8 @@ const TeamList = ({
   setCurrentWorkspace,
   workspaces,
   setWorkspaces,
+  setCurrentTeam,
 }) => {
-  const [selectedTeam, setSelectedTeam] = useState(null);
   const team = [
     {
       id: 1,
@@ -24,9 +25,17 @@ const TeamList = ({
       id: 3,
       name: "Team 3",
     },
+    {
+      id: 4,
+      name: "Team 4",
+    },
+    {
+      id: 5,
+      name: "Team 5",
+    },
   ];
   const handleTeamClick = (team) => {
-    setSelectedTeam(team);
+    setCurrentTeam(team);
     setTab("specific");
   };
   const handleCancel = () => {
@@ -113,6 +122,7 @@ const TeamList = ({
           {team.map((team) => (
             <div
               key={team.id}
+              data = {team}
               className="col"
               onClick={() => handleTeamClick(team)}
             >

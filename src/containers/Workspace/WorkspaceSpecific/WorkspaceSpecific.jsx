@@ -14,6 +14,7 @@ const WorkspaceSpecific = ({
   setWorkspaces,
   toDoData,
   setToDoData,
+  currentTeam,
 }) => {
   const [change, setChange] = useState("specific");
   const handleCancel = () => {
@@ -75,7 +76,7 @@ const WorkspaceSpecific = ({
             </div>
             <div className="specific-name">
               <div className="name">
-                <p>{currentWorkspace.name}</p>
+                <p>{currentTeam.name} ({currentWorkspace.name})</p>
               </div>
               <div className="description">
                 <p>This is a place where the runner-up live and work.</p>

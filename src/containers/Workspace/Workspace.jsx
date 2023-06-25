@@ -22,6 +22,8 @@ const Workspace = ({
   const [tab, setTab] = useState("home");
 
   const [currentWorkspace, setCurrentWorkspace] = useState({});
+
+  const [currentTeam, setCurrentTeam] = useState({});
   return (
     <Container>
       <ToastContainer />
@@ -63,6 +65,7 @@ const Workspace = ({
           setToDoData={setToDoData}
           id={id}
           setId={setId}
+          currentTeam={currentTeam}
         />
       )}
       {tab === "addUser" && <AddUser setTab={setTab} />}
@@ -77,6 +80,7 @@ const Workspace = ({
           setWorkspaces={setWorkspaces}
           toDoData={toDoData}
           setToDoData={setToDoData}
+          setCurrentTeam={setCurrentTeam}
         />
       )}
     </Container>
