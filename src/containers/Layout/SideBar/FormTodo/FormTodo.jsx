@@ -378,9 +378,9 @@ const FormTodo = ({
               placeholder="Add description ..."
               onChange={(e) => {
                 setDescription(e.target.value);
-                let newEvent = event;
+                let newEvent = eventCache;
                 newEvent.description = e.target.value;
-                setEvent(newEvent);
+                setEventCache(newEvent);
               }}
             ></input>
 

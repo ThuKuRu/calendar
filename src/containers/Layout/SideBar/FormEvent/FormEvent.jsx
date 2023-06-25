@@ -135,7 +135,10 @@ const FormEvent = ({
         <div className="modal-container">
           <ToastContainer />
           <div className="header">
-            <div className="headerText"> {!editMode ?"Create new Event" : "Edit event"} </div>
+            <div className="headerText">
+              {" "}
+              {!editMode ? "Create new Event" : "Edit event"}{" "}
+            </div>
           </div>
           <div className="content">
             <input
