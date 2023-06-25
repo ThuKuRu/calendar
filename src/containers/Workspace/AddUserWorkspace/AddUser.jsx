@@ -1,5 +1,7 @@
 import React, { useState, useRef } from "react";
 import { Container } from "./index.style";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function AddUser({ setTab }) {
   const [assignees, setAssignees] = useState("");
@@ -8,25 +10,32 @@ function AddUser({ setTab }) {
   const [message, setMessage] = useState("");
   const fileInputRef = useRef(null);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setTab("specific");
-  };
-
   const handleCancel = (e) => {
     setTab("specific");
   };
 
-  const handleChooseImage = () => {
-    fileInputRef.current.click();
-  };
-
-  const [file, setFile] = useState();
-  console.log(file);
   const handleChange = (e) => {
     console.log(e.target.files);
     setFile(URL.createObjectURL(e.target.files[0]));
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (assignees !== "" && role !== "" && workingStatus !== "") {
+      if (!file) {
+        toast.error("Please add image for user");
+        return;
+      }
+    } else {
+      toast.error("Error: Please fill in all required fields.");
+      return;
+    }
+
+    setTab("specific");
+    toast.success("User added successfully!");
+  };
+  const [file, setFile] = useState();
+  console.log(file);
 
   return (
     <Container>
@@ -107,7 +116,7 @@ function AddUser({ setTab }) {
             Cancel
           </button>
           <button className="create-button" type="submit">
-            Create
+            Add
           </button>
         </div>
       </form>

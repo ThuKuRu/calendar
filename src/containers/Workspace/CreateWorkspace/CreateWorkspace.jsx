@@ -35,7 +35,7 @@ function CreateWorkspace({
         return;
       }
     } else {
-      toast.error("Please fill in all required fields.");
+      toast.error("Error: Please fill in all required fields.");
       return;
     }
     const you = {

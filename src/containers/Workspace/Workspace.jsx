@@ -6,6 +6,7 @@ import CreateWorkspace from "./CreateWorkspace/CreateWorkspace";
 import WorkspaceSpecific from "./WorkspaceSpecific/WorkspaceSpecific";
 import AddUser from "./AddUserWorkspace/AddUser";
 import TeamList from "./TeamList/TeamList";
+import { ToastContainer } from "react-toastify";
 
 const Workspace = ({
   workspaces,
@@ -23,6 +24,7 @@ const Workspace = ({
   const [currentWorkspace, setCurrentWorkspace] = useState({});
   return (
     <Container>
+      <ToastContainer />
       {tab === "home" && (
         <WorkspaceHome
           setTab={setTab}
