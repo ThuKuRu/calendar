@@ -40,7 +40,7 @@ const MainCalendar = ({
       minute: "",
     },
     deadline: new Date(),
-    level: "1",
+    level: "Optional",
     color: "#2d7fe0",
     fontColor: "#fff",
   };

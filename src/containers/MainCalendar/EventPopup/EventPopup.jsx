@@ -2,11 +2,11 @@ import React from "react";
 import { Container } from "./index.style";
 
 const levelColor = {
-  5: "#FF0000",
-  4: "#FFA500",
-  3: "#FFFF00",
-  2: "#1AC71A",
-  1: "#00BFFF",
+  Critical: "#FF0000",
+  High: "#FFA500",
+  Medium: "#FFFF00",
+  Low: "#1AC71A",
+  Optional: "#00BFFF",
 };
 
 const EventPopup = ({

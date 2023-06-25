@@ -23,6 +23,11 @@ const DoneStyle = styled.div`
         align-items: center;
         text-align: center;
         flex: 1;
+        .priorityItems {
+          min-width: 4rem;
+
+          text-align: center;
+        }
         span {
           margin-right: 0.3125em;
         }
@@ -113,11 +118,11 @@ const DoneStyle = styled.div`
 `;
 
 const levelColor = {
-  5: "#FF0000",
-  4: "#FFA500",
-  3: "#FFFF00",
-  2: "#1AC71A",
-  1: "#00BFFF",
+  Critical: "#FF0000",
+  High: "#FFA500",
+  Medium: "#FFFF00",
+  Low: "#1AC71A",
+  Optional: "#00BFFF",
 };
 
 const Color = styled.p`
