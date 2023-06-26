@@ -19,8 +19,12 @@ const TodoStyle = styled.div`
       text-align: center;
       align-items: center;
       .col {
-        padding: 0.1em 0.5em;
-        margin-left: -2em;
+        // padding: 0.1em 0.5em;
+        // margin-left: -2em;
+        // display: flex;
+        // align-items: center;
+        // text-align: center;
+        // flex: 1;
         display: flex;
         align-items: center;
         text-align: center;
@@ -73,12 +77,14 @@ const TodoStyle = styled.div`
           width: clamp(5em, 6.25vw, 7.5em);
           border-radius: 1em;
           padding: 0px;
-          margin-left: -1em;
+          // margin-left: -1em;
+          margin-right: 0.5em;
           input {
             height: 0.5em;
           }
           .slider {
-            margin-top: 1em;
+            // margin-top: 1em;
+            height: 0.5em;
           }
         }
         .todo {
@@ -86,7 +92,7 @@ const TodoStyle = styled.div`
           padding: 0.0625em 1.5625em 0;
           background-color: #00bfff;
           border-radius: 20px;
-          margin-left: 0.5em;
+          margin-left: 1em;
         }
       }
     }
