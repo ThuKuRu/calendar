@@ -24,6 +24,17 @@ const Doing = ({
         return workspace.id === currentWorkspace.id ? newWorkspace : workspace;
       })
     );
+    if (parseInt(newWorkspace.todolist[index].percent) > 100) {
+      newWorkspace.todolist[index].status = "done";
+      setCurrentWorkspace(newWorkspace);
+      setWorkspaces(
+        workspaces.map((workspace) => {
+          return workspace.id === currentWorkspace.id
+            ? newWorkspace
+            : workspace;
+        })
+      );
+    }
   };
   const options = {
     month: "short",
