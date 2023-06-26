@@ -56,7 +56,6 @@ const Todo = ({
     hour12: true,
   };
 
-  console.log(currentWorkspace.todolist);
   return (
     <TodoStyle>
       <div className="specific-task">

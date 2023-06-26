@@ -8,12 +8,28 @@ function isNotNegativeInteger(number) {
   return Number.isInteger(number) && number >= 0;
 }
 
+const levelColor = {
+  Critical: "#FF0000",
+  High: "#FFA500",
+  Medium: "#FFFF00",
+  Low: "#1AC71A",
+  Optional: "#00BFFF",
+};
+
+const levelFontColor = {
+  Critical: "#fff",
+  High: "#fff",
+  Medium: "#000",
+  Low: "#fff",
+  Optional: "#fff",
+};
+
 const CreateToDo = ({ close, id, setId, toDoData, setToDoData }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [time, setTime] = useState("");
   const [date, setDate] = useState(new Date());
-  const [value, setValue] = React.useState("1");
+  const [value, setValue] = useState("Optional");
   const [day, setDay] = useState();
   const [hour, setHour] = useState();
   const [minute, setMinute] = useState();
@@ -94,6 +110,8 @@ const CreateToDo = ({ close, id, setId, toDoData, setToDoData }) => {
       ),
       percent: "0",
       level: value,
+      color: levelColor[value],
+      fontColor: levelFontColor[value],
       comple: "false",
       eventType: "todo",
     };

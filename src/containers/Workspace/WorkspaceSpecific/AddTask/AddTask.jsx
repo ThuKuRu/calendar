@@ -15,6 +15,22 @@ function isNotNegativeInteger(number) {
   return Number.isInteger(number) && number >= 0;
 }
 
+const levelColor = {
+  Critical: "#FF0000",
+  High: "#FFA500",
+  Medium: "#FFFF00",
+  Low: "#1AC71A",
+  Optional: "#00BFFF",
+};
+
+const levelFontColor = {
+  Critical: "#fff",
+  High: "#fff",
+  Medium: "#000",
+  Low: "#fff",
+  Optional: "#fff",
+};
+
 const AddTask = ({
   close,
   id,
@@ -31,14 +47,14 @@ const AddTask = ({
   const [description, setDescription] = useState("");
   const [time, setTime] = useState("");
   const [date, setDate] = useState(new Date());
-  const [value, setValue] = React.useState("1");
+  const [value, setValue] = useState("Optional");
   const [day, setDay] = useState();
   const [hour, setHour] = useState();
   const [minute, setMinute] = useState();
   const [saveColor, setSaveColor] = useState("#978f8f");
   const [saveBgColor, setSaveBgColor] = useState("#d9d9d9");
   const [assignee, setAssignee] = useState("");
-
+  const [chosenAssignee, setChosenAssignee] = useState([]);
   const handleToastError = (message) => {
     toast.error(`Error: ${message}`);
   };
@@ -65,18 +81,6 @@ const AddTask = ({
       handleToastError("Please fill in all required fields.");
       return;
     }
-    // if (
-    //   title === "" ||
-    //   time === "" ||
-    //   date === "" ||
-    //   day === "" ||
-    //   hour === "" ||
-    //   minute === "" ||
-    //   assignee === ""
-    // ) {
-    //   handleToastError("Please fill in all required fields.");
-    //   return;
-    // }
     const selectedDateTime = new Date(
       date.getFullYear(),
       date.getMonth(),
@@ -114,69 +118,70 @@ const AddTask = ({
     const workspaceImage = currentWorkspace.teamMems.filter((current) => {
       return current.memberName === assignee;
     });
-    const todo = {
-      id: id,
-      name_img: "thu_1.png",
-      memberName: assignee,
-      memberAvatar: workspaceImage[0].memberAvatar,
-      duration: {
-        day: day,
-        hour: hour,
-        minute: minute,
-      },
-      description: description,
-      deadline: new Date(
-        date.getFullYear(),
-        date.getMonth(),
-        date.getDate(),
-        time.getHours(),
-        time.getMinutes()
-      ),
-      percent: "0",
-      level: value,
-      comple: "false",
-      pjName: title,
-      pjImg: "python.jpg",
-    };
+    chosenAssignee.map((assignee) => {
+      const todo = {
+        id: id,
+        name_img: "thu_1.png",
+        memberName: assignee,
+        memberAvatar: workspaceImage[0].memberAvatar,
+        duration: {
+          day: day,
+          hour: hour,
+          minute: minute,
+        },
+        description: description,
+        deadline: new Date(
+          date.getFullYear(),
+          date.getMonth(),
+          date.getDate(),
+          time.getHours(),
+          time.getMinutes()
+        ),
+        percent: "0",
+        level: value,
+        comple: "false",
+        color: levelColor[value],
+        fontColor: levelFontColor[value],
+        pjName: title,
+        pjImg: "python.jpg",
+        status: "todo",
+      };
 
-    setId(id + 1);
-    let newCurrentWorkspace = {};
-    let newWorkspaces = workspaces.map((current) => {
-      if (current.id === currentWorkspace.id) {
-        let currentNewWorkspace = {
-          id: current.id,
-          avatar: current.avatar,
-          name: current.name,
-          todolist: current.todolist,
-          teamMems: current.teamMems,
-        };
-        if (current.todolist === undefined) {
-          currentNewWorkspace.todolist = [todo];
+      setId(id + 1);
+      let newCurrentWorkspace = {};
+      let newWorkspaces = workspaces.map((current) => {
+        if (current.id === currentWorkspace.id) {
+          let currentNewWorkspace = currentWorkspace;
+          if (current.todolist === undefined) {
+            currentNewWorkspace.todolist = [todo];
+            newCurrentWorkspace = currentNewWorkspace;
+            return currentNewWorkspace;
+          }
+          currentNewWorkspace.todolist = [...currentWorkspace.todolist, todo];
           newCurrentWorkspace = currentNewWorkspace;
           return currentNewWorkspace;
         }
-        currentNewWorkspace.todolist = [...currentWorkspace.todolist, todo];
-        newCurrentWorkspace = currentNewWorkspace;
-        return currentNewWorkspace;
+        return current;
+      });
+      setWorkspaces(newWorkspaces);
+      setCurrentWorkspace(newCurrentWorkspace);
+      // console.log(newCurrentWorkspace);
+      if (todo.memberName === "Thu thút") {
+        const newTodo = {
+          name: todo.pjName,
+          name_img: "python.jpg",
+          assignee: currentWorkspace.name,
+          assignee_img: currentWorkspace.avatar,
+          description: todo.description,
+          deadline: todo.deadline,
+          percent: todo.percent,
+          level: todo.level,
+          comple: todo.comple,
+        };
+        setToDoData([...toDoData, newTodo]);
       }
-      return current;
+      return null;
     });
-    setWorkspaces(newWorkspaces);
-    setCurrentWorkspace(newCurrentWorkspace);
-    if (todo.memberName === "Thu thút") {
-      const newTodo = {
-        name: todo.pjName,
-        name_img: "python.jpg",
-        assignee: currentWorkspace.name,
-        assignee_img: currentWorkspace.avatar,
-        description: todo.description,
-        deadline: todo.deadline,
-        percent: todo.percent,
-        level: todo.level,
-        comple: todo.comple,
-      };
-      setToDoData([...toDoData, newTodo]);
-    }
     close();
     handleToastSuccess();
   };
@@ -231,6 +236,15 @@ const AddTask = ({
   };
 
   const handleChangeSelect = (e) => {
+    if (chosenAssignee === []) {
+      setChosenAssignee([e.target.value]);
+    } else {
+      if (
+        chosenAssignee.filter((assignee) => assignee === e.target.value)
+          .length <= 0
+      )
+        setChosenAssignee([...chosenAssignee, e.target.value]);
+    }
     setAssignee(e.target.value);
   };
 
@@ -276,6 +290,31 @@ const AddTask = ({
                       );
                     })}
                   </MemberMenu>
+                </div>
+              </div>
+              <div className="formTodo-time-container">
+                <div className="theChosen">
+                  {chosenAssignee.map !== undefined &&
+                    chosenAssignee.map((assignee) => {
+                      return (
+                        <div>
+                          {console.log(assignee)}
+                          {assignee}
+                          <span
+                            className="material-symbols-outlined"
+                            onClick={() => {
+                              setChosenAssignee(
+                                chosenAssignee.filter((current) => {
+                                  return current !== assignee;
+                                })
+                              );
+                            }}
+                          >
+                            close
+                          </span>{" "}
+                        </div>
+                      );
+                    })}
                 </div>
               </div>
               <div className="formTodo-time-container">
