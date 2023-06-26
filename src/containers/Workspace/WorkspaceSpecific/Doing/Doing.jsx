@@ -131,7 +131,7 @@ const Doing = ({
                       </div>
                     </div>
                     <div className="col ">
-                      <div className="doing">Halfway done</div>
+                      <div className="doing">Doing</div>
                     </div>
                   </div>
                 )}
