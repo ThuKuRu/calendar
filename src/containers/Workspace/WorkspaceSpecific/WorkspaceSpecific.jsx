@@ -44,7 +44,7 @@ const WorkspaceSpecific = ({
             arrow_back_ios_new
           </span>
         </div>
-        <div className="headerRight">
+        {/* <div className="headerRight">
           <div className="leaveWorkspace">
             <div className="leaveButton">
               <span
@@ -62,7 +62,7 @@ const WorkspaceSpecific = ({
               <span class="material-symbols-outlined">settings</span>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
       <div className="specific">
         <div className="specificLeft">

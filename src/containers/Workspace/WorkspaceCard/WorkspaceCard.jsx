@@ -78,7 +78,7 @@ const WorkspaceCard = ({
           alt=""
         />
         <div className="name">{workspace.name}</div>
-        {workspace.teamMems !== null && workspace.teamMems.length <= 4 && (
+        {/* {workspace.teamMems !== null && workspace.teamMems.length <= 4 && (
           <div className="teamMems">
             {workspace.teamMems.map((member) => {
               return (
@@ -90,8 +90,8 @@ const WorkspaceCard = ({
               );
             })}
           </div>
-        )}
-        {workspace.teamMems.length > 4 && (
+        )} */}
+        {/* {workspace.teamMems.length > 4 && (
           <div className="teamMems">
             {workspace.teamMems.slice(0, 3).map((member) => {
               return (
@@ -106,7 +106,7 @@ const WorkspaceCard = ({
               +{workspace.teamMems.length - 3}
             </div>
           </div>
-        )}
+        )} */}
       </div>
 
       <Modal
