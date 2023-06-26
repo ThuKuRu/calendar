@@ -18,7 +18,7 @@ const SideBar = ({ tab, setTab }) => {
         <p className="textLogo">arenda-</p>
       </div>
       <div className="navbar">
-        <div className={tab === "dashboard" ? "container active" : "container"}>
+        {/* <div className={tab === "dashboard" ? "container active" : "container"}>
           <div
             className="dashboard"
             onClick={() => {
@@ -28,7 +28,7 @@ const SideBar = ({ tab, setTab }) => {
             <span className="material-symbols-outlined">grid_view</span>
             <p>Dashboard</p>
           </div>
-        </div>
+        </div> */}
         <div className={tab === "calendar" ? "container active" : "container"}>
           <div
             className="calendar"
