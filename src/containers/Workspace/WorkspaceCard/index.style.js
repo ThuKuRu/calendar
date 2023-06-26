@@ -16,6 +16,7 @@ const Container = styled.div`
     box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
     border-radius: 1.25em;
     transform: translateY(-0.25em);
+    background-color: #f5f5f5;
   }
   .leaveWorkspace {
     width: 100%;
@@ -43,14 +44,14 @@ const Container = styled.div`
     .avatar {
       margin-top: 10%;
       margin-bottom: 1%;
-      height: 2vw;
-      width: 2vw;
+      height: 4vw;
+      width: 4vw;
       border-radius: 50px;
     }
     .name {
       font-size: clamp(1rem, 1.3vw, 1.5625rem);
       font-weight: bold;
-      margin-bottom: 1%;
+      margin: auto;
     }
     .teamMems {
       display: flex;
