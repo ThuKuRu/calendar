@@ -134,7 +134,7 @@ const Color = styled.p`
   margin-left: -3em;
   background-color: ${({ value }) => levelColor[value]};
   color: ${({ value }) => {
-    if (value === "5") return "#ffffff";
+    if (value === "Critical") return "#ffffff";
   }};
 `;
 

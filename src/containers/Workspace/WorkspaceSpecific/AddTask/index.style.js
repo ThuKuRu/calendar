@@ -111,6 +111,22 @@ const FormTodoStyle = styled.div`
             margin: 1.25rem 0;
             font-weight: bold;
             align-items: center;
+            .theChosen {
+              display: flex;
+              div {
+                margin-left: 10px;
+                border: 1px solid #000;
+                border-radius: 1em;
+                padding: 0.5em;
+                display: flex;
+                align-items: center;
+                font-size: clamp(0.8rem, 0.625vw, 1rem);
+                span {
+                  cursor: pointer;
+                }
+              }
+            }
+
             .formTodo-duration {
               display: flex;
               align-items: center;
