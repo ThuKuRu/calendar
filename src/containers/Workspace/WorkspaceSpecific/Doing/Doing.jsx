@@ -127,7 +127,6 @@ const Doing = ({
                             handleSliderChange(e, index);
                           }}
                         />
-                        {/* <p>{todo.percent}</p> */}
                       </div>
                     </div>
                     <div className="col ">
