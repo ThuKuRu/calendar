@@ -238,7 +238,7 @@ const eventData = [
     end: "2023/4/2/9/0",
     color: "#00bfff",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 26,
@@ -247,7 +247,7 @@ const eventData = [
     end: "2023/4/4/9/0",
     color: "#00bfff",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 27,
@@ -256,7 +256,7 @@ const eventData = [
     end: "2023/4/12/9/0",
     color: "#00bfff",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 28,
@@ -266,7 +266,7 @@ const eventData = [
     description: "calendar",
     color: "#00bfff",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 29,
@@ -275,7 +275,7 @@ const eventData = [
     end: "2023/4/23/15/0",
     color: "#00bfff",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 30,
@@ -284,7 +284,7 @@ const eventData = [
     end: "2023/5/3/11/0",
     color: "#00bfff",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 31,
@@ -293,7 +293,7 @@ const eventData = [
     end: "2023/5/12/12/0",
     color: "#00bfff",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 32,
@@ -303,7 +303,7 @@ const eventData = [
     description: 93,
     color: "#00bfff",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 33,
@@ -312,7 +312,7 @@ const eventData = [
     end: "2023/5/24/12/30",
     color: "#00bfff",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 34,
@@ -321,7 +321,7 @@ const eventData = [
     end: "2023/5/29/13/30",
     color: "#00bfff",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 35,
@@ -330,7 +330,7 @@ const eventData = [
     end: "2023/6/3/11/0",
     color: "#00bfff",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 36,
@@ -340,7 +340,7 @@ const eventData = [
     description: "Quiz 2,3",
     color: "#00bfff",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 37,
@@ -349,7 +349,7 @@ const eventData = [
     end: "2023/6/17/11/0",
     color: "#00bfff",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 38,
@@ -358,7 +358,7 @@ const eventData = [
     end: "2023/6/27/11/0",
     color: "#00bfff",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 39,
@@ -367,7 +367,7 @@ const eventData = [
     end: "2023/6/28/11/0",
     color: "#00bfff",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 40,
@@ -376,7 +376,7 @@ const eventData = [
     end: "2023/4/3/20/0",
     color: "#ff0000",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 41,
@@ -385,7 +385,7 @@ const eventData = [
     end: "2023/4/18/11/0",
     color: "#ff0000",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 42,
@@ -394,7 +394,7 @@ const eventData = [
     end: "2023/4/22/13/0",
     color: "#ff0000",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 43,
@@ -403,7 +403,7 @@ const eventData = [
     end: "2023/4/24/22/0",
     color: "#ff0000",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 44,
@@ -412,7 +412,7 @@ const eventData = [
     end: "2023/4/31/11/0",
     color: "#ff0000",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 45,
@@ -421,7 +421,7 @@ const eventData = [
     end: "2023/5/3/21/0",
     color: "#ff0000",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 46,
@@ -430,7 +430,7 @@ const eventData = [
     end: "2023/5/9/21/0",
     color: "#ff0000",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 47,
@@ -439,7 +439,7 @@ const eventData = [
     end: "2023/5/17/21/0",
     color: "#ff0000",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 48,
@@ -448,7 +448,7 @@ const eventData = [
     end: "2023/5/27/21/0",
     color: "#ff0000",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 49,
@@ -458,7 +458,7 @@ const eventData = [
     description: "3x4",
     color: "#ff0000",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 50,
@@ -467,7 +467,7 @@ const eventData = [
     end: "2023/6/4/12/30",
     color: "#ff0000",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 51,
@@ -476,7 +476,7 @@ const eventData = [
     end: "2023/6/11/17/0",
     color: "#ff0000",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 52,
@@ -485,7 +485,7 @@ const eventData = [
     end: "2023/6/18/17/0",
     color: "#ff0000",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 53,
@@ -495,7 +495,7 @@ const eventData = [
     description: "Slide",
     color: "#ff0000",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 54,
@@ -504,7 +504,7 @@ const eventData = [
     end: "2023/6/29/18/0",
     color: "#ff0000",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 55,
@@ -513,7 +513,7 @@ const eventData = [
     end: "2023/4/4/8/0",
     color: "#ffff00",
     fontColor: "#000",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 56,
@@ -523,7 +523,7 @@ const eventData = [
     description: "Book+Note",
     color: "#ffff00",
     fontColor: "#000",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 57,
@@ -532,7 +532,7 @@ const eventData = [
     end: "2023/4/13/8/0",
     color: "#ffff00",
     fontColor: "#000",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 58,
@@ -541,7 +541,7 @@ const eventData = [
     end: "2023/4/19/9/0",
     color: "#ffff00",
     fontColor: "#000",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 59,
@@ -550,7 +550,7 @@ const eventData = [
     end: "2023/4/27/8/0",
     color: "#ffff00",
     fontColor: "#000",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 60,
@@ -559,7 +559,7 @@ const eventData = [
     end: "2023/5/4/10/0",
     color: "#ffff00",
     fontColor: "#000",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 61,
@@ -569,7 +569,7 @@ const eventData = [
     description: "BT 2,3",
     color: "#ffff00",
     fontColor: "#000",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 62,
@@ -578,7 +578,7 @@ const eventData = [
     end: "2023/5/13/10/0",
     color: "#ffff00",
     fontColor: "#000",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 63,
@@ -587,7 +587,7 @@ const eventData = [
     end: "2023/5/19/10/0",
     color: "#ffff00",
     fontColor: "#000",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 64,
@@ -596,7 +596,7 @@ const eventData = [
     end: "2023/5/26/10/0",
     color: "#ffff00",
     fontColor: "#000",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 65,
@@ -606,7 +606,7 @@ const eventData = [
     description: "Presentation",
     color: "#ffff00",
     fontColor: "#000",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 66,
@@ -615,7 +615,7 @@ const eventData = [
     end: "2023/6/12/15/0",
     color: "#ffff00",
     fontColor: "#000",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 67,
@@ -624,7 +624,7 @@ const eventData = [
     end: "2023/6/14/15/0",
     color: "#ffff00",
     fontColor: "#000",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 68,
@@ -633,7 +633,7 @@ const eventData = [
     end: "2023/6/24/15/0",
     color: "#ffff00",
     fontColor: "#000",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 69,
@@ -642,7 +642,7 @@ const eventData = [
     end: "2023/6/26/15/0",
     color: "#ffff00",
     fontColor: "#000",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 70,
@@ -651,7 +651,7 @@ const eventData = [
     end: "2023/4/6/20/0",
     color: "#ffa500",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 71,
@@ -660,7 +660,7 @@ const eventData = [
     end: "2023/4/7/20/0",
     color: "#ffa500",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 72,
@@ -669,7 +669,7 @@ const eventData = [
     end: "2023/4/9/20/0",
     color: "#ffa500",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 73,
@@ -678,7 +678,7 @@ const eventData = [
     end: "2023/4/11/20/0",
     color: "#ffa500",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 74,
@@ -687,7 +687,7 @@ const eventData = [
     end: "2023/4/14/20/0",
     color: "#ffa500",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 75,
@@ -696,7 +696,7 @@ const eventData = [
     end: "2023/5/7/14/0",
     color: "#ffa500",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 76,
@@ -706,7 +706,7 @@ const eventData = [
     description: "Mũ cối",
     color: "#ffa500",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 77,
@@ -715,7 +715,7 @@ const eventData = [
     end: "2023/5/16/15/0",
     color: "#ffa500",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 78,
@@ -724,7 +724,7 @@ const eventData = [
     end: "2023/5/30/10/0",
     color: "#ffa500",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 79,
@@ -733,7 +733,7 @@ const eventData = [
     end: "2023/5/30/18/0",
     color: "#ffa500",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 80,
@@ -742,7 +742,7 @@ const eventData = [
     end: "2023/6/6/16/0",
     color: "#ffa500",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 81,
@@ -751,7 +751,7 @@ const eventData = [
     end: "2023/6/8/16/0",
     color: "#ffa500",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 82,
@@ -760,7 +760,7 @@ const eventData = [
     end: "2023/6/13/17/0",
     color: "#ffa500",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 83,
@@ -769,7 +769,7 @@ const eventData = [
     end: "2023/6/16/18/0",
     color: "#ffa500",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 84,
@@ -778,7 +778,7 @@ const eventData = [
     end: "2023/6/23/19/0",
     color: "#ffa500",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 85,
@@ -787,7 +787,7 @@ const eventData = [
     end: "2023/4/16/16/0",
     color: "#1ac71a",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 86,
@@ -796,7 +796,7 @@ const eventData = [
     end: "2023/4/21/16/0",
     color: "#1ac71a",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 87,
@@ -805,7 +805,7 @@ const eventData = [
     end: "2023/4/26/16/0",
     color: "#1ac71a",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 88,
@@ -814,7 +814,7 @@ const eventData = [
     end: "2023/4/28/16/0",
     color: "#1ac71a",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 89,
@@ -824,7 +824,7 @@ const eventData = [
     description: "Đọc, nghe",
     color: "#1ac71a",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 90,
@@ -833,7 +833,7 @@ const eventData = [
     end: "2023/5/6/8/0",
     color: "#1ac71a",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 91,
@@ -842,7 +842,7 @@ const eventData = [
     end: "2023/5/7/8/0",
     color: "#1ac71a",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 92,
@@ -851,7 +851,7 @@ const eventData = [
     end: "2023/5/10/8/0",
     color: "#1ac71a",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 93,
@@ -861,7 +861,7 @@ const eventData = [
     description: "Scanner",
     color: "#1ac71a",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 94,
@@ -870,7 +870,7 @@ const eventData = [
     end: "2023/5/14/8/0",
     color: "#1ac71a",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 95,
@@ -879,7 +879,7 @@ const eventData = [
     end: "2023/7/7/12/0",
     color: "#1ac71a",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 96,
@@ -888,7 +888,7 @@ const eventData = [
     end: "2023/7/10/13/0",
     color: "#1ac71a",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 97,
@@ -898,7 +898,7 @@ const eventData = [
     description: "Vẽ biểu đồ",
     color: "#1ac71a",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 98,
@@ -907,7 +907,7 @@ const eventData = [
     end: "2023/7/21/15/0",
     color: "#1ac71a",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 99,
@@ -916,7 +916,7 @@ const eventData = [
     end: "2023/7/28/16/0",
     color: "#1ac71a",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 100,
@@ -925,7 +925,7 @@ const eventData = [
     end: "2023/5/25/10/0",
     color: "#00bfff",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 101,
@@ -934,7 +934,7 @@ const eventData = [
     end: "2023/5/25/16/0",
     color: "#ff0000",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 102,
@@ -943,7 +943,7 @@ const eventData = [
     end: "2023/5/26/8/30",
     color: "#ffff00",
     fontColor: "#000",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 103,
@@ -952,7 +952,7 @@ const eventData = [
     end: "2023/5/26/14/0",
     color: "#ffa500",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 104,
@@ -961,7 +961,7 @@ const eventData = [
     end: "2023/5/26/17/30",
     color: "#1ac71a",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 105,
@@ -970,7 +970,7 @@ const eventData = [
     end: "2023/5/27/8/30",
     color: "#00bfff",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 106,
@@ -979,7 +979,7 @@ const eventData = [
     end: "2023/5/27/14/0",
     color: "#ff0000",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 107,
@@ -988,7 +988,7 @@ const eventData = [
     end: "2023/5/27/17/0",
     color: "#ffff00",
     fontColor: "#000",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 108,
@@ -997,7 +997,7 @@ const eventData = [
     end: "2023/5/28/9/0",
     color: "#ffa500",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 109,
@@ -1006,7 +1006,7 @@ const eventData = [
     end: "2023/5/28/17/30",
     color: "#1ac71a",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 110,
@@ -1015,7 +1015,7 @@ const eventData = [
     end: "2023/5/29/16/0",
     color: "#ffa500",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 111,
@@ -1024,7 +1024,7 @@ const eventData = [
     end: "2023/5/18/9/0",
     color: "#00bfff",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 112,
@@ -1033,7 +1033,7 @@ const eventData = [
     end: "2023/5/18/17/0",
     color: "#ff0000",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 113,
@@ -1042,7 +1042,7 @@ const eventData = [
     end: "2023/5/19/17/0",
     color: "#ffff00",
     fontColor: "#000",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 114,
@@ -1051,7 +1051,7 @@ const eventData = [
     end: "2023/5/19/12/0",
     color: "#ffa500",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 115,
@@ -1060,7 +1060,7 @@ const eventData = [
     end: "2023/5/20/11/30",
     color: "#1ac71a",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 116,
@@ -1069,7 +1069,7 @@ const eventData = [
     end: "2023/5/20/17/0",
     color: "#00bfff",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 117,
@@ -1078,7 +1078,7 @@ const eventData = [
     end: "2023/5/21/8/30",
     color: "#ff0000",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 118,
@@ -1087,7 +1087,7 @@ const eventData = [
     end: "2023/5/22/8/0",
     color: "#ffff00",
     fontColor: "#000",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 119,
@@ -1096,7 +1096,7 @@ const eventData = [
     end: "2023/5/22/15/0",
     color: "#ffa500",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 120,
@@ -1105,7 +1105,7 @@ const eventData = [
     end: "2023/5/23/9/30",
     color: "#1ac71a",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 121,
@@ -1114,7 +1114,7 @@ const eventData = [
     end: "2023/5/23/15/0",
     color: "#00bfff",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 122,
@@ -1123,7 +1123,7 @@ const eventData = [
     end: "2023/5/24/8/0",
     color: "#ff0000",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 123,
@@ -1132,7 +1132,7 @@ const eventData = [
     end: "2023/5/24/15/0",
     color: "#ffff00",
     fontColor: "#000",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 124,
@@ -1141,7 +1141,7 @@ const eventData = [
     end: "2023/6/1/9/0",
     color: "#ffa500",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 125,
@@ -1150,7 +1150,7 @@ const eventData = [
     end: "2023/6/1/20/0",
     color: "#1ac71a",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   //
   {
@@ -1160,7 +1160,7 @@ const eventData = [
     end: "2023/6/2/10/0",
     color: "#00bfff",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 127,
@@ -1169,7 +1169,7 @@ const eventData = [
     end: "2023/6/2/14/0",
     color: "#ff0000",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 128,
@@ -1178,7 +1178,7 @@ const eventData = [
     end: "2023/6/3/8/0",
     color: "#ffff00",
     fontColor: "#000",
-    eventType: "todo",
+    eventType: "event",
   },
 
   {
@@ -1188,7 +1188,7 @@ const eventData = [
     end: "2023/6/3/17/0",
     color: "#ffa500",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 130,
@@ -1197,7 +1197,7 @@ const eventData = [
     end: "2023/6/4/9/30",
     color: "#1ac71a",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 131,
@@ -1206,7 +1206,7 @@ const eventData = [
     end: "2023/6/4/18/0",
     color: "#00bfff",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 132,
@@ -1215,7 +1215,7 @@ const eventData = [
     end: "2023/6/5/8/30",
     color: "#ff0000",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 133,
@@ -1224,7 +1224,7 @@ const eventData = [
     end: "2023/6/5/12/0",
     color: "#ffff00",
     fontColor: "#000",
-    eventType: "todo",
+    eventType: "event",
   },
 
   {
@@ -1234,7 +1234,7 @@ const eventData = [
     end: "2023/6/5/17/0",
     color: "#ffa500",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 135,
@@ -1243,7 +1243,7 @@ const eventData = [
     end: "2023/6/6/9/0",
     color: "#1ac71a",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 136,
@@ -1252,7 +1252,7 @@ const eventData = [
     end: "2023/6/6/13/0",
     color: "#00bfff",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 137,
@@ -1261,7 +1261,7 @@ const eventData = [
     end: "2023/6/7/11/0",
     color: "#ff0000",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 138,
@@ -1270,7 +1270,7 @@ const eventData = [
     end: "2023/6/7/17/0",
     color: "#ffff00",
     fontColor: "#000",
-    eventType: "todo",
+    eventType: "event",
   },
 
   {
@@ -1280,7 +1280,7 @@ const eventData = [
     end: "2023/6/8/11/0",
     color: "#ffa500",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
   {
     id: 140,
@@ -1289,7 +1289,7 @@ const eventData = [
     end: "2023/6/8/13/0",
     color: "#1ac71a",
     fontColor: "#fff",
-    eventType: "todo",
+    eventType: "event",
   },
 ];
 
