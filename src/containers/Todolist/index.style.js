@@ -29,22 +29,6 @@ const Color = styled.p`
   }};
 `;
 
-const Percent = styled.p`
-  display: flex;
-  background-color: #2d7fe0;
-  border-radius: 1em;
-  margin: 0px !important;
-  width: ${({ percent }) => percentToDo[percent]};
-  text-align: center;
-  justify-content: center;
-  padding: 0.24em 0;
-  .percentContent {
-    font-size: clamp(0.53rem, 0.53vw, 0.625rem);
-    color: #fff;
-    font-weight: 600;
-  }
-`;
-
 const TodolistStyle = styled.div`
   --hover: #1849aa;
   display: flex;
@@ -133,7 +117,6 @@ const TodolistStyle = styled.div`
         justify-content: flex-start;
         width: clamp(5em, 6.25vw, 7.5em);
         border-radius: 1em;
-        border: 1px solid #ccc;
         padding: 0px;
       }
     }
@@ -197,4 +180,4 @@ const Img = styled.img`
   width: 22px;
 `;
 
-export { TodolistStyle, Img, Color, Percent };
+export { TodolistStyle, Img, Color };
