@@ -112,6 +112,19 @@ const TodolistStyle = styled.div`
           color: #2d7fe0;
         }
       }
+      .edit {
+        cursor: pointer;
+        margin-left: 1em;
+        &:focus {
+          transform: translateY(-0.25em);
+          color: #2d7fe0;
+        }
+        &:hover {
+          border-radius: 0.75em;
+          transform: translateY(-0.25em);
+          color: #2d7fe0;
+        }
+      }
       .percent {
         display: flex;
         justify-content: flex-start;
