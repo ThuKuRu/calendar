@@ -22,6 +22,14 @@ const levelFontColor = {
   Optional: "#fff",
 };
 
+const importantLevel = {
+  Critical: "5",
+  High: "4",
+  Medium: "3",
+  Low: "2",
+  Optional: "1",
+};
+
 const Todolist = ({ toDoData, setToDoData, id, setId, events, setEvents }) => {
   const onClickDelete = (key) => {
     const newToDoData = toDoData.filter((current, index) => {
@@ -42,7 +50,10 @@ const Todolist = ({ toDoData, setToDoData, id, setId, events, setEvents }) => {
 
   const sortToDoList = () => {
     const newToDoData = [...toDoData];
-    newToDoData.sort((todo1, todo2) => todo2.level - todo1.level);
+    newToDoData.sort(
+      (todo1, todo2) =>
+        importantLevel[todo2.level] - importantLevel[todo1.level]
+    );
     setToDoData(newToDoData);
   };
 
