@@ -133,6 +133,15 @@ const Container = styled.div`
               align-items: center;
               margin: 0px 0px 0px 0.3125em;  
             }
+            .team-box {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 200px;
+              height: 100px;
+              border: 1px solid #ccc;
+              margin: 10px;
+            }
             .name {
               font-size: clamp(1rem, 1.04vw, 1.4rem);
               font-weight: 600;
