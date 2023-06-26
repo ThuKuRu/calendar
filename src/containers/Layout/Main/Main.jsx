@@ -186,7 +186,8 @@ const Main = ({ tab }) => {
     {
       id: 1,
       avatar: "thu_1.png",
-      name: "Công ty Thu Cuối",
+      name: "Việt Nhật 03",
+      link: "https://meet.google.com/trc-wnzm-hra",
       todolist: [
         {
           id: 1,
@@ -264,11 +265,34 @@ const Main = ({ tab }) => {
           memberAvatar: "user5.jpg",
         },
       ],
+      team: [
+        {
+          id: 1,
+          name: "Team UIUX",
+        },
+        {
+          id: 2,
+          name: "Team AI",
+        },
+        {
+          id: 3,
+          name: "Team ITSS",
+        },
+        {
+          id: 4,
+          name: "Team Kĩ năng mềm",
+        },
+        {
+          id: 5,
+          name: "Team Thuật toán",
+        },
+      ],
     },
     {
       id: 2,
       avatar: "database.png",
-      name: "Quản lý Cuộc đời",
+      name: "ĐH Bách khoa",
+      link: "https://meet.google.com/dsg-sgrs-dfg",
       todolist: [
         {
           id: 1,
@@ -363,11 +387,34 @@ const Main = ({ tab }) => {
           memberAvatar: "user7.jpg",
         },
       ],
+      team: [
+        {
+          id: 1,
+          name: "Team Toán cao cấp",
+        },
+        {
+          id: 2,
+          name: "Team Vật lý",
+        },
+        {
+          id: 3,
+          name: "Team Pháp luật",
+        },
+        {
+          id: 4,
+          name: "Team Hóa",
+        },
+        {
+          id: 5,
+          name: "Team Quân sự",
+        },
+      ],
     },
     {
       id: 3,
       avatar: "design_1.webp",
-      name: "Thiết kế Tương lai",
+      name: "Sun* Asterisk",
+      link: "https://meet.google.com/ats-gstj-lpa",
       todolist: [
         {
           id: 1,
@@ -518,11 +565,34 @@ const Main = ({ tab }) => {
           memberAvatar: "user1.jpg",
         },
       ],
+      team: [
+        {
+          id: 1,
+          name: "Team TC",
+        },
+        {
+          id: 2,
+          name: "Team Naitei",
+        },
+        {
+          id: 3,
+          name: "Team N2",
+        },
+        {
+          id: 4,
+          name: "Team Văn hóa",
+        },
+        {
+          id: 5,
+          name: "Team Tuyển dụng",
+        },
+      ],
     },
     {
       id: 4,
       avatar: "se_2.jpg",
-      name: "SE Project",
+      name: "Nghiên cứu tốt nghiệp",
+      link: "https://meet.google.com/mvx-tyio-ter",
       todolist: [
         {
           id: 1,
@@ -599,6 +669,28 @@ const Main = ({ tab }) => {
           memberAvatar: "user5.jpg",
         },
       ],
+      team: [
+        {
+          id: 1,
+          name: "Team GR1",
+        },
+        {
+          id: 2,
+          name: "Team GR2",
+        },
+        {
+          id: 3,
+          name: "Team GR3",
+        },
+        {
+          id: 4,
+          name: "Team Lab",
+        },
+        {
+          id: 5,
+          name: "Team Tốt nghiệp",
+        },
+      ],
     },
   ]);
 
@@ -606,7 +698,7 @@ const Main = ({ tab }) => {
     {
       id: 5,
       avatar: "thu_1.png",
-      name: "Công ty Thu cười",
+      name: "Công ty Vui vẻ",
       teamMems: [
         {
           id: 1,
@@ -728,7 +820,7 @@ const Main = ({ tab }) => {
     {
       id: 7,
       avatar: "design_1.webp",
-      name: "Thiết kế nhà đất",
+      name: "Dự án thiết kế",
       teamMems: [
         {
           id: 1,
@@ -832,7 +924,7 @@ const Main = ({ tab }) => {
     {
       id: 8,
       avatar: "se_2.jpg",
-      name: "ES Project",
+      name: "AI Project",
       teamMems: [
         {
           id: 1,

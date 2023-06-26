@@ -56,21 +56,30 @@ const Container = styled.div`
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      .logo {
-        cursor: pointer;
+      cursor: pointer;
+      &:focus {
+        box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+        transform: translateY(-0.25em);
+      }
+      &:hover {
+        box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+        border-radius: 1.25em;
+        transform: translateY(-0.25em);
+        background-color: #f5f5f5;
       }
       span {
         font-size: 1.875em;
-        &:focus {
-          transform: translateY(-0.25em);
-          color: #2d7fe0;
-        }
-        &:hover {
-          border-radius: 0.75em;
-          transform: translateY(-0.25em);
-          color: #2d7fe0;
-        }
+        // &:focus {
+        //   transform: translateY(-0.25em);
+        //   color: #2d7fe0;
+        // }
+        // &:hover {
+        //   border-radius: 0.75em;
+        //   transform: translateY(-0.25em);
+        //   color: #2d7fe0;
+        // }
       }
+
       .createText {
         font-size: clamp(1rem, 1.3vw, 1.5625rem);
         font-weight: bold;

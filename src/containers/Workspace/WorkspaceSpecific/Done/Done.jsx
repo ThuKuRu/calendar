@@ -109,20 +109,6 @@ const Done = ({
                         {todo.level}
                       </Color>
                     </div>
-                    {/* <div className="col">
-                      <div className="percent">
-                        <input
-                          type="range"
-                          min="0"
-                          max="100"
-                          value={todo.percent}
-                          onInput={(e) => {
-                            handleSliderChange(e, index);
-                          }}
-                        />
-                        <p>{todo.percent}</p>
-                      </div>
-                    </div> */}
                     <div className="col ">
                       <div className="done">Completed</div>
                     </div>
