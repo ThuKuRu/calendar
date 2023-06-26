@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { TodoStyle, Img, Color } from "./index.style";
 import Popup from "reactjs-popup";
 import AddTask from "../AddTask/AddTask";
+import RangeSlider from "react-bootstrap-range-slider";
 
 const Todo = ({
   currentWorkspace,
@@ -14,11 +15,6 @@ const Todo = ({
   setToDoData,
   setCurrentWorkspace,
 }) => {
-  // const sliderPercent = toDoData.map((todo) => {
-  //   return todo.percent;
-  // });
-
-  // const [sliderValue, setSliderValue] = useState(sliderPercent);
   const handleSliderChange = (event, index) => {
     let newWorkspace = currentWorkspace;
     newWorkspace.todolist[index].percent = parseInt(event.target.value);
@@ -38,12 +34,7 @@ const Todo = ({
     hour12: true,
   };
 
-  const onClickDelete = (key) => {
-    const newToDoData = currentWorkspace.teamMems.filter((current) => {
-      return current.id !== key;
-    });
-    setWorkspaces([...workspaces, newToDoData]);
-  };
+  console.log(currentWorkspace.todolist);
   return (
     <TodoStyle>
       <div className="specific-task">
@@ -68,70 +59,64 @@ const Todo = ({
             <span className="material-symbols-outlined">instant_mix</span>
             <p className="name">Priority</p>
           </div>
-          <div className="col">
+          <div className="col ">
             <span className="material-symbols-outlined">percent</span>
             <p className="name">Percent</p>
           </div>
-          <div className="col ">
+          <div className="col">
             <span className="material-symbols-outlined">
               assignment_turned_in
             </span>
-            <p className="name">Completed</p>
+            <p className="name">Status</p>
           </div>
         </div>
         <div>
           {currentWorkspace.todolist !== undefined &&
             currentWorkspace.todolist.map((todo, index) => (
-              <div className="table">
-                <div className="col">
-                  <span>
-                    <Img src={require("../../../../img/" + todo.pjImg)} />
-                  </span>
-                  <p>{todo.pjName}</p>
-                </div>
-                <div className="col">
-                  <img
-                    className="avatar"
-                    src={require("../../../../img/" + todo.memberAvatar)}
-                    alt="/"
-                  />
-                  <p>{todo.memberName}</p>
-                </div>
-                <div className="col">
-                  <p>{todo.description}</p>
-                </div>
-                <div className="col">
-                  <p>{todo.deadline.toLocaleString("en-US", options)}</p>
-                </div>
-                <div className="col ">
-                  <Color value={todo.level}>{todo.level}</Color>
-                </div>
-                <div className="col">
-                  <div className="percent">
-                    <input
-                      id={index}
-                      key={index}
-                      type="range"
-                      min="0"
-                      max="100"
-                      value={todo.percent}
-                      onInput={(e) => {
-                        handleSliderChange(e, index);
-                      }}
-                    />
-                    <p>{todo.percent}</p>
+              <div>
+                {todo.status === "todo" && (
+                  <div className="table">
+                    <div className="col">
+                      <span>
+                        <Img src={require("../../../../img/" + todo.pjImg)} />
+                      </span>
+                      <p>{todo.pjName}</p>
+                    </div>
+                    <div className="col">
+                      <img
+                        className="avatar"
+                        src={require("../../../../img/" + todo.memberAvatar)}
+                        alt="/"
+                      />
+                      <p>{todo.memberName}</p>
+                    </div>
+                    <div className="col">
+                      <p>{todo.description}</p>
+                    </div>
+                    <div className="col">
+                      <p>{todo.deadline.toLocaleString("en-US", options)}</p>
+                    </div>
+                    <div className="col ">
+                      <Color value={todo.level}>{todo.level}</Color>
+                    </div>
+                    <div className="col">
+                      <div className="percent">
+                        <RangeSlider
+                          value={parseInt(todo.percent)}
+                          maxValue={100}
+                          minValue={0}
+                          className="slider"
+                          onInput={(e) => {
+                            handleSliderChange(e, index);
+                          }}
+                        />
+                      </div>
+                    </div>
+                    <div className="col ">
+                      <div className="todo">Initiate</div>
+                    </div>
                   </div>
-                </div>
-                <div className="col ">
-                  <span
-                    class="material-symbols-outlined delete"
-                    onClick={() => {
-                      onClickDelete(index);
-                    }}
-                  >
-                    delete
-                  </span>
-                </div>
+                )}
               </div>
             ))}
         </div>
