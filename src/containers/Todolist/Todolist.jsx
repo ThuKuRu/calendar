@@ -69,7 +69,6 @@ const Todolist = ({ toDoData, setToDoData, id, setId, events, setEvents }) => {
 
   const handleSliderChange = (event, index) => {
     let newToDoData = toDoData;
-    console.log(newToDoData);
     newToDoData[index].percent = parseInt(event.target.value);
     setToDoData(newToDoData);
   };
@@ -87,19 +86,43 @@ const Todolist = ({ toDoData, setToDoData, id, setId, events, setEvents }) => {
     const sortedTodoList = [...toDoData].sort(
       (a, b) => a.deadline - b.deadline
     );
+    const sortedEvents = [...events].sort((event1, event2) => {
+      let left = event1.start;
+      let right = event2.start;
+      return left === right ? 0 : left > right ? 1 : -1;
+    });
+
     let currTime = new Date();
+    let index = sortedEvents.findIndex((a) => {
+      return a.start.getTime() > currTime.getTime();
+    });
+
+    currTime = sortedEvents[index].end;
+
     const filteredEventsList = events.filter(
       (currentEvent) =>
         toDoData.filter((currentTodo) => currentTodo.id === currentEvent.id)
           .length === 0
     );
-    const newEventsList = sortedTodoList.map((current) => {
+
+    const listNewEvents = sortedTodoList.map((current) => {
+      while (
+        (sortedEvents[index + 1].start.getTime() <=
+          currTime.getTime() + 60 * 60 * 1000 &&
+          sortedEvents[index + 1].end.getTime() >=
+            currTime.getTime() + 60 * 60 * 1000) ||
+        (sortedEvents[index + 1].start.getTime() <= currTime.getTime() &&
+          sortedEvents[index + 1].end.getTime() >= currTime.getTime())
+      ) {
+        index += 1;
+        currTime = sortedEvents[index].end;
+      }
       const event = {
         id: current.id,
         title: current.name,
         start: currTime,
         end: new Date(currTime.getTime() + 60 * 60 * 1000),
-        deadline: new Date(currTime.getTime() + 60 * 60 * 1000),
+        deadline: current.deadline,
         description: current.description,
         level: current.level,
         color: levelColor[current.level],
@@ -107,10 +130,30 @@ const Todolist = ({ toDoData, setToDoData, id, setId, events, setEvents }) => {
         eventType: "todo",
         duration: current.duration,
       };
-      currTime = new Date(event.end.getTime() + 60 * 60 * 1000 * 8);
+
+      currTime = new Date(event.end.getTime() + 60 * 60 * 1000);
+
       return event;
     });
-    setEvents([...filteredEventsList, ...newEventsList]);
+    setEvents([...filteredEventsList, ...listNewEvents]);
+    // const newEventsList = sortedTodoList.map((current) => {
+    //   const event = {
+    //     id: current.id,
+    //     title: current.name,
+    //     start: currTime,
+    //     end: new Date(currTime.getTime() + 60 * 60 * 1000),
+    //     deadline: new Date(currTime.getTime() + 60 * 60 * 1000),
+    //     description: current.description,
+    //     level: current.level,
+    //     color: levelColor[current.level],
+    //     fontColor: levelFontColor[current.level],
+    //     eventType: "todo",
+    //     duration: current.duration,
+    //   };
+    //   currTime = new Date(event.end.getTime() + 60 * 60 * 1000 * 8);
+    //   return event;
+    // });
+    // setEvents([...filteredEventsList, ...newEventsList]);
 
     toast.success("Calendar has been successfully updated");
   };
@@ -176,6 +219,10 @@ const Todolist = ({ toDoData, setToDoData, id, setId, events, setEvents }) => {
           </span>
           <p className="name">Completed</p>
         </div>
+        <div className="col ">
+          <span class="material-symbols-outlined">edit_note</span>
+          <p className="name">Edit</p>
+        </div>
       </div>
       <div>
         {toDoData.map((todo, index) => (
@@ -227,6 +274,9 @@ const Todolist = ({ toDoData, setToDoData, id, setId, events, setEvents }) => {
               >
                 delete
               </span>
+            </div>
+            <div className="col ">
+              <span class="material-symbols-outlined edit">edit</span>
             </div>
           </div>
         ))}
