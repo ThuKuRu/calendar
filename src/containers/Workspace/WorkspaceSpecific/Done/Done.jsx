@@ -63,10 +63,6 @@ const Done = ({
             <span className="material-symbols-outlined">instant_mix</span>
             <p className="name">Priority</p>
           </div>
-          {/* <div className="col">
-            <span className="material-symbols-outlined">percent</span>
-            <p className="name">Percent</p>
-          </div> */}
           <div className="col ">
             <span className="material-symbols-outlined">
               assignment_turned_in
@@ -112,7 +108,9 @@ const Done = ({
                     <div className="col ">
                       <div className="done">Completed</div>
                     </div>
-                    <div className="col"></div>
+                    <div className="col">
+                      <span className="material-symbols-outlined">forum</span>
+                    </div>
                   </div>
                 )}
               </div>
