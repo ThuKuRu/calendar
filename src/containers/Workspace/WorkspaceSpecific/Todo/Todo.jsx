@@ -104,7 +104,9 @@ const Todo = ({
                   <p>{todo.deadline.toLocaleString("en-US", options)}</p>
                 </div>
                 <div className="col ">
-                  <Color value={todo.level}>{todo.level}</Color>
+                  <Color value={todo.level} className="priorityItems">
+                    {todo.level}
+                  </Color>
                 </div>
                 <div className="col">
                   <div className="percent">
