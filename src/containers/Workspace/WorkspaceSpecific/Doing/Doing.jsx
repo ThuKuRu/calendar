@@ -35,6 +35,17 @@ const Doing = ({
         })
       );
     }
+    if (parseInt(newWorkspace.todolist[index].percent) === 0) {
+      newWorkspace.todolist[index].status = "todo";
+      setCurrentWorkspace(newWorkspace);
+      setWorkspaces(
+        workspaces.map((workspace) => {
+          return workspace.id === currentWorkspace.id
+            ? newWorkspace
+            : workspace;
+        })
+      );
+    }
   };
   const options = {
     month: "short",

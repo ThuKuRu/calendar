@@ -1076,7 +1076,7 @@ const Main = ({ tab }) => {
 
   return (
     <Content>
-      {tab === "dashboard" && <Dashboard />}
+      {/* {tab === "dashboard" && <Dashboard />} */}
       {tab === "calendar" && (
         <MainCalendar
           events={events}
