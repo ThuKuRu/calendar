@@ -5,7 +5,7 @@ import Main from "./Main/Main";
 import { LayOut } from "./index.style";
 
 const Layout = () => {
-  const [tab, setTab] = useState("dashboard");
+  const [tab, setTab] = useState("calendar");
 
   return (
     <LayOut>
