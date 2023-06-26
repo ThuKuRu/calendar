@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { TodolistStyle, Img, Color, Percent } from "./index.style";
+import { TodolistStyle, Img, Color } from "./index.style";
 import Popup from "reactjs-popup";
 import CreateToDo from "./CreateToDo/CreateToDo";
+import RangeSlider from "react-bootstrap-range-slider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -52,6 +53,13 @@ const Todolist = ({ toDoData, setToDoData, id, setId, events, setEvents }) => {
       let right = todo2.name;
       return left === right ? 0 : left > right ? 1 : -1;
     });
+    setToDoData(newToDoData);
+  };
+
+  const handleSliderChange = (event, index) => {
+    let newToDoData = toDoData;
+    console.log(newToDoData);
+    newToDoData[index].percent = parseInt(event.target.value);
     setToDoData(newToDoData);
   };
 
@@ -188,9 +196,15 @@ const Todolist = ({ toDoData, setToDoData, id, setId, events, setEvents }) => {
             </div>
             <div className="col">
               <div className="percent">
-                <Percent percent={todo.percent}>
-                  <div className="percentContent">{todo.percent}</div>
-                </Percent>
+                <RangeSlider
+                  value={parseInt(todo.percent)}
+                  maxValue={100}
+                  minValue={0}
+                  className="slider"
+                  onInput={(e) => {
+                    handleSliderChange(e, index);
+                  }}
+                />
               </div>
             </div>
             <div className="col ">

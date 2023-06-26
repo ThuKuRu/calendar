@@ -35,7 +35,7 @@ const Main = ({ tab }) => {
 
   const [toDoData, setToDoData] = useState([
     {
-      id: 10,
+      id: 1,
       name: "HTML",
       name_img: "html.png",
       assignee: "You",
@@ -53,7 +53,7 @@ const Main = ({ tab }) => {
       eventType: "todo",
     },
     {
-      id: 11,
+      id: 2,
       name: "SE Project",
       name_img: "se_2.jpg",
       assignee: "Team SE",
@@ -71,7 +71,7 @@ const Main = ({ tab }) => {
       eventType: "todo",
     },
     {
-      id: 12,
+      id: 3,
       name: "UI UX",
       name_img: "uiux.png",
       assignee: "T2 Team",
@@ -89,7 +89,7 @@ const Main = ({ tab }) => {
       eventType: "todo",
     },
     {
-      id: 13,
+      id: 4,
       name: "Figma",
       name_img: "figma.png",
       assignee: "Team design",
@@ -107,7 +107,7 @@ const Main = ({ tab }) => {
       eventType: "todo",
     },
     {
-      id: 14,
+      id: 5,
       name: "Java",
       name_img: "java.png",
       assignee: "You",
@@ -125,7 +125,7 @@ const Main = ({ tab }) => {
       eventType: "todo",
     },
     {
-      id: 15,
+      id: 6,
       name: "Python",
       name_img: "python.jpg",
       assignee: "You",
@@ -143,7 +143,7 @@ const Main = ({ tab }) => {
       eventType: "todo",
     },
     {
-      id: 16,
+      id: 7,
       name: "HTML",
       name_img: "html.png",
       assignee: "You",
@@ -161,7 +161,7 @@ const Main = ({ tab }) => {
       eventType: "todo",
     },
     {
-      id: 17,
+      id: 8,
       name: "Database",
       name_img: "database.png",
       assignee: "You",
@@ -179,70 +179,9 @@ const Main = ({ tab }) => {
       eventType: "todo",
     },
   ]);
+
   const [people, setPeople] = useState(userData);
 
-  // [
-  //   {
-  //     id: 1,
-  //     memberName: "Thu thút",
-  //     memberAvatar: "thu_1.png",
-  //     pjName: "Python",
-  //     pjImg: "python.jpg",
-  //     description: "Coding Homepage",
-  //     deadline: new Date(2023, 5, 20, 16, 30),
-  //     percent: "20",
-  //     level: "Medium",
-  //     comple: "false",
-  //   },
-  //   {
-  //     id: 2,
-  //     memberName: "Bá Hoàng",
-  //     memberAvatar: "python.jpg",
-  //     pjName: "Python",
-  //     pjImg: "python.jpg",
-  //     description: "Coding Login/Sign up",
-  //     deadline: new Date(2023, 5, 20, 21, 30),
-  //     percent: "60",
-  //     level: "Medium",
-  //     comple: "false",
-  //   },
-  //   {
-  //     id: 3,
-  //     memberName: "Tuấn Anh",
-  //     memberAvatar: "user6.jpg",
-  //     pjName: "Python",
-  //     pjImg: "python.jpg",
-  //     description: "Learning Design Rules",
-  //     deadline: new Date(2023, 5, 20, 22, 0),
-  //     percent: "30",
-  //     level: "High",
-  //     comple: "false",
-  //   },
-  //   {
-  //     id: 4,
-  //     memberName: "Quang Huy",
-  //     memberAvatar: "user5.jpg",
-  //     pjName: "Python",
-  //     pjImg: "python.jpg",
-  //     description: "Coding Layout",
-  //     deadline: new Date(2023, 5, 21, 13, 30),
-  //     percent: "80",
-  //     level: "Low",
-  //     comple: "false",
-  //   },
-  //   {
-  //     id: 5,
-  //     memberName: "Vũ Hoàng",
-  //     memberAvatar: "user7.jpg",
-  //     pjName: "UI UX",
-  //     pjImg: "uiux.png",
-  //     description: "Design admin page",
-  //     deadline: new Date(2023, 5, 26, 10, 0),
-  //     percent: "60",
-  //     level: "Low",
-  //     comple: "false",
-  //   },
-  // ];
   const [workspaces, setWorkspaces] = useState([
     {
       id: 1,
@@ -261,6 +200,7 @@ const Main = ({ tab }) => {
           percent: "20",
           level: "Medium",
           comple: "false",
+          status: "doing",
         },
         {
           id: 2,
@@ -270,9 +210,10 @@ const Main = ({ tab }) => {
           pjImg: "python.jpg",
           description: "Coding Login/Sign up",
           deadline: new Date(2023, 5, 20, 21, 30),
-          percent: "60",
+          percent: "100",
           level: "Medium",
           comple: "false",
+          status: "done",
         },
         {
           id: 3,
@@ -285,6 +226,7 @@ const Main = ({ tab }) => {
           percent: "30",
           level: "High",
           comple: "false",
+          status: "doing",
         },
         {
           id: 4,
@@ -294,9 +236,10 @@ const Main = ({ tab }) => {
           pjImg: "python.jpg",
           description: "Coding Layout",
           deadline: new Date(2023, 5, 21, 13, 30),
-          percent: "80",
+          percent: "0",
           level: "Low",
           comple: "false",
+          status: "todo",
         },
       ],
 
@@ -362,6 +305,7 @@ const Main = ({ tab }) => {
           percent: "80",
           level: "Optional",
           comple: "false",
+          status: "doing",
         },
         {
           id: 2,
@@ -371,9 +315,10 @@ const Main = ({ tab }) => {
           pjImg: "uiux.png",
           description: "Design tour page",
           deadline: new Date(2023, 5, 25, 15, 0),
-          percent: "50",
+          percent: "0",
           level: "Low",
           comple: "false",
+          status: "todo",
         },
         {
           id: 3,
@@ -386,6 +331,7 @@ const Main = ({ tab }) => {
           percent: "40",
           level: "High",
           comple: "false",
+          status: "doing",
         },
         {
           id: 4,
@@ -395,9 +341,10 @@ const Main = ({ tab }) => {
           pjImg: "uiux.png",
           description: "Design manager page",
           deadline: new Date(2023, 5, 26, 9, 30),
-          percent: "90",
+          percent: "100",
           level: "Optional",
           comple: "false",
+          status: "done",
         },
         {
           id: 5,
@@ -407,9 +354,10 @@ const Main = ({ tab }) => {
           pjImg: "uiux.png",
           description: "Design admin page",
           deadline: new Date(2023, 5, 26, 10, 0),
-          percent: "60",
+          percent: "0",
           level: "Low",
           comple: "false",
+          status: "todo",
         },
       ],
       teamMems: [
@@ -479,6 +427,7 @@ const Main = ({ tab }) => {
           percent: "60",
           level: "Critical",
           comple: "false",
+          status: "doing",
         },
 
         {
@@ -489,9 +438,10 @@ const Main = ({ tab }) => {
           pjImg: "java.png",
           description: "Design usecase",
           deadline: new Date(2023, 5, 28, 21, 0),
-          percent: "60",
+          percent: "0",
           level: "Critical",
           comple: "false",
+          status: "todo",
         },
         {
           id: 3,
@@ -501,9 +451,10 @@ const Main = ({ tab }) => {
           pjImg: "java.png",
           description: "Design Admin frame",
           deadline: new Date(2023, 5, 30, 15, 0),
-          percent: "40",
+          percent: "100",
           level: "Low",
           comple: "false",
+          status: "done",
         },
         {
           id: 4,
@@ -513,9 +464,10 @@ const Main = ({ tab }) => {
           pjImg: "java.png",
           description: "Design Manager frame",
           deadline: new Date(2023, 6, 1, 21, 30),
-          percent: "30",
+          percent: "100",
           level: "Low",
           comple: "false",
+          status: "done",
         },
         {
           id: 5,
@@ -528,6 +480,7 @@ const Main = ({ tab }) => {
           percent: "50",
           level: "Medium",
           comple: "false",
+          status: "doing",
         },
         {
           id: 6,
@@ -540,6 +493,7 @@ const Main = ({ tab }) => {
           percent: "80",
           level: "Optional",
           comple: "false",
+          status: "doing",
         },
         {
           id: 7,
@@ -549,9 +503,10 @@ const Main = ({ tab }) => {
           pjImg: "java.png",
           description: "Coding Tour frame",
           deadline: new Date(2023, 6, 3, 7, 30),
-          percent: "20",
+          percent: "0",
           level: "Medium",
           comple: "false",
+          status: "todo",
         },
         {
           id: 8,
@@ -564,6 +519,7 @@ const Main = ({ tab }) => {
           percent: "90",
           level: "Low",
           comple: "false",
+          status: "doing",
         },
       ],
       teamMems: [
@@ -649,6 +605,7 @@ const Main = ({ tab }) => {
           percent: "50",
           level: "Optional",
           comple: "false",
+          status: "doing",
         },
         {
           id: 2,
@@ -661,6 +618,7 @@ const Main = ({ tab }) => {
           percent: "80",
           level: "Low",
           comple: "false",
+          status: "doing",
         },
         {
           id: 3,
@@ -670,9 +628,10 @@ const Main = ({ tab }) => {
           pjImg: "database.png",
           description: "Create Tour table",
           deadline: new Date(2023, 6, 3, 17, 30),
-          percent: "90",
+          percent: "100",
           level: "High",
           comple: "false",
+          status: "done",
         },
         {
           id: 4,
@@ -682,9 +641,10 @@ const Main = ({ tab }) => {
           pjImg: "database.png",
           description: "Create Address table",
           deadline: new Date(2023, 6, 3, 20, 30),
-          percent: "70",
+          percent: "0",
           level: "Medium",
           comple: "false",
+          status: "todo",
         },
       ],
       teamMems: [

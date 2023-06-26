@@ -1,8 +1,8 @@
 import React from "react";
 import { DoingStyle, Img, Color } from "./index.style";
 import Popup from "reactjs-popup";
-import { RangeStepInput } from "react-range-step-input";
 import AddTask from "../AddTask/AddTask";
+import RangeSlider from "react-bootstrap-range-slider";
 
 const Doing = ({
   currentWorkspace,
@@ -15,6 +15,16 @@ const Doing = ({
   setToDoData,
   setCurrentWorkspace,
 }) => {
+  const handleSliderChange = (event, index) => {
+    let newWorkspace = currentWorkspace;
+    newWorkspace.todolist[index].percent = parseInt(event.target.value);
+    setCurrentWorkspace(newWorkspace);
+    setWorkspaces(
+      workspaces.map((workspace) => {
+        return workspace.id === currentWorkspace.id ? newWorkspace : workspace;
+      })
+    );
+  };
   const options = {
     month: "short",
     day: "numeric",
@@ -61,53 +71,59 @@ const Doing = ({
             <span className="material-symbols-outlined">
               assignment_turned_in
             </span>
-            <p className="name">Completed</p>
+            <p className="name">Status</p>
           </div>
         </div>
         <div>
           {currentWorkspace.todolist !== undefined &&
             currentWorkspace.todolist.map((todo, index) => (
-              <div className="table">
-                <div className="col">
-                  <span>
-                    <Img src={require("../../../../img/" + todo.pjImg)} />
-                  </span>
-                  <p>{todo.pjName}</p>
-                </div>
-                <div className="col">
-                  <img
-                    className="avatar"
-                    src={require("../../../../img/" + todo.memberAvatar)}
-                    alt="/"
-                  />
-                  <p>{todo.memberName}</p>
-                </div>
-                <div className="col">
-                  <p>{todo.description}</p>
-                </div>
-                <div className="col">
-                  <p>{todo.deadline.toLocaleString("en-US", options)}</p>
-                </div>
-                <div className="col ">
-                  <Color value={todo.level} className="priorityItems">
-                    {todo.level}
-                  </Color>
-                </div>
-                <div className="col">
-                  <div className="percent">
-                    <RangeStepInput />
+              <div>
+                {todo.status === "doing" && (
+                  <div className="table">
+                    <div className="col">
+                      <span>
+                        <Img src={require("../../../../img/" + todo.pjImg)} />
+                      </span>
+                      <p>{todo.pjName}</p>
+                    </div>
+                    <div className="col">
+                      <img
+                        className="avatar"
+                        src={require("../../../../img/" + todo.memberAvatar)}
+                        alt="/"
+                      />
+                      <p>{todo.memberName}</p>
+                    </div>
+                    <div className="col">
+                      <p>{todo.description}</p>
+                    </div>
+                    <div className="col">
+                      <p>{todo.deadline.toLocaleString("en-US", options)}</p>
+                    </div>
+                    <div className="col ">
+                      <Color value={todo.level} className="priorityItems">
+                        {todo.level}
+                      </Color>
+                    </div>
+                    <div className="col">
+                      <div className="percent">
+                        <RangeSlider
+                          value={parseInt(todo.percent)}
+                          maxValue={100}
+                          minValue={0}
+                          className="slider"
+                          onInput={(e) => {
+                            handleSliderChange(e, index);
+                          }}
+                        />
+                        <p>{todo.percent}</p>
+                      </div>
+                    </div>
+                    <div className="col ">
+                      <div className="doing">Halfway done</div>
+                    </div>
                   </div>
-                </div>
-                <div className="col ">
-                  <span
-                    class="material-symbols-outlined delete"
-                    onClick={() => {
-                      onClickDelete(index);
-                    }}
-                  >
-                    delete
-                  </span>
-                </div>
+                )}
               </div>
             ))}
         </div>

@@ -85,6 +85,12 @@ const DoneStyle = styled.div`
           border-radius: 1em;
           padding: 0px;
         }
+        .done {
+          display: flex;
+          padding: 0.0625em 1.5625em 0;
+          background-color: #d9d9d9;
+          border-radius: 20px;
+        }
       }
     }
   }

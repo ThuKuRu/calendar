@@ -84,6 +84,18 @@ const DoingStyle = styled.div`
           width: clamp(5em, 6.25vw, 7.5em);
           border-radius: 1em;
           padding: 0px;
+          margin-right: 0.5em;
+          .slider {
+            height: 0.5em;
+          }
+        }
+
+        .doing {
+          display: flex;
+          padding: 0.0625em 1.5625em 0;
+          background-color: #1ac71a;
+          border-radius: 20px;
+          margin-left: 1em;
         }
       }
     }
