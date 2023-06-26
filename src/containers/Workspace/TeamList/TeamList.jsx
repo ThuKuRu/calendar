@@ -1,16 +1,6 @@
 import React, { useState } from "react";
 import { Container } from "./index.style";
-import WorkspaceSpecific from "../WorkspaceSpecific/WorkspaceSpecific";
-function shuffle(a) {
-  var j, x, i;
-  for (i = a.length - 1; i > 0; i--) {
-    j = Math.floor(Math.random() * (i + 1));
-    x = a[i];
-    a[i] = a[j];
-    a[j] = x;
-  }
-  return a;
-}
+
 const TeamList = ({
   id,
   setId,
@@ -21,48 +11,6 @@ const TeamList = ({
   setWorkspaces,
   setCurrentTeam,
 }) => {
-  // const team = [
-  //   {
-  //     id: 1,
-  //     name: "Team UIUX",
-  //   },
-  //   {
-  //     id: 2,
-  //     name: "Team AI",
-  //   },
-  //   {
-  //     id: 3,
-  //     name: "Team ITSS",
-  //   },
-  //   {
-  //     id: 4,
-  //     name: "Team Kĩ năng mềm",
-  //   },
-  //   {
-  //     id: 5,
-  //     name: "Team Thuật toán",
-  //   },
-  //   {
-  //     id: 6,
-  //     name: "Team Thể thao",
-  //   },
-  //   {
-  //     id: 7,
-  //     name: "Team Thiết bị",
-  //   },
-  //   {
-  //     id: 8,
-  //     name: "Team IoT",
-  //   },
-  //   {
-  //     id: 9,
-  //     name: "Team Mạng",
-  //   },
-  //   {
-  //     id: 10,
-  //     name: "Team Pháp luật",
-  //   },
-  // ];
   const handleTeamClick = (team) => {
     setCurrentTeam(team);
     setTab("specific");
@@ -142,26 +90,48 @@ const TeamList = ({
                 badge
               </span>
               <p className="name" style={{ display: "inline-block" }}>
-                Name
+                List of teams
               </p>
             </div>
           </div>
         </div>
-        <div className="table">
+        <div className="table" style={{ display: "flex", flexWrap: "wrap" }}>
           {currentWorkspace.team.map((team) => (
+            <div key={team.id} data={team} className="col">
               <div
-                key={team.id}
-                data={team}
-                className="col"
+                className="team-box"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  width: "200px",
+                  height: "100px",
+                  border: "1px solid #000000",
+                  margin: "10px",
+                  borderRadius: "20px",
+                  cursor: "pointer",
+                }}
                 onClick={() => handleTeamClick(team)}
               >
-                <p className="name" style={{ cursor: "pointer" }}>
-                  {team.name}
-                </p>
+                <p className="name">{team.name}</p>
               </div>
-            ))}
+            </div>
+          ))}
         </div>
       </div>
+      <style jsx>{`
+        .team-box:focus {
+          box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+          transform: translateY(-0.25em);
+        }
+
+        .team-box:hover {
+          box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+          border-radius: 1.25em;
+          transform: translateY(-0.25em);
+          background-color: #f5f5f5;
+        }
+      `}</style>
     </Container>
   );
 };
