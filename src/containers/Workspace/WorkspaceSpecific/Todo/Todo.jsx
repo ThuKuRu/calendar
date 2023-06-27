@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TodoStyle, Img, Color } from "./index.style";
+import { TodoStyle, Img, Color, SelectList, MenuItem } from "./index.style";
 import Popup from "reactjs-popup";
 import AddTask from "../AddTask/AddTask";
 import RangeSlider from "react-bootstrap-range-slider";
@@ -54,6 +54,35 @@ const Todo = ({
     hour: "numeric",
     minute: "numeric",
     hour12: true,
+  };
+
+  const handleChange = (event, index) => {
+    if (event.target.value === "doing") {
+      let newWorkspace = currentWorkspace;
+      newWorkspace.todolist[index].status = event.target.value;
+      setCurrentWorkspace(newWorkspace);
+      console.log(currentWorkspace.todolist);
+      setWorkspaces(
+        workspaces.map((workspace) => {
+          return workspace.id === currentWorkspace.id
+            ? newWorkspace
+            : workspace;
+        })
+      );
+    }
+    if (event.target.value === "done") {
+      let newWorkspace = currentWorkspace;
+      newWorkspace.todolist[index].status = event.target.value;
+      setCurrentWorkspace(newWorkspace);
+      console.log(currentWorkspace.todolist);
+      setWorkspaces(
+        workspaces.map((workspace) => {
+          return workspace.id === currentWorkspace.id
+            ? newWorkspace
+            : workspace;
+        })
+      );
+    }
   };
 
   return (
@@ -136,7 +165,20 @@ const Todo = ({
                       </div>
                     </div>
                     <div className="col ">
-                      <div className="todo">Initiate</div>
+                      <div className="todo">
+                        <SelectList
+                          value={todo.status}
+                          onChange={(e) => {
+                            handleChange(e, index);
+                          }}
+                        >
+                          <MenuItem value="todo" selected="selected">
+                            Initiate
+                          </MenuItem>
+                          <MenuItem value="doing">Doing</MenuItem>
+                          <MenuItem value="done">Completed</MenuItem>
+                        </SelectList>
+                      </div>
                     </div>
                   </div>
                 )}

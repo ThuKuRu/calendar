@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { TodolistStyle, Img, Color } from "./index.style";
 import Popup from "reactjs-popup";
 import CreateToDo from "./CreateToDo/CreateToDo";
@@ -136,24 +136,6 @@ const Todolist = ({ toDoData, setToDoData, id, setId, events, setEvents }) => {
       return event;
     });
     setEvents([...filteredEventsList, ...listNewEvents]);
-    // const newEventsList = sortedTodoList.map((current) => {
-    //   const event = {
-    //     id: current.id,
-    //     title: current.name,
-    //     start: currTime,
-    //     end: new Date(currTime.getTime() + 60 * 60 * 1000),
-    //     deadline: new Date(currTime.getTime() + 60 * 60 * 1000),
-    //     description: current.description,
-    //     level: current.level,
-    //     color: levelColor[current.level],
-    //     fontColor: levelFontColor[current.level],
-    //     eventType: "todo",
-    //     duration: current.duration,
-    //   };
-    //   currTime = new Date(event.end.getTime() + 60 * 60 * 1000 * 8);
-    //   return event;
-    // });
-    // setEvents([...filteredEventsList, ...newEventsList]);
 
     toast.success("Calendar has been successfully updated");
   };

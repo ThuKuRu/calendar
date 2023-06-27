@@ -85,11 +85,8 @@ const DoneStyle = styled.div`
           border-radius: 1em;
           padding: 0px;
         }
-        .done {
-          display: flex;
-          padding: 0.0625em 1.5625em 0;
-          background-color: #d9d9d9;
-          border-radius: 20px;
+        .comment {
+          text-align: center;
         }
       }
     }
@@ -140,6 +137,35 @@ const Color = styled.p`
   }};
 `;
 
+const levelStatus = {
+  todo: "#00BFFF",
+  doing: "#1AC71A",
+  done: "#D9D9D9",
+};
+
+const SelectList = styled.select`
+  border: none;
+  text-align: center;
+  text-decoration: none !important;
+  border-radius: 20px;
+  margin-left: 20px;
+  padding: 0.0625em 1.5625em 0;
+  font-family: var(--font) !important;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: ${({ value }) => levelStatus[value]};
+`;
+
+const MenuItem = styled.option`
+  background-color: #ccc;
+  color: #000;
+  text-align: center;
+  list-style: none;
+  font-family: var(--font) !important;
+  background-color: ${({ value }) => levelStatus[value]};
+`;
+
 const Img = styled.img`
   text-align: center;
   align-items: center;
@@ -147,4 +173,4 @@ const Img = styled.img`
   width: 22px;
 `;
 
-export { DoneStyle, Color, Img };
+export { DoneStyle, Color, Img, SelectList, MenuItem };
