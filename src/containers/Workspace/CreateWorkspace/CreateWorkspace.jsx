@@ -88,6 +88,7 @@ function CreateWorkspace({
             id="workspaceName"
             value={workspaceName}
             onChange={(e) => setWorkspaceName(e.target.value)}
+            placeholder="Add Workspace name ..."
           />
 
           <label htmlFor="assignees">Members:</label>
@@ -97,6 +98,7 @@ function CreateWorkspace({
             value={members}
             onChange={(e) => setMembers(e.target.value)}
           /> */}
+
           <SelectList value={members} onChange={handleChangeSelect}>
             {
               <MenuItem value="" disable hidden>
@@ -108,12 +110,14 @@ function CreateWorkspace({
             ))}
           </SelectList>
 
-          <label htmlFor="description">Description:</label>
-          <textarea
-            id="description"
+          <div className="description">Description:</div>
+          <input
+            type="text"
+            className="formTodo-address"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-          />
+            placeholder="Add description ..."
+          ></input>
         </div>
 
         <div className="image-upload">

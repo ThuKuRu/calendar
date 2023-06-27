@@ -17,10 +17,13 @@ const Container = styled.div`
 
   .form input[type="text"],
   .form textarea {
-    width: 35vw;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    width: 260%;
+    margin-bottom: 0.55em;
+    border: 1px solid #000000;
+    border-radius: 15px;
+    padding: 0.44em 0.66em;
+    font-size: clamp(0.9375rem, 0.9375vw, 1.125rem);
+    font-family: inherit;
   }
 
   .image-upload {
@@ -137,8 +140,9 @@ const SelectList = styled.select`
   text-decoration: none !important;
   display: flex;
   align-items: center;
-  width: 100%;
+  width: 270%;
   padding: 8px 12px;
+  border-radius: 15px;
   font-size: 18px;
   font-family: var(--font) !important;
   -moz-appearance: none;
@@ -148,7 +152,6 @@ const SelectList = styled.select`
 
 const MenuItem = styled.option`
   padding: 5px 10px;
-  text-align: center;
   background-color: #ccc;
   color: #000;
   list-style: none;
