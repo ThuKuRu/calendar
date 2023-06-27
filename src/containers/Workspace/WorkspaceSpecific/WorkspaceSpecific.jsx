@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { WorkspaceSpecificStyle } from "./index.style";
 import Todo from "./Todo/Todo";
-import Doing from "./Doing/Doing";
-import Done from "./Done/Done";
 
 const WorkspaceSpecific = ({
   id,
@@ -16,16 +14,9 @@ const WorkspaceSpecific = ({
   setToDoData,
   currentTeam,
 }) => {
-  const [change, setChange] = useState("specific");
+  const [change, setChange] = useState("todo");
   const handleCancel = () => {
     setTab("teamlist");
-  };
-
-  const onClickOutTeam = (key) => {
-    const newWorkspaces = workspaces.filter((current) => {
-      return current.id !== key;
-    });
-    setWorkspaces([...newWorkspaces]);
   };
 
   return (
@@ -44,25 +35,6 @@ const WorkspaceSpecific = ({
             arrow_back_ios_new
           </span>
         </div>
-        {/* <div className="headerRight">
-          <div className="leaveWorkspace">
-            <div className="leaveButton">
-              <span
-                className="material-symbols-outlined"
-                onClick={() => {
-                  onClickOutTeam(currentWorkspace.id);
-                }}
-              >
-                logout
-              </span>
-            </div>
-          </div>
-          <div className="settingWorkspace">
-            <div className="settingButton">
-              <span class="material-symbols-outlined">settings</span>
-            </div>
-          </div>
-        </div> */}
       </div>
       <div className="specific">
         <div className="specificLeft">
@@ -100,37 +72,32 @@ const WorkspaceSpecific = ({
           </div>
           <div className="buttons">
             <div
-              className={
-                change === "specific" ? "container active" : "container"
-              }
+              className={change === "todo" ? "container active" : "container"}
+              onClick={() => {
+                setChange("todo");
+              }}
             >
-              <div
-                onClick={() => {
-                  setChange("specific");
-                }}
-              >
+              <div>
                 <p>Todo</p>
               </div>
             </div>
             <div
               className={change === "doing" ? "container active" : "container"}
+              onClick={() => {
+                setChange("doing");
+              }}
             >
-              <div
-                onClick={() => {
-                  setChange("doing");
-                }}
-              >
+              <div>
                 <p>Doing</p>
               </div>
             </div>
             <div
               className={change === "done" ? "container active" : "container"}
+              onClick={() => {
+                setChange("done");
+              }}
             >
-              <div
-                onClick={() => {
-                  setChange("done");
-                }}
-              >
+              <div>
                 <p>Done</p>
               </div>
             </div>
@@ -146,34 +113,8 @@ const WorkspaceSpecific = ({
               workspaces={workspaces}
               setWorkspaces={setWorkspaces}
               setCurrentWorkspace={setCurrentWorkspace}
+              change={change}
             />
-
-            {/* {change === "doing" && (
-              <Doing
-                id={id}
-                setTab={setTab}
-                setId={setId}
-                toDoData={toDoData}
-                setToDoData={setToDoData}
-                currentWorkspace={currentWorkspace}
-                workspaces={workspaces}
-                setWorkspaces={setWorkspaces}
-                setCurrentWorkspace={setCurrentWorkspace}
-              />
-            )}
-            {change === "done" && (
-              <Done
-                id={id}
-                setTab={setTab}
-                setId={setId}
-                toDoData={toDoData}
-                setToDoData={setToDoData}
-                currentWorkspace={currentWorkspace}
-                workspaces={workspaces}
-                setWorkspaces={setWorkspaces}
-                setCurrentWorkspace={setCurrentWorkspace}
-              />
-            )} */}
           </div>
         </div>
 

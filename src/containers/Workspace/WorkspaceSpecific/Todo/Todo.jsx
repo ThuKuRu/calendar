@@ -1,9 +1,50 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { TodoStyle, Img, Color, SelectList, MenuItem } from "./index.style";
 import Popup from "reactjs-popup";
 import AddTask from "../AddTask/AddTask";
 import RangeSlider from "react-bootstrap-range-slider";
+import { Overlay, Tooltip } from "react-bootstrap";
+import Comment from "./Comment/Comment";
 
+function Cmt() {
+  const [showTooltip, setShowTooltip] = useState(false);
+  const closeTooltip = () => {
+    setShowTooltip(false);
+  };
+  const openTooltip = () => {
+    setShowTooltip(true);
+  };
+  const ref = useRef(null);
+
+  const getTarget = () => {
+    return ref.current;
+  };
+  return (
+    <div className="comment">
+      <span
+        className="material-symbols-outlined"
+        ref={ref}
+        // onMouseOver={openTooltip}
+        onClick={openTooltip}
+        // onMouseOut={closeTooltip}
+        style={{ height: "100%" }}
+      >
+        forum
+      </span>
+      <Overlay
+        rootClose
+        target={getTarget}
+        show={showTooltip}
+        onHide={closeTooltip}
+        placement="right"
+      >
+        <Tooltip id="test" style={{ zIndex: 4 }}>
+          <Comment />
+        </Tooltip>
+      </Overlay>
+    </div>
+  );
+}
 const Todo = ({
   currentWorkspace,
   workspaces,
@@ -14,38 +55,27 @@ const Todo = ({
   toDoData,
   setToDoData,
   setCurrentWorkspace,
+  change,
 }) => {
   const handleSliderChange = (event, index) => {
     let newWorkspace = currentWorkspace;
     newWorkspace.todolist[index].percent = parseInt(event.target.value);
+    if (
+      parseInt(newWorkspace.todolist[index].percent) > 0 &&
+      parseInt(newWorkspace.todolist[index].percent) < 100
+    ) {
+      newWorkspace.todolist[index].status = "doing";
+    } else if (parseInt(newWorkspace.todolist[index].percent) === 100) {
+      newWorkspace.todolist[index].status = "done";
+    } else {
+      newWorkspace.todolist[index].status = "todo";
+    }
     setCurrentWorkspace(newWorkspace);
     setWorkspaces(
       workspaces.map((workspace) => {
         return workspace.id === currentWorkspace.id ? newWorkspace : workspace;
       })
     );
-    if (parseInt(newWorkspace.todolist[index].percent) > 0) {
-      newWorkspace.todolist[index].status = "doing";
-      setCurrentWorkspace(newWorkspace);
-      setWorkspaces(
-        workspaces.map((workspace) => {
-          return workspace.id === currentWorkspace.id
-            ? newWorkspace
-            : workspace;
-        })
-      );
-    }
-    if (parseInt(newWorkspace.todolist[index].percent) === 100) {
-      newWorkspace.todolist[index].status = "done";
-      setCurrentWorkspace(newWorkspace);
-      setWorkspaces(
-        workspaces.map((workspace) => {
-          return workspace.id === currentWorkspace.id
-            ? newWorkspace
-            : workspace;
-        })
-      );
-    }
   };
 
   const options = {
@@ -56,33 +86,16 @@ const Todo = ({
     hour12: true,
   };
 
-  const handleChange = (event, index) => {
-    if (event.target.value === "doing") {
-      let newWorkspace = currentWorkspace;
-      newWorkspace.todolist[index].status = event.target.value;
-      setCurrentWorkspace(newWorkspace);
-      console.log(currentWorkspace.todolist);
-      setWorkspaces(
-        workspaces.map((workspace) => {
-          return workspace.id === currentWorkspace.id
-            ? newWorkspace
-            : workspace;
-        })
-      );
-    }
-    if (event.target.value === "done") {
-      let newWorkspace = currentWorkspace;
-      newWorkspace.todolist[index].status = event.target.value;
-      setCurrentWorkspace(newWorkspace);
-      console.log(currentWorkspace.todolist);
-      setWorkspaces(
-        workspaces.map((workspace) => {
-          return workspace.id === currentWorkspace.id
-            ? newWorkspace
-            : workspace;
-        })
-      );
-    }
+  const handleChange = async (event, index) => {
+    let newWorkspace = currentWorkspace;
+    newWorkspace.todolist[index].status = event.target.value;
+    setCurrentWorkspace(newWorkspace);
+    const tmp = await Promise.all(
+      workspaces.map((workspace) => {
+        return workspace.id === currentWorkspace.id ? newWorkspace : workspace;
+      })
+    );
+    setWorkspaces(tmp);
   };
 
   return (
@@ -109,22 +122,30 @@ const Todo = ({
             <span className="material-symbols-outlined">instant_mix</span>
             <p className="name">Priority</p>
           </div>
-          <div className="col ">
-            <span className="material-symbols-outlined">percent</span>
-            <p className="name">Percent</p>
-          </div>
+          {change !== "done" && (
+            <div className="col ">
+              <span className="material-symbols-outlined">percent</span>
+              <p className="name">Percent</p>
+            </div>
+          )}
           <div className="col">
             <span className="material-symbols-outlined">
               assignment_turned_in
             </span>
             <p className="name">Status</p>
           </div>
+          {change === "done" && (
+            <div className="col">
+              <span className="material-symbols-outlined">comment</span>
+              <p className="name">Comment</p>
+            </div>
+          )}
         </div>
         <div>
           {currentWorkspace.todolist !== undefined &&
             currentWorkspace.todolist.map((todo, index) => (
               <div>
-                {todo.status === "todo" && (
+                {todo.status === change && (
                   <div className="table">
                     <div className="col">
                       <span>
@@ -151,19 +172,21 @@ const Todo = ({
                         {todo.level}
                       </Color>
                     </div>
-                    <div className="col">
-                      <div className="percent">
-                        <RangeSlider
-                          value={parseInt(todo.percent)}
-                          maxValue={100}
-                          minValue={0}
-                          className="slider"
-                          onInput={(e) => {
-                            handleSliderChange(e, index);
-                          }}
-                        />
+                    {change !== "done" && (
+                      <div className="col">
+                        <div className="percent">
+                          <RangeSlider
+                            value={parseInt(todo.percent)}
+                            maxValue={100}
+                            minValue={0}
+                            className="slider"
+                            onInput={(e) => {
+                              handleSliderChange(e, index);
+                            }}
+                          />
+                        </div>
                       </div>
-                    </div>
+                    )}
                     <div className="col ">
                       <div className="todo">
                         <SelectList
@@ -180,6 +203,7 @@ const Todo = ({
                         </SelectList>
                       </div>
                     </div>
+                    {change === "done" && <div className="col">{Cmt()}</div>}
                   </div>
                 )}
               </div>

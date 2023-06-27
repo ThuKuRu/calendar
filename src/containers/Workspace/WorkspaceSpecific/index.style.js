@@ -114,9 +114,9 @@ const WorkspaceSpecificStyle = styled.div`
       display: flex;
       margin-left: 2em;
       justify-content: flex-end;
+      padding: 0.3125em 0;
       .container {
         padding: 0em 1.3125em;
-        margin-top: 0.3125em;
         font-size: clamp(0.9rem, 0.83vw, 1rem);
         margin-right: 1em;
         div {
