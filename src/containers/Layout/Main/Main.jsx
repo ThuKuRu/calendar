@@ -13,7 +13,7 @@ const Main = ({ tab }) => {
   const [toDoData, setToDoData] = useState([
     {
       id: 1,
-      name: "HTML",
+      title: "HTML",
       name_img: "html.png",
       assignee: "You",
       assignee_img: "thu_1.png",
@@ -31,7 +31,7 @@ const Main = ({ tab }) => {
     },
     {
       id: 2,
-      name: "SE Project",
+      title: "SE Project",
       name_img: "se_2.jpg",
       assignee: "Team SE",
       assignee_img: "se_1.jpg",
@@ -49,7 +49,7 @@ const Main = ({ tab }) => {
     },
     {
       id: 3,
-      name: "UI UX",
+      title: "UI UX",
       name_img: "uiux.png",
       assignee: "T2 Team",
       assignee_img: "t2.jpg",
@@ -67,7 +67,7 @@ const Main = ({ tab }) => {
     },
     {
       id: 4,
-      name: "Figma",
+      title: "Figma",
       name_img: "figma.png",
       assignee: "Team design",
       assignee_img: "design_1.webp",
@@ -85,7 +85,7 @@ const Main = ({ tab }) => {
     },
     {
       id: 5,
-      name: "Java",
+      title: "Java",
       name_img: "java.png",
       assignee: "You",
       assignee_img: "thu_1.png",
@@ -103,7 +103,7 @@ const Main = ({ tab }) => {
     },
     {
       id: 6,
-      name: "Python",
+      title: "Python",
       name_img: "python.jpg",
       assignee: "You",
       assignee_img: "thu_1.png",
@@ -121,7 +121,7 @@ const Main = ({ tab }) => {
     },
     {
       id: 7,
-      name: "HTML",
+      title: "HTML",
       name_img: "html.png",
       assignee: "You",
       assignee_img: "thu_1.png",
@@ -139,7 +139,7 @@ const Main = ({ tab }) => {
     },
     {
       id: 8,
-      name: "Database",
+      title: "Database",
       name_img: "database.png",
       assignee: "You",
       assignee_img: "thu_1.png",

@@ -5,6 +5,7 @@ import CreateToDo from "./CreateToDo/CreateToDo";
 import RangeSlider from "react-bootstrap-range-slider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import FormTodo from "../Layout/SideBar/FormTodo/FormTodo";
 
 const levelColor = {
   Critical: "#FF0000",
@@ -31,6 +32,27 @@ const importantLevel = {
 };
 
 const Todolist = ({ toDoData, setToDoData, id, setId, events, setEvents }) => {
+  const newEvent = {
+    id: id,
+    title: "",
+    start: new Date(),
+    end: new Date(),
+    description: "",
+    duration: {
+      day: "",
+      hour: "",
+      minute: "",
+    },
+    deadline: new Date(),
+    level: "Optional",
+    color: "#2d7fe0",
+    fontColor: "#fff",
+  };
+  const [eventCache, setEventCache] = useState(newEvent);
+  const resetCache = () => {
+    setEventCache(newEvent);
+  };
+  const [open, setOpen] = useState(false);
   const onClickDelete = (key) => {
     const newToDoData = toDoData.filter((current, index) => {
       return index !== key;
@@ -60,8 +82,8 @@ const Todolist = ({ toDoData, setToDoData, id, setId, events, setEvents }) => {
   const sortToDoName = () => {
     const newToDoData = [...toDoData];
     newToDoData.sort((todo1, todo2) => {
-      let left = todo1.name;
-      let right = todo2.name;
+      let left = todo1.title;
+      let right = todo2.title;
       return left === right ? 0 : left > right ? 1 : -1;
     });
     setToDoData(newToDoData);
@@ -119,7 +141,7 @@ const Todolist = ({ toDoData, setToDoData, id, setId, events, setEvents }) => {
       }
       const event = {
         id: current.id,
-        title: current.name,
+        title: current.title,
         start: currTime,
         end: new Date(currTime.getTime() + 60 * 60 * 1000),
         deadline: current.deadline,
@@ -213,7 +235,7 @@ const Todolist = ({ toDoData, setToDoData, id, setId, events, setEvents }) => {
               <span>
                 <Img src={require("../../img/" + todo.name_img)} />
               </span>
-              <p>{todo.name}</p>
+              <p>{todo.title}</p>
             </div>
             <div className="col">
               <img
@@ -258,7 +280,25 @@ const Todolist = ({ toDoData, setToDoData, id, setId, events, setEvents }) => {
               </span>
             </div>
             <div className="col ">
-              <span class="material-symbols-outlined edit">edit</span>
+              <span
+                className={
+                  toDoData[index].assignee.toUpperCase() === "YOU" ||
+                  toDoData[index].assignee.toUpperCase() === "Thu THÚT"
+                    ? "material-symbols-outlined edit"
+                    : "material-symbols-outlined uneditable"
+                }
+                onClick={() => {
+                  if (
+                    toDoData[index].assignee.toUpperCase() === "YOU" ||
+                    toDoData[index].assignee.toUpperCase() === "Thu THÚT"
+                  ) {
+                    setEventCache(toDoData[index]);
+                    setOpen(true);
+                  }
+                }}
+              >
+                edit
+              </span>
             </div>
           </div>
         ))}
@@ -292,6 +332,28 @@ const Todolist = ({ toDoData, setToDoData, id, setId, events, setEvents }) => {
           </Popup>
         </div>
       </div>
+      <Popup modal open={open}>
+        {(close) => (
+          <div>
+            <FormTodo
+              close={() => {
+                setOpen((open) => !open);
+                close();
+              }}
+              events={events}
+              setEvents={setEvents}
+              id={id}
+              setId={setId}
+              toDoData={toDoData}
+              setToDoData={setToDoData}
+              eventCache={eventCache}
+              setEventCache={setEventCache}
+              resetCache={resetCache}
+              editMode={"true"}
+            />
+          </div>
+        )}
+      </Popup>
     </TodolistStyle>
   );
 };

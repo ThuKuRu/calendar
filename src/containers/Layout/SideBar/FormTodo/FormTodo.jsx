@@ -106,7 +106,7 @@ const FormTodo = ({
     }
     const todo = {
       id: editMode ? eventCache.id : id,
-      name: title,
+      title: title,
       name_img: "thu_1.png",
       assignee: "you",
       assignee_img: "thu_1.png",
