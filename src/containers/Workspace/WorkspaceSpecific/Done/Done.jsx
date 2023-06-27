@@ -1,7 +1,48 @@
-import React from "react";
-import { DoneStyle, Img, Color } from "./index.style";
+import React, { useState, useRef } from "react";
+import { DoneStyle, Img, Color, SelectList, MenuItem } from "./index.style";
 import Popup from "reactjs-popup";
 import AddTask from "../AddTask/AddTask";
+import { Overlay, Tooltip } from "react-bootstrap";
+import Comment from "./Comment/Comment";
+
+function Cmt() {
+  const [showTooltip, setShowTooltip] = useState(false);
+  const closeTooltip = () => {
+    setShowTooltip(false);
+  };
+  const openTooltip = () => {
+    setShowTooltip(true);
+  };
+  const ref = useRef(null);
+
+  const getTarget = () => {
+    return ref.current;
+  };
+  return (
+    <div className="comment">
+      <span
+        className="material-symbols-outlined"
+        ref={ref}
+        onMouseOver={openTooltip}
+        onMouseOut={closeTooltip}
+        style={{ height: "100%" }}
+      >
+        forum
+      </span>
+      <Overlay
+        rootClose
+        target={getTarget}
+        show={showTooltip}
+        onHide={closeTooltip}
+        placement="right"
+      >
+        <Tooltip id="test" style={{ zIndex: 4 }}>
+          <Comment />
+        </Tooltip>
+      </Overlay>
+    </div>
+  );
+}
 
 const Done = ({
   currentWorkspace,
@@ -14,6 +55,36 @@ const Done = ({
   setToDoData,
   setCurrentWorkspace,
 }) => {
+  const handleChange = (event, index) => {
+    if (event.target.value === "doing") {
+      let newWorkspace = currentWorkspace;
+      newWorkspace.todolist[index].status = event.target.value;
+      setCurrentWorkspace(newWorkspace);
+      console.log(currentWorkspace.todolist);
+      setWorkspaces(
+        workspaces.map((workspace) => {
+          return workspace.id === currentWorkspace.id
+            ? newWorkspace
+            : workspace;
+        })
+      );
+    }
+    if (event.target.value === "todo") {
+      let newWorkspace = currentWorkspace;
+      newWorkspace.todolist[index].status = event.target.value;
+      newWorkspace.todolist[index].percent = "0";
+      setCurrentWorkspace(newWorkspace);
+      console.log(currentWorkspace.todolist);
+      setWorkspaces(
+        workspaces.map((workspace) => {
+          return workspace.id === currentWorkspace.id
+            ? newWorkspace
+            : workspace;
+        })
+      );
+    }
+  };
+
   const options = {
     month: "short",
     day: "numeric",
@@ -22,23 +93,6 @@ const Done = ({
     hour12: true,
   };
 
-  const handleSliderChange = (event, index) => {
-    let newWorkspace = currentWorkspace;
-    newWorkspace.todolist[index].percent = parseInt(event.target.value);
-    setCurrentWorkspace(newWorkspace);
-    setWorkspaces(
-      workspaces.map((workspace) => {
-        return workspace.id === currentWorkspace.id ? newWorkspace : workspace;
-      })
-    );
-  };
-
-  const onClickDelete = (key) => {
-    const newToDoData = currentWorkspace.teamMems.filter((current) => {
-      return current.id !== key;
-    });
-    setWorkspaces([...workspaces, newToDoData]);
-  };
   return (
     <DoneStyle>
       <div className="specific-task">
@@ -106,11 +160,22 @@ const Done = ({
                       </Color>
                     </div>
                     <div className="col ">
-                      <div className="done">Completed</div>
+                      <div className="todo">
+                        <SelectList
+                          value={todo.status}
+                          onChange={(e) => {
+                            handleChange(e, index);
+                          }}
+                        >
+                          <MenuItem value="todo" selected="selected">
+                            Initiate
+                          </MenuItem>
+                          <MenuItem value="doing">Doing</MenuItem>
+                          <MenuItem value="done">Completed</MenuItem>
+                        </SelectList>
+                      </div>
                     </div>
-                    <div className="col">
-                      <span className="material-symbols-outlined">forum</span>
-                    </div>
+                    <div className="col">{Cmt()}</div>
                   </div>
                 )}
               </div>

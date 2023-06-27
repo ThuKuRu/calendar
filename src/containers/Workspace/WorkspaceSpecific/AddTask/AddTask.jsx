@@ -165,7 +165,6 @@ const AddTask = ({
       });
       setWorkspaces(newWorkspaces);
       setCurrentWorkspace(newCurrentWorkspace);
-      // console.log(newCurrentWorkspace);
       if (todo.memberName === "Thu thút") {
         const newTodo = {
           name: todo.pjName,

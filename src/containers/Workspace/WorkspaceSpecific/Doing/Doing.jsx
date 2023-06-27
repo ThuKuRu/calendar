@@ -1,5 +1,5 @@
 import React from "react";
-import { DoingStyle, Img, Color } from "./index.style";
+import { DoingStyle, Img, Color, SelectList, MenuItem } from "./index.style";
 import Popup from "reactjs-popup";
 import AddTask from "../AddTask/AddTask";
 import RangeSlider from "react-bootstrap-range-slider";
@@ -24,7 +24,7 @@ const Doing = ({
         return workspace.id === currentWorkspace.id ? newWorkspace : workspace;
       })
     );
-    if (parseInt(newWorkspace.todolist[index].percent) > 100) {
+    if (parseInt(newWorkspace.todolist[index].percent) === 100) {
       newWorkspace.todolist[index].status = "done";
       setCurrentWorkspace(newWorkspace);
       setWorkspaces(
@@ -47,6 +47,37 @@ const Doing = ({
       );
     }
   };
+
+  const handleChange = (event, index) => {
+    if (event.target.value === "todo") {
+      let newWorkspace = currentWorkspace;
+      newWorkspace.todolist[index].status = event.target.value;
+      newWorkspace.todolist[index].percent = "0";
+      setCurrentWorkspace(newWorkspace);
+      console.log(currentWorkspace.todolist);
+      setWorkspaces(
+        workspaces.map((workspace) => {
+          return workspace.id === currentWorkspace.id
+            ? newWorkspace
+            : workspace;
+        })
+      );
+    }
+    if (event.target.value === "done") {
+      let newWorkspace = currentWorkspace;
+      newWorkspace.todolist[index].status = event.target.value;
+      setCurrentWorkspace(newWorkspace);
+      console.log(currentWorkspace.todolist);
+      setWorkspaces(
+        workspaces.map((workspace) => {
+          return workspace.id === currentWorkspace.id
+            ? newWorkspace
+            : workspace;
+        })
+      );
+    }
+  };
+
   const options = {
     month: "short",
     day: "numeric",
@@ -55,12 +86,6 @@ const Doing = ({
     hour12: true,
   };
 
-  const onClickDelete = (key) => {
-    const newToDoData = currentWorkspace.teamMems.filter((current) => {
-      return current.id !== key;
-    });
-    setWorkspaces([...workspaces, newToDoData]);
-  };
   return (
     <DoingStyle>
       <div className="specific-task">
@@ -141,7 +166,20 @@ const Doing = ({
                       </div>
                     </div>
                     <div className="col ">
-                      <div className="doing">Doing</div>
+                      <div className="todo">
+                        <SelectList
+                          value={todo.status}
+                          onChange={(e) => {
+                            handleChange(e, index);
+                          }}
+                        >
+                          <MenuItem value="todo" selected="selected">
+                            Initiate
+                          </MenuItem>
+                          <MenuItem value="doing">Doing</MenuItem>
+                          <MenuItem value="done">Completed</MenuItem>
+                        </SelectList>
+                      </div>
                     </div>
                   </div>
                 )}
