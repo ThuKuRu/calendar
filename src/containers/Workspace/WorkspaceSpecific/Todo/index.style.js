@@ -85,6 +85,19 @@ const TodoStyle = styled.div`
           border-radius: 1em;
           padding: 0px;
         }
+        .edit {
+          cursor: pointer;
+          margin-left: 1em;
+          &:focus {
+            transform: translateY(-0.25em);
+            color: #2d7fe0;
+          }
+          &:hover {
+            border-radius: 0.75em;
+            transform: translateY(-0.25em);
+            color: #2d7fe0;
+          }
+        }
         .comment {
           margin-left: 3em;
         }
