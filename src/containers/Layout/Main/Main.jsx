@@ -10,29 +10,6 @@ import userData from "../../../data/users";
 
 const Main = ({ tab }) => {
   const [id, setId] = useState(500);
-  const [events, setEvents] = useState(
-    eventData.map((event) => {
-      if (event.start.split === undefined) return event;
-      let newEvent = event;
-
-      newEvent.start = new Date(
-        event.start.split("/")[0],
-        event.start.split("/")[1],
-        event.start.split("/")[2],
-        event.start.split("/")[3],
-        event.start.split("/")[4]
-      );
-      newEvent.end = new Date(
-        event.end.split("/")[0],
-        event.end.split("/")[1],
-        event.end.split("/")[2],
-        event.end.split("/")[3],
-        event.end.split("/")[4]
-      );
-      return newEvent;
-    })
-  );
-
   const [toDoData, setToDoData] = useState([
     {
       id: 1,
@@ -201,6 +178,7 @@ const Main = ({ tab }) => {
           level: "Medium",
           comple: "false",
           status: "doing",
+          comment: "",
         },
         {
           id: 2,
@@ -214,6 +192,7 @@ const Main = ({ tab }) => {
           level: "Medium",
           comple: "false",
           status: "done",
+          comment: "",
         },
         {
           id: 3,
@@ -227,6 +206,7 @@ const Main = ({ tab }) => {
           level: "High",
           comple: "false",
           status: "doing",
+          comment: "",
         },
         {
           id: 4,
@@ -240,6 +220,7 @@ const Main = ({ tab }) => {
           level: "Medium",
           comple: "false",
           status: "todo",
+          comment: "",
         },
         {
           id: 5,
@@ -253,6 +234,7 @@ const Main = ({ tab }) => {
           level: "High",
           comple: "false",
           status: "doing",
+          comment: "",
         },
         {
           id: 6,
@@ -266,6 +248,7 @@ const Main = ({ tab }) => {
           level: "Low",
           comple: "false",
           status: "todo",
+          comment: "",
         },
         {
           id: 7,
@@ -279,6 +262,7 @@ const Main = ({ tab }) => {
           level: "Low",
           comple: "false",
           status: "todo",
+          comment: "",
         },
         {
           id: 8,
@@ -292,6 +276,7 @@ const Main = ({ tab }) => {
           level: "High",
           comple: "false",
           status: "done",
+          comment: "",
         },
         {
           id: 9,
@@ -305,6 +290,7 @@ const Main = ({ tab }) => {
           level: "Medium",
           comple: "false",
           status: "done",
+          comment: "Good",
         },
         {
           id: 10,
@@ -318,6 +304,7 @@ const Main = ({ tab }) => {
           level: "High",
           comple: "false",
           status: "doing",
+          comment: "",
         },
         {
           id: 11,
@@ -331,6 +318,7 @@ const Main = ({ tab }) => {
           level: "Medium",
           comple: "false",
           status: "todo",
+          comment: "",
         },
         {
           id: 12,
@@ -344,6 +332,7 @@ const Main = ({ tab }) => {
           level: "Optional",
           comple: "false",
           status: "todo",
+          comment: "",
         },
         {
           id: 13,
@@ -357,6 +346,7 @@ const Main = ({ tab }) => {
           level: "Critical",
           comple: "false",
           status: "doing",
+          comment: "",
         },
       ],
 
@@ -1099,6 +1089,28 @@ const Main = ({ tab }) => {
       ],
     },
   ]);
+  const [events, setEvents] = useState(
+    eventData.map((event) => {
+      if (event.start.split === undefined) return event;
+      let newEvent = event;
+
+      newEvent.start = new Date(
+        event.start.split("/")[0],
+        event.start.split("/")[1],
+        event.start.split("/")[2],
+        event.start.split("/")[3],
+        event.start.split("/")[4]
+      );
+      newEvent.end = new Date(
+        event.end.split("/")[0],
+        event.end.split("/")[1],
+        event.end.split("/")[2],
+        event.end.split("/")[3],
+        event.end.split("/")[4]
+      );
+      return newEvent;
+    })
+  );
 
   return (
     <Content>

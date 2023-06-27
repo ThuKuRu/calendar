@@ -23,7 +23,8 @@ function Cmt() {
       <span
         className="material-symbols-outlined"
         ref={ref}
-        onMouseOver={openTooltip}
+        // onMouseOver={openTooltip}
+        onClick={openTooltip}
         onMouseOut={closeTooltip}
         style={{ height: "100%" }}
       >
@@ -56,33 +57,17 @@ const Done = ({
   setCurrentWorkspace,
 }) => {
   const handleChange = (event, index) => {
-    if (event.target.value === "doing") {
-      let newWorkspace = currentWorkspace;
-      newWorkspace.todolist[index].status = event.target.value;
-      setCurrentWorkspace(newWorkspace);
-      console.log(currentWorkspace.todolist);
-      setWorkspaces(
-        workspaces.map((workspace) => {
-          return workspace.id === currentWorkspace.id
-            ? newWorkspace
-            : workspace;
-        })
-      );
-    }
-    if (event.target.value === "todo") {
-      let newWorkspace = currentWorkspace;
-      newWorkspace.todolist[index].status = event.target.value;
-      newWorkspace.todolist[index].percent = "0";
-      setCurrentWorkspace(newWorkspace);
-      console.log(currentWorkspace.todolist);
-      setWorkspaces(
-        workspaces.map((workspace) => {
-          return workspace.id === currentWorkspace.id
-            ? newWorkspace
-            : workspace;
-        })
-      );
-    }
+    let newWorkspace = currentWorkspace;
+    newWorkspace.todolist[index].status = event.target.value;
+    newWorkspace.todolist[index].percent =
+      event.target.value === "todo" ? 0 : newWorkspace.todolist[index].percent;
+    setCurrentWorkspace(newWorkspace);
+    const workspacesNew = workspaces.map((workspace) => {
+      return workspace.id === currentWorkspace.id ? newWorkspace : workspace;
+    });
+    console.log(workspacesNew);
+    console.log(workspaces);
+    setWorkspaces(workspacesNew);
   };
 
   const options = {

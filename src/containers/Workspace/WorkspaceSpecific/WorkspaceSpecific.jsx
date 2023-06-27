@@ -136,20 +136,19 @@ const WorkspaceSpecific = ({
             </div>
           </div>
           <div className="specific-task">
-            {change === "specific" && (
-              <Todo
-                id={id}
-                setTab={setTab}
-                setId={setId}
-                toDoData={toDoData}
-                setToDoData={setToDoData}
-                currentWorkspace={currentWorkspace}
-                workspaces={workspaces}
-                setWorkspaces={setWorkspaces}
-                setCurrentWorkspace={setCurrentWorkspace}
-              />
-            )}
-            {change === "doing" && (
+            <Todo
+              id={id}
+              setTab={setTab}
+              setId={setId}
+              toDoData={toDoData}
+              setToDoData={setToDoData}
+              currentWorkspace={currentWorkspace}
+              workspaces={workspaces}
+              setWorkspaces={setWorkspaces}
+              setCurrentWorkspace={setCurrentWorkspace}
+            />
+
+            {/* {change === "doing" && (
               <Doing
                 id={id}
                 setTab={setTab}
@@ -174,7 +173,7 @@ const WorkspaceSpecific = ({
                 setWorkspaces={setWorkspaces}
                 setCurrentWorkspace={setCurrentWorkspace}
               />
-            )}
+            )} */}
           </div>
         </div>
 

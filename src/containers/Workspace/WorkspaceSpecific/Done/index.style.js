@@ -86,7 +86,7 @@ const DoneStyle = styled.div`
           padding: 0px;
         }
         .comment {
-          text-align: center;
+          margin-left: 3em;
         }
       }
     }
