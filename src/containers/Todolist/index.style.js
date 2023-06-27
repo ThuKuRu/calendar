@@ -132,6 +132,10 @@ const TodolistStyle = styled.div`
         border-radius: 1em;
         padding: 0px;
       }
+      .uneditable {
+        margin-left: 1em;
+        opacity: 0.5;
+      }
     }
   }
   .footer {
