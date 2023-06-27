@@ -10,13 +10,6 @@ const TopNav = () => {
   const [value, setValue] = React.useState("user");
   const navigate = useNavigate();
 
-  // const handleChange = (event) => {
-  //   setValue(event.target.value);
-  //   if (event.target.value === "logout") {
-  //     navigate("/login");
-  //   }
-  // };
-
   return (
     <NavBar>
       <link
@@ -34,13 +27,6 @@ const TopNav = () => {
         <Popup trigger={<Avatar src={AvatarImg} variant="rounded" />}>
           <Logout />
         </Popup>
-        {/* <SelectList value={value} onChange={handleChange}>
-          <img src={AvatarImg} alt="/" />
-          <MenuItem value="user" selected="selected">
-            <img src={AvatarImg} alt="/" />
-          </MenuItem>
-          <MenuItem value="logout">Logout</MenuItem>
-        </SelectList> */}
       </div>
     </NavBar>
   );
