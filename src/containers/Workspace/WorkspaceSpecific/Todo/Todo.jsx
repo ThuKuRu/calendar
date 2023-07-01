@@ -141,10 +141,6 @@ const Todo = ({
               <p className="name">Comment</p>
             </div>
           )}
-          <div className="col ">
-            <span class="material-symbols-outlined">edit_note</span>
-            <p className="name">Edit</p>
-          </div>
         </div>
         <div>
           {currentWorkspace.todolist !== undefined &&
@@ -209,28 +205,6 @@ const Todo = ({
                       </div>
                     </div>
                     {change === "done" && <div className="col">{Cmt()}</div>}
-                    <div className="col ">
-                      <span
-                        className={
-                          // toDoData[index].assignee.toUpperCase() === "YOU" ||
-                          // toDoData[index].assignee.toUpperCase() === "Thu THÚT"
-                          //   ? "material-symbols-outlined edit"
-                          //   : "material-symbols-outlined uneditable"
-                          "material-symbols-outlined edit"
-                        }
-                        // onClick={() => {
-                        //   if (
-                        //     toDoData[index].assignee.toUpperCase() === "YOU" ||
-                        //     toDoData[index].assignee.toUpperCase() === "Thu THÚT"
-                        //   ) {
-                        //     setEventCache(toDoData[index]);
-                        //     setOpen(true);
-                        //   }
-                        // }}
-                      >
-                        edit
-                      </span>
-                    </div>
                   </div>
                 )}
               </div>
