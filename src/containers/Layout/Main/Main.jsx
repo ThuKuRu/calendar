@@ -1101,12 +1101,19 @@ const Main = ({ tab }) => {
         event.start.split("/")[3],
         event.start.split("/")[4]
       );
+      newEvent.start = new Date(
+        newEvent.start.getTime() + 60 * 60 * 1000 * 24 * 14
+      );
+
       newEvent.end = new Date(
         event.end.split("/")[0],
         event.end.split("/")[1],
         event.end.split("/")[2],
         event.end.split("/")[3],
         event.end.split("/")[4]
+      );
+      newEvent.end = new Date(
+        newEvent.end.getTime() + 60 * 60 * 1000 * 24 * 14
       );
       return newEvent;
     })

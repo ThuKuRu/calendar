@@ -4,7 +4,7 @@ const DashBoard = styled.div`
   .container {
     display: grid;
     grid-template-columns: 35% 65%;
-    grid-template-rows: 45% 45%;
+    grid-template-rows: 48% 42%;
     gap: 12% 2em;
     padding: 0.5em 2em 0 2em;
     font-size: clamp(0.75rem, 1.3vw, 3rem);
